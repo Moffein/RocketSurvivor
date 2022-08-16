@@ -49,7 +49,7 @@ namespace RocketSurvivor
                             //Negate falling speed
                             if (!cb.characterMotor.isGrounded && cb.characterMotor.velocity.y < 0f)
                             {
-                                damageInfo.force.y += cb.characterMotor.velocity.y * -150f;
+                                damageInfo.force.y += cb.characterMotor.velocity.y * -100f;
                             }
                         }
                     }
