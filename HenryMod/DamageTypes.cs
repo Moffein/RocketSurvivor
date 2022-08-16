@@ -48,7 +48,7 @@ namespace RocketSurvivor
                             //if (damageInfo.force.y < 0f)  //RoR2 force calculations can't be trusted because it's calculated based on hitbox instead of coreposition, so just launch the enemy for free.
                                 damageInfo.force.y = 0f;
 
-                            damageInfo.force.y += damageInfo.force.magnitude;
+                            damageInfo.force.y += magnitude;
                             isGrounded = cb.characterMotor.isGrounded;
                             //Negate falling speed
                             if (!cb.characterMotor.isGrounded && cb.characterMotor.velocity.y < 0f)
