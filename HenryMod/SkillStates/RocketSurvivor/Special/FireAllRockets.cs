@@ -54,7 +54,6 @@ namespace EntityStates.RocketSurvivorSkills.Special
 
         public void FireProjectile()
         {
-            shotsRemaining--;
             if (base.isAuthority)
             {
                 /*if (base.skillLocator && base.skillLocator.primary.stock > 0)
@@ -63,10 +62,17 @@ namespace EntityStates.RocketSurvivorSkills.Special
                 }*/
 
                 Ray aimRay = base.GetAimRay();
-                base.StartAimMode(aimRay, 3f, false);
+
+                Vector3 aimDirection = aimRay.direction;
+                if (shotsRemaining != baseShotCount)
+                {
+                    aimDirection = Util.ApplySpread(aimRay.direction, 0f, 3f, 1f, 1f);
+                }
 
                 //Set force to 0? Knockback makes it pretty bad against small enemies.
-                ProjectileManager.instance.FireProjectile(GetProjectilePrefab(), aimRay.origin, Util.QuaternionSafeLookRotation(aimRay.direction), base.gameObject, this.damageStat * GetDamageCoefficient(), GetForce() * 0.25f, isCrit, DamageColorIndex.Default, null, -1f);
+                ProjectileManager.instance.FireProjectile(GetProjectilePrefab(), aimRay.origin, Util.QuaternionSafeLookRotation(aimDirection), base.gameObject, this.damageStat * GetDamageCoefficient(), GetForce() * 0.25f, isCrit, DamageColorIndex.Default, null, -1f);
+
+                base.StartAimMode(aimRay, 3f, false);
             }
 
             if (FireRocket.effectPrefab)
@@ -75,6 +81,7 @@ namespace EntityStates.RocketSurvivorSkills.Special
             }
             base.PlayAnimation("LeftArm, Override", "ShootGun", "ShootGun.playbackRate", 1.8f); //TODO: REPLACE
             Util.PlaySound(FireRocket.attackSoundString, base.gameObject);
+            shotsRemaining--;
         }
 
         private GameObject GetProjectilePrefab()
