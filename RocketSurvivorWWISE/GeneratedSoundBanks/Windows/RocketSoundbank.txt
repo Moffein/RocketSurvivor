@@ -24,8 +24,8 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	267091277	rocket_jumper_shoot	C:\Users\Node\RoR2 Mods\RocketSurvivor\RocketSurvivorWWISE\.cache\Windows\SFX\rocket_jumper_shoot_3F75BDB9.wem		\Actor-Mixer Hierarchy\Default Work Unit\Master Mixer\SFX Mixer\Major Sounds\rocket_jumper_shoot		27643
 	442034263	bottle_hit_flesh1	C:\Users\Node\RoR2 Mods\RocketSurvivor\RocketSurvivorWWISE\.cache\Windows\SFX\bottle_hit_flesh1_3F75BDB9.wem		\Actor-Mixer Hierarchy\Default Work Unit\Master Mixer\SFX Mixer\Minor Sounds\bottle_hit_flesh1		4862
 	557845177	DB_Jav_FireToggle	C:\Users\Node\RoR2 Mods\RocketSurvivor\RocketSurvivorWWISE\.cache\Windows\SFX\DB_Jav_FireToggle_3F75BDB9.wem		\Actor-Mixer Hierarchy\Default Work Unit\Master Mixer\SFX Mixer\Minor Sounds\DB_Jav_FireToggle		9259
+	560277754	hl2_wpn_denyselect	C:\Users\Node\RoR2 Mods\RocketSurvivor\RocketSurvivorWWISE\.cache\Windows\SFX\hl2_wpn_denyselect_3F75BDB9.wem		\Actor-Mixer Hierarchy\Default Work Unit\Master Mixer\SFX Mixer\Minor Sounds\hl2_wpn_denyselect		1764
 	594778408	shovel_swing	C:\Users\Node\RoR2 Mods\RocketSurvivor\RocketSurvivorWWISE\.cache\Windows\SFX\shovel_swing_3F75BDB9.wem		\Actor-Mixer Hierarchy\Default Work Unit\Master Mixer\SFX Mixer\Minor Sounds\shovel_swing		12629
 	730758600	Reflex_RL	C:\Users\Node\RoR2 Mods\RocketSurvivor\RocketSurvivorWWISE\.cache\Windows\SFX\Reflex_RL_3F75BDB9.wem		\Actor-Mixer Hierarchy\Default Work Unit\Master Mixer\SFX Mixer\Major Sounds\Reflex_RL		12483
 	961459857	QC_RL	C:\Users\Node\RoR2 Mods\RocketSurvivor\RocketSurvivorWWISE\.cache\Windows\SFX\QC_RL_3F75BDB9.wem		\Actor-Mixer Hierarchy\Default Work Unit\Master Mixer\SFX Mixer\Major Sounds\QC_RL		12151
-	978772347	sniper_railgun_no_fire	C:\Users\Node\RoR2 Mods\RocketSurvivor\RocketSurvivorWWISE\.cache\Windows\SFX\sniper_railgun_no_fire_3F75BDB9.wem		\Actor-Mixer Hierarchy\Default Work Unit\Master Mixer\SFX Mixer\Minor Sounds\sniper_railgun_no_fire		10774
 

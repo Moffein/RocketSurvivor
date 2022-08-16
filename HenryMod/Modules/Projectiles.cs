@@ -132,7 +132,7 @@ namespace RocketSurvivor.Modules
             EntityStates.RocketSurvivorSkills.Primary.FireRocketAlt.projectilePrefab = rocketPrefab;
         }
 
-        //Use a model that's less harmful looking.
+        //Use a different model that's distinct from the regular rockets.
         private static void CreateConcRocket()
         {
             GameObject rocketPrefab = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Toolbot/ToolbotGrenadeLauncherProjectile.prefab").WaitForCompletion().InstantiateClone("RocketSurvivorConcProjectile", true);

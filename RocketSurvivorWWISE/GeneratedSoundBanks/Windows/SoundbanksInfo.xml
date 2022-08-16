@@ -16,7 +16,7 @@
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 		</SoundBank>
-		<SoundBank Id="1554628720" Language="SFX" Hash="3438480297">
+		<SoundBank Id="1554628720" Language="SFX" Hash="3182889410">
 			<ObjectPath>\SoundBanks\Default Work Unit\RocketSoundbank</ObjectPath>
 			<ShortName>RocketSoundbank</ShortName>
 			<Path>RocketSoundbank.bnk</Path>
@@ -71,9 +71,9 @@
 				</Event>
 				<Event Id="1995085771" Name="Play_Moffein_RocketSurvivor_M2_NoFire" ObjectPath="\Events\Default Work Unit\Play_Moffein_RocketSurvivor_M2_NoFire">
 					<IncludedMemoryFiles>
-						<File Id="978772347" Language="SFX">
-							<ShortName>sniper_railgun_no_fire.wav</ShortName>
-							<Path>SFX\sniper_railgun_no_fire_3F75BDB9.wem</Path>
+						<File Id="560277754" Language="SFX">
+							<ShortName>hl2_wpn_denyselect.wav</ShortName>
+							<Path>SFX\hl2_wpn_denyselect_3F75BDB9.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>

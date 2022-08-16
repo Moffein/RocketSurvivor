@@ -52,7 +52,7 @@
 						<Action Name="" ID="{022A0AED-85E2-4CFC-924F-4AEDA374C730}" ShortID="232734149">
 							<ReferenceList>
 								<Reference Name="Target">
-									<ObjectRef Name="sniper_railgun_no_fire" ID="{8F670390-7DE2-430E-B277-361BEDB178F6}" WorkUnitID="{D7284510-35A1-4A16-B82C-F723456E5A7C}"/>
+									<ObjectRef Name="hl2_wpn_denyselect" ID="{98BBBA90-94A7-484D-9B3B-C020DE2887A9}" WorkUnitID="{D7284510-35A1-4A16-B82C-F723456E5A7C}"/>
 								</Reference>
 							</ReferenceList>
 						</Action>
