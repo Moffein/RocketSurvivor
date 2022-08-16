@@ -11,6 +11,7 @@ namespace EntityStates.RocketSurvivorSkills.Utility
 		{
 			base.OnEnter();
 			this.duration = ConcRocket.baseDuration / this.attackSpeedStat;
+			this.minDuration = ConcRocket.baseMinDuration / this.attackSpeedStat;
 			Ray aimRay = base.GetAimRay();
 			base.StartAimMode(aimRay, 3f, false);
 
@@ -39,7 +40,7 @@ namespace EntityStates.RocketSurvivorSkills.Utility
 
 		public override InterruptPriority GetMinimumInterruptPriority()
 		{
-			return InterruptPriority.Pain;
+			return (base.fixedAge >= this.minDuration && (base.inputBank && !base.inputBank.skill3.down)) ? InterruptPriority.Skill : InterruptPriority.Pain;
 		}
 
 		public static string muzzleString = "MuzzleCenter";
@@ -47,9 +48,12 @@ namespace EntityStates.RocketSurvivorSkills.Utility
 		public static GameObject projectilePrefab;
 		public static GameObject effectPrefab = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Commando/MuzzleflashFMJ.prefab").WaitForCompletion();	//Use a less threatening VFX for this
 		public static float damageCoefficient = 0f;
-		public static float force = 3000f;
-		public static float baseDuration = 0.8f;
+		public static float force = 3200f;
 
+		public static float baseDuration = 0.8f;
+		public static float baseMinDuration = 0.2f;
+
+		private float minDuration;
 		private float duration;
 	}
 }

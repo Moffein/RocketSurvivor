@@ -114,7 +114,7 @@ namespace RocketSurvivor.Modules.Survivors
             primarySkillDef.dontAllowPastMaxStocks = true;
             primarySkillDef.forceSprintDuringState = false;
             primarySkillDef.fullRestockOnAssign = true;
-            primarySkillDef.icon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texPrimaryIcon");
+            primarySkillDef.icon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texSecondaryIcon");
             primarySkillDef.interruptPriority = InterruptPriority.Skill;
             primarySkillDef.isCombatSkill = true;
             primarySkillDef.keywordTokens = new string[] { };
@@ -141,7 +141,7 @@ namespace RocketSurvivor.Modules.Survivors
             primaryAltSkillDef.dontAllowPastMaxStocks = true;
             primaryAltSkillDef.forceSprintDuringState = false;
             primaryAltSkillDef.fullRestockOnAssign = true;
-            primaryAltSkillDef.icon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texPrimaryIcon");
+            primaryAltSkillDef.icon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texSecondaryIcon");
             primaryAltSkillDef.interruptPriority = InterruptPriority.Skill;
             primaryAltSkillDef.isCombatSkill = true;
             primaryAltSkillDef.keywordTokens = new string[] { };
@@ -164,33 +164,32 @@ namespace RocketSurvivor.Modules.Survivors
             #endregion
 
             #region Secondary
-            SkillDef airDetDef = Modules.Skills.CreateSkillDef(new SkillDefInfo
-            {
-                skillName = "AirDet",
-                skillNameToken = Rocket_Prefix + "SECONDARY_NAME",
-                skillDescriptionToken = Rocket_Prefix + "SECONDARY_DESCRIPTION",
-                skillIcon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texSecondaryIcon"),
-                activationState = new EntityStates.SerializableEntityStateType(typeof(EntityStates.RocketSurvivorSkills.Secondary.AirDet)),
-                activationStateMachineName = "Slide",   //TODO: rename statemachine to "Detonator"
-                baseMaxStock = 1,
-                baseRechargeInterval = 3f,
-                beginSkillCooldownOnSkillEnd = false,
-                canceledFromSprinting = false,
-                forceSprintDuringState = false,
-                fullRestockOnAssign = true,
-                interruptPriority = EntityStates.InterruptPriority.Skill,
-                resetCooldownTimerOnUse = false,
-                isCombatSkill = false,
-                mustKeyPress = true,
-                cancelSprintingOnActivation = false,
-                rechargeStock = 1,
-                requiredStock = 1,
-                stockToConsume = 1,
-                keywordTokens = new string[] {}
-            });
-            (airDetDef as ScriptableObject).name = "AirDet";
-            Modules.Skills.AddSecondarySkills(bodyPrefab, airDetDef);
-            RocketSurvivorSetup.AirDetDef = airDetDef;
+
+            RocketTrackerSkillDef airDetTrackerDef = RocketTrackerSkillDef.CreateInstance<RocketTrackerSkillDef>();
+            airDetTrackerDef.activationState = new EntityStates.SerializableEntityStateType(typeof(EntityStates.RocketSurvivorSkills.Secondary.AirDet));
+            airDetTrackerDef.activationStateMachineName = "Slide";
+            airDetTrackerDef.baseMaxStock = 1;
+            airDetTrackerDef.baseRechargeInterval = 3f;
+            airDetTrackerDef.beginSkillCooldownOnSkillEnd = false;
+            airDetTrackerDef.canceledFromSprinting = false;
+            airDetTrackerDef.dontAllowPastMaxStocks = true;
+            airDetTrackerDef.forceSprintDuringState = false;
+            airDetTrackerDef.fullRestockOnAssign = true;
+            airDetTrackerDef.icon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texUtilityIcon");
+            airDetTrackerDef.interruptPriority = InterruptPriority.Skill;
+            airDetTrackerDef.isCombatSkill = false;
+            airDetTrackerDef.keywordTokens = new string[] { };
+            airDetTrackerDef.mustKeyPress = false;
+            airDetTrackerDef.cancelSprintingOnActivation = false;
+            airDetTrackerDef.rechargeStock = 1;
+            airDetTrackerDef.requiredStock = 1;
+            airDetTrackerDef.skillName = "AirDet";
+            airDetTrackerDef.skillNameToken = Rocket_Prefix + "SECONDARY_NAME";
+            airDetTrackerDef.skillDescriptionToken = Rocket_Prefix + "SECONDARY_DESCRIPTION";
+            airDetTrackerDef.stockToConsume = 1;
+            (airDetTrackerDef as ScriptableObject).name = "AirDet";
+            Modules.Skills.AddSecondarySkills(bodyPrefab, airDetTrackerDef);
+            RocketSurvivorSetup.AirDetDef = airDetTrackerDef;
 
             NetworkSoundEventDef detSuccessSound = ScriptableObject.CreateInstance<NetworkSoundEventDef>();
             detSuccessSound.eventName = "Play_Moffein_RocketSurvivor_M2_Trigger";
@@ -220,7 +219,7 @@ namespace RocketSurvivor.Modules.Survivors
             concDef.dontAllowPastMaxStocks = true;
             concDef.forceSprintDuringState = false;
             concDef.fullRestockOnAssign = true;
-            concDef.icon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texPrimaryIcon");
+            concDef.icon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texSpecialIcon");
             concDef.interruptPriority = InterruptPriority.PrioritySkill;
             concDef.isCombatSkill = true;
             concDef.keywordTokens = new string[] { };
@@ -239,16 +238,16 @@ namespace RocketSurvivor.Modules.Survivors
                 skillName = "MarketGarden",
                 skillNameToken = Rocket_Prefix + "UTILITY_ALT_NAME",
                 skillDescriptionToken = Rocket_Prefix + "UTILITY_ALT_DESCRIPTION",
-                skillIcon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texSpecialIcon"),
+                skillIcon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texPrimaryIcon"),
                 activationState = new EntityStates.SerializableEntityStateType(typeof(EntityStates.RocketSurvivorSkills.Utility.ComicallyLargeSpoon)),
-                activationStateMachineName = "Slide",
+                activationStateMachineName = "Weapon",
                 baseMaxStock = 1,
                 baseRechargeInterval = 7f,
                 beginSkillCooldownOnSkillEnd = false,
                 canceledFromSprinting = false,
                 forceSprintDuringState = false,
                 fullRestockOnAssign = true,
-                interruptPriority = EntityStates.InterruptPriority.Any,
+                interruptPriority = EntityStates.InterruptPriority.PrioritySkill,
                 resetCooldownTimerOnUse = false,
                 isCombatSkill = true,
                 mustKeyPress = false,

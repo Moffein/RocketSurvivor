@@ -7,6 +7,7 @@ using System.IO;
 using System.Collections.Generic;
 using RoR2.UI;
 using System;
+using UnityEngine.AddressableAssets;
 
 namespace RocketSurvivor.Modules
 {
@@ -16,8 +17,8 @@ namespace RocketSurvivor.Modules
         internal static AssetBundle mainAssetBundle;
 
         // particle effects
-        internal static GameObject swordSwingEffect;
-        internal static GameObject swordHitImpactEffect;
+        internal static GameObject spoonSwingEffect;
+        internal static GameObject spoonImpactEffect;
 
         internal static GameObject bombExplosionEffect;
 
@@ -90,8 +91,6 @@ namespace RocketSurvivor.Modules
 
             spoonHitSoundEvent = CreateNetworkSoundEventDef("Play_Moffein_RocketSurvivor_R_Alt_Hit");
 
-            bombExplosionEffect = LoadEffect("BombExplosionEffect", "HenryBombExplosion");
-
             if (bombExplosionEffect)
             {
                 ShakeEmitter shakeEmitter = bombExplosionEffect.AddComponent<ShakeEmitter>();
@@ -108,8 +107,8 @@ namespace RocketSurvivor.Modules
                 };
             }
 
-            swordSwingEffect = Assets.LoadEffect("HenrySwordSwingEffect", true);
-            swordHitImpactEffect = Assets.LoadEffect("ImpactHenrySlash");
+            spoonSwingEffect = Assets.LoadEffect("HenrySwordSwingEffect", true);
+            spoonImpactEffect = Assets.LoadEffect("ImpactHenrySlash");
         }
 
         private static GameObject CreateTracer(string originalTracerName, string newTracerName)

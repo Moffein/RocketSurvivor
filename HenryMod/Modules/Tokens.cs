@@ -22,7 +22,7 @@ namespace RocketSurvivor.Modules
 
             //Unlock Condition: Hit 20 airshots.
             LanguageAPI.Add(prefix + "PRIMARY_ALT_NAME", "HG4 SAM Launcher");
-            LanguageAPI.Add(prefix + "PRIMARY_ALT_DESCRIPTION", "Fire a precision missile for <style=cIsDamage>600% damage</style>. Deals <style=cIsDamage>+40% damage</style> against <style=cIsUtility>airborne targets</style>. Can hold up to 4.");
+            LanguageAPI.Add(prefix + "PRIMARY_ALT_DESCRIPTION", "Fire a precision missile for <style=cIsDamage>600% damage</style>. Deals <style=cIsDamage>+30% damage</style> against <style=cIsUtility>airborne targets</style>. Can hold up to 4.");
 
             LanguageAPI.Add(prefix + "SECONDARY_NAME", "Remote Detonator");
             LanguageAPI.Add(prefix + "SECONDARY_DESCRIPTION", "Detonate your <style=cIsDamage>last-fired missile</style>, increasing its <style=cIsDamage>damage</style> and <style=cIsDamage>blast radius</style> by <style=cIsDamage>30%</style>.");

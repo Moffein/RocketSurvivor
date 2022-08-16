@@ -69,7 +69,7 @@ namespace RocketSurvivor
                 CharacterBody cb = self.body;
                 if (cb.isFlying || (cb.characterMotor && !cb.characterMotor.isGrounded))
                 {
-                    damageInfo.damage *= 1.4f;
+                    damageInfo.damage *= 1.3f;
                     if (damageInfo.damageColorIndex == DamageColorIndex.Default) damageInfo.damageColorIndex = DamageColorIndex.WeakPoint;
 
                     EffectManager.SimpleSoundEffect(RocketSurvivor.Modules.Assets.spoonHitSoundEvent.index, damageInfo.position, true);

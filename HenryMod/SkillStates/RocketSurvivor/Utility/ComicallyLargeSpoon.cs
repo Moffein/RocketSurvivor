@@ -12,7 +12,7 @@ namespace EntityStates.RocketSurvivorSkills.Utility
         {
             this.hitboxName = "Sword";
 
-            //Just use a fake overlap attack to tell if you're actually hitting something
+            //Just use overlap attack to tell if you're actually hitting something. Damage is dealt via Explosion.
             //No clue about the attack timing, needs adjustent.
             this.damageType = DamageType.Generic;
             this.damageCoefficient = 0f;
@@ -21,17 +21,17 @@ namespace EntityStates.RocketSurvivorSkills.Utility
             this.bonusForce = Vector3.zero;
             this.baseDuration = 0.8f;
             this.attackStartTime = 0.25f;
-            this.attackEndTime = 0.65f;
+            this.attackEndTime = 0.8f;
             this.baseEarlyExitTime = 0.8f;
             this.hitStopDuration = 0.012f;
             this.attackRecoil = 0.5f;
             this.hitHopVelocity = 36f;
 
-            this.swingSoundString = "";//This is delayed, don't use unless sound gets tweaked.
+            this.swingSoundString = "";//This is delayed until the attack actually comes out.
             this.hitSoundString = "Play_Moffein_RocketSurvivor_R_Alt_Hit";
             this.muzzleString = "SwingRight";
-            this.swingEffectPrefab = RocketSurvivor.Modules.Assets.swordSwingEffect;
-            this.hitEffectPrefab = RocketSurvivor.Modules.Assets.swordHitImpactEffect;
+            this.swingEffectPrefab = null;//RocketSurvivor.Modules.Assets.spoonSwingEffect; Nullrefs, no clue why. Added null check to BaseMeleeAttack.
+            this.hitEffectPrefab = null;//RocketSurvivor.Modules.Assets.spoonImpactEffect;
 
             this.impactSound = RocketSurvivor.Modules.Assets.spoonHitSoundEvent.index;
 
@@ -97,7 +97,7 @@ namespace EntityStates.RocketSurvivorSkills.Utility
 
         public override InterruptPriority GetMinimumInterruptPriority()
         {
-            return InterruptPriority.Skill;
+            return InterruptPriority.Pain;
         }
 
         private bool firedExplosion = false;

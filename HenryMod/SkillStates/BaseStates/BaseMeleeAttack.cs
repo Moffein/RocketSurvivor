@@ -102,7 +102,7 @@ namespace RocketSurvivor.SkillStates.BaseStates
 
         protected virtual void PlaySwingEffect()
         {
-            EffectManager.SimpleMuzzleFlash(this.swingEffectPrefab, base.gameObject, this.muzzleString, true);
+            if (this.swingEffectPrefab) EffectManager.SimpleMuzzleFlash(this.swingEffectPrefab, base.gameObject, this.muzzleString, true);
         }
 
         protected virtual void OnHitEnemyAuthority()

@@ -123,7 +123,13 @@ namespace RocketSurvivor.Components
                                     if (mdc.Has(DamageTypes.AirborneBonus)) ba.AddModdedDamageType(DamageTypes.AirborneBonus);
                                 }
 
-                                EffectManager.SpawnEffect(EntityStates.RocketSurvivorSkills.Secondary.AirDet.explosionEffectPrefab, new EffectData { origin = toDetonate.transform.position, scale = ba.radius }, true);
+                                GameObject effectPrefab = EntityStates.RocketSurvivorSkills.Secondary.AirDet.explosionEffectPrefab;
+                                if (pd.damageType.HasFlag(DamageType.Silent) && pd.damageType.HasFlag(DamageType.Stun1s))
+                                {
+                                    effectPrefab = EntityStates.RocketSurvivorSkills.Secondary.AirDet.concExplosionEffectPrefab;
+                                }
+
+                                EffectManager.SpawnEffect(effectPrefab, new EffectData { origin = toDetonate.transform.position, scale = ba.radius }, true);
 
                                 ba.Fire();
                             }

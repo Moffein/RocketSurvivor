@@ -24,7 +24,7 @@ namespace RocketSurvivor.Modules
 
         private static void CreateRocket()
         {
-            GameObject rocketPrefab = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Drones/PaladinRocket.prefab").WaitForCompletion().InstantiateClone("RocketSurvivorRocketProjectile", true);
+            GameObject rocketPrefab = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Toolbot/ToolbotGrenadeLauncherProjectile.prefab").WaitForCompletion().InstantiateClone("RocketSurvivorRocketProjectile", true);//"RoR2/Base/Drones/PaladinRocket.prefab"
 
             ProjectileSimple ps = rocketPrefab.GetComponent<ProjectileSimple>();
             ps.desiredForwardSpeed = 75f;// 20.96f should be equivalent to tf2 rockets (1100HU/S) but this doesn't seem to be the case in-game.
@@ -50,7 +50,7 @@ namespace RocketSurvivor.Modules
             pie.falloffModel = BlastAttack.FalloffModel.SweetSpot;
 
             //Remove built-in sounds
-            AkEvent[] akEvents = rocketPrefab.GetComponentsInChildren<AkEvent>();
+            /*AkEvent[] akEvents = rocketPrefab.GetComponentsInChildren<AkEvent>();
             for (int i = 0; i < akEvents.Length; i++)
             {
                 UnityEngine.Object.Destroy(akEvents[i]);
@@ -60,7 +60,7 @@ namespace RocketSurvivor.Modules
             if (akgo)
             {
                 UnityEngine.Object.Destroy(akgo);
-            }
+            }*/
 
             rocketPrefab.AddComponent<AddToRocketTrackerComponent>();
             BlastJumpComponent bjc = rocketPrefab.AddComponent<BlastJumpComponent>();
@@ -79,7 +79,7 @@ namespace RocketSurvivor.Modules
         //Use a different rocket model for this.
         private static void CreateRocketAlt()
         {
-            GameObject rocketPrefab = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Drones/PaladinRocket.prefab").WaitForCompletion().InstantiateClone("RocketSurvivorRocketAltProjectile", true);
+            GameObject rocketPrefab = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Toolbot/ToolbotGrenadeLauncherProjectile.prefab").WaitForCompletion().InstantiateClone("RocketSurvivorRocketAltProjectile", true);//"RoR2/Base/Drones/PaladinRocket.prefab"
 
             ProjectileSimple ps = rocketPrefab.GetComponent<ProjectileSimple>();
             ps.desiredForwardSpeed = 75f * 1.8f;// 20.96f should be equivalent to tf2 rockets (1100HU/S) but this doesn't seem to be the case in-game.
@@ -94,7 +94,7 @@ namespace RocketSurvivor.Modules
             Modules.Content.AddEffectDef(new EffectDef(explosionEffect));
 
             pie.blastDamageCoefficient = 1f;
-            pie.blastRadius = 4f;
+            pie.blastRadius = 3f;   //Artificer is 2
             pie.destroyOnEnemy = true;
             pie.destroyOnWorld = true;
             pie.lifetime = 12f;
@@ -105,7 +105,7 @@ namespace RocketSurvivor.Modules
             pie.falloffModel = BlastAttack.FalloffModel.None;   //Sweetspot becomes unreliable at low radius.
 
             //Remove built-in sounds
-            AkEvent[] akEvents = rocketPrefab.GetComponentsInChildren<AkEvent>();
+            /*AkEvent[] akEvents = rocketPrefab.GetComponentsInChildren<AkEvent>();
             for (int i = 0; i < akEvents.Length; i++)
             {
                 UnityEngine.Object.Destroy(akEvents[i]);
@@ -115,7 +115,7 @@ namespace RocketSurvivor.Modules
             if (akgo)
             {
                 UnityEngine.Object.Destroy(akgo);
-            }
+            }*/
 
             rocketPrefab.AddComponent<AddToRocketTrackerComponent>();
             BlastJumpComponent bjc = rocketPrefab.AddComponent<BlastJumpComponent>();

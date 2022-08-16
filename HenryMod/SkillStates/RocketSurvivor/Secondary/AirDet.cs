@@ -12,10 +12,13 @@ namespace EntityStates.RocketSurvivorSkills.Secondary
         public static NetworkSoundEventDef detonateSuccess;
         public static NetworkSoundEventDef detonateFail;
         public static GameObject explosionEffectPrefab;
+        public static GameObject concExplosionEffectPrefab = Addressables.LoadAssetAsync<GameObject>("RoR2/DLC1/Railgunner/RailgunnerMineExplosion.prefab").WaitForCompletion();
 
         public static float forceMult = 1.3f;
         public static float radiusMult = 1.3f;
         public static float damageMult = 1.3f;
+
+        public static float baseDuration = 0.3f;
 
         public override void OnEnter()
         {
@@ -36,13 +39,20 @@ namespace EntityStates.RocketSurvivorSkills.Secondary
                     EffectManager.SimpleSoundEffect(success ? detonateSuccess.index : detonateFail.index, base.transform.position, true);
                 }
             }
+        }
 
-            this.outer.SetNextStateToMain();
+        public override void FixedUpdate()
+        {
+            base.FixedUpdate();
+            if (base.isAuthority && base.fixedAge > AirDet.baseDuration)
+            {
+                this.outer.SetNextStateToMain();
+            }
         }
 
         public override InterruptPriority GetMinimumInterruptPriority()
         {
-            return InterruptPriority.Any;
+            return (base.inputBank && !base.inputBank.skill2.down) ? InterruptPriority.Skill : InterruptPriority.PrioritySkill;
         }
     }
 }
