@@ -14,6 +14,7 @@ namespace RocketSurvivor.Modules
         {
             CreateRocket();
             CreateRocketAlt();
+            CreateConcRocket();
         }
 
         internal static void AddProjectile(GameObject projectileToAdd)
