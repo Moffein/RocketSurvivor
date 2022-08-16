@@ -31,6 +31,12 @@ namespace EntityStates.RocketSurvivorSkills.Utility
 		public override void FixedUpdate()
 		{
 			base.FixedUpdate();
+
+			if (!buttonReleased && base.inputBank && !base.inputBank.skill3.down)
+			{
+				buttonReleased = true;
+			}
+
 			if (base.fixedAge >= this.duration && base.isAuthority)
 			{
 				this.outer.SetNextStateToMain();
@@ -40,7 +46,7 @@ namespace EntityStates.RocketSurvivorSkills.Utility
 
 		public override InterruptPriority GetMinimumInterruptPriority()
 		{
-			return (base.fixedAge >= this.minDuration && (base.inputBank && !base.inputBank.skill3.down)) ? InterruptPriority.Skill : InterruptPriority.Pain;
+			return (base.fixedAge >= this.minDuration && buttonReleased) ? InterruptPriority.Skill : InterruptPriority.Pain;
 		}
 
 		public static string muzzleString = "MuzzleCenter";
@@ -55,5 +61,6 @@ namespace EntityStates.RocketSurvivorSkills.Utility
 
 		private float minDuration;
 		private float duration;
+		private bool buttonReleased = false;
 	}
 }

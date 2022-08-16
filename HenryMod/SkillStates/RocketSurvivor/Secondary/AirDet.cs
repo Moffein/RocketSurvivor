@@ -20,6 +20,8 @@ namespace EntityStates.RocketSurvivorSkills.Secondary
 
         public static float baseDuration = 0.3f;
 
+        private bool buttonReleased = false;
+
         public override void OnEnter()
         {
             base.OnEnter();
@@ -44,6 +46,11 @@ namespace EntityStates.RocketSurvivorSkills.Secondary
         public override void FixedUpdate()
         {
             base.FixedUpdate();
+            if (!buttonReleased && base.inputBank && !base.inputBank.skill2.down)
+            {
+                buttonReleased = true;
+            }
+
             if (base.isAuthority && base.fixedAge > AirDet.baseDuration)
             {
                 this.outer.SetNextStateToMain();
@@ -52,7 +59,7 @@ namespace EntityStates.RocketSurvivorSkills.Secondary
 
         public override InterruptPriority GetMinimumInterruptPriority()
         {
-            return (base.inputBank && !base.inputBank.skill2.down) ? InterruptPriority.Skill : InterruptPriority.PrioritySkill;
+            return buttonReleased ? InterruptPriority.Skill : InterruptPriority.PrioritySkill;
         }
     }
 }
