@@ -18,7 +18,7 @@ namespace EntityStates.RocketSurvivorSkills.Secondary
         public static float radiusMult = 1.3f;
         public static float damageMult = 1.3f;
 
-        public static float baseDuration = 0.3f;
+        public static float baseDuration = 0.1f;
 
         private bool buttonReleased = false;
 
@@ -37,7 +37,6 @@ namespace EntityStates.RocketSurvivorSkills.Secondary
                         rtc.RpcAddSecondaryStock();
                     }
 
-                    //Uncomment when sounds are set up properly
                     EffectManager.SimpleSoundEffect(success ? detonateSuccess.index : detonateFail.index, base.transform.position, true);
                 }
             }
