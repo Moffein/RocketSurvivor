@@ -101,7 +101,7 @@ namespace RocketSurvivor.Modules
             pie.timerAfterImpact = false;
             pie.lifetimeAfterImpact = 0f;
             pie.blastAttackerFiltering = AttackerFiltering.NeverHitSelf;
-            pie.falloffModel = BlastAttack.FalloffModel.SweetSpot;
+            pie.falloffModel = BlastAttack.FalloffModel.None;   //Sweetspot becomes unreliable at low radius.
 
             //Remove built-in sounds
             AkEvent[] akEvents = rocketPrefab.GetComponentsInChildren<AkEvent>();

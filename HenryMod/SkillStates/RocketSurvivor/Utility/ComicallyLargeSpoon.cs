@@ -76,7 +76,7 @@ namespace EntityStates.RocketSurvivorSkills.Utility
                         position = base.characterBody.corePosition,
                         procChainMask = default,
                         procCoefficient = 1f,
-                        radius = 12f,
+                        radius = 8f,
                         teamIndex = base.GetTeam()
                     };
                     ba.AddModdedDamageType(DamageTypes.ScaleForceToMass);

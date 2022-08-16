@@ -12,6 +12,7 @@ using System.Security.Permissions;
 
 namespace RocketSurvivor
 {
+    [BepInDependency("HIFU.Inferno", BepInDependency.DependencyFlags.SoftDependency)]
     [BepInDependency("com.bepis.r2api", BepInDependency.DependencyFlags.HardDependency)]
     [NetworkCompatibility(CompatibilityLevel.EveryoneMustHaveMod, VersionStrictness.EveryoneNeedSameModVersion)]
     [BepInPlugin(MODUID, MODNAME, MODVERSION)]
@@ -38,10 +39,12 @@ namespace RocketSurvivor
         public const string DEVELOPER_PREFIX = "MOFFEIN";
 
         public static RocketSurvivorPlugin instance;
+        public static bool infernoPluginLoaded = false;
 
         private void Awake()
         {
             instance = this;
+            infernoPluginLoaded = BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey("HIFU.Inferno");
 
             Log.Init(Logger);
 

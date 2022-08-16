@@ -1,4 +1,5 @@
 ﻿using RoR2;
+using System.Runtime.CompilerServices;
 
 namespace RocketSurvivor.Modules
 {
@@ -21,8 +22,15 @@ namespace RocketSurvivor.Modules
         {
             if ((bool)runReport.gameEnding && runReport.gameEnding.isWin)
             {
+
+                DifficultyDef infernoDef = null;
+                if (RocketSurvivorPlugin.infernoPluginLoaded)
+                {
+                    infernoDef = GetInfernoDef();
+                }
+
                 DifficultyDef runDifficulty = DifficultyCatalog.GetDifficultyDef(runReport.ruleBook.FindDifficulty());
-                if (runDifficulty.countsAsHardMode && runDifficulty.scalingValue >= RequiredDifficultyCoefficient)
+                if ((infernoDef != null && runDifficulty == infernoDef) || (runDifficulty.countsAsHardMode && runDifficulty.scalingValue >= RequiredDifficultyCoefficient))
                 {
                     Grant();
                 }
@@ -32,6 +40,12 @@ namespace RocketSurvivor.Modules
         public override BodyIndex LookUpRequiredBodyIndex()
         {
             return BodyCatalog.FindBodyIndex(RequiredCharacterBody);
+        }
+
+        [MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
+        private DifficultyDef GetInfernoDef()
+        {
+            return Inferno.Main.InfernoDiffDef;
         }
     }
 }

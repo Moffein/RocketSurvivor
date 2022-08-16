@@ -11,7 +11,7 @@ namespace RocketSurvivor
         public static DamageAPI.ModdedDamageType AirborneBonus;
         public static DamageAPI.ModdedDamageType MarketGarden;
         public static DamageAPI.ModdedDamageType SlamDunk;
-        public static DamageAPI.ModdedDamageType LaunchIntoAir;
+        //public static DamageAPI.ModdedDamageType LaunchIntoAir;
 
         public static void Initialize()
         {
@@ -21,7 +21,7 @@ namespace RocketSurvivor
             AirborneBonus = DamageAPI.ReserveDamageType();
             MarketGarden = DamageAPI.ReserveDamageType();
             SlamDunk = DamageAPI.ReserveDamageType();
-            LaunchIntoAir = DamageAPI.ReserveDamageType();
+            //LaunchIntoAir = DamageAPI.ReserveDamageType();
 
             On.RoR2.HealthComponent.TakeDamage += HealthComponent_TakeDamage;
 
@@ -108,7 +108,8 @@ namespace RocketSurvivor
                 }
             }
 
-            if (damageInfo.HasModdedDamageType(DamageTypes.LaunchIntoAir))
+            //Excessive. Funny but not that practical.
+            /*if (damageInfo.HasModdedDamageType(DamageTypes.LaunchIntoAir))
             {
                 CharacterBody cb = self.body;
                 if (cb)
@@ -121,7 +122,7 @@ namespace RocketSurvivor
                         damageInfo.force += forceMult * addForce;
                     }
                 }
-            }
+            }*/
 
             orig(self, damageInfo);
         }
