@@ -29,8 +29,9 @@ namespace RocketSurvivor.Modules
                     infernoDef = GetInfernoDef();
                 }
 
-                DifficultyDef runDifficulty = DifficultyCatalog.GetDifficultyDef(runReport.ruleBook.FindDifficulty());
-                if ((infernoDef != null && runDifficulty == infernoDef) || (runDifficulty.countsAsHardMode && runDifficulty.scalingValue >= RequiredDifficultyCoefficient))
+                DifficultyIndex difficultyIndex = runReport.ruleBook.FindDifficulty();
+                DifficultyDef runDifficulty = DifficultyCatalog.GetDifficultyDef(difficultyIndex);
+                if ((infernoDef != null && runDifficulty == infernoDef) || (runDifficulty.countsAsHardMode && runDifficulty.scalingValue >= RequiredDifficultyCoefficient) || (difficultyIndex >= DifficultyIndex.Eclipse1 && difficultyIndex <= DifficultyIndex.Eclipse8))
                 {
                     Grant();
                 }
