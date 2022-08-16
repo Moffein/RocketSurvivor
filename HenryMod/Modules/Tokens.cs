@@ -1,67 +1,41 @@
 ﻿using R2API;
 using System;
 
-namespace HenryMod.Modules
+namespace RocketSurvivor.Modules
 {
     internal static class Tokens
     {
         internal static void AddTokens()
         {
-            #region Henry
-            string prefix = RocketSurvivorPlugin.DEVELOPER_PREFIX + "_HENRY_BODY_";
+            //Todo:Convert to external language file
+            string prefix = RocketSurvivorPlugin.DEVELOPER_PREFIX + "_ROCKET_BODY_";
 
-            string desc = "Henry is a skilled fighter who makes use of a wide arsenal of weaponry to take down his foes.<color=#CCD3E0>" + Environment.NewLine + Environment.NewLine;
-            desc = desc + "< ! > Sword is a good all-rounder while Boxing Gloves are better for laying a beatdown on more powerful foes." + Environment.NewLine + Environment.NewLine;
-            desc = desc + "< ! > Pistol is a powerful anti air, with its low cooldown and high damage." + Environment.NewLine + Environment.NewLine;
-            desc = desc + "< ! > Roll has a lingering armor buff that helps to use it aggressively." + Environment.NewLine + Environment.NewLine;
-            desc = desc + "< ! > Bomb can be used to wipe crowds with ease." + Environment.NewLine + Environment.NewLine;
+            LanguageAPI.Add(prefix + "NAME", "Rocket");
 
-            string outro = "..and so he left, searching for a new identity.";
-            string outroFailure = "..and so he vanished, forever a blank slate.";
+            LanguageAPI.Add(prefix + "SUBTITLE", "Shock and Awe");
 
-            LanguageAPI.Add(prefix + "NAME", "Henry");
-            LanguageAPI.Add(prefix + "DESCRIPTION", desc);
-            LanguageAPI.Add(prefix + "SUBTITLE", "The Chosen One");
-            LanguageAPI.Add(prefix + "LORE", "sample lore");
-            LanguageAPI.Add(prefix + "OUTRO_FLAVOR", outro);
-            LanguageAPI.Add(prefix + "OUTRO_FAILURE", outroFailure);
+            LanguageAPI.Add(prefix + "PASSIVE_NAME", "Blastoff");
+            LanguageAPI.Add(prefix + "PASSIVE_DESCRIPTION", "Your explosives can be used to <style=cIsUtility>blast jump</style>.");
 
-            #region Skins
-            LanguageAPI.Add(prefix + "DEFAULT_SKIN_NAME", "Default");
-            LanguageAPI.Add(prefix + "MASTERY_SKIN_NAME", "Alternate");
-            #endregion
+            LanguageAPI.Add(prefix + "PRIMARY_NAME", "HG4 Missile Launcher");
+            LanguageAPI.Add(prefix + "PRIMARY_DESCRIPTION", "Fire a missile for <style=cIsDamage>520% damage</style>. Can hold up to 4.");
 
-            #region Passive
-            LanguageAPI.Add(prefix + "PASSIVE_NAME", "Henry passive");
-            LanguageAPI.Add(prefix + "PASSIVE_DESCRIPTION", "Sample text.");
-            #endregion
+            //Unlock Condition: Hit 20 airshots.
+            LanguageAPI.Add(prefix + "PRIMARY_ALT_NAME", "HG4 SAM Launcher");
+            LanguageAPI.Add(prefix + "PRIMARY_ALT_DESCRIPTION", "Fire a precision missile for <style=cIsDamage>600% damage</style>. Deals <style=cIsDamage>+40% damage</style> against <style=cIsUtility>airborne targets</style>. Can hold up to 4.");
 
-            #region Primary
-            LanguageAPI.Add(prefix + "PRIMARY_SLASH_NAME", "Sword");
-            LanguageAPI.Add(prefix + "PRIMARY_SLASH_DESCRIPTION", Helpers.agilePrefix + $"Swing forward for <style=cIsDamage>{100f * StaticValues.swordDamageCoefficient}% damage</style>.");
-            #endregion
+            LanguageAPI.Add(prefix + "SECONDARY_NAME", "Remote Detonator");
+            LanguageAPI.Add(prefix + "SECONDARY_DESCRIPTION", "Detonate your <style=cIsDamage>last-fired missile</style>, increasing its <style=cIsDamage>damage</style> and <style=cIsDamage>blast radius</style> by <style=cIsDamage>30%</style>.");
 
-            #region Secondary
-            LanguageAPI.Add(prefix + "SECONDARY_GUN_NAME", "Handgun");
-            LanguageAPI.Add(prefix + "SECONDARY_GUN_DESCRIPTION", Helpers.agilePrefix + $"Fire a handgun for <style=cIsDamage>{100f * StaticValues.gunDamageCoefficient}% damage</style>.");
-            #endregion
+            LanguageAPI.Add(prefix + "UTILITY_NAME", "Concussion Blast");
+            LanguageAPI.Add(prefix + "UTILITY_DESCRIPTION", "<style=cIsDamage>Stunning</style>. Fire a nonlethal missile that <style=cIsDamage>launches</style> enemies into the air.");
 
-            #region Utility
-            LanguageAPI.Add(prefix + "UTILITY_ROLL_NAME", "Roll");
-            LanguageAPI.Add(prefix + "UTILITY_ROLL_DESCRIPTION", "Roll a short distance, gaining <style=cIsUtility>300 armor</style>. <style=cIsUtility>You cannot be hit during the roll.</style>");
-            #endregion
+            //Unlock Condition: Kill 5 enemies in a single rocket jump.
+            LanguageAPI.Add(prefix + "UTILITY_ALT_NAME", "Bombing Run");
+            LanguageAPI.Add(prefix + "UTILITY_ALT_DESCRIPTION", "<style=cIsDamage>Stunning</style>. Swing an explosive at an enemy for <style=cIsDamage>1000% damage</style>. Deals <style=cIsDamage>Critical Strikes</style> while <style=cIsUtility>rocket jumping</style>.");
 
-            #region Special
-            LanguageAPI.Add(prefix + "SPECIAL_BOMB_NAME", "Bomb");
-            LanguageAPI.Add(prefix + "SPECIAL_BOMB_DESCRIPTION", $"Throw a bomb for <style=cIsDamage>{100f * StaticValues.bombDamageCoefficient}% damage</style>.");
-            #endregion
-
-            #region Achievements
-            LanguageAPI.Add(prefix + "MASTERYUNLOCKABLE_ACHIEVEMENT_NAME", "Henry: Mastery");
-            LanguageAPI.Add(prefix + "MASTERYUNLOCKABLE_ACHIEVEMENT_DESC", "As Henry, beat the game or obliterate on Monsoon.");
-            LanguageAPI.Add(prefix + "MASTERYUNLOCKABLE_UNLOCKABLE_NAME", "Henry: Mastery");
-            #endregion
-            #endregion
+            LanguageAPI.Add(prefix + "SPECIAL_NAME", "Rapid Rearm");
+            LanguageAPI.Add(prefix + "SPECIAL_DESCRIPTION", "Rapidly <style=cIsDamage>fire 4 missiles</style>, then <style=cIsUtility>reload your weapon</style>.");
         }
     }
 }

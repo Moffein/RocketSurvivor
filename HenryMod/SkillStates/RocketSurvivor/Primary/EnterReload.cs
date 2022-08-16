@@ -1,7 +1,7 @@
 ﻿using RoR2;
 using UnityEngine;
 
-namespace EntityStates.RocketSurvivor.Primary
+namespace EntityStates.RocketSurvivorSkills.Primary
 {
 	public class EnterReload : BaseState
 	{

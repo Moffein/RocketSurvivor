@@ -8,7 +8,7 @@ using System.Collections.Generic;
 using RoR2.UI;
 using System;
 
-namespace HenryMod.Modules
+namespace RocketSurvivor.Modules
 {
     internal static class Assets
     {
@@ -22,7 +22,7 @@ namespace HenryMod.Modules
         internal static GameObject bombExplosionEffect;
 
         // networked hit sounds
-        internal static NetworkSoundEventDef swordHitSoundEvent;
+        internal static NetworkSoundEventDef spoonHitSoundEvent;
 
         // cache these and use to create our own materials
         internal static Shader hotpoo = RoR2.LegacyResourcesAPI.Load<Shader>("Shaders/Deferred/HGStandard");
@@ -69,7 +69,7 @@ namespace HenryMod.Modules
         internal static void LoadSoundbank()
         {                                                                
             //soundbank currently broke, but this is how you should load yours
-            using (Stream manifestResourceStream2 = Assembly.GetExecutingAssembly().GetManifestResourceStream($"{csProjName}.HenryBank.bnk"))
+            using (Stream manifestResourceStream2 = Assembly.GetExecutingAssembly().GetManifestResourceStream($"{csProjName}.RocketSoundbank.bnk"))
             {
                 byte[] array = new byte[manifestResourceStream2.Length];
                 manifestResourceStream2.Read(array, 0, array.Length);
@@ -88,7 +88,7 @@ namespace HenryMod.Modules
             // feel free to delete everything in here and load in your own assets instead
             // it should work fine even if left as is- even if the assets aren't in the bundle
 
-            swordHitSoundEvent = CreateNetworkSoundEventDef("HenrySwordHit");
+            spoonHitSoundEvent = CreateNetworkSoundEventDef("Play_Moffein_RocketSurvivor_R_Alt_Hit");
 
             bombExplosionEffect = LoadEffect("BombExplosionEffect", "HenryBombExplosion");
 

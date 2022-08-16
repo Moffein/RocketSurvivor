@@ -1,27 +1,27 @@
-﻿using HenryMod.SkillStates;
-using HenryMod.SkillStates.BaseStates;
+﻿using RocketSurvivor.SkillStates;
+using RocketSurvivor.SkillStates.BaseStates;
 using System.Collections.Generic;
 using System;
-using EntityStates.RocketSurvivor.Primary;
+using EntityStates.RocketSurvivorSkills.Primary;
+using EntityStates.RocketSurvivorSkills.Secondary;
+using EntityStates.RocketSurvivorSkills.Utility;
+using EntityStates.RocketSurvivorSkills.Special;
 
-namespace HenryMod.Modules
+namespace RocketSurvivor.Modules
 {
     public static class States
     {
         internal static void RegisterStates()
         {
-            Modules.Content.AddEntityState(typeof(BaseMeleeAttack));
-            Modules.Content.AddEntityState(typeof(SlashCombo));
-
-            Modules.Content.AddEntityState(typeof(Shoot));
-
-            Modules.Content.AddEntityState(typeof(Roll));
-
-            Modules.Content.AddEntityState(typeof(ThrowBomb));
-
             Modules.Content.AddEntityState(typeof(FireRocket));
+            Modules.Content.AddEntityState(typeof(FireRocketAlt));
             Modules.Content.AddEntityState(typeof(EnterReload));
             Modules.Content.AddEntityState(typeof(Reload));
+            Modules.Content.AddEntityState(typeof(AirDet));
+            Modules.Content.AddEntityState(typeof(FireAllRockets));
+            Modules.Content.AddEntityState(typeof(Rearm));
+            Modules.Content.AddEntityState(typeof(ComicallyLargeSpoon));
+            Modules.Content.AddEntityState(typeof(ConcRocket));
         }
     }
 }

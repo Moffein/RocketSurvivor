@@ -1,7 +1,7 @@
 ﻿using BepInEx.Configuration;
 using UnityEngine;
 
-namespace HenryMod.Modules
+namespace RocketSurvivor.Modules
 {
     public static class Config
     {

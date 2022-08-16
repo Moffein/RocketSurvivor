@@ -1,13 +1,13 @@
 ﻿using RoR2;
 using UnityEngine;
 
-namespace EntityStates.RocketSurvivor.Primary
+namespace EntityStates.RocketSurvivorSkills.Primary
 {
 	public class Reload : BaseState
 	{
 		public static float enterSoundPitch = 1f;
 		public static float exitSoundPitch = 1f;
-		public static string enterSoundString = "Play_bandit2_m1_reload_bullet";
+		public static string enterSoundString = "Play_Moffein_RocketSurvivor_M1_Reload";
 		public static GameObject reloadEffectPrefab = LegacyResourcesAPI.Load<GameObject>("prefabs/effects/Bandit2Reload");
 		public static float baseDuration = 0.8f;
 

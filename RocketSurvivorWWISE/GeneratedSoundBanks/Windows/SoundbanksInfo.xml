@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="12" SoundbankVersion="135">
+	<RootPaths>
+		<ProjectRoot>C:\Users\Node\RoR2 Mods\RocketSurvivor\RocketSurvivorWWISE\</ProjectRoot>
+		<SourceFilesRoot>C:\Users\Node\RoR2 Mods\RocketSurvivor\RocketSurvivorWWISE\.cache\Windows\</SourceFilesRoot>
+		<SoundBanksRoot>C:\Users\Node\RoR2 Mods\RocketSurvivor\RocketSurvivorWWISE\GeneratedSoundBanks\Windows\</SoundBanksRoot>
+		<ExternalSourcesInputFile></ExternalSourcesInputFile>
+		<ExternalSourcesOutputRoot>C:\Users\Node\RoR2 Mods\RocketSurvivor\RocketSurvivorWWISE\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
+	</RootPaths>
+	<DialogueEvents/>
+	<StreamedFiles/>
+	<MediaFilesNotInAnyBank/>
+	<SoundBanks>
+		<SoundBank Id="1355168291" Language="SFX" Hash="1891520505">
+			<ObjectPath>Init</ObjectPath>
+			<ShortName>Init</ShortName>
+			<Path>Init.bnk</Path>
+		</SoundBank>
+		<SoundBank Id="1554628720" Language="SFX" Hash="3438480297">
+			<ObjectPath>\SoundBanks\Default Work Unit\RocketSoundbank</ObjectPath>
+			<ShortName>RocketSoundbank</ShortName>
+			<Path>RocketSoundbank.bnk</Path>
+			<IncludedEvents>
+				<Event Id="1154839090" Name="Play_Moffein_RocketSurvivor_M1_Alt_Explode" ObjectPath="\Events\Default Work Unit\Play_Moffein_RocketSurvivor_M1_Alt_Explode">
+					<IncludedMemoryFiles>
+						<File Id="12427387" Language="SFX">
+							<ShortName>Reflex_RL_Explo.wav</ShortName>
+							<Path>SFX\Reflex_RL_Explo_3F75BDB9.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="1606585696" Name="Play_Moffein_RocketSurvivor_M1_Alt_Shoot" ObjectPath="\Events\Default Work Unit\Play_Moffein_RocketSurvivor_M1_Alt_Shoot">
+					<IncludedMemoryFiles>
+						<File Id="730758600" Language="SFX">
+							<ShortName>Reflex_RL.wav</ShortName>
+							<Path>SFX\Reflex_RL_3F75BDB9.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="3693856494" Name="Play_Moffein_RocketSurvivor_M1_Explode" ObjectPath="\Events\Default Work Unit\Play_Moffein_RocketSurvivor_M1_Explode">
+					<IncludedMemoryFiles>
+						<File Id="162412063" Language="SFX">
+							<ShortName>QC_RL_Explo.wav</ShortName>
+							<Path>SFX\QC_RL_Explo_3F75BDB9.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="3142338656" Name="Play_Moffein_RocketSurvivor_M1_Reload" ObjectPath="\Events\Default Work Unit\Play_Moffein_RocketSurvivor_M1_Reload">
+					<IncludedMemoryFiles>
+						<File Id="31814413" Language="SFX">
+							<ShortName>rocket_reload.wav</ShortName>
+							<Path>SFX\rocket_reload_3F75BDB9.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="879535644" Name="Play_Moffein_RocketSurvivor_M1_Shoot" ObjectPath="\Events\Default Work Unit\Play_Moffein_RocketSurvivor_M1_Shoot">
+					<IncludedMemoryFiles>
+						<File Id="961459857" Language="SFX">
+							<ShortName>QC_RL.wav</ShortName>
+							<Path>SFX\QC_RL_3F75BDB9.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2966818513" Name="Play_Moffein_RocketSurvivor_M2_Explode" ObjectPath="\Events\Default Work Unit\Play_Moffein_RocketSurvivor_M2_Explode">
+					<IncludedMemoryFiles>
+						<File Id="204569046" Language="SFX">
+							<ShortName>wSmite.wav</ShortName>
+							<Path>SFX\wSmite_3F75BDB9.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="1995085771" Name="Play_Moffein_RocketSurvivor_M2_NoFire" ObjectPath="\Events\Default Work Unit\Play_Moffein_RocketSurvivor_M2_NoFire">
+					<IncludedMemoryFiles>
+						<File Id="978772347" Language="SFX">
+							<ShortName>sniper_railgun_no_fire.wav</ShortName>
+							<Path>SFX\sniper_railgun_no_fire_3F75BDB9.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2849063714" Name="Play_Moffein_RocketSurvivor_M2_Trigger" ObjectPath="\Events\Default Work Unit\Play_Moffein_RocketSurvivor_M2_Trigger">
+					<IncludedMemoryFiles>
+						<File Id="557845177" Language="SFX">
+							<ShortName>DB_Jav_FireToggle.wav</ShortName>
+							<Path>SFX\DB_Jav_FireToggle_3F75BDB9.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2170386138" Name="Play_Moffein_RocketSurvivor_R_Alt_Hit" ObjectPath="\Events\Default Work Unit\Play_Moffein_RocketSurvivor_R_Alt_Hit">
+					<IncludedMemoryFiles>
+						<File Id="442034263" Language="SFX">
+							<ShortName>bottle_hit_flesh1.wav</ShortName>
+							<Path>SFX\bottle_hit_flesh1_3F75BDB9.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="802553295" Name="Play_Moffein_RocketSurvivor_R_Alt_Swing" ObjectPath="\Events\Default Work Unit\Play_Moffein_RocketSurvivor_R_Alt_Swing">
+					<IncludedMemoryFiles>
+						<File Id="594778408" Language="SFX">
+							<ShortName>shovel_swing.wav</ShortName>
+							<Path>SFX\shovel_swing_3F75BDB9.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="1534412064" Name="Play_Moffein_RocketSurvivor_R_Shoot" ObjectPath="\Events\Default Work Unit\Play_Moffein_RocketSurvivor_R_Shoot">
+					<IncludedMemoryFiles>
+						<File Id="267091277" Language="SFX">
+							<ShortName>rocket_jumper_shoot.wav</ShortName>
+							<Path>SFX\rocket_jumper_shoot_3F75BDB9.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="893151536" Name="Play_Moffein_RocketSurvivor_Shift_Rearm" ObjectPath="\Events\Default Work Unit\Play_Moffein_RocketSurvivor_Shift_Rearm">
+					<IncludedMemoryFiles>
+						<File Id="95071274" Language="SFX">
+							<ShortName>DB_Jav_RocketCharge.wav</ShortName>
+							<Path>SFX\DB_Jav_RocketCharge_3F75BDB9.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+			</IncludedEvents>
+			<GameParameters>
+				<GameParameter Id="3673881719" Name="Volume_SFX" ObjectPath="\Game Parameters\Default Work Unit\Volume_SFX"/>
+			</GameParameters>
+		</SoundBank>
+	</SoundBanks>
+</SoundBanksInfo>

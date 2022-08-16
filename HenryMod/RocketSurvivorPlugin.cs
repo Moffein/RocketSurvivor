@@ -1,6 +1,7 @@
 ﻿using BepInEx;
-using HenryMod.Modules.Survivors;
+using RocketSurvivor.Modules.Survivors;
 using R2API.Utils;
+using RocketSurvivor;
 using RoR2;
 using System.Collections.Generic;
 using System.Security;
@@ -9,7 +10,7 @@ using System.Security.Permissions;
 [module: UnverifiableCode]
 [assembly: SecurityPermission(SecurityAction.RequestMinimum, SkipVerification = true)]
 
-namespace HenryMod
+namespace RocketSurvivor
 {
     [BepInDependency("com.bepis.r2api", BepInDependency.DependencyFlags.HardDependency)]
     [NetworkCompatibility(CompatibilityLevel.EveryoneMustHaveMod, VersionStrictness.EveryoneNeedSameModVersion)]
@@ -19,7 +20,9 @@ namespace HenryMod
         "PrefabAPI",
         "LanguageAPI",
         "SoundAPI",
-        "UnlockableAPI"
+        "UnlockableAPI",
+        nameof(R2API.DamageAPI),
+        nameof(R2API.RecalculateStatsAPI)
     })]
 
     public class RocketSurvivorPlugin : BaseUnityPlugin
@@ -41,6 +44,10 @@ namespace HenryMod
             instance = this;
 
             Log.Init(Logger);
+
+            DamageTypes.Initialize();   //Init this first. Other things depend on this.
+            Buffs.Initialize();
+
             Modules.Assets.Initialize(); // load assets and read config
             Modules.Config.ReadConfig();
             Modules.States.RegisterStates(); // register states for networking
@@ -50,7 +57,7 @@ namespace HenryMod
             Modules.ItemDisplays.PopulateDisplays(); // collect item display prefabs for use in our display rules
 
             // survivor initialization
-            new MyCharacter().Initialize();
+            new RocketSurvivorSetup().Initialize();
 
             // now make a content pack and add it- this part will change with the next update
             new Modules.ContentPacks().Initialize();

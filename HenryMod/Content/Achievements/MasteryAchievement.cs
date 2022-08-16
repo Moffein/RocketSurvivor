@@ -2,7 +2,7 @@
 using System;
 using UnityEngine;
 
-namespace HenryMod.Modules.Achievements
+namespace RocketSurvivor.Modules.Achievements
 {
     internal class MasteryAchievement : BaseMasteryUnlockable
     {

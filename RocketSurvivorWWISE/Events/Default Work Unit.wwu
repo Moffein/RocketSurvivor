@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<WwiseDocument Type="WorkUnit" ID="{BD8F92EA-735A-4F3E-A5C9-A7984FDEEDAF}" SchemaVersion="97">
+	<Events>
+		<WorkUnit Name="Default Work Unit" ID="{BD8F92EA-735A-4F3E-A5C9-A7984FDEEDAF}" PersistMode="Standalone">
+			<ChildrenList>
+				<Event Name="Play_Moffein_RocketSurvivor_M1_Shoot" ID="{0697D57A-4EE6-4824-BA32-3F498688DE76}">
+					<ChildrenList>
+						<Action Name="" ID="{06FF6D8E-8E90-456E-839C-E1FAD18D4520}" ShortID="479238323">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="QC_RL" ID="{807E4092-81F2-48F7-9D8B-C008C60B0759}" WorkUnitID="{D7284510-35A1-4A16-B82C-F723456E5A7C}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Moffein_RocketSurvivor_M1_Explode" ID="{0E25958B-45EC-46BC-BE44-0660C9550775}">
+					<ChildrenList>
+						<Action Name="" ID="{769CC4A2-3F61-405D-A225-6A31DD7854DE}" ShortID="734991881">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="QC_RL_Explo" ID="{B5B0FFFC-23B2-4C9C-A4DB-428D5B232B5E}" WorkUnitID="{D7284510-35A1-4A16-B82C-F723456E5A7C}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Moffein_RocketSurvivor_M2_Trigger" ID="{0C7F433E-4F20-41FB-90B8-539EFBA05FA9}">
+					<ChildrenList>
+						<Action Name="" ID="{5284A021-B977-421D-B6D7-908A6A30BDC1}" ShortID="198825630">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="DB_Jav_FireToggle" ID="{D03DA2D1-CF0F-4C9C-B081-AFB8CED51885}" WorkUnitID="{D7284510-35A1-4A16-B82C-F723456E5A7C}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Moffein_RocketSurvivor_Shift_Rearm" ID="{08777F61-7D2A-4B49-8463-8BF348FB14E7}">
+					<ChildrenList>
+						<Action Name="" ID="{3FEAB682-49F5-4BF5-972D-F15EDEF35616}" ShortID="130062780">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="DB_Jav_RocketCharge" ID="{1AE5871C-9A6F-4CEE-90D7-CC0B0EBB2A28}" WorkUnitID="{D7284510-35A1-4A16-B82C-F723456E5A7C}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Moffein_RocketSurvivor_M2_NoFire" ID="{E08E4059-56CB-4CD8-8D28-255720D8CA6F}">
+					<ChildrenList>
+						<Action Name="" ID="{022A0AED-85E2-4CFC-924F-4AEDA374C730}" ShortID="232734149">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="sniper_railgun_no_fire" ID="{8F670390-7DE2-430E-B277-361BEDB178F6}" WorkUnitID="{D7284510-35A1-4A16-B82C-F723456E5A7C}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Moffein_RocketSurvivor_M1_Alt_Shoot" ID="{EB12777C-E976-4B5E-A3C0-B1F18AC2C60D}">
+					<ChildrenList>
+						<Action Name="" ID="{839514ED-14D1-48D0-9910-283535CC9084}" ShortID="522866215">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Reflex_RL" ID="{44744319-1258-4369-9279-79BB2C873D24}" WorkUnitID="{D7284510-35A1-4A16-B82C-F723456E5A7C}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Moffein_RocketSurvivor_M1_Reload" ID="{F31CE634-F920-46ED-8E90-C8D05DD3CD5D}">
+					<ChildrenList>
+						<Action Name="" ID="{0CE8ACE4-3D25-4BB3-B534-B51DD51F5A25}" ShortID="906712067">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="rocket_reload" ID="{B9C74A09-1D39-4A59-8606-7E92E19C5335}" WorkUnitID="{D7284510-35A1-4A16-B82C-F723456E5A7C}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Moffein_RocketSurvivor_M2_Explode" ID="{6BE5DC3A-8D79-43F0-B77F-40FF571AA2A3}">
+					<ChildrenList>
+						<Action Name="" ID="{3D03B966-1E72-4BAC-88F6-1A851AAB5436}" ShortID="497483265">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="wSmite" ID="{085AECE8-C831-47E3-B38D-A34E4D7F254C}" WorkUnitID="{D7284510-35A1-4A16-B82C-F723456E5A7C}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Moffein_RocketSurvivor_M1_Alt_Explode" ID="{05026AAE-1329-4948-9480-70DAF834A12E}">
+					<ChildrenList>
+						<Action Name="" ID="{EA87E43A-D851-4CE4-8C37-C37AE95C20D0}" ShortID="575611725">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="Reflex_RL_Explo" ID="{3FA7D4B0-7761-4B2A-B0D8-E43CC9F8364C}" WorkUnitID="{D7284510-35A1-4A16-B82C-F723456E5A7C}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Moffein_RocketSurvivor_R_Alt_Swing" ID="{7347EF6E-BDC6-41F6-8DFE-5293F2774F54}">
+					<ChildrenList>
+						<Action Name="" ID="{3FB12A96-FCF3-43DF-B8BB-3C30E7BCEA3E}" ShortID="1046837789">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="shovel_swing" ID="{98B2C119-DF7E-4B64-8147-ABFBCD5AA522}" WorkUnitID="{D7284510-35A1-4A16-B82C-F723456E5A7C}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Moffein_RocketSurvivor_R_Alt_Hit" ID="{F064D73D-F8A8-4749-A2B0-425B9DEAC58C}">
+					<ChildrenList>
+						<Action Name="" ID="{51ABCD25-DDCB-4ADE-969E-D4A5BCB57F25}" ShortID="920531414">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="bottle_hit_flesh1" ID="{8B7B33D9-FA2E-4FAB-AEFF-AE7BD9C769BD}" WorkUnitID="{D7284510-35A1-4A16-B82C-F723456E5A7C}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+				<Event Name="Play_Moffein_RocketSurvivor_R_Shoot" ID="{1FC1CC41-9BB9-4C1C-A0FE-F6B97FB18458}">
+					<ChildrenList>
+						<Action Name="" ID="{59C45144-FC37-47D8-8526-7E5D9734D5DA}" ShortID="759853153">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="rocket_jumper_shoot" ID="{60BD9E94-BFE2-48BE-A5CF-C83273BEBFF7}" WorkUnitID="{D7284510-35A1-4A16-B82C-F723456E5A7C}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
+			</ChildrenList>
+		</WorkUnit>
+	</Events>
+</WwiseDocument>

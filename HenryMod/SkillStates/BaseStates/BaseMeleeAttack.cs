@@ -2,10 +2,11 @@
 using RoR2;
 using RoR2.Audio;
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 
-namespace HenryMod.SkillStates.BaseStates
+namespace RocketSurvivor.SkillStates.BaseStates
 {
     public class BaseMeleeAttack : BaseSkillState
     {
@@ -67,19 +68,22 @@ namespace HenryMod.SkillStates.BaseStates
 
             this.PlayAttackAnimation();
 
-            this.attack = new OverlapAttack();
-            this.attack.damageType = this.damageType;
-            this.attack.attacker = base.gameObject;
-            this.attack.inflictor = base.gameObject;
-            this.attack.teamIndex = base.GetTeam();
-            this.attack.damage = this.damageCoefficient * this.damageStat;
-            this.attack.procCoefficient = this.procCoefficient;
-            this.attack.hitEffectPrefab = this.hitEffectPrefab;
-            this.attack.forceVector = this.bonusForce;
-            this.attack.pushAwayForce = this.pushForce;
-            this.attack.hitBoxGroup = hitBoxGroup;
-            this.attack.isCrit = base.RollCrit();
-            this.attack.impactSound = this.impactSound;
+            this.attack = new OverlapAttack
+            {
+                damageType = this.damageType,
+                attacker = base.gameObject,
+                inflictor = base.gameObject,
+                teamIndex = base.GetTeam(),
+                damage = this.damageCoefficient * this.damageStat,
+                procCoefficient = this.procCoefficient,
+                hitEffectPrefab = this.hitEffectPrefab,
+                forceVector = this.bonusForce,
+                pushAwayForce = this.pushForce,
+                hitBoxGroup = hitBoxGroup,
+                isCrit = base.RollCrit(),
+                impactSound = this.impactSound,
+                ignoredHealthComponentList = new List<HealthComponent>()
+            };
         }
 
         protected virtual void PlayAttackAnimation()

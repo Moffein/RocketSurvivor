@@ -16,6 +16,7 @@
     <None Remove="HenryBank.bnk" />
     <None Remove="Modules\Characters\Henry.cs~RF6221a098.TMP" />
     <None Remove="rocketassetbundle" />
+    <None Remove="RocketSoundbank.bnk" />
   </ItemGroup>
 
 	<ItemGroup>
@@ -29,8 +30,8 @@
 	</ItemGroup>
 	
   <ItemGroup>
-    <EmbeddedResource Include="HenryBank.bnk" />
     <EmbeddedResource Include="rocketassetbundle" />
+    <EmbeddedResource Include="RocketSoundbank.bnk" />
   </ItemGroup>
 
   <ItemGroup>
@@ -364,10 +365,6 @@
     <Reference Include="Zio">
       <HintPath>..\libs\Zio.dll</HintPath>
     </Reference>
-  </ItemGroup>
-
-  <ItemGroup>
-    <Folder Include="Components\Projectile\" />
   </ItemGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
