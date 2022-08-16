@@ -37,7 +37,7 @@ namespace RocketSurvivor.Modules.Survivors
             maxHealth = 110f,
             healthRegen = 1f,
             armor = 0f,
-            damage = 12f,
+            damage = 15f,
 
             jumpCount = 1,
         };
