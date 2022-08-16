@@ -18,7 +18,7 @@ namespace EntityStates.RocketSurvivorSkills.Secondary
         public static float radiusMult = 1.3f;
         public static float damageMult = 1.3f;
 
-        public static float baseDuration = 0.1f;
+        public static float baseDuration = 0.25f;
 
         private bool buttonReleased = false;
 
@@ -58,7 +58,7 @@ namespace EntityStates.RocketSurvivorSkills.Secondary
 
         public override InterruptPriority GetMinimumInterruptPriority()
         {
-            return buttonReleased ? InterruptPriority.Skill : InterruptPriority.PrioritySkill;
+            return buttonReleased ? InterruptPriority.Any : InterruptPriority.PrioritySkill;
         }
     }
 }
