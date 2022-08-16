@@ -28,7 +28,7 @@ namespace RocketSurvivor.Modules
             LanguageAPI.Add(prefix + "SECONDARY_DESCRIPTION", "Detonate your <style=cIsDamage>last-fired missile</style>, increasing its <style=cIsDamage>damage</style> and <style=cIsDamage>blast radius</style> by <style=cIsDamage>30%</style>.");
 
             LanguageAPI.Add(prefix + "UTILITY_NAME", "Concussion Blast");
-            LanguageAPI.Add(prefix + "UTILITY_DESCRIPTION", "<style=cIsDamage>Stunning</style>. Fire a nonlethal missile that <style=cIsDamage>pushes</style> enemies away.");
+            LanguageAPI.Add(prefix + "UTILITY_DESCRIPTION", "<style=cIsDamage>Stunning</style>. Fire a nonlethal missile that <style=cIsUtility>pushes</style> enemies away.");
 
             //Unlock Condition: Kill 5 enemies in a single rocket jump.
             LanguageAPI.Add(prefix + "UTILITY_ALT_NAME", "Bombing Run");
