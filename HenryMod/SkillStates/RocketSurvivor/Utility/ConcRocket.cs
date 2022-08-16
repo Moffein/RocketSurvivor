@@ -54,7 +54,7 @@ namespace EntityStates.RocketSurvivorSkills.Utility
 		public static GameObject projectilePrefab;
 		public static GameObject effectPrefab = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Commando/MuzzleflashFMJ.prefab").WaitForCompletion();	//Use a less threatening VFX for this
 		public static float damageCoefficient = 0f;
-		public static float force = 3200f;
+		public static float force = 2400f;
 
 		public static float baseDuration = 0.8f;
 		public static float baseMinDuration = 0.2f;

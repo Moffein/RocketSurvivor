@@ -132,13 +132,6 @@
 											</ActiveSourceList>
 										</Sound>
 										<Sound Name="rocket_reload" ID="{B9C74A09-1D39-4A59-8606-7E92E19C5335}" ShortID="584766995">
-											<PropertyList>
-												<Property Name="Volume" Type="Real64">
-													<ValueList>
-														<Value>4</Value>
-													</ValueList>
-												</Property>
-											</PropertyList>
 											<ReferenceList>
 												<Reference Name="Conversion">
 													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D122DBC8-4810-4E3C-A6E2-8B6FAB862739}"/>

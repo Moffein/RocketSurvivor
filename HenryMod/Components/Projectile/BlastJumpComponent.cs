@@ -75,7 +75,7 @@ namespace RocketSurvivor.Components.Projectile
                         //Attempt to break your fall, should help with pogos
                         if (hc.body.characterMotor.velocity.y < 0f)
                         {
-                            finalForce.y += hc.body.characterMotor.velocity.y * -100f;
+                            finalForce.y += hc.body.characterMotor.velocity.y * -140f;//Different from the value used for enemies
                         }
 
                         //Reduce the effect of downwards jumps so you don't crater yourself if you shoot above you
