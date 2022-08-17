@@ -121,6 +121,7 @@ namespace RocketSurvivor.Components
                                 {
                                     if (mdc.Has(DamageTypes.ScaleForceToMass)) ba.AddModdedDamageType(DamageTypes.ScaleForceToMass);
                                     if (mdc.Has(DamageTypes.AirborneBonus)) ba.AddModdedDamageType(DamageTypes.AirborneBonus);
+                                    if (mdc.Has(DamageTypes.MarkForAirshot)) ba.AddModdedDamageType(DamageTypes.MarkForAirshot);
                                 }
 
                                 GameObject effectPrefab = EntityStates.RocketSurvivorSkills.Secondary.AirDet.explosionEffectPrefab;

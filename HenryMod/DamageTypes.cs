@@ -1,4 +1,5 @@
 ﻿using R2API;
+using RocketSurvivor.Components;
 using RoR2;
 using UnityEngine;
 
@@ -11,7 +12,7 @@ namespace RocketSurvivor
         public static DamageAPI.ModdedDamageType AirborneBonus;
         public static DamageAPI.ModdedDamageType MarketGarden;
         public static DamageAPI.ModdedDamageType SlamDunk;
-        //public static DamageAPI.ModdedDamageType LaunchIntoAir;
+        public static DamageAPI.ModdedDamageType MarkForAirshot;
 
         public static void Initialize()
         {
@@ -21,7 +22,7 @@ namespace RocketSurvivor
             AirborneBonus = DamageAPI.ReserveDamageType();
             MarketGarden = DamageAPI.ReserveDamageType();
             SlamDunk = DamageAPI.ReserveDamageType();
-            //LaunchIntoAir = DamageAPI.ReserveDamageType();
+            MarkForAirshot = DamageAPI.ReserveDamageType();
 
             On.RoR2.HealthComponent.TakeDamage += HealthComponent_TakeDamage;
 
@@ -30,11 +31,23 @@ namespace RocketSurvivor
 
         private static void HealthComponent_TakeDamage(On.RoR2.HealthComponent.orig_TakeDamage orig, RoR2.HealthComponent self, RoR2.DamageInfo damageInfo)
         {
-            if (damageInfo.HasModdedDamageType(DamageTypes.ScaleForceToMass))
-            {
+            CharacterBody cb = self.body;
 
-                CharacterBody cb = self.body;
-                if (cb)
+            if (cb)
+            {
+                bool playAirshotSound = cb.HasBuff(Buffs.AirshotVulnerableDebuff);
+                if (damageInfo.HasModdedDamageType(DamageTypes.MarkForAirshot)) //Refresh airshot buff when juggling.
+                {
+                    //Only add the component if enemy does not have the buff
+                    if (!cb.HasBuff(Buffs.AirshotVulnerableDebuff))
+                    {
+                        LaunchedEnemyBuffApplier le = self.gameObject.AddComponent<LaunchedEnemyBuffApplier>();
+                        le.characterMotor = self.body.characterMotor;
+                        le.body = self.body;
+                    }
+                }
+
+                if (damageInfo.HasModdedDamageType(DamageTypes.ScaleForceToMass))
                 {
                     bool isGrounded = true;
                     float mass = 0f;
@@ -46,7 +59,7 @@ namespace RocketSurvivor
                             float magnitude = damageInfo.force.magnitude;
 
                             //if (damageInfo.force.y < 0f)  //RoR2 force calculations can't be trusted because it's calculated based on hitbox instead of coreposition, so just launch the enemy for free.
-                                damageInfo.force.y = 0f;
+                            damageInfo.force.y = 0f;
 
                             damageInfo.force.y += magnitude;
                             isGrounded = cb.characterMotor.isGrounded;
@@ -66,16 +79,38 @@ namespace RocketSurvivor
 
                     damageInfo.force *= scalingFactor;
                 }
-            }
 
-            if (damageInfo.HasModdedDamageType(DamageTypes.AirborneBonus))
-            {
-                CharacterBody cb = self.body;
-                if (cb.isFlying || (cb.characterMotor && !cb.characterMotor.isGrounded))
+
+                if (damageInfo.HasModdedDamageType(DamageTypes.AirborneBonus))
                 {
-                    damageInfo.damage *= 1.3f;
-                    if (damageInfo.damageColorIndex == DamageColorIndex.Default) damageInfo.damageColorIndex = DamageColorIndex.WeakPoint;
+                    if (cb.isFlying || (cb.characterMotor && !cb.characterMotor.isGrounded))
+                    {
+                        damageInfo.damage *= 1.3f;
+                        playAirshotSound = true;
+                    }
+                }
 
+                if (damageInfo.HasModdedDamageType(DamageTypes.SlamDunk))
+                {
+                    Vector3 direction = Vector3.down;
+                    if (cb.isFlying)
+                    {
+                        //Scale force to match mass
+                        Rigidbody rb = cb.rigidbody;
+                        if (rb)
+                        {
+                            //Reset Y force so that it overrides ScaleForceToMass
+                            damageInfo.force.y = 0f;
+
+                            direction *= Mathf.Min(4f, Mathf.Max(rb.mass / 100f, 1f));  //Greater Wisp 300f, SCU 1000f
+                            damageInfo.force += 1600f * direction;
+                        }
+                    }
+                }
+
+                if (playAirshotSound && damageInfo.HasModdedDamageType(DamageTypes.ScaleForceToMass) && damageInfo.damage > 0 &&  !damageInfo.damageType.HasFlag(DamageType.Silent))    //Check for ScaleForceToMass damageType so that only Rocket Skills play the sound.
+                {
+                    if (damageInfo.damageColorIndex == DamageColorIndex.Default) damageInfo.damageColorIndex = DamageColorIndex.WeakPoint;
                     EffectManager.SimpleSoundEffect(RocketSurvivor.Modules.Assets.spoonHitSoundEvent.index, damageInfo.position, true);
                 }
             }
@@ -92,41 +127,6 @@ namespace RocketSurvivor
                     damageInfo.damage *= totalMultiplier;
                 }
             }
-
-            if (damageInfo.HasModdedDamageType(DamageTypes.SlamDunk))
-            {
-                Vector3 direction = Vector3.down;
-                CharacterBody cb = self.body;
-                if (cb && cb.isFlying)
-                {
-                    //Scale force to match mass
-                    Rigidbody rb = cb.rigidbody;
-                    if (rb)
-                    {
-                        //Reset Y force so that it overrides ScaleForceToMass
-                        damageInfo.force.y = 0f;
-
-                        direction *= Mathf.Min(4f, Mathf.Max(rb.mass / 100f, 1f));  //Greater Wisp 300f, SCU 1000f
-                        damageInfo.force += 1600f * direction;
-                    }
-                }
-            }
-
-            //Excessive. Funny but not that practical.
-            /*if (damageInfo.HasModdedDamageType(DamageTypes.LaunchIntoAir))
-            {
-                CharacterBody cb = self.body;
-                if (cb)
-                {
-                    if (!cb.isFlying && cb.characterMotor != null)
-                    {
-                        if (damageInfo.force.y < 0f) damageInfo.force.y = 0f;
-                        Vector3 addForce = Vector3.up * 2000f;
-                        float forceMult = Mathf.Max(1f, cb.characterMotor.mass / 100f);
-                        damageInfo.force += forceMult * addForce;
-                    }
-                }
-            }*/
 
             orig(self, damageInfo);
         }

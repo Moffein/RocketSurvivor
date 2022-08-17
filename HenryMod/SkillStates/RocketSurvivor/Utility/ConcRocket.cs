@@ -15,7 +15,7 @@ namespace EntityStates.RocketSurvivorSkills.Utility
 			Ray aimRay = base.GetAimRay();
 			base.StartAimMode(aimRay, 3f, false);
 
-			base.PlayAnimation("LeftArm, Override", "ShootGun", "ShootGun.playbackRate", 1.8f); //TODO: REPLACE
+			base.PlayAnimation("Gesture, Override", "ThrowBomb", "ThrowBomb.playbackRate", this.duration); //TODO: REPLACE
 			Util.PlaySound(attackSoundString, base.gameObject);
 
 			if (ConcRocket.effectPrefab)
@@ -50,7 +50,7 @@ namespace EntityStates.RocketSurvivorSkills.Utility
 		}
 
 		public static string muzzleString = "MuzzleCenter";
-		public static string attackSoundString = "Play_Moffein_RocketSurvivor_R_Shoot";//"Play_MULT_m1_grenade_launcher_shoot";
+		public static string attackSoundString = "Play_commando_M2_grenade_throw";//"Play_Moffein_RocketSurvivor_R_Shoot";//"Play_MULT_m1_grenade_launcher_shoot";
 		public static GameObject projectilePrefab;
 		public static GameObject effectPrefab = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Commando/MuzzleflashFMJ.prefab").WaitForCompletion();	//Use a less threatening VFX for this
 		public static float damageCoefficient = 0f;

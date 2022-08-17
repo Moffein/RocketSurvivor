@@ -21,6 +21,7 @@ namespace RocketSurvivor.Modules.Survivors
         public override string survivorTokenPrefix => Rocket_Prefix;
 
         public static SkillDef FireRocketSkillDef, FireRocketAltSkillDef, AirDetDef;
+        public static Color RocketSurvivorColor = new Color(62f / 255f, 137f / 255f, 72f / 255f);
 
         public override BodyInfo bodyInfo { get; set; } = new BodyInfo
         {
@@ -29,7 +30,7 @@ namespace RocketSurvivor.Modules.Survivors
             subtitleNameToken = RocketSurvivorPlugin.DEVELOPER_PREFIX + "_ROCKET_BODY_SUBTITLE",
 
             characterPortrait = Assets.mainAssetBundle.LoadAsset<Texture>("texHenryIcon"),
-            bodyColor = new Color(62f/255f,137f/255f,72f/255f),
+            bodyColor = RocketSurvivorColor,
 
             crosshair = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Toolbot/ToolbotGrenadeLauncherCrosshair.prefab").WaitForCompletion(),
             podPrefab = RoR2.LegacyResourcesAPI.Load<GameObject>("Prefabs/NetworkedObjects/SurvivorPod"),
@@ -224,7 +225,7 @@ namespace RocketSurvivor.Modules.Survivors
             concDef.isCombatSkill = true;
             concDef.keywordTokens = new string[] { };
             concDef.mustKeyPress = false;
-            concDef.cancelSprintingOnActivation = true;
+            concDef.cancelSprintingOnActivation = false;
             concDef.rechargeStock = 1;
             concDef.requiredStock = 1;
             concDef.skillName = "FireConcRocket";

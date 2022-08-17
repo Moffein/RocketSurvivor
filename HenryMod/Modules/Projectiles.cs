@@ -135,11 +135,11 @@ namespace RocketSurvivor.Modules
         //Use a different model that's distinct from the regular rockets.
         private static void CreateConcRocket()
         {
-            GameObject rocketPrefab = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Toolbot/ToolbotGrenadeLauncherProjectile.prefab").WaitForCompletion().InstantiateClone("RocketSurvivorConcProjectile", true);
+            GameObject rocketPrefab = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Commando/CommandoGrenadeProjectile.prefab").WaitForCompletion().InstantiateClone("RocketSurvivorConcProjectile", true);
 
             ProjectileSimple ps = rocketPrefab.GetComponent<ProjectileSimple>();
-            ps.desiredForwardSpeed = 100f;
-            ps.lifetime = 20f;
+            //ps.desiredForwardSpeed = 100f;
+            ps.lifetime = 12f;
 
             ProjectileImpactExplosion pie = rocketPrefab.GetComponent<ProjectileImpactExplosion>();
             InitializeImpactExplosion(pie);
@@ -172,15 +172,16 @@ namespace RocketSurvivor.Modules
 
             rocketPrefab.AddComponent<AddToRocketTrackerComponent>();
             BlastJumpComponent bjc = rocketPrefab.AddComponent<BlastJumpComponent>();
-            bjc.force = 3000f;
+            bjc.force = 3600f;
             bjc.horizontalMultiplier = 1.5f;
-            bjc.requireAirborne = false;
+            bjc.requireAirborne = true;
 
             ProjectileDamage pd = rocketPrefab.GetComponent<ProjectileDamage>();
             pd.damageType = DamageType.Stun1s | DamageType.Silent;
 
             DamageAPI.ModdedDamageTypeHolderComponent mdc = rocketPrefab.AddComponent<DamageAPI.ModdedDamageTypeHolderComponent>();
             mdc.Add(DamageTypes.ScaleForceToMass);
+            mdc.Add(DamageTypes.MarkForAirshot);
 
             AddProjectile(rocketPrefab);
 
