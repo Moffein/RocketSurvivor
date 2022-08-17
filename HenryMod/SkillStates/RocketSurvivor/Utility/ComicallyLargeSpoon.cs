@@ -64,7 +64,7 @@ namespace EntityStates.RocketSurvivorSkills.Utility
                     {
                         attacker = base.gameObject,
                         attackerFiltering = AttackerFiltering.NeverHitSelf,
-                        baseDamage = base.damageStat * 8f,
+                        baseDamage = base.damageStat * 10f,
                         baseForce = 2400f,
                         bonusForce = Vector3.zero,
                         canRejectForce = true,

@@ -46,7 +46,7 @@ namespace EntityStates.RocketSurvivorSkills.Primary
 		public static string attackSoundString = "Play_Moffein_RocketSurvivor_M1_Shoot";
 		public static GameObject projectilePrefab;
 		public static GameObject effectPrefab = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Commando/MuzzleflashFMJ.prefab").WaitForCompletion();
-		public static float damageCoefficient = 3.9f;
+		public static float damageCoefficient = 5.2f;
 		public static float force = 1600f;
 		public static float baseDuration = 0.8f;
 
