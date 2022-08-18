@@ -41,9 +41,13 @@ namespace RocketSurvivor
                     //Only add the component if enemy does not have the buff
                     if (!cb.HasBuff(Buffs.AirshotVulnerableDebuff))
                     {
-                        LaunchedEnemyBuffApplier le = self.gameObject.AddComponent<LaunchedEnemyBuffApplier>();
-                        le.characterMotor = self.body.characterMotor;
-                        le.body = self.body;
+                        LaunchedEnemyBuffApplier le = self.gameObject.GetComponent<LaunchedEnemyBuffApplier>(); //Prevent multiple
+                        if (!le)
+                        {
+                            le = self.gameObject.AddComponent<LaunchedEnemyBuffApplier>();
+                            le.characterMotor = self.body.characterMotor;
+                            le.body = self.body;
+                        }
                     }
                 }
 
