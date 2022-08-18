@@ -54,7 +54,6 @@ namespace RocketSurvivor
             Modules.Assets.Initialize(); // load assets and read config
             Modules.Config.ReadConfig();
             Modules.States.RegisterStates(); // register states for networking
-            Modules.Buffs.RegisterBuffs(); // add and register custom buffs/debuffs
             Modules.Projectiles.RegisterProjectiles(); // add and register custom projectiles
             Modules.Tokens.AddTokens(); // register name tokens
             Modules.ItemDisplays.PopulateDisplays(); // collect item display prefabs for use in our display rules
@@ -64,28 +63,6 @@ namespace RocketSurvivor
 
             // now make a content pack and add it- this part will change with the next update
             new Modules.ContentPacks().Initialize();
-
-            Hook();
-        }
-
-        private void Hook()
-        {
-            // run hooks here, disabling one is as simple as commenting out the line
-            On.RoR2.CharacterBody.RecalculateStats += CharacterBody_RecalculateStats;
-        }
-
-        private void CharacterBody_RecalculateStats(On.RoR2.CharacterBody.orig_RecalculateStats orig, CharacterBody self)
-        {
-            orig(self);
-
-            // a simple stat hook, adds armor after stats are recalculated
-            if (self)
-            {
-                if (self.HasBuff(Modules.Buffs.armorBuff))
-                {
-                    self.armor += 300f;
-                }
-            }
         }
     }
 }

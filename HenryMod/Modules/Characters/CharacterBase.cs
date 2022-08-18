@@ -82,7 +82,7 @@ namespace RocketSurvivor.Modules.Characters
 
         public virtual void InitializeDoppelganger(string clone)
         {
-            Modules.Prefabs.CreateGenericDoppelganger(instance.bodyPrefab, bodyName + "MonsterMaster", clone);
+            Modules.Prefabs.CreateGenericDoppelganger(instance.bodyPrefab, this.bodyInfo.bodyName + "MonsterMaster", clone);
         }
 
         public virtual void InitializeItemDisplays()

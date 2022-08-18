@@ -25,7 +25,7 @@ namespace RocketSurvivor.Modules.Survivors
 
         public override BodyInfo bodyInfo { get; set; } = new BodyInfo
         {
-            bodyName = "RocketBody",
+            bodyName = "RocketSurvivor",
             bodyNameToken = RocketSurvivorPlugin.DEVELOPER_PREFIX + "_ROCKET_BODY_NAME",
             subtitleNameToken = RocketSurvivorPlugin.DEVELOPER_PREFIX + "_ROCKET_BODY_SUBTITLE",
 
