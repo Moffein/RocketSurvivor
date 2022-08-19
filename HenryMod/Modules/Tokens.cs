@@ -18,11 +18,11 @@ namespace RocketSurvivor.Modules
             LanguageAPI.Add(prefix + "PASSIVE_DESCRIPTION", "Your explosives can be used to <style=cIsUtility>blast jump</style>.");
 
             LanguageAPI.Add(prefix + "PRIMARY_NAME", "HG4 Missile Launcher");
-            LanguageAPI.Add(prefix + "PRIMARY_DESCRIPTION", "Fire a missile for <style=cIsDamage>520% damage</style>. Can hold up to 4.");
+            LanguageAPI.Add(prefix + "PRIMARY_DESCRIPTION", "<style=cIsUtility>Agile</style>. Fire a missile for <style=cIsDamage>520% damage</style>. Can hold up to 4.");
 
             //Unlock Condition: Hit 20 airshots.
             LanguageAPI.Add(prefix + "PRIMARY_ALT_NAME", "HG4 SAM Launcher");
-            LanguageAPI.Add(prefix + "PRIMARY_ALT_DESCRIPTION", "Fire a precision missile for <style=cIsDamage>600% damage</style>. Deals <style=cIsDamage>+30% damage</style> against <style=cIsUtility>airborne targets</style>. Can hold up to 4.");
+            LanguageAPI.Add(prefix + "PRIMARY_ALT_DESCRIPTION", "<style=cIsUtility>Agile</style>. Fire a precision missile for <style=cIsDamage>600% damage</style>. Deals <style=cIsDamage>+30% damage</style> against <style=cIsUtility>airborne targets</style>. Can hold up to 4.");
 
             LanguageAPI.Add(prefix + "SECONDARY_NAME", "Remote Detonator");
             LanguageAPI.Add(prefix + "SECONDARY_DESCRIPTION", "Detonate your <style=cIsDamage>last-fired missile</style>, increasing its <style=cIsDamage>damage</style> and <style=cIsDamage>blast radius</style> by <style=cIsDamage>30%</style>.");

@@ -118,9 +118,9 @@ namespace RocketSurvivor.Modules.Survivors
             primarySkillDef.icon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texSecondaryIcon");
             primarySkillDef.interruptPriority = InterruptPriority.Skill;
             primarySkillDef.isCombatSkill = true;
-            primarySkillDef.keywordTokens = new string[] { };
+            primarySkillDef.keywordTokens = new string[] { "KEYWORD_AGILE" };
             primarySkillDef.mustKeyPress = false;
-            primarySkillDef.cancelSprintingOnActivation = true;
+            primarySkillDef.cancelSprintingOnActivation = false;
             primarySkillDef.rechargeStock = 0;
             primarySkillDef.requiredStock = 1;
             primarySkillDef.skillName = "FireRocket";
@@ -145,9 +145,9 @@ namespace RocketSurvivor.Modules.Survivors
             primaryAltSkillDef.icon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texSecondaryIcon");
             primaryAltSkillDef.interruptPriority = InterruptPriority.Skill;
             primaryAltSkillDef.isCombatSkill = true;
-            primaryAltSkillDef.keywordTokens = new string[] { };
+            primaryAltSkillDef.keywordTokens = new string[] { "KEYWORD_AGILE" };
             primaryAltSkillDef.mustKeyPress = false;
-            primaryAltSkillDef.cancelSprintingOnActivation = true;
+            primaryAltSkillDef.cancelSprintingOnActivation = false;
             primaryAltSkillDef.rechargeStock = 0;
             primaryAltSkillDef.requiredStock = 1;
             primaryAltSkillDef.skillName = "FireRocketAlt";
