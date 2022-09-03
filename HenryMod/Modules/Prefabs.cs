@@ -296,6 +296,7 @@ namespace RocketSurvivor.Modules {
             mainHurtbox.damageModifier = HurtBox.DamageModifier.Normal;
             mainHurtbox.hurtBoxGroup = hurtBoxGroup;
             mainHurtbox.indexInGroup = 0;
+            mainHurtbox.isSniperTarget = true;
 
             hurtBoxGroup.hurtBoxes = new HurtBox[]
             {

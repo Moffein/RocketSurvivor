@@ -10,6 +10,7 @@ namespace RocketSurvivor.Components.Projectile
         private ProjectileImpactExplosion pie;
         private ProjectileController pc;
 
+        public float minVerticalForce = 0f;
         public float force = 0f;
         public float aoe = 0f;
         public float horizontalMultiplier = 1f;
@@ -75,15 +76,15 @@ namespace RocketSurvivor.Components.Projectile
                         //Attempt to break your fall, should help with pogos
                         if (hc.body.characterMotor.velocity.y < 0f)
                         {
-                            finalForce.y += hc.body.characterMotor.velocity.y * -140f;//Different from the value used for enemies
+                            hc.body.characterMotor.velocity.y = 0f;
+                            if (finalForce.y < 0f) finalForce.y = 0f;
                         }
-
-                        //Reduce the effect of downwards jumps so you don't crater yourself if you shoot above you
-                        if (finalForce.y < 0f) finalForce.y *= 0.25f;
+                        if (finalForce.y < minVerticalForce) finalForce.y = minVerticalForce;
 
                         //Encourage proper rocket jumps: doesn't work well in practice due to the nature of force/air control in RoR2.
                         dist.x *= horizontalMultiplier;
                         dist.y *= horizontalMultiplier;
+
 
                         hc.TakeDamageForce(finalForce, true, false);
 
