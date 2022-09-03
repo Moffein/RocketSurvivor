@@ -58,7 +58,7 @@ namespace EntityStates.RocketSurvivorSkills.Utility
 
 		public static float baseDuration = 0.8f;
 		public static float baseMinDuration = 0.2f;
-
+		
 		private float minDuration;
 		private float duration;
 		private bool buttonReleased = false;

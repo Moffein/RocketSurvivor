@@ -14,7 +14,7 @@ namespace EntityStates.RocketSurvivorSkills.Primary
 			Ray aimRay = base.GetAimRay();
 			base.StartAimMode(aimRay, 3f, false);
 
-			base.PlayAnimation("LeftArm, Override", "ShootGun", "ShootGun.playbackRate", 1.8f);	//TODO: REPLACE
+			base.PlayAnimation("Gesture, Additive", "Shoot", "Shoot.playbackRate", 0.169f);
 			Util.PlaySound(attackSoundString, base.gameObject);
 
 			if (FireRocket.effectPrefab)

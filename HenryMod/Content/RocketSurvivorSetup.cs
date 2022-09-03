@@ -14,7 +14,7 @@ namespace RocketSurvivor.Modules.Survivors
 {
     internal class RocketSurvivorSetup : SurvivorBase
     {
-        public override string bodyName => "Henry";
+        public override string bodyName => "Rocket";
 
         public const string Rocket_Prefix = RocketSurvivorPlugin.DEVELOPER_PREFIX + "_ROCKET_BODY_";
         //used when registering your survivor's language tokens
@@ -25,11 +25,11 @@ namespace RocketSurvivor.Modules.Survivors
 
         public override BodyInfo bodyInfo { get; set; } = new BodyInfo
         {
-            bodyName = "RocketSurvivor",
+            bodyName = "RocketSurvivorBody",
             bodyNameToken = RocketSurvivorPlugin.DEVELOPER_PREFIX + "_ROCKET_BODY_NAME",
             subtitleNameToken = RocketSurvivorPlugin.DEVELOPER_PREFIX + "_ROCKET_BODY_SUBTITLE",
 
-            characterPortrait = Assets.mainAssetBundle.LoadAsset<Texture>("texHenryIcon"),
+            characterPortrait = Assets.mainAssetBundle.LoadAsset<Texture>("texIconRocket"),
             bodyColor = RocketSurvivorColor,
 
             crosshair = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Toolbot/ToolbotGrenadeLauncherCrosshair.prefab").WaitForCompletion(),
@@ -43,22 +43,23 @@ namespace RocketSurvivor.Modules.Survivors
             jumpCount = 1,
         };
 
-        public override CustomRendererInfo[] customRendererInfos { get; set; } = new CustomRendererInfo[] 
-        {
-                new CustomRendererInfo
-                {
-                    childName = "SwordModel",
-                    material = Materials.CreateHopooMaterial("matHenry"),
-                },
-                new CustomRendererInfo
-                {
-                    childName = "GunModel",
-                },
-                new CustomRendererInfo
-                {
-                    childName = "Model",
-                }
-        };
+        public override CustomRendererInfo[] customRendererInfos { get; set; } 
+        //    = new CustomRendererInfo[] 
+        //{
+        //        new CustomRendererInfo
+        //        {
+        //            childName = "SwordModel",
+        //            material = Materials.CreateHopooMaterial("matHenry"),
+        //        },
+        //        new CustomRendererInfo
+        //        {
+        //            childName = "GunModel",
+        //        },
+        //        new CustomRendererInfo
+        //        {
+        //            childName = "Model",
+        //        }
+        //};
 
         public override UnlockableDef characterUnlockableDef => null;
 
@@ -87,9 +88,9 @@ namespace RocketSurvivor.Modules.Survivors
         {
             ChildLocator childLocator = bodyPrefab.GetComponentInChildren<ChildLocator>();
             GameObject model = childLocator.gameObject;
-
+            
             //example of how to create a hitbox
-            Transform hitboxTransform = childLocator.FindChild("SwordHitbox");
+            Transform hitboxTransform = childLocator.FindChild("ShovelHitbox");
             Modules.Prefabs.SetupHitbox(model, hitboxTransform, "Sword");
         }
 

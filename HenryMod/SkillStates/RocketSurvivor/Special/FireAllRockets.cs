@@ -79,7 +79,7 @@ namespace EntityStates.RocketSurvivorSkills.Special
             {
                 EffectManager.SimpleMuzzleFlash(GetEffectPrefab(), base.gameObject, GetMuzzleString(), false);
             }
-            base.PlayAnimation("LeftArm, Override", "ShootGun", "ShootGun.playbackRate", 1.8f); //TODO: REPLACE
+            base.PlayAnimation("Gesture, Additive", "Shoot", "Shoot.playbackRate", 0.169f);
             Util.PlaySound(FireRocket.attackSoundString, base.gameObject);
             shotsRemaining--;
         }
