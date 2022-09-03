@@ -29,8 +29,8 @@ namespace EntityStates.RocketSurvivorSkills.Utility
 
             this.swingSoundString = "";//This is delayed until the attack actually comes out.
             this.hitSoundString = "Play_Moffein_RocketSurvivor_R_Alt_Hit";
-            this.muzzleString = "SwingRight";
-            this.swingEffectPrefab = null;//RocketSurvivor.Modules.Assets.spoonSwingEffect; Nullrefs, no clue why. Added null check to BaseMeleeAttack.
+            this.muzzleString = "SwordHitbox";
+            this.swingEffectPrefab = RocketSurvivor.Modules.Assets.spoonSwingEffect;// Nullrefs, no clue why. Added null check to BaseMeleeAttack.
             this.hitEffectPrefab = null;//RocketSurvivor.Modules.Assets.spoonImpactEffect;
 
             this.impactSound = RocketSurvivor.Modules.Assets.spoonHitSoundEvent.index;
@@ -43,6 +43,8 @@ namespace EntityStates.RocketSurvivorSkills.Utility
         protected override void PlayAttackAnimation()
         {
             base.PlayAttackAnimation();
+
+            PlayCrossfade("Gesture, Override", "SwingShovel", "Swing.playbackRate", duration, 0.05f);
         }
 
         protected override void PlaySwingEffect()
