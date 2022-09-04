@@ -55,20 +55,27 @@ namespace RocketSurvivor
                 {
                     bool isGrounded = true;
                     float mass = 0f;
+
                     if (cb.characterMotor)
                     {
-                        mass = cb.characterMotor.mass;
-                        if (!cb.characterMotor.isFlying && !cb.isFlying)
+                        //Change direction to be based on coreposition
+                        isGrounded = cb.characterMotor.isGrounded;
+                        float magnitude = damageInfo.force.magnitude;
+                        if (damageInfo.inflictor && damageInfo.inflictor.transform)
                         {
-                            float magnitude = damageInfo.force.magnitude;
+                            damageInfo.force = (cb.corePosition - damageInfo.inflictor.transform.position).normalized * magnitude;
+                        }
 
-                            //if (damageInfo.force.y < 0f)  //RoR2 force calculations can't be trusted because it's calculated based on hitbox instead of coreposition, so just launch the enemy for free.
-                            damageInfo.force.y = 0f;
+                        mass = cb.characterMotor.mass;
+                        if (!cb.characterMotor.isFlying)
+                        {
 
-                            damageInfo.force.y += magnitude;
-                            isGrounded = cb.characterMotor.isGrounded;
+                            //RoR2 force calculations can't be trusted because it's calculated based on hitbox instead of coreposition
+                            if (damageInfo.force.y < 0f) damageInfo.force.y = 0f;
+
                             //Negate falling speed
-                            if (!cb.characterMotor.isGrounded && cb.characterMotor.velocity.y < 0f)
+                            //damageInfo.force.y += magnitude;
+                            if (!isGrounded && cb.characterMotor.velocity.y < 0f)
                             {
                                 damageInfo.force.y += cb.characterMotor.velocity.y * -120f;
                             }
