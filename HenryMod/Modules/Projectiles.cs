@@ -65,7 +65,7 @@ namespace RocketSurvivor.Modules
             rocketPrefab.AddComponent<AddToRocketTrackerComponent>();
             BlastJumpComponent bjc = rocketPrefab.AddComponent<BlastJumpComponent>();
             bjc.force = 2000f;
-            bjc.horizontalMultiplier = 1f;
+            bjc.horizontalMultiplier = 1.5f;
             //bjc.aoe = 8f;
 
             DamageAPI.ModdedDamageTypeHolderComponent mdc = rocketPrefab.AddComponent<DamageAPI.ModdedDamageTypeHolderComponent>();
@@ -120,7 +120,7 @@ namespace RocketSurvivor.Modules
             rocketPrefab.AddComponent<AddToRocketTrackerComponent>();
             BlastJumpComponent bjc = rocketPrefab.AddComponent<BlastJumpComponent>();
             bjc.force = 2000f;
-            bjc.horizontalMultiplier = 1f;
+            bjc.horizontalMultiplier = 1.5f;
             bjc.aoe = 8f;  //Keep the Rocket Jump AoE the same for consistency
 
             DamageAPI.ModdedDamageTypeHolderComponent mdc = rocketPrefab.AddComponent<DamageAPI.ModdedDamageTypeHolderComponent>();
