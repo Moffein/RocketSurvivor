@@ -65,7 +65,6 @@ namespace RocketSurvivor.Modules
             rocketPrefab.AddComponent<AddToRocketTrackerComponent>();
             BlastJumpComponent bjc = rocketPrefab.AddComponent<BlastJumpComponent>();
             bjc.force = 2000f;
-            bjc.minVerticalForce = 1600f;
             bjc.horizontalMultiplier = 1f;
             //bjc.aoe = 8f;
 
@@ -121,7 +120,6 @@ namespace RocketSurvivor.Modules
             rocketPrefab.AddComponent<AddToRocketTrackerComponent>();
             BlastJumpComponent bjc = rocketPrefab.AddComponent<BlastJumpComponent>();
             bjc.force = 2000f;
-            bjc.minVerticalForce = 1600f;
             bjc.horizontalMultiplier = 1f;
             bjc.aoe = 8f;  //Keep the Rocket Jump AoE the same for consistency
 
@@ -175,7 +173,6 @@ namespace RocketSurvivor.Modules
             rocketPrefab.AddComponent<AddToRocketTrackerComponent>();
             BlastJumpComponent bjc = rocketPrefab.AddComponent<BlastJumpComponent>();
             bjc.force = 3600f;
-            bjc.minVerticalForce = 2000f;
             bjc.horizontalMultiplier = 1.5f;
             bjc.requireAirborne = true;
 

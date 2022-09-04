@@ -10,13 +10,14 @@ namespace RocketSurvivor.Components.Projectile
         private ProjectileImpactExplosion pie;
         private ProjectileController pc;
 
-        public float minVerticalForce = 0f;
         public float force = 0f;
         public float aoe = 0f;
         public float horizontalMultiplier = 1f;
         public bool requireAirborne = true;
-        private bool fired = false;
 
+        public static Vector3 bodyPositionOffset = new Vector3(0f, 0.7f, 0f);
+
+        private bool fired = false;
 
         public void Awake()
         {
@@ -67,7 +68,7 @@ namespace RocketSurvivor.Components.Projectile
                 if (hc && hc.body && hc.body.characterMotor && (!requireAirborne || !hc.body.characterMotor.isGrounded))
                 {
                     float aoeSqr = aoe * aoe;
-                    Vector3 dist = hc.body.corePosition - base.transform.position;
+                    Vector3 dist = hc.body.corePosition + bodyPositionOffset - base.transform.position;
                     if (dist.sqrMagnitude <= aoeSqr)
                     {
 
@@ -77,9 +78,10 @@ namespace RocketSurvivor.Components.Projectile
                         if (hc.body.characterMotor.velocity.y < 0f)
                         {
                             hc.body.characterMotor.velocity.y = 0f;
+
+                            //Not much use to downwards launch, just results in accidental craters
                             if (finalForce.y < 0f) finalForce.y = 0f;
                         }
-                        if (finalForce.y < minVerticalForce) finalForce.y = minVerticalForce;
 
                         //Encourage proper rocket jumps: doesn't work well in practice due to the nature of force/air control in RoR2.
                         dist.x *= horizontalMultiplier;
@@ -95,6 +97,9 @@ namespace RocketSurvivor.Components.Projectile
                         }
                     }
                 }
+
+                //Debug.Log("Rocket Position" + base.transform.position);
+                //Debug.Log("Body Position" + hc.body.corePosition);
             }
         }
     }

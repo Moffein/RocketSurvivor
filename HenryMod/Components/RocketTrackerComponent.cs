@@ -90,7 +90,6 @@ namespace RocketSurvivor.Components
                             {
                                 bjc.aoe *= EntityStates.RocketSurvivorSkills.Secondary.AirDet.radiusMult;
                                 bjc.force *= EntityStates.RocketSurvivorSkills.Secondary.AirDet.forceMult;
-                                bjc.minVerticalForce *= EntityStates.RocketSurvivorSkills.Secondary.AirDet.forceMult;
                                 bjc.BlastJump();
                             }
 
