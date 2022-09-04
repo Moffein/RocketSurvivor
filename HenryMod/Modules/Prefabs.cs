@@ -3,6 +3,7 @@ using RoR2;
 using System.Collections.Generic;
 using UnityEngine;
 using RocketSurvivor.Modules.Characters;
+using System.Linq;
 
 namespace RocketSurvivor.Modules {
     // module for creating body prefabs and whatnot
@@ -287,24 +288,38 @@ namespace RocketSurvivor.Modules {
                 Debug.LogWarning("Could not set up main hurtbox: make sure you have a transform pair in your prefab's ChildLocator component called 'MainHurtbox'");
                 return;
             }
-
             HurtBoxGroup hurtBoxGroup = model.AddComponent<HurtBoxGroup>();
-            HurtBox mainHurtbox = childLocator.FindChild("MainHurtbox").gameObject.AddComponent<HurtBox>();
+            HurtBox mainHurtbox = childLocator.FindChildGameObject("MainHurtbox").AddComponent<HurtBox>();
             mainHurtbox.gameObject.layer = LayerIndex.entityPrecise.intVal;
             mainHurtbox.healthComponent = prefab.GetComponent<HealthComponent>();
             mainHurtbox.isBullseye = true;
             mainHurtbox.damageModifier = HurtBox.DamageModifier.Normal;
             mainHurtbox.hurtBoxGroup = hurtBoxGroup;
-            mainHurtbox.indexInGroup = 0;
             mainHurtbox.isSniperTarget = true;
 
             hurtBoxGroup.hurtBoxes = new HurtBox[]
             {
                 mainHurtbox
             };
-
             hurtBoxGroup.mainHurtBox = mainHurtbox;
-            hurtBoxGroup.bullseyeCount = 1;
+
+            if (childLocator.FindChild("HeadHurtbox")) {
+
+                HurtBox headHurtbox = childLocator.FindChild("HeadHurtbox").gameObject.AddComponent<HurtBox>();
+                headHurtbox.gameObject.layer = LayerIndex.entityPrecise.intVal;
+                headHurtbox.healthComponent = prefab.GetComponent<HealthComponent>();
+                headHurtbox.isBullseye = false;
+                headHurtbox.damageModifier = HurtBox.DamageModifier.Normal;
+                headHurtbox.hurtBoxGroup = hurtBoxGroup;
+                headHurtbox.isSniperTarget = true;
+                mainHurtbox.isSniperTarget = false;
+                
+                hurtBoxGroup.hurtBoxes = new HurtBox[]
+                {
+                    mainHurtbox,
+                    headHurtbox
+                };
+            }
         }
 
         public static void SetupHurtBoxes(GameObject bodyPrefab) {
