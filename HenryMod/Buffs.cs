@@ -75,7 +75,7 @@ namespace RocketSurvivor
                             Vector2 newDirection = new Vector2(self.moveDirection.x, self.moveDirection.z);
 
                             float angle = Vector2.Angle(currentVelocity, newDirection);
-                            float lerp = angle > 165f ? 1f : 1f - angle / 165f; //Add 15+15 degrees of freedom while turning, to allow for "airstrafing"
+                            float lerp = angle > 135f ? 1f : 1f - angle / 135f; //Allow for gradual turning without losing speed.
 
                             walkSpeed = Mathf.Lerp(walkSpeed, targetSpeed, lerp);
                         }
