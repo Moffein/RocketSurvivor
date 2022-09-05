@@ -10,12 +10,14 @@ namespace RocketSurvivor.Components.Projectile
         private ProjectileImpactExplosion pie;
         private ProjectileController pc;
 
+        private Vector3 rocketVelocity;
+
         public float force = 0f;
         public float aoe = 0f;
         public float horizontalMultiplier = 1f;
         public bool requireAirborne = true;
 
-        public static Vector3 bodyPositionOffset = new Vector3(0f, 0.7f, 0f);
+        public static Vector3 bodyPositionOffset = new Vector3(0f, 0.5f, 0f);
 
         private bool fired = false;
 
@@ -38,6 +40,7 @@ namespace RocketSurvivor.Components.Projectile
         public void FixedUpdate()
         {
             if (!NetworkServer.active) return;
+
             if (fired)
             {
                 Destroy(this);
@@ -71,7 +74,6 @@ namespace RocketSurvivor.Components.Projectile
                     Vector3 dist = hc.body.corePosition + bodyPositionOffset - base.transform.position;
                     if (dist.sqrMagnitude <= aoeSqr)
                     {
-
                         Vector3 finalForce = dist.normalized * force;
 
                         //Attempt to break your fall, should help with pogos
@@ -84,8 +86,8 @@ namespace RocketSurvivor.Components.Projectile
                         }
 
                         //Encourage proper rocket jumps: doesn't work well in practice due to the nature of force/air control in RoR2.
-                        dist.x *= horizontalMultiplier;
-                        dist.y *= horizontalMultiplier;
+                        finalForce.x *= horizontalMultiplier;
+                        finalForce.z *= horizontalMultiplier;
 
 
                         hc.TakeDamageForce(finalForce, true, false);

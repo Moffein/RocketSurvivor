@@ -1,4 +1,6 @@
-﻿using RoR2;
+﻿using Mono.Cecil.Cil;
+using MonoMod.Cil;
+using RoR2;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -20,17 +22,18 @@ namespace RocketSurvivor
             if (initialized) return;
 
             BuffDef vanillaSpeedBuff = Addressables.LoadAssetAsync<BuffDef>("RoR2/Base/SprintOutOfCombat/bdWhipBoost.asset").WaitForCompletion();    //Steal icon + color from here
-            RocketJumpSpeedBuff = CreateBuffDef("RocketSurvivorRocketJumpSpeedBuff", false, false, false, new Color(0.376f, 0.843f, 0.898f), vanillaSpeedBuff.iconSprite);//Give a bonus to move speed when affected by the buff.
+            RocketJumpSpeedBuff = CreateBuffDef("RocketSurvivorRocketJumpSpeedBuff", false, false, false, new Color(0.376f, 0.843f, 0.898f), vanillaSpeedBuff.iconSprite);
 
 
             BuffDef vanillaCritBuff = Addressables.LoadAssetAsync<BuffDef>("RoR2/Base/CritOnUse/bdFullCrit.asset").WaitForCompletion();    //Steal icon + color from here
-            AirshotVulnerableDebuff = CreateBuffDef("RocketSurvivorAirshotVulnerableDebuff", false, false, true, Modules.Survivors.RocketSurvivorSetup.RocketSurvivorColor, vanillaCritBuff.iconSprite);//Give a bonus to move speed when affected by the buff.
+            AirshotVulnerableDebuff = CreateBuffDef("RocketSurvivorAirshotVulnerableDebuff", false, false, true, Modules.Survivors.RocketSurvivorSetup.RocketSurvivorColor, vanillaCritBuff.iconSprite);
 
-            //Need to do a stacking speed boost since RoR2 physics cancel out the force taken from rocket jumps, preventing pogos/combos. Seems clunky.
             R2API.RecalculateStatsAPI.GetStatCoefficients += (sender, args) =>
             {
-                int rjCount = sender.GetBuffCount(RocketJumpSpeedBuff);
-                args.moveSpeedMultAdd += 0.4f * rjCount;
+                if (sender.HasBuff(RocketJumpSpeedBuff))
+                {
+                    args.moveSpeedMultAdd += 0.4f;
+                }
 
                 if (sender.HasBuff(AirshotVulnerableDebuff))
                 {
@@ -38,7 +41,7 @@ namespace RocketSurvivor
                 }
             };
 
-            //Remove the buff upon touching the ground
+            //Remove the Rocket Jump Speed buff upon touching the ground
             On.RoR2.CharacterMotor.FixedUpdate += (orig, self) =>
             {
                 orig(self);
@@ -46,15 +49,41 @@ namespace RocketSurvivor
                 {
                     if (self.body.HasBuff(RocketJumpSpeedBuff))
                     {
-                        /*int buffCount = self.body.GetBuffCount(RocketJumpSpeedBuff);
-                        for (int i = 0; i < buffCount; i++)
-                        {
-                            self.body.RemoveBuff(RocketJumpSpeedBuff);
-                        }*/
-                        //self.body.ClearTimedBuffs(RocketJumpSpeedBuff);
                         self.body.RemoveBuff(RocketJumpSpeedBuff);
                     }
                 }
+            };
+
+            //Adjust Rocket Jump physics
+            IL.RoR2.CharacterMotor.PreMove += (il) =>
+            {
+                ILCursor c = new ILCursor(il);
+                c.GotoNext(MoveType.After,
+                    x => x.MatchCall<CharacterMotor>("get_walkSpeed")
+                    );
+                c.Emit(OpCodes.Ldarg_0);
+                c.EmitDelegate<Func<float, CharacterMotor, float>>((walkSpeed, self) =>
+                {
+                    if (self.body && self.body.HasBuff(RocketJumpSpeedBuff))
+                    {
+                        Vector2 currentVelocity = new Vector2(self.velocity.x, self.velocity.z);
+                        float targetSpeed = currentVelocity.magnitude;
+
+                        //Scale targetspeed between current speed and walking speed, based on movement input compared to current velocity direction.
+                        if (targetSpeed > walkSpeed)
+                        {
+                            Vector2 newDirection = new Vector2(self.moveDirection.x, self.moveDirection.z);
+
+                            float angle = Vector2.Angle(currentVelocity, newDirection);
+                            float lerp = 1f - angle / 180f;
+
+                            walkSpeed = Mathf.Lerp(walkSpeed, targetSpeed, lerp);
+                        }
+                    }
+
+                    return walkSpeed;
+                });
+
             };
 
             initialized = true;
