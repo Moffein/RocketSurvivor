@@ -54,6 +54,16 @@ namespace RocketSurvivor
                 }
             };
 
+            //Remove Rocket Jump Speed buff when jumping, since jumping resets momentum
+            On.RoR2.CharacterMotor.Jump += (orig, self, hMult, vMult, vault) =>
+            {
+                orig(self, hMult, vMult, vault);
+                if (NetworkServer.active && self.body.HasBuff(RocketJumpSpeedBuff))
+                {
+                    self.body.RemoveBuff(RocketJumpSpeedBuff);
+                }
+            };
+
             //Adjust Rocket Jump physics
             //no need to nullcheck self.body since it is a [RequiredComponent] of CharacterMotor
             IL.RoR2.CharacterMotor.PreMove += (il) =>
@@ -71,7 +81,9 @@ namespace RocketSurvivor
                     {
                         if (moveDirection.x == 0f && moveDirection.z == 0f)
                         {
-                            moveDirection = self.velocity.normalized;
+                            moveDirection = self.velocity;
+                            moveDirection.y = 0f;
+                            moveDirection.Normalize();
                         }
                     }
                     return moveDirection;
