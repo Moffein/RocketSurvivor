@@ -106,7 +106,7 @@ namespace RocketSurvivor
                         {
                             Vector2 newDirection = new Vector2(self.moveDirection.x, self.moveDirection.z);
 
-                            float maxTurnAngle = 45f;
+                            float maxTurnAngle = 10f;
                             float angle = Vector2.Angle(currentVelocity, newDirection);
                             float lerp = (angle <= maxTurnAngle) ? 1f : 1f - ((angle - maxTurnAngle) / (180f - maxTurnAngle)); //Allow for gradual turning without losing speed.
 
