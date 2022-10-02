@@ -103,7 +103,7 @@ namespace RocketSurvivor.Modules.Survivors
             sk.passiveSkill.enabled = true;
             sk.passiveSkill.skillNameToken = Rocket_Prefix + "PASSIVE_NAME";
             sk.passiveSkill.skillDescriptionToken = Rocket_Prefix + "PASSIVE_DESCRIPTION";
-            sk.passiveSkill.icon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texSpecialIcon");
+            sk.passiveSkill.icon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texSkillPassive");
 
             #region Primary
             ReloadSkillDef primarySkillDef = ReloadSkillDef.CreateInstance<ReloadSkillDef>();
@@ -116,7 +116,7 @@ namespace RocketSurvivor.Modules.Survivors
             primarySkillDef.dontAllowPastMaxStocks = true;
             primarySkillDef.forceSprintDuringState = false;
             primarySkillDef.fullRestockOnAssign = true;
-            primarySkillDef.icon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texSecondaryIcon");
+            primarySkillDef.icon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texSkillPrimary");
             primarySkillDef.interruptPriority = InterruptPriority.Skill;
             primarySkillDef.isCombatSkill = true;
             primarySkillDef.keywordTokens = new string[] { "KEYWORD_AGILE" };
@@ -143,7 +143,7 @@ namespace RocketSurvivor.Modules.Survivors
             primaryAltSkillDef.dontAllowPastMaxStocks = true;
             primaryAltSkillDef.forceSprintDuringState = false;
             primaryAltSkillDef.fullRestockOnAssign = true;
-            primaryAltSkillDef.icon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texSecondaryIcon");
+            primaryAltSkillDef.icon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texSkillPrimary_DirectHit");
             primaryAltSkillDef.interruptPriority = InterruptPriority.Skill;
             primaryAltSkillDef.isCombatSkill = true;
             primaryAltSkillDef.keywordTokens = new string[] { "KEYWORD_AGILE" };
@@ -177,7 +177,7 @@ namespace RocketSurvivor.Modules.Survivors
             airDetTrackerDef.dontAllowPastMaxStocks = true;
             airDetTrackerDef.forceSprintDuringState = false;
             airDetTrackerDef.fullRestockOnAssign = true;
-            airDetTrackerDef.icon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texUtilityIcon");
+            airDetTrackerDef.icon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texSkillSecondary");
             airDetTrackerDef.interruptPriority = InterruptPriority.Skill;
             airDetTrackerDef.isCombatSkill = false;
             airDetTrackerDef.keywordTokens = new string[] { };
@@ -221,7 +221,7 @@ namespace RocketSurvivor.Modules.Survivors
             concDef.dontAllowPastMaxStocks = true;
             concDef.forceSprintDuringState = false;
             concDef.fullRestockOnAssign = true;
-            concDef.icon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texSpecialIcon");
+            concDef.icon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texSkillUtility_Conc");
             concDef.interruptPriority = InterruptPriority.PrioritySkill;
             concDef.isCombatSkill = true;
             concDef.keywordTokens = new string[] { };
@@ -240,7 +240,7 @@ namespace RocketSurvivor.Modules.Survivors
                 skillName = "MarketGarden",
                 skillNameToken = Rocket_Prefix + "UTILITY_ALT_NAME",
                 skillDescriptionToken = Rocket_Prefix + "UTILITY_ALT_DESCRIPTION",
-                skillIcon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texPrimaryIcon"),
+                skillIcon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texSkillUtility_Shovel"),
                 activationState = new EntityStates.SerializableEntityStateType(typeof(EntityStates.RocketSurvivorSkills.Utility.ComicallyLargeSpoon)),
                 activationStateMachineName = "Weapon",
                 baseMaxStock = 1,
@@ -272,7 +272,7 @@ namespace RocketSurvivor.Modules.Survivors
                 skillName = "Rearm",
                 skillNameToken = Rocket_Prefix + "SPECIAL_NAME",
                 skillDescriptionToken = Rocket_Prefix + "SPECIAL_DESCRIPTION",
-                skillIcon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texUtilityIcon"),
+                skillIcon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texSkillSpecial"),
                 activationState = new EntityStates.SerializableEntityStateType(typeof(EntityStates.RocketSurvivorSkills.Special.FireAllRockets)),
                 activationStateMachineName = "Weapon",
                 baseMaxStock = 1,

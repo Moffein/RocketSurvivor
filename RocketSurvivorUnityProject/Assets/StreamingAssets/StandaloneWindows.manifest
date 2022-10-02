@@ -1,0 +1,7 @@
+ManifestFileVersion: 0
+CRC: 288109618
+AssetBundleManifest:
+  AssetBundleInfos:
+    Info_0:
+      Name: rocketassetbundle
+      Dependencies: {}

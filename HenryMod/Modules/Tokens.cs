@@ -14,6 +14,13 @@ namespace RocketSurvivor.Modules
 
             LanguageAPI.Add(prefix + "SUBTITLE", "Shock and Awe");
 
+            LanguageAPI.Add(prefix + "LORE", "bio: rocket was born with a special power");
+
+            LanguageAPI.Add(prefix + "DESCRIPTION", "The Rocket is an explosives expert who deals devastating area damage.<style=cSub>\r\n\r\n< ! > Blast jump often to traverse the map quickly and escape danger!\r\n\r\n< ! > Your Rocket Launcher has high knockback against enemies. Use this to knock them off of ledges!\r\n\r\n< ! > Remote Detonator is useful for hitting flying enemies, and can also be used for mobility.\r\n\r\n< ! > Concussion Blast's armor debuff can be maintained by juggling enemies in the air with your rockets.\r\n\r\n< ! > Rapid Rearm can be used to skip your rocket launcher's lengthy reload time.");
+
+            LanguageAPI.Add(RocketSurvivorPlugin.DEVELOPER_PREFIX + "_ROCKET_OUTRO_FLAVOR", "..and so he left, blasting off again.");
+            LanguageAPI.Add(RocketSurvivorPlugin.DEVELOPER_PREFIX + "_ROCKET_MAIN_ENDING_ESCAPE_FAILURE_FLAVOR", "..and so he vanished, ");
+
             LanguageAPI.Add(prefix + "PASSIVE_NAME", "Blastoff");
             LanguageAPI.Add(prefix + "PASSIVE_DESCRIPTION", "Your explosives can be used to <style=cIsUtility>blast jump</style>.");
 
