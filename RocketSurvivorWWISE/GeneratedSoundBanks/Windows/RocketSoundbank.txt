@@ -16,10 +16,10 @@ Game Parameter	ID	Name			Wwise Object Path	Notes
 	3673881719	Volume_SFX			\Default Work Unit\Volume_SFX	
 
 In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
-	12427387	Reflex_RL_Explo	C:\Users\Node\RoR2 Mods\RocketSurvivor\RocketSurvivorWWISE\.cache\Windows\SFX\Reflex_RL_Explo_3F75BDB9.wem		\Actor-Mixer Hierarchy\Default Work Unit\Master Mixer\SFX Mixer\Minor Sounds\Reflex_RL_Explo		15272
+	12427387	Reflex_RL_Explo	C:\Users\Node\RoR2 Mods\RocketSurvivor\RocketSurvivorWWISE\.cache\Windows\SFX\Reflex_RL_Explo_3F75BDB9.wem		\Actor-Mixer Hierarchy\Default Work Unit\Master Mixer\SFX Mixer\Major Sounds\Reflex_RL_Explo		15272
 	31814413	rocket_reload	C:\Users\Node\RoR2 Mods\RocketSurvivor\RocketSurvivorWWISE\.cache\Windows\SFX\rocket_reload_3F75BDB9.wem		\Actor-Mixer Hierarchy\Default Work Unit\Master Mixer\SFX Mixer\Minor Sounds\rocket_reload		3663
 	95071274	DB_Jav_RocketCharge	C:\Users\Node\RoR2 Mods\RocketSurvivor\RocketSurvivorWWISE\.cache\Windows\SFX\DB_Jav_RocketCharge_3F75BDB9.wem		\Actor-Mixer Hierarchy\Default Work Unit\Master Mixer\SFX Mixer\Major Sounds\DB_Jav_RocketCharge		21009
-	162412063	QC_RL_Explo	C:\Users\Node\RoR2 Mods\RocketSurvivor\RocketSurvivorWWISE\.cache\Windows\SFX\QC_RL_Explo_3F75BDB9.wem		\Actor-Mixer Hierarchy\Default Work Unit\Master Mixer\SFX Mixer\Minor Sounds\QC_RL_Explo		8109
+	162412063	QC_RL_Explo	C:\Users\Node\RoR2 Mods\RocketSurvivor\RocketSurvivorWWISE\.cache\Windows\SFX\QC_RL_Explo_3F75BDB9.wem		\Actor-Mixer Hierarchy\Default Work Unit\Master Mixer\SFX Mixer\Major Sounds\QC_RL_Explo		8109
 	204569046	wSmite	C:\Users\Node\RoR2 Mods\RocketSurvivor\RocketSurvivorWWISE\.cache\Windows\SFX\wSmite_3F75BDB9.wem		\Actor-Mixer Hierarchy\Default Work Unit\Master Mixer\SFX Mixer\Major Sounds\wSmite		10526
 	267091277	rocket_jumper_shoot	C:\Users\Node\RoR2 Mods\RocketSurvivor\RocketSurvivorWWISE\.cache\Windows\SFX\rocket_jumper_shoot_3F75BDB9.wem		\Actor-Mixer Hierarchy\Default Work Unit\Master Mixer\SFX Mixer\Major Sounds\rocket_jumper_shoot		27643
 	442034263	bottle_hit_flesh1	C:\Users\Node\RoR2 Mods\RocketSurvivor\RocketSurvivorWWISE\.cache\Windows\SFX\bottle_hit_flesh1_3F75BDB9.wem		\Actor-Mixer Hierarchy\Default Work Unit\Master Mixer\SFX Mixer\Minor Sounds\bottle_hit_flesh1		4862

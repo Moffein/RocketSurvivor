@@ -153,68 +153,6 @@
 												<ActiveSource Name="rocket_reload" ID="{AD1E81F2-A859-48AB-B182-891447FC12F1}" Platform="Linked"/>
 											</ActiveSourceList>
 										</Sound>
-										<Sound Name="QC_RL_Explo" ID="{B5B0FFFC-23B2-4C9C-A4DB-428D5B232B5E}" ShortID="649863274">
-											<PropertyList>
-												<Property Name="3DSpatialization" Type="int16" Value="2"/>
-												<Property Name="Volume" Type="Real64">
-													<ValueList>
-														<Value>3</Value>
-													</ValueList>
-												</Property>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Attenuation">
-													<ObjectRef Name="Major Sound Attenuation" ID="{F9AF4DDB-8C60-48C5-9E20-35FDB8442FB0}" WorkUnitID="{A4AE4047-EBA7-4C38-956F-73B7A4AF992C}"/>
-												</Reference>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D122DBC8-4810-4E3C-A6E2-8B6FAB862739}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3B723698-973F-48B8-90F6-9F62DA80C7D5}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="QC_RL_Explo" ID="{84A9197D-AF50-4CAC-A930-5D78C82734EC}">
-													<Language>SFX</Language>
-													<AudioFile>QC_RL_Explo.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="162412063"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="QC_RL_Explo" ID="{84A9197D-AF50-4CAC-A930-5D78C82734EC}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
-										<Sound Name="Reflex_RL_Explo" ID="{3FA7D4B0-7761-4B2A-B0D8-E43CC9F8364C}" ShortID="1054243162">
-											<PropertyList>
-												<Property Name="Volume" Type="Real64">
-													<ValueList>
-														<Value>6</Value>
-													</ValueList>
-												</Property>
-											</PropertyList>
-											<ReferenceList>
-												<Reference Name="Conversion">
-													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D122DBC8-4810-4E3C-A6E2-8B6FAB862739}"/>
-												</Reference>
-												<Reference Name="OutputBus">
-													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3B723698-973F-48B8-90F6-9F62DA80C7D5}"/>
-												</Reference>
-											</ReferenceList>
-											<ChildrenList>
-												<AudioFileSource Name="Reflex_RL_Explo" ID="{28791120-2408-42B0-98F4-5D7C680E79AC}">
-													<Language>SFX</Language>
-													<AudioFile>Reflex_RL_Explo.wav</AudioFile>
-													<MediaIDList>
-														<MediaID ID="12427387"/>
-													</MediaIDList>
-												</AudioFileSource>
-											</ChildrenList>
-											<ActiveSourceList>
-												<ActiveSource Name="Reflex_RL_Explo" ID="{28791120-2408-42B0-98F4-5D7C680E79AC}" Platform="Linked"/>
-											</ActiveSourceList>
-										</Sound>
 										<Sound Name="shovel_swing" ID="{98B2C119-DF7E-4B64-8147-ABFBCD5AA522}" ShortID="855205729">
 											<PropertyList>
 												<Property Name="Volume" Type="Real64">
@@ -473,6 +411,72 @@
 											</ChildrenList>
 											<ActiveSourceList>
 												<ActiveSource Name="rocket_jumper_shoot" ID="{DA3ABACD-BF4E-41D3-BFF5-6A73E7CAD23C}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="QC_RL_Explo" ID="{B5B0FFFC-23B2-4C9C-A4DB-428D5B232B5E}" ShortID="649863274">
+											<PropertyList>
+												<Property Name="3DSpatialization" Type="int16" Value="2"/>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>3</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Attenuation">
+													<ObjectRef Name="Minor Sound Attenuation" ID="{CF59CE08-8698-4B84-BA27-85FB0CE7B716}" WorkUnitID="{A4AE4047-EBA7-4C38-956F-73B7A4AF992C}"/>
+												</Reference>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D122DBC8-4810-4E3C-A6E2-8B6FAB862739}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3B723698-973F-48B8-90F6-9F62DA80C7D5}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="QC_RL_Explo" ID="{84A9197D-AF50-4CAC-A930-5D78C82734EC}">
+													<Language>SFX</Language>
+													<AudioFile>QC_RL_Explo.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="162412063"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="QC_RL_Explo" ID="{84A9197D-AF50-4CAC-A930-5D78C82734EC}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="Reflex_RL_Explo" ID="{3FA7D4B0-7761-4B2A-B0D8-E43CC9F8364C}" ShortID="1054243162">
+											<PropertyList>
+												<Property Name="3DSpatialization" Type="int16" Value="2"/>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>6</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Attenuation">
+													<ObjectRef Name="Minor Sound Attenuation" ID="{CF59CE08-8698-4B84-BA27-85FB0CE7B716}" WorkUnitID="{A4AE4047-EBA7-4C38-956F-73B7A4AF992C}"/>
+												</Reference>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D122DBC8-4810-4E3C-A6E2-8B6FAB862739}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3B723698-973F-48B8-90F6-9F62DA80C7D5}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="Reflex_RL_Explo" ID="{28791120-2408-42B0-98F4-5D7C680E79AC}">
+													<Language>SFX</Language>
+													<AudioFile>Reflex_RL_Explo.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="12427387"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="Reflex_RL_Explo" ID="{28791120-2408-42B0-98F4-5D7C680E79AC}" Platform="Linked"/>
 											</ActiveSourceList>
 										</Sound>
 									</ChildrenList>
