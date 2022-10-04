@@ -196,12 +196,12 @@ namespace RocketSurvivor.Modules.Survivors
             NetworkSoundEventDef detSuccessSound = ScriptableObject.CreateInstance<NetworkSoundEventDef>();
             detSuccessSound.eventName = "Play_Moffein_RocketSurvivor_M2_Trigger";
             Modules.Content.AddNetworkSoundEventDef(detSuccessSound);
-            EntityStates.RocketSurvivorSkills.Secondary.AirDet.detonateSuccess = detSuccessSound;
+            RocketTrackerComponent.detonateSuccess = detSuccessSound;
 
             NetworkSoundEventDef detFailSound = ScriptableObject.CreateInstance<NetworkSoundEventDef>();
             detFailSound.eventName = "Play_Moffein_RocketSurvivor_M2_NoFire";
             Modules.Content.AddNetworkSoundEventDef(detFailSound);
-            EntityStates.RocketSurvivorSkills.Secondary.AirDet.detonateFail = detFailSound;
+            RocketTrackerComponent.detonateFail = detFailSound;
 
             GameObject airDetEffect = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Common/VFX/OmniExplosionVFX.prefab").WaitForCompletion().InstantiateClone("RocketSurvivorAirDetVFX", false);
             EffectComponent ec = airDetEffect.GetComponent<EffectComponent>();

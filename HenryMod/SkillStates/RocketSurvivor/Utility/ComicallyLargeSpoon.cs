@@ -78,7 +78,7 @@ namespace EntityStates.RocketSurvivorSkills.Utility
                         position = base.characterBody.corePosition,
                         procChainMask = default,
                         procCoefficient = 1f,
-                        radius = 8f,
+                        radius = 10f,
                         teamIndex = base.GetTeam()
                     };
                     ba.AddModdedDamageType(DamageTypes.ScaleForceToMass);
@@ -94,6 +94,10 @@ namespace EntityStates.RocketSurvivorSkills.Utility
 
         public override void OnExit()
         {
+            if (base.isAuthority && !firedExplosion && base.skillLocator && base.skillLocator.utility.stock < base.skillLocator.utility.maxStock)
+            {
+                base.skillLocator.utility.AddOneStock();
+            }
             base.OnExit();
         }
 

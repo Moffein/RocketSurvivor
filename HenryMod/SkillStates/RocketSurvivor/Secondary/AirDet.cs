@@ -9,8 +9,6 @@ namespace EntityStates.RocketSurvivorSkills.Secondary
 {
     public class AirDet : BaseState
     {
-        public static NetworkSoundEventDef detonateSuccess;
-        public static NetworkSoundEventDef detonateFail;
         public static GameObject explosionEffectPrefab;
         public static GameObject concExplosionEffectPrefab = Addressables.LoadAssetAsync<GameObject>("RoR2/DLC1/Railgunner/RailgunnerMineExplosion.prefab").WaitForCompletion();
 
@@ -26,18 +24,12 @@ namespace EntityStates.RocketSurvivorSkills.Secondary
         {
             base.OnEnter();
 
-            if (NetworkServer.active)
+            if (base.isAuthority)
             {
                 RocketTrackerComponent rtc = base.GetComponent<RocketTrackerComponent>();
                 if (rtc)
                 {
-                    bool success = rtc.DetonateRocket();
-                    if (!success)
-                    {
-                        rtc.RpcAddSecondaryStock();
-                    }
-
-                    EffectManager.SimpleSoundEffect(success ? detonateSuccess.index : detonateFail.index, base.transform.position, true);
+                    rtc.CmdDetonateRocket();
                 }
             }
         }
@@ -45,14 +37,18 @@ namespace EntityStates.RocketSurvivorSkills.Secondary
         public override void FixedUpdate()
         {
             base.FixedUpdate();
-            if (!buttonReleased && base.inputBank && !base.inputBank.skill2.down)
-            {
-                buttonReleased = true;
-            }
 
-            if (base.isAuthority && base.fixedAge > AirDet.baseDuration)
+            if (base.isAuthority)
             {
-                this.outer.SetNextStateToMain();
+                if (!buttonReleased && base.inputBank && !base.inputBank.skill2.down)
+                {
+                    buttonReleased = true;
+                }
+
+                if (base.fixedAge > AirDet.baseDuration)
+                {
+                    this.outer.SetNextStateToMain();
+                }
             }
         }
 

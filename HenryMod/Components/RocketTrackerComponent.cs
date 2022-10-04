@@ -15,6 +15,9 @@ namespace RocketSurvivor.Components
         private List<GameObject> rocketList;
         private SkillLocator skillLocator;
 
+        public static NetworkSoundEventDef detonateSuccess;
+        public static NetworkSoundEventDef detonateFail;
+
         [SyncVar]
          private bool _rocketAvailable = false;
 
@@ -29,15 +32,6 @@ namespace RocketSurvivor.Components
             if (NetworkServer.active)
             {
                 UpdateRocketAvailable();
-            }
-
-            if (base.hasAuthority)
-            {
-                //Control when skills should be usable.
-                if (skillLocator && skillLocator.secondary.skillDef == RocketSurvivorSetup.AirDetDef)
-                {
-
-                }
             }
         }
 
@@ -139,6 +133,7 @@ namespace RocketSurvivor.Components
                         detonatedSuccessfully = true;
                     }
                 }
+
                 UpdateRocketAvailable();
             }
             return detonatedSuccessfully;
@@ -161,6 +156,20 @@ namespace RocketSurvivor.Components
             if (skillLocator & skillLocator.special.stock < skillLocator.special.maxStock)
             {
                 skillLocator.special.AddOneStock();
+            }
+        }
+
+        [Command]
+        public void CmdDetonateRocket()
+        {
+            if (NetworkServer.active)
+            {
+                bool success = DetonateRocket();
+                EffectManager.SimpleSoundEffect(success ? detonateSuccess.index : detonateFail.index, base.transform.position, true); //Moved from AirDet.cs to here
+                if (!success)
+                {
+                    RpcAddSecondaryStock();
+                }
             }
         }
     }
