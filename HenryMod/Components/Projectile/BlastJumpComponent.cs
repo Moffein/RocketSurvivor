@@ -1,5 +1,6 @@
 ﻿using RoR2;
 using RoR2.Projectile;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Networking;
 
@@ -11,6 +12,7 @@ namespace RocketSurvivor.Components.Projectile
         private ProjectileController pc;
 
         private Vector3 rocketVelocity;
+        private HealthComponent healthComponent;
 
         public float force = 0f;
         public float aoe = 0f;
@@ -67,41 +69,51 @@ namespace RocketSurvivor.Components.Projectile
             fired = true;
             if (pc && pc.owner)
             {
-                HealthComponent hc = pc.owner.GetComponent<HealthComponent>();
-                if (hc && hc.body && hc.body.characterMotor && (!requireAirborne || !hc.body.characterMotor.isGrounded))
+                if (!healthComponent) healthComponent = pc.owner.GetComponent<HealthComponent>();
+
+                if (healthComponent && healthComponent.body && healthComponent.body.characterMotor && (!requireAirborne || !healthComponent.body.characterMotor.isGrounded))
                 {
-                    float aoeSqr = aoe * aoe;
-                    Vector3 dist = hc.body.corePosition + bodyPositionOffset - base.transform.position;
-                    if (dist.sqrMagnitude <= aoeSqr)
+                    Collider[] array = Physics.OverlapSphere(base.transform.position, aoe, LayerIndex.entityPrecise.mask);
+                    for (int i = 0; i < array.Length; i++)
                     {
-                        Vector3 finalForce = dist.normalized * force;
-
-                        //Attempt to break your fall, should help with pogos
-                        if (hc.body.characterMotor.velocity.y < 0f)
+                        HurtBox hurtBox = array[i].GetComponent<HurtBox>();
+                        if (hurtBox)
                         {
-                            hc.body.characterMotor.velocity.y = 0f;
+                            HealthComponent hc = hurtBox.healthComponent;
+                            if (hc == healthComponent)
+                            {
+                                Vector3 dist = healthComponent.body.corePosition + bodyPositionOffset - base.transform.position;
 
-                            //Not much use to downwards launch, just results in accidental craters
-                            if (finalForce.y < 0f) finalForce.y = 0f;
-                        }
+                                Vector3 finalForce = dist.normalized * force;
 
-                        //Encourage proper rocket jumps: doesn't work well in practice due to the nature of force/air control in RoR2.
-                        finalForce.x *= horizontalMultiplier;
-                        finalForce.z *= horizontalMultiplier;
+                                //Attempt to break your fall, should help with pogos
+                                if (healthComponent.body.characterMotor.velocity.y < 0f)
+                                {
+                                    healthComponent.body.characterMotor.velocity.y = 0f;
+
+                                    //Not much use to downwards launch, just results in accidental craters
+                                    if (finalForce.y < 0f) finalForce.y = 0f;
+                                }
+
+                                //Encourage proper rocket jumps: doesn't work well in practice due to the nature of force/air control in RoR2.
+                                finalForce.x *= horizontalMultiplier;
+                                finalForce.z *= horizontalMultiplier;
 
 
-                        hc.TakeDamageForce(finalForce, true, false);
+                                healthComponent.TakeDamageForce(finalForce, true, false);
 
-                        //Split on whether this should be a thing or not. Leaning towards excluding it since it only artificially encourages rocket jumping.
-                        if (!hc.body.HasBuff(Buffs.RocketJumpSpeedBuff))
-                        {
-                            hc.body.AddBuff(Buffs.RocketJumpSpeedBuff);
+                                //Split on whether this should be a thing or not. Leaning towards excluding it since it only artificially encourages rocket jumping.
+                                if (!healthComponent.body.HasBuff(Buffs.RocketJumpSpeedBuff))
+                                {
+                                    healthComponent.body.AddBuff(Buffs.RocketJumpSpeedBuff);
+                                }
+
+                                break;
+                            }
                         }
                     }
-                }
 
-                //Debug.Log("Rocket Position" + base.transform.position);
-                //Debug.Log("Body Position" + hc.body.corePosition);
+                }
             }
         }
     }
