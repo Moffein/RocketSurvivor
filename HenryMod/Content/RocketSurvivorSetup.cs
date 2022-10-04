@@ -132,6 +132,7 @@ namespace RocketSurvivor.Modules.Survivors
             primarySkillDef.reloadState = new SerializableEntityStateType(typeof(EntityStates.RocketSurvivorSkills.Primary.EnterReload));
             primarySkillDef.reloadInterruptPriority = InterruptPriority.Any;
             (primarySkillDef as ScriptableObject).name = "FireRocket";
+            Modules.Content.AddSkillDef(primarySkillDef);
 
             ReloadSkillDef primaryAltSkillDef = ReloadSkillDef.CreateInstance<ReloadSkillDef>();
             primaryAltSkillDef.activationState = new SerializableEntityStateType(typeof(EntityStates.RocketSurvivorSkills.Primary.FireRocketAlt));
@@ -159,6 +160,7 @@ namespace RocketSurvivor.Modules.Survivors
             primaryAltSkillDef.reloadState = new SerializableEntityStateType(typeof(EntityStates.RocketSurvivorSkills.Primary.EnterReload));
             primaryAltSkillDef.reloadInterruptPriority = InterruptPriority.Any;
             (primaryAltSkillDef as ScriptableObject).name = "FireRocketAlt";
+            Modules.Content.AddSkillDef(primaryAltSkillDef);
 
             RocketSurvivorSetup.FireRocketSkillDef = primarySkillDef;
             RocketSurvivorSetup.FireRocketAltSkillDef = primaryAltSkillDef;
@@ -190,6 +192,8 @@ namespace RocketSurvivor.Modules.Survivors
             airDetTrackerDef.skillDescriptionToken = Rocket_Prefix + "SECONDARY_DESCRIPTION";
             airDetTrackerDef.stockToConsume = 1;
             (airDetTrackerDef as ScriptableObject).name = "AirDet";
+            Modules.Content.AddSkillDef(airDetTrackerDef);
+
             Modules.Skills.AddSecondarySkills(bodyPrefab, airDetTrackerDef);
             RocketSurvivorSetup.AirDetDef = airDetTrackerDef;
 
@@ -234,6 +238,7 @@ namespace RocketSurvivor.Modules.Survivors
             concDef.skillDescriptionToken = Rocket_Prefix + "UTILITY_DESCRIPTION";
             concDef.stockToConsume = 1;
             (concDef as ScriptableObject).name = "FireConcRocket";
+            Modules.Content.AddSkillDef(concDef);
 
             SkillDef marketGardenDef = Modules.Skills.CreateSkillDef(new SkillDefInfo
             {
@@ -260,6 +265,7 @@ namespace RocketSurvivor.Modules.Survivors
                 keywordTokens = new string[] { "KEYWORD_STUNNING" }
             });
             (marketGardenDef as ScriptableObject).name = "MarketGarden";
+            Modules.Content.AddSkillDef(marketGardenDef);
 
             Modules.Skills.AddUtilitySkills(bodyPrefab, new SkillDef[] { concDef, marketGardenDef });
 
@@ -291,6 +297,7 @@ namespace RocketSurvivor.Modules.Survivors
                 stockToConsume = 1
             });
             (rearmDef as ScriptableObject).name = "Rearm";
+            Modules.Content.AddSkillDef(rearmDef);
             Modules.Skills.AddSpecialSkills(bodyPrefab, rearmDef);
             #endregion
         }

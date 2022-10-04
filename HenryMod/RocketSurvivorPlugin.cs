@@ -33,7 +33,7 @@ namespace RocketSurvivor
         //   this shouldn't even have to be said
         public const string MODUID = "com.EnforcerGang.RocketSurvivor";
         public const string MODNAME = "RocketSurvivor";
-        public const string MODVERSION = "0.2.7";
+        public const string MODVERSION = "0.2.8";
 
         // a prefix for name tokens to prevent conflicts- please capitalize all name tokens for convention
         public const string DEVELOPER_PREFIX = "MOFFEIN";
