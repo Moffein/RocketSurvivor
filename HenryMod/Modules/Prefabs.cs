@@ -288,10 +288,13 @@ namespace RocketSurvivor.Modules {
                 Debug.LogWarning("Could not set up main hurtbox: make sure you have a transform pair in your prefab's ChildLocator component called 'MainHurtbox'");
                 return;
             }
+
+            HealthComponent hc = prefab.GetComponent<HealthComponent>();
+
             HurtBoxGroup hurtBoxGroup = model.AddComponent<HurtBoxGroup>();
             HurtBox mainHurtbox = childLocator.FindChildGameObject("MainHurtbox").AddComponent<HurtBox>();
             mainHurtbox.gameObject.layer = LayerIndex.entityPrecise.intVal;
-            mainHurtbox.healthComponent = prefab.GetComponent<HealthComponent>();
+            mainHurtbox.healthComponent = hc;
             mainHurtbox.isBullseye = true;
             mainHurtbox.damageModifier = HurtBox.DamageModifier.Normal;
             mainHurtbox.hurtBoxGroup = hurtBoxGroup;
@@ -303,15 +306,18 @@ namespace RocketSurvivor.Modules {
             };
             hurtBoxGroup.mainHurtBox = mainHurtbox;
 
+            hurtBoxGroup.bullseyeCount = 1;
+
             if (childLocator.FindChild("HeadHurtbox")) {
 
                 HurtBox headHurtbox = childLocator.FindChild("HeadHurtbox").gameObject.AddComponent<HurtBox>();
                 headHurtbox.gameObject.layer = LayerIndex.entityPrecise.intVal;
-                headHurtbox.healthComponent = prefab.GetComponent<HealthComponent>();
+                headHurtbox.healthComponent = hc;
                 headHurtbox.isBullseye = false;
                 headHurtbox.damageModifier = HurtBox.DamageModifier.Normal;
                 headHurtbox.hurtBoxGroup = hurtBoxGroup;
                 headHurtbox.isSniperTarget = true;
+
                 mainHurtbox.isSniperTarget = false;
                 
                 hurtBoxGroup.hurtBoxes = new HurtBox[]
@@ -319,6 +325,10 @@ namespace RocketSurvivor.Modules {
                     mainHurtbox,
                     headHurtbox
                 };
+
+                //This needs to be manually set or else some things break. Why?
+                mainHurtbox.indexInGroup = 0;
+                headHurtbox.indexInGroup = 1;
             }
         }
 
