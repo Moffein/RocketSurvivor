@@ -219,7 +219,7 @@ namespace RocketSurvivor.Modules.Survivors
             concDef.activationState = new SerializableEntityStateType(typeof(EntityStates.RocketSurvivorSkills.Utility.ConcRocket));
             concDef.activationStateMachineName = "Weapon";
             concDef.baseMaxStock = 1;
-            concDef.baseRechargeInterval = 7f;
+            concDef.baseRechargeInterval = 5f;
             concDef.beginSkillCooldownOnSkillEnd = false;
             concDef.canceledFromSprinting = false;
             concDef.dontAllowPastMaxStocks = true;
@@ -249,7 +249,7 @@ namespace RocketSurvivor.Modules.Survivors
                 activationState = new EntityStates.SerializableEntityStateType(typeof(EntityStates.RocketSurvivorSkills.Utility.ComicallyLargeSpoon)),
                 activationStateMachineName = "Weapon",
                 baseMaxStock = 1,
-                baseRechargeInterval = 7f,
+                baseRechargeInterval = 5f,
                 beginSkillCooldownOnSkillEnd = false,
                 canceledFromSprinting = false,
                 forceSprintDuringState = false,
@@ -282,7 +282,7 @@ namespace RocketSurvivor.Modules.Survivors
                 activationState = new EntityStates.SerializableEntityStateType(typeof(EntityStates.RocketSurvivorSkills.Special.FireAllRockets)),
                 activationStateMachineName = "Weapon",
                 baseMaxStock = 1,
-                baseRechargeInterval = 12f,
+                baseRechargeInterval = 10f,
                 beginSkillCooldownOnSkillEnd = true,
                 canceledFromSprinting = false,
                 forceSprintDuringState = false,

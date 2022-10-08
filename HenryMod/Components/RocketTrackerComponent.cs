@@ -68,8 +68,7 @@ namespace RocketSurvivor.Components
             {
                 if (this.IsRocketAvailable())
                 {
-                    GameObject toDetonate = rocketList.LastOrDefault();
-                    if (toDetonate)
+                    foreach (GameObject toDetonate in rocketList)
                     {
                         ProjectileDamage pd = toDetonate.GetComponent<ProjectileDamage>();
                         ProjectileController pc = toDetonate.GetComponent<ProjectileController>();
@@ -106,7 +105,7 @@ namespace RocketSurvivor.Components
                                     position = toDetonate.transform.position,
                                     procChainMask = default,
                                     procCoefficient = pie.blastProcCoefficient,
-                                    radius = pie.blastRadius * EntityStates.RocketSurvivorSkills.Secondary.AirDet.radiusMult,
+                                    radius = Mathf.Max(pie.blastRadius * EntityStates.RocketSurvivorSkills.Secondary.AirDet.radiusMult, EntityStates.RocketSurvivorSkills.Secondary.AirDet.minRadius),
                                     teamIndex = tf.teamIndex
                                 };
 

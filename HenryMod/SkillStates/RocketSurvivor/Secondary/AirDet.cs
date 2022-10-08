@@ -15,6 +15,7 @@ namespace EntityStates.RocketSurvivorSkills.Secondary
         public static float forceMult = 1.3f;
         public static float radiusMult = 1.3f;
         public static float damageMult = 1.3f;
+        public static float minRadius = 8f;
 
         public static float baseDuration = 0.25f;
 
