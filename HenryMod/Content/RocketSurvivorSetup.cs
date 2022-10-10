@@ -346,13 +346,8 @@ namespace RocketSurvivor.Modules.Survivors
             List<SkinDef> skins = new List<SkinDef>();
 
             #region DefaultSkin
-            Color colorVisor = new Color(242f / 255f, 243f / 255f, 235f / 255f);
-            Color colorPrimary = new Color(79f / 255f, 129f / 255f, 91f / 255f);
-            Color colorSecondary = new Color(27f / 255f, 47f / 255f, 35f / 255f);
-            Color colorDetails = new Color(11f / 255f, 19f / 255f, 22f / 255f);
-
             SkinDef defaultSkin = Modules.Skins.CreateSkinDef(Rocket_Prefix + "DEFAULT_SKIN_NAME",
-                LoadoutAPI.CreateSkinIcon(colorVisor, colorPrimary, colorDetails, colorSecondary),
+                Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texRocketSkinDefault"),
                 defaultRenderers,
                 mainRenderer,
                 model);

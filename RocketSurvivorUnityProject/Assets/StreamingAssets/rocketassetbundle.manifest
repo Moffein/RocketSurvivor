@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 3331662402
+CRC: 1234794063
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 296cc4284f554a45d2191da9193e48f1
+    Hash: cdde44633445d044f4798b3bf00f994c
   TypeTreeHash:
     serializedVersion: 2
     Hash: ee1d7256862da8ce9889e5c97008e83f
@@ -66,6 +66,7 @@ Assets:
 - Assets/RocketBundle/textures/TexShovelEmissive.png
 - Assets/RocketBundle/Animation/animRocket.controller
 - Assets/RocketBundle/RocketDisplay.prefab
+- Assets/RocketBundle/icons/texRocketSkinDefault.png
 - Assets/RocketBundle/icons/texSkillPrimary_DirectHit_mspaint.png
 - Assets/RocketBundle/textures/TexBlackBox.png
 - Assets/RocketBundle/Materials/MatBlackBox.mat

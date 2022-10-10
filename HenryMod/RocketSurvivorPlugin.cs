@@ -26,19 +26,15 @@ namespace RocketSurvivor
         "LanguageAPI",
         "SoundAPI",
         "UnlockableAPI",
-        nameof(R2API.LoadoutAPI),   //Only used for skin icon. TODO: create an actual sprite for the skin and remove
         nameof(R2API.DamageAPI),
         nameof(R2API.RecalculateStatsAPI)
     })]
 
     public class RocketSurvivorPlugin : BaseUnityPlugin
     {
-        // if you don't change these you're giving permission to deprecate the mod-
-        //  please change the names to your own stuff, thanks
-        //   this shouldn't even have to be said
         public const string MODUID = "com.EnforcerGang.RocketSurvivor";
         public const string MODNAME = "RocketSurvivor";
-        public const string MODVERSION = "0.2.14";
+        public const string MODVERSION = "0.2.15";
 
         // a prefix for name tokens to prevent conflicts- please capitalize all name tokens for convention
         public const string DEVELOPER_PREFIX = "MOFFEIN";
