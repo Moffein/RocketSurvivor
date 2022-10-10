@@ -6,6 +6,8 @@ using RoR2;
 using System.Collections.Generic;
 using System.Security;
 using System.Security.Permissions;
+using RoR2.Skills;
+using System.Runtime.CompilerServices;
 
 [module: UnverifiableCode]
 [assembly: SecurityPermission(SecurityAction.RequestMinimum, SkipVerification = true)]
@@ -13,6 +15,8 @@ using System.Security.Permissions;
 namespace RocketSurvivor
 {
     [BepInDependency("HIFU.Inferno", BepInDependency.DependencyFlags.SoftDependency)]
+    [BepInDependency("com.DestroyedClone.AncientScepter", BepInDependency.DependencyFlags.SoftDependency)]
+    [BepInDependency("com.ThinkInvisible.ClassicItems", BepInDependency.DependencyFlags.SoftDependency)]
     [BepInDependency("com.bepis.r2api", BepInDependency.DependencyFlags.HardDependency)]
     [NetworkCompatibility(CompatibilityLevel.EveryoneMustHaveMod, VersionStrictness.EveryoneNeedSameModVersion)]
     [BepInPlugin(MODUID, MODNAME, MODVERSION)]
@@ -22,6 +26,7 @@ namespace RocketSurvivor
         "LanguageAPI",
         "SoundAPI",
         "UnlockableAPI",
+        nameof(R2API.LoadoutAPI),   //Only used for skin icon. TODO: create an actual sprite for the skin and remove
         nameof(R2API.DamageAPI),
         nameof(R2API.RecalculateStatsAPI)
     })]
@@ -40,11 +45,17 @@ namespace RocketSurvivor
 
         public static RocketSurvivorPlugin instance;
         public static bool infernoPluginLoaded = false;
+        public static bool scepterStandaloneLoaded = false;
+        public static bool scepterClassicLoaded = false;
+
+        public static bool msPaintIcons = true;
 
         private void Awake()
         {
             instance = this;
             infernoPluginLoaded = BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey("HIFU.Inferno");
+            scepterStandaloneLoaded = BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey("com.DestroyedClone.AncientScepter");
+            scepterClassicLoaded = BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey("com.ThinkInvisible.ClassicItems");
 
             Log.Init(Logger);
 
@@ -63,6 +74,28 @@ namespace RocketSurvivor
 
             // now make a content pack and add it- this part will change with the next update
             new Modules.ContentPacks().Initialize();
+        }
+
+        public static void SetupScepterClassic(string bodyName, SkillDef scepterSkill, SkillDef origSkill)
+        {
+            if (scepterClassicLoaded) SetupScepterClassicInternal(bodyName, scepterSkill, origSkill);
+        }
+
+        public static void SetupScepterStandalone(string bodyName, SkillDef scepterSkill, SkillSlot skillSlot, int skillIndex)
+        {
+            if (scepterStandaloneLoaded) SetupScepterStandaloneInternal(bodyName, scepterSkill, skillSlot, skillIndex);
+        }
+
+        [MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
+        private static void SetupScepterStandaloneInternal(string bodyName, SkillDef scepterSkill, SkillSlot skillSlot, int skillIndex)
+        {
+            AncientScepter.AncientScepterItem.instance.RegisterScepterSkill(scepterSkill, bodyName, skillSlot, skillIndex);
+        }
+
+        [MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
+        private static void SetupScepterClassicInternal(string bodyName, SkillDef scepterSkill, SkillDef origSkill)
+        {
+            ThinkInvisible.ClassicItems.Scepter.instance.RegisterScepterSkill(scepterSkill, bodyName, SkillSlot.Special, origSkill);
         }
     }
 }

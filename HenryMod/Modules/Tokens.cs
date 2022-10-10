@@ -12,6 +12,9 @@ namespace RocketSurvivor.Modules
 
             LanguageAPI.Add(prefix + "NAME", "Rocket");
 
+
+            LanguageAPI.Add(prefix + "DEFAULT_SKIN_NAME", "Default");
+
             LanguageAPI.Add(prefix + "SUBTITLE", "Shock and Awe");
 
             LanguageAPI.Add(prefix + "LORE", "bio: rocket was born with a special power");
@@ -43,6 +46,9 @@ namespace RocketSurvivor.Modules
 
             LanguageAPI.Add(prefix + "SPECIAL_NAME", "Rapid Rearm");
             LanguageAPI.Add(prefix + "SPECIAL_DESCRIPTION", "Rapidly <style=cIsDamage>fire 4 rockets</style>, then <style=cIsUtility>reload your weapon</style>.");
+
+            LanguageAPI.Add(prefix + "SPECIAL_SCEPTER_NAME", "Rocketstorm");
+            LanguageAPI.Add(prefix + "SPECIAL_SCEPTER_DESCRIPTION", "Rapidly <style=cIsDamage>fire 8 rockets</style>, then <style=cIsUtility>reload your weapon</style>.");
         }
     }
 }

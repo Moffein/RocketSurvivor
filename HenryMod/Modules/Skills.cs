@@ -140,8 +140,8 @@ namespace RocketSurvivor.Modules
 
             skillDef.keywordTokens = skillDefInfo.keywordTokens;
 
-            RocketSurvivor.Modules.Content.AddSkillDef(skillDef);
-
+            //Doing this manually to reduce confusion.
+            //RocketSurvivor.Modules.Content.AddSkillDef(skillDef);
 
             return skillDef;
         }

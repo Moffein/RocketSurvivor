@@ -107,8 +107,9 @@ namespace RocketSurvivor.Modules
                 };
             }
 
-            spoonSwingEffect = Assets.LoadEffect("HenrySwordSwingEffect", true);
-            spoonImpactEffect = Assets.LoadEffect("ImpactHenrySlash");
+            //Set these to something else later.
+            //spoonSwingEffect = Assets.LoadEffect("HenrySwordSwingEffect", true);
+            //spoonImpactEffect = Assets.LoadEffect("ImpactHenrySlash");
         }
 
         private static GameObject CreateTracer(string originalTracerName, string newTracerName)

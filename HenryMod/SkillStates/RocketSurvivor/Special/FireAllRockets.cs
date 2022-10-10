@@ -26,7 +26,11 @@ namespace EntityStates.RocketSurvivorSkills.Special
                     selectedPrimarySkill = RocketSurvivorSetup.FireRocketAltSkillDef;
                 }
             }
+
+            ModifyStats();
         }
+
+        public virtual void ModifyStats() { }
 
         public override void FixedUpdate()
         {
@@ -153,9 +157,9 @@ namespace EntityStates.RocketSurvivorSkills.Special
         private SkillDef selectedPrimarySkill;
         private bool isCrit;
         private float fireStopwatch;
-        private float delayBetweenShots;
 
-        private int shotsRemaining;
+        public float delayBetweenShots;
+        public int shotsRemaining;
 
         public static int baseShotCount = 4;
         public static float baseDelayBetweenShots = 0.2f;
