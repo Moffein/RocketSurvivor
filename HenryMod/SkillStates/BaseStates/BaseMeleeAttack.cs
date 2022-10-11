@@ -191,7 +191,7 @@ namespace RocketSurvivor.SkillStates.BaseStates
                 this.FireAttack();
             }
 
-            if (this.stopwatch >= (this.duration - this.earlyExitTime) && base.isAuthority)
+            /*if (this.stopwatch >= (this.duration - this.earlyExitTime) && base.isAuthority)
             {
                 if (base.inputBank.skill1.down)
                 {
@@ -199,7 +199,7 @@ namespace RocketSurvivor.SkillStates.BaseStates
                     this.SetNextState();
                     return;
                 }
-            }
+            }*/
 
             if (this.stopwatch >= this.duration && base.isAuthority)
             {
