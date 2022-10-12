@@ -68,13 +68,46 @@ namespace EntityStates.RocketSurvivorSkills.Special
                 Ray aimRay = base.GetAimRay();
 
                 Vector3 aimDirection = aimRay.direction;
-                if (shotsRemaining != baseShotCount)
+
+
+                float damageMult = RocketSurvivor.RocketSurvivorPlugin.GetICBMDamageMult(base.characterBody);
+
+                //Copied from Bandit2
+                if (RocketSurvivor.RocketSurvivorPlugin.pocketICBM && base.characterBody && base.characterBody.inventory && base.characterBody.inventory.GetItemCount(DLC1Content.Items.MoreMissile) > 0)
                 {
-                    aimDirection = Util.ApplySpread(aimRay.direction, 0f, 3f, 1f, 1f);
+                    Vector3 rhs = Vector3.Cross(Vector3.up, aimRay.direction);
+                    Vector3 axis = Vector3.Cross(aimRay.direction, rhs);
+
+                    float currentSpread = 0f;
+                    float angle = 0f;
+                    float num2 = 0f;
+                    num2 = UnityEngine.Random.Range(1f + currentSpread, 1f + currentSpread) * 3f;   //Bandit is x2
+                    angle = num2 / 2f;  //3 - 1 rockets
+
+                    Vector3 direction = Quaternion.AngleAxis(-num2 * 0.5f, axis) * aimRay.direction;
+                    Quaternion rotation = Quaternion.AngleAxis(angle, axis);
+                    Ray aimRay2 = new Ray(aimRay.origin, direction);
+                    for (int i = 0; i < 3; i++)
+                    {
+                        aimDirection = aimRay2.direction;
+                        if (shotsRemaining != baseShotCount)
+                        {
+                            aimDirection = Util.ApplySpread(aimRay2.direction, 0f, 3f, 1f, 1f);
+                        }
+
+                        ProjectileManager.instance.FireProjectile(GetProjectilePrefab(), aimRay2.origin, Util.QuaternionSafeLookRotation(aimDirection), base.gameObject, this.damageStat * GetDamageCoefficient(), GetForce() * 0.25f, isCrit, DamageColorIndex.Default, null, -1f);
+                        aimRay2.direction = rotation * aimRay2.direction;
+                    }
+                }
+                else
+                {
+                    if (shotsRemaining != baseShotCount)
+                    {
+                        aimDirection = Util.ApplySpread(aimRay.direction, 0f, 3f, 1f, 1f);
+                    }
+                    ProjectileManager.instance.FireProjectile(GetProjectilePrefab(), aimRay.origin, Util.QuaternionSafeLookRotation(aimDirection), base.gameObject, this.damageStat * GetDamageCoefficient(), GetForce() * 0.25f, isCrit, DamageColorIndex.Default, null, -1f);
                 }
 
-                //Set force to 0? Knockback makes it pretty bad against small enemies.
-                ProjectileManager.instance.FireProjectile(GetProjectilePrefab(), aimRay.origin, Util.QuaternionSafeLookRotation(aimDirection), base.gameObject, this.damageStat * GetDamageCoefficient(), GetForce() * 0.25f, isCrit, DamageColorIndex.Default, null, -1f);
 
                 base.StartAimMode(aimRay, 3f, false);
             }

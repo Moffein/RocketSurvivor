@@ -85,6 +85,7 @@ namespace RocketSurvivor.Modules
             ProjectileSimple ps = rocketPrefab.GetComponent<ProjectileSimple>();
             ps.desiredForwardSpeed = 75f * 1.8f;// 20.96f should be equivalent to tf2 rockets (1100HU/S) but this doesn't seem to be the case in-game.
             ps.lifetime = 20f;
+            ps.updateAfterFiring = true;
 
             ProjectileImpactExplosion pie = rocketPrefab.GetComponent<ProjectileImpactExplosion>();
             InitializeImpactExplosion(pie);
@@ -95,7 +96,7 @@ namespace RocketSurvivor.Modules
             Modules.Content.AddEffectDef(new EffectDef(explosionEffect));
 
             pie.blastDamageCoefficient = 1f;
-            pie.blastRadius = 3f;   //Artificer is 2
+            pie.blastRadius = 5f;   //Artificer is 2
             pie.destroyOnEnemy = true;
             pie.destroyOnWorld = true;
             pie.lifetime = 12f;
@@ -128,6 +129,21 @@ namespace RocketSurvivor.Modules
             DamageAPI.ModdedDamageTypeHolderComponent mdc = rocketPrefab.AddComponent<DamageAPI.ModdedDamageTypeHolderComponent>();
             mdc.Add(DamageTypes.ScaleForceToMass);
             mdc.Add(DamageTypes.AirborneBonus);
+
+            rocketPrefab.AddComponent<ProjectileTargetComponent>();
+            ProjectileSteerTowardTarget pstt = rocketPrefab.AddComponent<ProjectileSteerTowardTarget>();
+            pstt.yAxisOnly = false;
+            pstt.rotationSpeed = 50f;   //90f
+
+            ProjectileDirectionalTargetFinder pdtf = rocketPrefab.AddComponent<ProjectileDirectionalTargetFinder>();
+            pdtf.lookRange = 80f;   //25f
+            pdtf.lookCone = 20f;    //20f
+            pdtf.targetSearchInterval = 0.1f;
+            pdtf.onlySearchIfNoTarget = true;
+            pdtf.allowTargetLoss = false;
+            pdtf.testLoS = false;
+            pdtf.ignoreAir = false;
+            pdtf.flierAltitudeTolerance = Mathf.Infinity;
 
             AddProjectile(rocketPrefab);
 
