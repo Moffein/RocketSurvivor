@@ -34,7 +34,7 @@ namespace RocketSurvivor
     {
         public const string MODUID = "com.EnforcerGang.RocketSurvivor";
         public const string MODNAME = "RocketSurvivor";
-        public const string MODVERSION = "0.2.17";
+        public const string MODVERSION = "0.2.18";
 
         // a prefix for name tokens to prevent conflicts- please capitalize all name tokens for convention
         public const string DEVELOPER_PREFIX = "MOFFEIN";
@@ -45,6 +45,7 @@ namespace RocketSurvivor
         public static bool scepterClassicLoaded = false;
 
         public static bool msPaintIcons = true;
+        public static bool pocketICBM = true;
 
         private void Awake()
         {
@@ -54,6 +55,8 @@ namespace RocketSurvivor
             scepterClassicLoaded = BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey("com.ThinkInvisible.ClassicItems");
 
             Log.Init(Logger);
+
+            ReadConfig();
 
             DamageTypes.Initialize();   //Init this first. Other things depend on this.
             Buffs.Initialize();
@@ -70,6 +73,23 @@ namespace RocketSurvivor
 
             // now make a content pack and add it- this part will change with the next update
             new Modules.ContentPacks().Initialize();
+        }
+
+        private void ReadConfig()
+        {
+            pocketICBM = Config.Bind("Gameplay", "Pocket ICBM Interaction", true, "Pocket ICBM works with Rocket's skills.").Value;
+        }
+
+        public static float GetICBMDamageMult(CharacterBody body)
+        {
+            float mult = 1f;
+            if (body && body.inventory)
+            {
+                int itemcount = body.inventory.GetItemCount(DLC1Content.Items.MoreMissile);
+                int stack = itemcount - 1;
+                if (stack > 0) mult += stack * 0.5f;
+            }
+            return mult;
         }
 
         public static void SetupScepterClassic(string bodyName, SkillDef scepterSkill, SkillDef origSkill)
