@@ -96,7 +96,7 @@ namespace RocketSurvivor.Modules
             Modules.Content.AddEffectDef(new EffectDef(explosionEffect));
 
             pie.blastDamageCoefficient = 1f;
-            pie.blastRadius = 5f;   //Artificer is 2
+            pie.blastRadius = 4f;   //Artificer is 2
             pie.destroyOnEnemy = true;
             pie.destroyOnWorld = true;
             pie.lifetime = 12f;
@@ -136,7 +136,7 @@ namespace RocketSurvivor.Modules
             pstt.rotationSpeed = 50f;   //90f
 
             ProjectileDirectionalTargetFinder pdtf = rocketPrefab.AddComponent<ProjectileDirectionalTargetFinder>();
-            pdtf.lookRange = 80f;   //25f
+            pdtf.lookRange = 60f;   //25f
             pdtf.lookCone = 20f;    //20f
             pdtf.targetSearchInterval = 0.1f;
             pdtf.onlySearchIfNoTarget = true;

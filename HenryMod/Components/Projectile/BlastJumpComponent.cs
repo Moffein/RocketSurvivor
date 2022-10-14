@@ -10,6 +10,7 @@ namespace RocketSurvivor.Components.Projectile
     {
         private ProjectileImpactExplosion pie;
         private ProjectileController pc;
+        private ProjectileDamage pd;
 
         private Vector3 rocketVelocity;
         private HealthComponent healthComponent;
@@ -27,6 +28,7 @@ namespace RocketSurvivor.Components.Projectile
         {
             pie = base.GetComponent<ProjectileImpactExplosion>();
             pc = base.GetComponent<ProjectileController>();
+            pd = base.GetComponent<ProjectileDamage>();
 
             if (!pie || !pc)
             {
@@ -67,6 +69,10 @@ namespace RocketSurvivor.Components.Projectile
         {
             if (!NetworkServer.active) return;
             fired = true;
+
+            //Used to disable rocket jumps on extra ICBM rockets.
+            if (pd && pd.force <= 0f) return;
+
             if (pc && pc.owner)
             {
                 if (!healthComponent) healthComponent = pc.owner.GetComponent<HealthComponent>();

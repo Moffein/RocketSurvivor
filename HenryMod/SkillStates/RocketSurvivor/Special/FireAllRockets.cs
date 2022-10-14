@@ -95,7 +95,7 @@ namespace EntityStates.RocketSurvivorSkills.Special
                             aimDirection = Util.ApplySpread(aimRay2.direction, 0f, 3f, 1f, 1f);
                         }
 
-                        ProjectileManager.instance.FireProjectile(GetProjectilePrefab(), aimRay2.origin, Util.QuaternionSafeLookRotation(aimDirection), base.gameObject, this.damageStat * GetDamageCoefficient(), GetForce() * 0.25f, isCrit, DamageColorIndex.Default, null, -1f);
+                        ProjectileManager.instance.FireProjectile(GetProjectilePrefab(), aimRay2.origin, Util.QuaternionSafeLookRotation(aimDirection), base.gameObject, damageMult * this.damageStat * GetDamageCoefficient(), ((i != 1 && !RocketSurvivor.RocketSurvivorPlugin.pocketICBMEnableKnockback) ? 0f : GetForce() * 0.25f), isCrit, DamageColorIndex.Default, null, -1f);
                         aimRay2.direction = rotation * aimRay2.direction;
                     }
                 }

@@ -42,13 +42,13 @@ namespace EntityStates.RocketSurvivorSkills.Primary
 					Ray aimRay2 = new Ray(aimRay.origin, direction);
 					for (int i = 0; i < 3; i++)
 					{
-						ProjectileManager.instance.FireProjectile(FireRocketAlt.projectilePrefab, aimRay2.origin, Util.QuaternionSafeLookRotation(aimRay2.direction), base.gameObject, damageMult * this.damageStat * FireRocket.damageCoefficient, FireRocket.force, base.RollCrit(), DamageColorIndex.Default, null, -1f);
+						ProjectileManager.instance.FireProjectile(FireRocketAlt.projectilePrefab, aimRay2.origin, Util.QuaternionSafeLookRotation(aimRay2.direction), base.gameObject, damageMult * this.damageStat * FireRocket.damageCoefficient, ((i != 1 && !RocketSurvivor.RocketSurvivorPlugin.pocketICBMEnableKnockback) ? 0f : FireRocket.force), base.RollCrit(), DamageColorIndex.Default, null, -1f);
 						aimRay2.direction = rotation * aimRay2.direction;
 					}
 				}
 				else
 				{
-					ProjectileManager.instance.FireProjectile(FireRocketAlt.projectilePrefab, aimRay.origin, Util.QuaternionSafeLookRotation(aimRay.direction), base.gameObject, damageMult * this.damageStat * FireRocket.damageCoefficient, FireRocket.force, base.RollCrit(), DamageColorIndex.Default, null, -1f);
+					ProjectileManager.instance.FireProjectile(FireRocketAlt.projectilePrefab, aimRay.origin, Util.QuaternionSafeLookRotation(aimRay.direction), base.gameObject, this.damageStat * FireRocket.damageCoefficient, FireRocket.force, base.RollCrit(), DamageColorIndex.Default, null, -1f);
 				}
 			}
 		}
