@@ -35,7 +35,7 @@ namespace RocketSurvivor.Modules
             LanguageAPI.Add(prefix + "PRIMARY_ALT_DESCRIPTION", "<style=cIsUtility>Agile</style>. Fire a heat-seeking precision rocket for <style=cIsDamage>650% damage</style>. Deals <style=cIsDamage>+30% damage</style> against <style=cIsUtility>airborne targets</style>. Can hold up to 4.");
 
             LanguageAPI.Add(prefix + "SECONDARY_NAME", "Remote Detonator");
-            LanguageAPI.Add(prefix + "SECONDARY_DESCRIPTION", "Detonate <style=cIsDamage>all rockets</style>, increasing their <style=cIsDamage>damage</style> and <style=cIsDamage>blast radius</style> by <style=cIsDamage>30%</style>.");
+            LanguageAPI.Add(prefix + "SECONDARY_DESCRIPTION", "Detonate <style=cIsDamage>all rockets</style>, increasing their <style=cIsDamage>damage</style> and <style=cIsDamage>blast radius</style> by <style=cIsDamage>50%</style>.");
 
             LanguageAPI.Add(prefix + "UTILITY_NAME", "Concussion Blast");
             LanguageAPI.Add(prefix + "UTILITY_DESCRIPTION", "<style=cIsDamage>Stunning</style>. Toss a nonlethal grenade that <style=cIsUtility>pushes</style> enemies away and <style=cIsDamage>reduces their armor</style> by <style=cIsDamage>40</style> while <style=cIsUtility>airborne</style>.");
