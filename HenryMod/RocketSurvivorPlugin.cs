@@ -34,7 +34,7 @@ namespace RocketSurvivor
     {
         public const string MODUID = "com.EnforcerGang.RocketSurvivor";
         public const string MODNAME = "RocketSurvivor";
-        public const string MODVERSION = "0.3.3";
+        public const string MODVERSION = "0.3.4";
 
         // a prefix for name tokens to prevent conflicts- please capitalize all name tokens for convention
         public const string DEVELOPER_PREFIX = "MOFFEIN";
@@ -47,6 +47,7 @@ namespace RocketSurvivor
         public static bool msPaintIcons = true;
         public static bool pocketICBM = true;
         public static bool pocketICBMEnableKnockback = false;
+        public static bool samTracking = true;
 
         private void Awake()
         {
@@ -80,6 +81,7 @@ namespace RocketSurvivor
         {
             pocketICBM = Config.Bind("Gameplay", "Pocket ICBM Interaction", true, "Pocket ICBM works with Rocket's skills.").Value;
             pocketICBMEnableKnockback = Config.Bind("Gameplay", "Pocket ICBM Knockback", false, "Extra rockets from Pocket ICBM have knockback.").Value;
+            samTracking = Config.Bind("Primaries - HG4 SAM Launcher", "Enable Homing (Server-Side)", true, "SAM Rockets will home towards targets.").Value;
         }
 
         public static float GetICBMDamageMult(CharacterBody body)

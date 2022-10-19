@@ -130,21 +130,24 @@ namespace RocketSurvivor.Modules
             mdc.Add(DamageTypes.ScaleForceToMass);
             mdc.Add(DamageTypes.AirborneBonus);
 
-            rocketPrefab.AddComponent<ProjectileTargetComponent>();
-            ProjectileSteerTowardTarget pstt = rocketPrefab.AddComponent<ProjectileSteerTowardTarget>();
-            pstt.yAxisOnly = false;
-            pstt.rotationSpeed = 60f;   //90f
+            if (RocketSurvivorPlugin.samTracking)
+            {
+                rocketPrefab.AddComponent<ProjectileTargetComponent>();
+                ProjectileSteerTowardTarget pstt = rocketPrefab.AddComponent<ProjectileSteerTowardTarget>();
+                pstt.yAxisOnly = false;
+                pstt.rotationSpeed = 60f;   //90f
 
-            ProjectileDirectionalTargetFinder2 pdtf = rocketPrefab.AddComponent<ProjectileDirectionalTargetFinder2>();
-            pdtf.lookRange = 60f;   //25f
-            pdtf.lookCone = 12f;    //20f
-            pdtf.targetSearchInterval = 0.1f;
-            pdtf.onlySearchIfNoTarget = true;
-            pdtf.allowTargetLoss = false;
-            pdtf.testLoS = true;
-            pdtf.ignoreAir = false;
-            pdtf.flierAltitudeTolerance = Mathf.Infinity;
-            pdtf.SearchMode = BullseyeSearch.SortMode.Angle;
+                ProjectileDirectionalTargetFinder2 pdtf = rocketPrefab.AddComponent<ProjectileDirectionalTargetFinder2>();
+                pdtf.lookRange = 60f;   //25f
+                pdtf.lookCone = 12f;    //20f
+                pdtf.targetSearchInterval = 0.1f;
+                pdtf.onlySearchIfNoTarget = true;
+                pdtf.allowTargetLoss = false;
+                pdtf.testLoS = true;
+                pdtf.ignoreAir = false;
+                pdtf.flierAltitudeTolerance = Mathf.Infinity;
+                pdtf.SearchMode = BullseyeSearch.SortMode.Angle;
+            }
 
             AddProjectile(rocketPrefab);
 
