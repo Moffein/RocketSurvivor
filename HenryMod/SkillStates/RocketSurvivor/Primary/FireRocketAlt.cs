@@ -68,6 +68,7 @@ namespace EntityStates.RocketSurvivorSkills.Primary
 			return InterruptPriority.PrioritySkill;
 		}
 
+		public static GameObject explosionEffectPrefab;
 		public static string muzzleString = "MuzzleCenter";
 		public static string attackSoundString = "Play_Moffein_RocketSurvivor_M1_Alt_Shoot";
 		public static GameObject projectilePrefab;

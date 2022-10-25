@@ -210,7 +210,7 @@ namespace RocketSurvivor.Modules.Survivors
 
             GameObject airDetEffect = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Common/VFX/OmniExplosionVFX.prefab").WaitForCompletion().InstantiateClone("RocketSurvivorAirDetVFX", false);
             EffectComponent ec = airDetEffect.GetComponent<EffectComponent>();
-            ec.soundName = "Play_Moffein_RocketSurvivor_M1_Explode";  //Play_MULT_m2_main_explode
+            ec.soundName = "Play_Moffein_RocketSurvivor_R_Flak_Explode";  //Play_MULT_m2_main_explode
             Modules.Content.AddEffectDef(new EffectDef(airDetEffect));
             EntityStates.RocketSurvivorSkills.Secondary.AirDet.explosionEffectPrefab = airDetEffect;
             #endregion
@@ -328,6 +328,62 @@ namespace RocketSurvivor.Modules.Survivors
             Modules.Content.AddSkillDef(rearmScepterDef);
             RocketSurvivor.RocketSurvivorPlugin.SetupScepterClassic("RocketSurvivorBody", rearmScepterDef, rearmDef);
             RocketSurvivor.RocketSurvivorPlugin.SetupScepterStandalone("RocketSurvivorBody", rearmScepterDef, SkillSlot.Special, 0);
+
+            SkillDef flakDef = Modules.Skills.CreateSkillDef(new SkillDefInfo
+            {
+                skillName = "Flak",
+                skillNameToken = Rocket_Prefix + "SPECIAL_FLAK_NAME",
+                skillDescriptionToken = Rocket_Prefix + "SPECIAL_FLAK_DESCRIPTION",
+                skillIcon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texSkillSpecial" + (RocketSurvivorPlugin.msPaintIcons ? "_mspaint" : "")),
+                activationState = new EntityStates.SerializableEntityStateType(typeof(EntityStates.RocketSurvivorSkills.Special.FireFlak)),
+                activationStateMachineName = "Weapon",
+                baseMaxStock = 1,
+                baseRechargeInterval = 10f,
+                beginSkillCooldownOnSkillEnd = true,
+                canceledFromSprinting = false,
+                forceSprintDuringState = false,
+                fullRestockOnAssign = true,
+                interruptPriority = EntityStates.InterruptPriority.PrioritySkill,
+                resetCooldownTimerOnUse = false,
+                isCombatSkill = true,
+                mustKeyPress = false,
+                cancelSprintingOnActivation = true,
+                rechargeStock = 1,
+                requiredStock = 1,
+                stockToConsume = 1
+            });
+            (flakDef as ScriptableObject).name = "Flak";
+            Modules.Content.AddSkillDef(flakDef);
+            Modules.Skills.AddSpecialSkills(bodyPrefab, flakDef);
+
+
+            SkillDef flakScepterDef = Modules.Skills.CreateSkillDef(new SkillDefInfo
+            {
+                skillName = "FlakScepter",
+                skillNameToken = Rocket_Prefix + "SPECIAL_SCEPTER_NAME",
+                skillDescriptionToken = Rocket_Prefix + "SPECIAL_SCEPTER_DESCRIPTION",
+                skillIcon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texSkillSpecial_Scepter" + (RocketSurvivorPlugin.msPaintIcons ? "_mspaint" : "")),
+                activationState = new EntityStates.SerializableEntityStateType(typeof(EntityStates.RocketSurvivorSkills.Special.FireFlakScepter)),
+                activationStateMachineName = "Weapon",
+                baseMaxStock = flakDef.baseMaxStock,
+                baseRechargeInterval = flakDef.baseRechargeInterval,
+                beginSkillCooldownOnSkillEnd = flakDef.beginSkillCooldownOnSkillEnd,
+                canceledFromSprinting = flakDef.canceledFromSprinting,
+                forceSprintDuringState = flakDef.forceSprintDuringState,
+                fullRestockOnAssign = flakDef.fullRestockOnAssign,
+                interruptPriority = flakDef.interruptPriority,
+                resetCooldownTimerOnUse = flakDef.resetCooldownTimerOnUse,
+                isCombatSkill = flakDef.isCombatSkill,
+                mustKeyPress = flakDef.mustKeyPress,
+                cancelSprintingOnActivation = flakDef.cancelSprintingOnActivation,
+                rechargeStock = flakDef.rechargeStock,
+                requiredStock = flakDef.requiredStock,
+                stockToConsume = flakDef.stockToConsume
+            });
+            (flakScepterDef as ScriptableObject).name = "FlakScepter";
+            Modules.Content.AddSkillDef(flakScepterDef);
+            RocketSurvivor.RocketSurvivorPlugin.SetupScepterClassic("RocketSurvivorBody", flakScepterDef, flakDef);
+            RocketSurvivor.RocketSurvivorPlugin.SetupScepterStandalone("RocketSurvivorBody", flakScepterDef, SkillSlot.Special, 1);
             #endregion
         }
 

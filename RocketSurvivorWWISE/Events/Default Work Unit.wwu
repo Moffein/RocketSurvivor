@@ -135,6 +135,17 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Play_Moffein_RocketSurvivor_R_Flak_Explode" ID="{7B1062E7-EEA4-4560-8F1B-F72ABEC40453}">
+					<ChildrenList>
+						<Action Name="" ID="{A844B3B5-13CB-4E07-B317-1473A036E356}" ShortID="496712994">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="wWormExplosion" ID="{56940AD3-6896-489B-A76C-F86833715B6D}" WorkUnitID="{D7284510-35A1-4A16-B82C-F723456E5A7C}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

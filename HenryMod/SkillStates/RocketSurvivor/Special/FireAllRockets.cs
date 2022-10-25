@@ -112,9 +112,10 @@ namespace EntityStates.RocketSurvivorSkills.Special
                 base.StartAimMode(aimRay, 3f, false);
             }
 
-            if (FireRocket.effectPrefab)
+            GameObject effectPrefab = GetEffectPrefab();
+            if (effectPrefab)
             {
-                EffectManager.SimpleMuzzleFlash(GetEffectPrefab(), base.gameObject, GetMuzzleString(), false);
+                EffectManager.SimpleMuzzleFlash(effectPrefab, base.gameObject, GetMuzzleString(), false);
             }
             base.PlayAnimation("Gesture, Additive", "Shoot", "Shoot.playbackRate", 0.169f);
             Util.PlaySound(FireRocket.attackSoundString, base.gameObject);

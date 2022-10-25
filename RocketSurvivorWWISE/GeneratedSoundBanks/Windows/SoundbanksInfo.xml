@@ -16,7 +16,7 @@
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 		</SoundBank>
-		<SoundBank Id="1554628720" Language="SFX" Hash="2103438065">
+		<SoundBank Id="1554628720" Language="SFX" Hash="524469754">
 			<ObjectPath>\SoundBanks\Default Work Unit\RocketSoundbank</ObjectPath>
 			<ShortName>RocketSoundbank</ShortName>
 			<Path>RocketSoundbank.bnk</Path>
@@ -98,6 +98,14 @@
 						<File Id="594778408" Language="SFX">
 							<ShortName>shovel_swing.wav</ShortName>
 							<Path>SFX\shovel_swing_3F75BDB9.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="728023283" Name="Play_Moffein_RocketSurvivor_R_Flak_Explode" ObjectPath="\Events\Default Work Unit\Play_Moffein_RocketSurvivor_R_Flak_Explode">
+					<IncludedMemoryFiles>
+						<File Id="947424030" Language="SFX">
+							<ShortName>wWormExplosion.wav</ShortName>
+							<Path>SFX\wWormExplosion_3F75BDB9.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>

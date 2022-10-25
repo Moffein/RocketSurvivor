@@ -12,7 +12,6 @@ namespace RocketSurvivor.Components.Projectile
         private ProjectileController pc;
         private ProjectileDamage pd;
 
-        private Vector3 rocketVelocity;
         private HealthComponent healthComponent;
 
         public float force = 0f;

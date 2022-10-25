@@ -8,6 +8,7 @@
 						<ObjectRef Name="Play_Moffein_RocketSurvivor_R_Alt_Swing" ID="{7347EF6E-BDC6-41F6-8DFE-5293F2774F54}" WorkUnitID="{BD8F92EA-735A-4F3E-A5C9-A7984FDEEDAF}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_Moffein_RocketSurvivor_M2_Trigger" ID="{0C7F433E-4F20-41FB-90B8-539EFBA05FA9}" WorkUnitID="{BD8F92EA-735A-4F3E-A5C9-A7984FDEEDAF}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_Moffein_RocketSurvivor_M2_Explode" ID="{6BE5DC3A-8D79-43F0-B77F-40FF571AA2A3}" WorkUnitID="{BD8F92EA-735A-4F3E-A5C9-A7984FDEEDAF}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_Moffein_RocketSurvivor_R_Flak_Explode" ID="{7B1062E7-EEA4-4560-8F1B-F72ABEC40453}" WorkUnitID="{BD8F92EA-735A-4F3E-A5C9-A7984FDEEDAF}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_Moffein_RocketSurvivor_M1_Explode" ID="{0E25958B-45EC-46BC-BE44-0660C9550775}" WorkUnitID="{BD8F92EA-735A-4F3E-A5C9-A7984FDEEDAF}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_Moffein_RocketSurvivor_M1_Reload" ID="{F31CE634-F920-46ED-8E90-C8D05DD3CD5D}" WorkUnitID="{BD8F92EA-735A-4F3E-A5C9-A7984FDEEDAF}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_Moffein_RocketSurvivor_R_Alt_Hit" ID="{F064D73D-F8A8-4749-A2B0-425B9DEAC58C}" WorkUnitID="{BD8F92EA-735A-4F3E-A5C9-A7984FDEEDAF}" Origin="Manual" Filter="7"/>

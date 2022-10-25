@@ -451,7 +451,7 @@
 												<Property Name="3DSpatialization" Type="int16" Value="2"/>
 												<Property Name="Volume" Type="Real64">
 													<ValueList>
-														<Value>6</Value>
+														<Value>6.5</Value>
 													</ValueList>
 												</Property>
 											</PropertyList>
@@ -477,6 +477,35 @@
 											</ChildrenList>
 											<ActiveSourceList>
 												<ActiveSource Name="Reflex_RL_Explo" ID="{28791120-2408-42B0-98F4-5D7C680E79AC}" Platform="Linked"/>
+											</ActiveSourceList>
+										</Sound>
+										<Sound Name="wWormExplosion" ID="{56940AD3-6896-489B-A76C-F86833715B6D}" ShortID="734719250">
+											<PropertyList>
+												<Property Name="Volume" Type="Real64">
+													<ValueList>
+														<Value>0.5</Value>
+													</ValueList>
+												</Property>
+											</PropertyList>
+											<ReferenceList>
+												<Reference Name="Conversion">
+													<ObjectRef Name="Default Conversion Settings" ID="{6D1B890C-9826-4384-BF07-C15223E9FB56}" WorkUnitID="{D122DBC8-4810-4E3C-A6E2-8B6FAB862739}"/>
+												</Reference>
+												<Reference Name="OutputBus">
+													<ObjectRef Name="Master Audio Bus" ID="{1514A4D8-1DA6-412A-A17E-75CA0C2149F3}" WorkUnitID="{3B723698-973F-48B8-90F6-9F62DA80C7D5}"/>
+												</Reference>
+											</ReferenceList>
+											<ChildrenList>
+												<AudioFileSource Name="wWormExplosion" ID="{73F363CE-87FA-4716-9D19-115E9898ABCA}">
+													<Language>SFX</Language>
+													<AudioFile>wWormExplosion.wav</AudioFile>
+													<MediaIDList>
+														<MediaID ID="947424030"/>
+													</MediaIDList>
+												</AudioFileSource>
+											</ChildrenList>
+											<ActiveSourceList>
+												<ActiveSource Name="wWormExplosion" ID="{73F363CE-87FA-4716-9D19-115E9898ABCA}" Platform="Linked"/>
 											</ActiveSourceList>
 										</Sound>
 									</ChildrenList>

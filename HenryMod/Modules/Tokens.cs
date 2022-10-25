@@ -49,6 +49,12 @@ namespace RocketSurvivor.Modules
 
             LanguageAPI.Add(prefix + "SPECIAL_SCEPTER_NAME", "Rocketstorm");
             LanguageAPI.Add(prefix + "SPECIAL_SCEPTER_DESCRIPTION", "Rapidly <style=cIsDamage>fire 8 rockets</style>, then <style=cIsUtility>reload your weapon</style>.");
+
+            LanguageAPI.Add(prefix + "SPECIAL_FLAK_NAME", "Clusterbomb");
+            LanguageAPI.Add(prefix + "SPECIAL_FLAK_DESCRIPTION", "Fire a cluster rocket for <style=cIsDamage>900% damage</style>. At mid-range, it will split into multiple bombs for <style=cIsDamage>5x240% damage</style>.");
+
+            LanguageAPI.Add(prefix + "SPECIAL_FLAK_SCEPTER_NAME", "Clustercannon");
+            LanguageAPI.Add(prefix + "SPECIAL_FLAK_SCEPTER_DESCRIPTION", "Fire 2 a cluster rockets for <style=cIsDamage>1000% damage</style> each. At mid-range, they each will split into multiple bombs for <style=cIsDamage>5x300% damage</style>.");
         }
     }
 }

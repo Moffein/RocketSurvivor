@@ -25,7 +25,7 @@ namespace EntityStates.RocketSurvivorSkills.Secondary
         {
             base.OnEnter();
 
-            if (base.isAuthority)
+            if (NetworkServer.active)
             {
                 RocketTrackerComponent rtc = base.GetComponent<RocketTrackerComponent>();
                 if (rtc)
