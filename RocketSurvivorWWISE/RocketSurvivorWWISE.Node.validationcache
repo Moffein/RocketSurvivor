@@ -6,9 +6,9 @@
 	<ValidationCacheItem File="C:\Users\Node\RoR2 Mods\RocketSurvivor\RocketSurvivorWWISE\Switches\Default Work Unit.wwu" DateLow="1660592717" DateHigh="0"/>
 	<ValidationCacheItem File="C:\Users\Node\RoR2 Mods\RocketSurvivor\RocketSurvivorWWISE\States\Default Work Unit.wwu" DateLow="1660592717" DateHigh="0"/>
 	<ValidationCacheItem File="C:\Users\Node\RoR2 Mods\RocketSurvivor\RocketSurvivorWWISE\Soundcaster Sessions\Default Work Unit.wwu" DateLow="1660592717" DateHigh="0"/>
-	<ValidationCacheItem File="C:\Users\Node\RoR2 Mods\RocketSurvivor\RocketSurvivorWWISE\SoundBanks\Default Work Unit.wwu" DateLow="1660614294" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\Node\RoR2 Mods\RocketSurvivor\RocketSurvivorWWISE\SoundBanks\Default Work Unit.wwu" DateLow="1666673351" DateHigh="0"/>
 	<ValidationCacheItem File="C:\Users\Node\RoR2 Mods\RocketSurvivor\RocketSurvivorWWISE\RocketSurvivorWWISE.wproj" DateLow="1660592717" DateHigh="0"/>
-	<ValidationCacheItem File="C:\Users\Node\RoR2 Mods\RocketSurvivor\RocketSurvivorWWISE\RocketSurvivorWWISE.Node.wsettings" DateLow="1665702100" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\Node\RoR2 Mods\RocketSurvivor\RocketSurvivorWWISE\RocketSurvivorWWISE.Node.wsettings" DateLow="1666674973" DateHigh="0"/>
 	<ValidationCacheItem File="C:\Users\Node\RoR2 Mods\RocketSurvivor\RocketSurvivorWWISE\Queries\Factory Queries.wwu" DateLow="1646551843" DateHigh="0"/>
 	<ValidationCacheItem File="C:\Users\Node\RoR2 Mods\RocketSurvivor\RocketSurvivorWWISE\Queries\Default Work Unit.wwu" DateLow="1660592717" DateHigh="0"/>
 	<ValidationCacheItem File="C:\Users\Node\RoR2 Mods\RocketSurvivor\RocketSurvivorWWISE\Presets\Factory Spatial Audio.wwu" DateLow="1646551843" DateHigh="0"/>
@@ -21,7 +21,7 @@
 	<ValidationCacheItem File="C:\Users\Node\RoR2 Mods\RocketSurvivor\RocketSurvivorWWISE\Game Parameters\Factory SoundSeed Air Game Syncs.wwu" DateLow="1646551864" DateHigh="0"/>
 	<ValidationCacheItem File="C:\Users\Node\RoR2 Mods\RocketSurvivor\RocketSurvivorWWISE\Game Parameters\Factory Motion.wwu" DateLow="1646551864" DateHigh="0"/>
 	<ValidationCacheItem File="C:\Users\Node\RoR2 Mods\RocketSurvivor\RocketSurvivorWWISE\Game Parameters\Default Work Unit.wwu" DateLow="1660592918" DateHigh="0"/>
-	<ValidationCacheItem File="C:\Users\Node\RoR2 Mods\RocketSurvivor\RocketSurvivorWWISE\Events\Default Work Unit.wwu" DateLow="1664692678" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\Node\RoR2 Mods\RocketSurvivor\RocketSurvivorWWISE\Events\Default Work Unit.wwu" DateLow="1666673345" DateHigh="0"/>
 	<ValidationCacheItem File="C:\Users\Node\RoR2 Mods\RocketSurvivor\RocketSurvivorWWISE\Effects\Factory Reflect.wwu" DateLow="1646551863" DateHigh="0"/>
 	<ValidationCacheItem File="C:\Users\Node\RoR2 Mods\RocketSurvivor\RocketSurvivorWWISE\Effects\Factory McDSP Effects.wwu" DateLow="1646551863" DateHigh="0"/>
 	<ValidationCacheItem File="C:\Users\Node\RoR2 Mods\RocketSurvivor\RocketSurvivorWWISE\Effects\Factory Mastering Suite.wwu" DateLow="1646551865" DateHigh="0"/>
@@ -44,5 +44,5 @@
 	<ValidationCacheItem File="C:\Users\Node\RoR2 Mods\RocketSurvivor\RocketSurvivorWWISE\Actor-Mixer Hierarchy\Factory Synth One.wwu" DateLow="1646551843" DateHigh="0"/>
 	<ValidationCacheItem File="C:\Users\Node\RoR2 Mods\RocketSurvivor\RocketSurvivorWWISE\Actor-Mixer Hierarchy\Factory SoundSeed Air Objects.wwu" DateLow="1646551864" DateHigh="0"/>
 	<ValidationCacheItem File="C:\Users\Node\RoR2 Mods\RocketSurvivor\RocketSurvivorWWISE\Actor-Mixer Hierarchy\Factory Motion.wwu" DateLow="1660592918" DateHigh="0"/>
-	<ValidationCacheItem File="C:\Users\Node\RoR2 Mods\RocketSurvivor\RocketSurvivorWWISE\Actor-Mixer Hierarchy\Default Work Unit.wwu" DateLow="1664692678" DateHigh="0"/>
+	<ValidationCacheItem File="C:\Users\Node\RoR2 Mods\RocketSurvivor\RocketSurvivorWWISE\Actor-Mixer Hierarchy\Default Work Unit.wwu" DateLow="1666673328" DateHigh="0"/>
 </ValidationCache>

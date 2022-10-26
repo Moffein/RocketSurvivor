@@ -354,7 +354,7 @@ namespace RocketSurvivor.Modules.Survivors
             });
             (flakDef as ScriptableObject).name = "Flak";
             Modules.Content.AddSkillDef(flakDef);
-            Modules.Skills.AddSpecialSkills(bodyPrefab, flakDef);
+            //Modules.Skills.AddSpecialSkills(bodyPrefab, flakDef);
 
 
             SkillDef flakScepterDef = Modules.Skills.CreateSkillDef(new SkillDefInfo
@@ -382,8 +382,8 @@ namespace RocketSurvivor.Modules.Survivors
             });
             (flakScepterDef as ScriptableObject).name = "FlakScepter";
             Modules.Content.AddSkillDef(flakScepterDef);
-            RocketSurvivor.RocketSurvivorPlugin.SetupScepterClassic("RocketSurvivorBody", flakScepterDef, flakDef);
-            RocketSurvivor.RocketSurvivorPlugin.SetupScepterStandalone("RocketSurvivorBody", flakScepterDef, SkillSlot.Special, 1);
+            //RocketSurvivor.RocketSurvivorPlugin.SetupScepterClassic("RocketSurvivorBody", flakScepterDef, flakDef);
+            //RocketSurvivor.RocketSurvivorPlugin.SetupScepterStandalone("RocketSurvivorBody", flakScepterDef, SkillSlot.Special, 1);
             #endregion
         }
 

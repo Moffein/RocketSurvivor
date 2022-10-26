@@ -168,6 +168,12 @@ namespace RocketSurvivor.Components
         [Command]
         public void CmdDetonateRocket()
         {
+            ServerDetonateRocket();
+        }
+
+        //Is this redundant?
+        public void ServerDetonateRocket()
+        {
             if (NetworkServer.active)
             {
                 bool success = DetonateRocket();
