@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 2770067968
+CRC: 3109826173
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: b2d399d7a9ca9ccd8d434e85ea01245a
+    Hash: 102f450ea4a6baa74bddfa16cd920f70
   TypeTreeHash:
     serializedVersion: 2
-    Hash: 2bc06a99e32e5000812990bcc3a82d48
+    Hash: b94259b1f9704646133d7ae03425307e
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -53,6 +53,10 @@ ClassTypes:
   Script: {instanceID: 0}
 - Class: 144
   Script: {instanceID: 0}
+- Class: 198
+  Script: {instanceID: 0}
+- Class: 199
+  Script: {instanceID: 0}
 - Class: 213
   Script: {instanceID: 0}
 - Class: 319
@@ -71,6 +75,7 @@ Assets:
 - Assets/RocketBundle/mdlRocket.prefab
 - Assets/RocketBundle/textures/TexShovelEmissive.png
 - Assets/RocketBundle/icons/texSkillUtility_Conc.png
+- Assets/RocketBundle/Particles/texRing.png
 - Assets/RocketBundle/Animation/animRocket.controller
 - Assets/RocketBundle/RocketDisplay.prefab
 - Assets/RocketBundle/icons/texRocketSkinDefault.png
@@ -94,6 +99,7 @@ Assets:
 - Assets/RocketBundle/textures/TexRocketBackpack.png
 - Assets/RocketBundle/icons/texSkillPassive_mspaint.png
 - Assets/RocketBundle/textures/TexRocketEmissive.png
+- Assets/RocketBundle/Particles/matRing.mat
 - Assets/RocketBundle/textures/TexRocket.png
 - Assets/RocketBundle/textures/TexRocketProjectile.png
 Dependencies: []

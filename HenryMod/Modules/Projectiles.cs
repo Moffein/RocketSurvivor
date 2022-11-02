@@ -174,7 +174,7 @@ namespace RocketSurvivor.Modules
             InitializeImpactExplosion(pie);
 
             pie.blastDamageCoefficient = 1f;
-            pie.blastRadius = 18f;
+            pie.blastRadius = 12f;
             pie.destroyOnEnemy = false;
             pie.destroyOnWorld = false;
             pie.lifetime = 9999999f;
@@ -215,7 +215,8 @@ namespace RocketSurvivor.Modules
 
             GameObject c4Ghost = Modules.Assets.mainAssetBundle.LoadAsset<GameObject>("mdlC4").InstantiateClone("RocketSurvivorC4Ghost", false);
             c4Ghost.layer = LayerIndex.noCollision.intVal;
-            Modules.Assets.ConvertAllRenderersToHopooShader(c4Ghost);
+            //Modules.Assets.ConvertAllRenderersToHopooShader(c4Ghost);
+            //Breaks ring
             c4Ghost.AddComponent<ProjectileGhostController>();
             pc.ghostPrefab = c4Ghost;
 

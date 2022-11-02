@@ -47,15 +47,14 @@ namespace RocketSurvivor
                         float magnitude = damageInfo.force.magnitude;
                         if (damageInfo.inflictor && damageInfo.inflictor.transform)
                         {
+                            //RoR2 force calculations can't be trusted because it's calculated based on hitbox instead of coreposition
                             damageInfo.force = (cb.corePosition - damageInfo.inflictor.transform.position).normalized * magnitude;
                         }
 
                         mass = cb.characterMotor.mass;
                         if (!cb.characterMotor.isFlying)
                         {
-
-                            //RoR2 force calculations can't be trusted because it's calculated based on hitbox instead of coreposition
-                            if (damageInfo.force.y < 0f) damageInfo.force.y = 0f;
+                            //if (damageInfo.force.y < 0f) damageInfo.force.y = 0f;
 
                             //Negate falling speed
                             //damageInfo.force.y += magnitude;
@@ -71,6 +70,7 @@ namespace RocketSurvivor
                     }
 
                     float scalingFactor = Mathf.Max(1f, (mass / 100f) * ((self.body.isChampion && isGrounded) ? 0.3f : 1f));
+                    scalingFactor = Mathf.Min(scalingFactor, 2.5f); //2.5f is Loader limit
 
                     damageInfo.force *= scalingFactor;
                 }
@@ -97,7 +97,7 @@ namespace RocketSurvivor
                             //Reset Y force so that it overrides ScaleForceToMass
                             damageInfo.force.y = 0f;
 
-                            direction *= Mathf.Min(4f, Mathf.Max(rb.mass / 100f, 1f));  //Greater Wisp 300f, SCU 1000f
+                            direction *= Mathf.Min(2.5f, Mathf.Max(rb.mass / 100f, 1f));  //Greater Wisp 300f, SCU 1000f, loader limit is 250f
                             damageInfo.force += 1600f * direction;
                         }
                     }

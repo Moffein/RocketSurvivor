@@ -37,8 +37,8 @@ namespace RocketSurvivor.Modules
             LanguageAPI.Add(prefix + "SECONDARY_NAME", "Remote Detonator");
             LanguageAPI.Add(prefix + "SECONDARY_DESCRIPTION", "Detonate <style=cIsDamage>all explosives</style>. Detonated <style=cIsDamage>rockets</style> gain <style=cIsDamage>50%</style> extra <style=cIsDamage>damage</style> and <style=cIsDamage>blast radius</style>.");
 
-            LanguageAPI.Add(prefix + "UTILITY_NAME", "Demolition Charge");
-            LanguageAPI.Add(prefix + "UTILITY_DESCRIPTION", "<style=cIsDamage>Stunning</style>. Place a demolition charge. Use <style=cIsDamage>Remote Detonator</style> to detonate it for <style=cIsDamage>1000% damage</style>.");
+            LanguageAPI.Add(prefix + "UTILITY_NAME", "Nitro Charge");
+            LanguageAPI.Add(prefix + "UTILITY_DESCRIPTION", "<style=cIsDamage>Stunning</style>. Place an explosive charge. Use <style=cIsDamage>Remote Detonator</style> to detonate it for <style=cIsDamage>1000% damage</style>.");
 
             //Unlock Condition: Kill 5 enemies in a single rocket jump.
             LanguageAPI.Add(prefix + "UTILITY_ALT_NAME", "Bombing Run");
