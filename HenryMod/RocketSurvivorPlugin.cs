@@ -44,7 +44,7 @@ namespace RocketSurvivor
         public static bool scepterStandaloneLoaded = false;
         public static bool scepterClassicLoaded = false;
 
-        public static bool msPaintIcons = true;
+        public static bool msPaintIcons = false;
         public static bool pocketICBM = true;
         public static bool pocketICBMEnableKnockback = false;
         public static bool samTracking = true;
@@ -79,6 +79,7 @@ namespace RocketSurvivor
 
         private void ReadConfig()
         {
+            msPaintIcons = Config.Bind("General", "Use MSPaint icons", false, "Use the original MSPaint icons from the mod's release.").Value;
             pocketICBM = Config.Bind("Gameplay", "Pocket ICBM Interaction", true, "Pocket ICBM works with Rocket's skills.").Value;
             pocketICBMEnableKnockback = Config.Bind("Gameplay", "Pocket ICBM Knockback", false, "Extra rockets from Pocket ICBM have knockback.").Value;
             samTracking = Config.Bind("Primaries - HG4 SAM Launcher", "Enable Homing (Server-Side)", true, "SAM Rockets will home towards targets.").Value;

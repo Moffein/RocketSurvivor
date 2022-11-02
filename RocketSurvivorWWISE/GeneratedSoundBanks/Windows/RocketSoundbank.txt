@@ -1,4 +1,5 @@
 Event	ID	Name			Wwise Object Path	Notes
+	628393261	Play_Moffein_RocketSurvivor_C4_Land			\Default Work Unit\Play_Moffein_RocketSurvivor_C4_Land	
 	728023283	Play_Moffein_RocketSurvivor_R_Flak_Explode			\Default Work Unit\Play_Moffein_RocketSurvivor_R_Flak_Explode	
 	802553295	Play_Moffein_RocketSurvivor_R_Alt_Swing			\Default Work Unit\Play_Moffein_RocketSurvivor_R_Alt_Swing	
 	879535644	Play_Moffein_RocketSurvivor_M1_Shoot			\Default Work Unit\Play_Moffein_RocketSurvivor_M1_Shoot	
@@ -26,6 +27,7 @@ In Memory Audio	ID	Name	Audio source file		Wwise Object Path	Notes	Data Size
 	442034263	bottle_hit_flesh1	C:\Users\Node\RoR2 Mods\RocketSurvivor\RocketSurvivorWWISE\.cache\Windows\SFX\bottle_hit_flesh1_3F75BDB9.wem		\Actor-Mixer Hierarchy\Default Work Unit\Master Mixer\SFX Mixer\Minor Sounds\bottle_hit_flesh1		4862
 	557845177	DB_Jav_FireToggle	C:\Users\Node\RoR2 Mods\RocketSurvivor\RocketSurvivorWWISE\.cache\Windows\SFX\DB_Jav_FireToggle_3F75BDB9.wem		\Actor-Mixer Hierarchy\Default Work Unit\Master Mixer\SFX Mixer\Minor Sounds\DB_Jav_FireToggle		9259
 	560277754	hl2_wpn_denyselect	C:\Users\Node\RoR2 Mods\RocketSurvivor\RocketSurvivorWWISE\.cache\Windows\SFX\hl2_wpn_denyselect_3F75BDB9.wem		\Actor-Mixer Hierarchy\Default Work Unit\Master Mixer\SFX Mixer\Minor Sounds\hl2_wpn_denyselect		1764
+	588972692	breach_land_01	C:\Users\Node\RoR2 Mods\RocketSurvivor\RocketSurvivorWWISE\.cache\Windows\SFX\breach_land_01_3F75BDB9.wem		\Actor-Mixer Hierarchy\Default Work Unit\Master Mixer\SFX Mixer\Minor Sounds\breach_land_01		6776
 	594778408	shovel_swing	C:\Users\Node\RoR2 Mods\RocketSurvivor\RocketSurvivorWWISE\.cache\Windows\SFX\shovel_swing_3F75BDB9.wem		\Actor-Mixer Hierarchy\Default Work Unit\Master Mixer\SFX Mixer\Minor Sounds\shovel_swing		12629
 	730758600	Reflex_RL	C:\Users\Node\RoR2 Mods\RocketSurvivor\RocketSurvivorWWISE\.cache\Windows\SFX\Reflex_RL_3F75BDB9.wem		\Actor-Mixer Hierarchy\Default Work Unit\Master Mixer\SFX Mixer\Major Sounds\Reflex_RL		12483
 	947424030	wWormExplosion	C:\Users\Node\RoR2 Mods\RocketSurvivor\RocketSurvivorWWISE\.cache\Windows\SFX\wWormExplosion_3F75BDB9.wem		\Actor-Mixer Hierarchy\Default Work Unit\Master Mixer\SFX Mixer\Major Sounds\wWormExplosion		49415

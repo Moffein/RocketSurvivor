@@ -12,7 +12,6 @@ namespace RocketSurvivor
         public static DamageAPI.ModdedDamageType AirborneBonus;
         public static DamageAPI.ModdedDamageType MarketGarden;
         public static DamageAPI.ModdedDamageType SlamDunk;
-        public static DamageAPI.ModdedDamageType MarkForAirshot;
 
         public static void Initialize()
         {
@@ -22,7 +21,6 @@ namespace RocketSurvivor
             AirborneBonus = DamageAPI.ReserveDamageType();
             MarketGarden = DamageAPI.ReserveDamageType();
             SlamDunk = DamageAPI.ReserveDamageType();
-            MarkForAirshot = DamageAPI.ReserveDamageType();
 
             On.RoR2.HealthComponent.TakeDamage += HealthComponent_TakeDamage;
 
@@ -35,21 +33,7 @@ namespace RocketSurvivor
 
             if (cb)
             {
-                bool playAirshotSound = cb.HasBuff(Buffs.AirshotVulnerableDebuff);
-                if (damageInfo.HasModdedDamageType(DamageTypes.MarkForAirshot)) //Refresh airshot buff when juggling.
-                {
-                    //Only add the component if enemy does not have the buff
-                    if (!cb.HasBuff(Buffs.AirshotVulnerableDebuff))
-                    {
-                        LaunchedEnemyBuffApplier le = self.gameObject.GetComponent<LaunchedEnemyBuffApplier>(); //Prevent multiple
-                        if (!le)
-                        {
-                            le = self.gameObject.AddComponent<LaunchedEnemyBuffApplier>();
-                            le.characterMotor = self.body.characterMotor;
-                            le.body = self.body;
-                        }
-                    }
-                }
+                bool playAirshotSound = false;
 
                 if (damageInfo.HasModdedDamageType(DamageTypes.ScaleForceToMass))
                 {

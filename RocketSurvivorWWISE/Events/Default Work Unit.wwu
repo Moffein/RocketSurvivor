@@ -146,6 +146,17 @@
 						</Action>
 					</ChildrenList>
 				</Event>
+				<Event Name="Play_Moffein_RocketSurvivor_C4_Land" ID="{4E930C9B-21AD-40D2-9CE9-F5535A3E0F2F}">
+					<ChildrenList>
+						<Action Name="" ID="{12CBE51D-92B1-47C0-9B7C-C817BC7E8819}" ShortID="93124062">
+							<ReferenceList>
+								<Reference Name="Target">
+									<ObjectRef Name="breach_land_01" ID="{E2370899-A333-405A-A38C-F60EEA47966C}" WorkUnitID="{D7284510-35A1-4A16-B82C-F723456E5A7C}"/>
+								</Reference>
+							</ReferenceList>
+						</Action>
+					</ChildrenList>
+				</Event>
 			</ChildrenList>
 		</WorkUnit>
 	</Events>

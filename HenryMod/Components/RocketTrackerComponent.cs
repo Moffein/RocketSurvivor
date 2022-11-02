@@ -12,18 +12,20 @@ namespace RocketSurvivor.Components
 {
     public class RocketTrackerComponent : NetworkBehaviour
     {
-        private List<GameObject> rocketList;
+        private List<RocketInfo> rocketList;
+        private List<RocketInfo> c4List;
         private SkillLocator skillLocator;
 
         public static NetworkSoundEventDef detonateSuccess;
         public static NetworkSoundEventDef detonateFail;
 
         [SyncVar]
-         private bool _rocketAvailable = false;
+        private bool _rocketAvailable = false;
 
         public void Awake()
         {
-            rocketList = new List<GameObject>();
+            c4List = new List<RocketInfo>();
+            rocketList = new List<RocketInfo>();
             skillLocator = base.GetComponent<SkillLocator>();
         }
 
@@ -41,8 +43,9 @@ namespace RocketSurvivor.Components
             if (!NetworkServer.active) return;
             bool newRocketAvailable = false;
 
-            rocketList.RemoveAll(item => item == null);
-            if (rocketList.Count > 0)
+            c4List.RemoveAll(item => item.gameObject == null);
+            rocketList.RemoveAll(item => item.gameObject == null);
+            if ((rocketList.Count + c4List.Count) > 0)
             {
                 newRocketAvailable = true;
             }
@@ -55,9 +58,113 @@ namespace RocketSurvivor.Components
             return _rocketAvailable;
         }
 
-        public void AddRocket(GameObject rocket)
+        public void AddRocket(GameObject rocket, bool applyAirDetBuff, bool isC4 = false)
         {
-            rocketList.Add(rocket);
+            RocketInfo info = new RocketInfo(rocket, applyAirDetBuff, isC4);
+            if (info.isC4)
+            {
+                int c4InList = c4List.Count;
+                int maxC4 = 1;
+                if (this.skillLocator && this.skillLocator.utility)
+                {
+                    maxC4 = Mathf.Max(maxC4, this.skillLocator.utility.maxStock);
+                }
+                if (c4InList >= maxC4)
+                {
+                    RocketInfo oldestC4 = c4List.FirstOrDefault<RocketInfo>();
+                    c4List.Remove(oldestC4);
+                    DetonateRocketInfo(oldestC4);
+                }
+                c4List.Add(info);
+            }
+            else
+            {
+                rocketList.Add(info);
+            }
+        }
+
+        private bool DetonateRocketInfo(RocketInfo info)
+        {
+            bool detonatedSuccessfully = false;
+            GameObject toDetonate = info.gameObject;
+            ProjectileDamage pd = toDetonate.GetComponent<ProjectileDamage>();
+            ProjectileController pc = toDetonate.GetComponent<ProjectileController>();
+            ProjectileImpactExplosion pie = toDetonate.GetComponent<ProjectileImpactExplosion>();
+            BlastJumpComponent bjc = toDetonate.GetComponent<BlastJumpComponent>();
+            TeamFilter tf = toDetonate.GetComponent<TeamFilter>();
+
+            if (pc && pie)
+            {
+                //Handle self-knockback first
+                if (bjc)
+                {
+                    if (info.applyAirDetBonus)
+                    {
+                        bjc.aoe *= EntityStates.RocketSurvivorSkills.Secondary.AirDet.radiusMult;
+                        bjc.force *= EntityStates.RocketSurvivorSkills.Secondary.AirDet.forceMult;
+                    }
+                    bjc.BlastJump();
+                }
+
+                //Handle blastattack second
+                if (tf && pd && pc.owner)
+                {
+                    BlastAttack ba = new BlastAttack
+                    {
+                        attacker = pc.owner,
+                        attackerFiltering = AttackerFiltering.NeverHitSelf,
+                        baseDamage = pd.damage * pie.blastDamageCoefficient,
+                        baseForce = pd.force,
+                        bonusForce = pie.bonusBlastForce,
+                        canRejectForce = pie.canRejectForce,
+                        crit = pd.crit,
+                        damageColorIndex = (!info.isC4 && pd.damageColorIndex == DamageColorIndex.Default) ? DamageColorIndex.WeakPoint : pd.damageColorIndex,
+                        damageType = pd.damageType,
+                        falloffModel = BlastAttack.FalloffModel.None,
+                        inflictor = pc.owner,
+                        position = toDetonate.transform.position,
+                        procChainMask = default,
+                        procCoefficient = pie.blastProcCoefficient,
+                        radius = pie.blastRadius,
+                        teamIndex = tf.teamIndex
+                    };
+
+                    if (info.applyAirDetBonus)
+                    {
+                        ba.baseForce *= EntityStates.RocketSurvivorSkills.Secondary.AirDet.forceMult;
+                        ba.bonusForce *= EntityStates.RocketSurvivorSkills.Secondary.AirDet.forceMult;
+                        ba.baseDamage *= EntityStates.RocketSurvivorSkills.Secondary.AirDet.damageMult;
+                        ba.radius = Mathf.Max(ba.radius * EntityStates.RocketSurvivorSkills.Secondary.AirDet.radiusMult, EntityStates.RocketSurvivorSkills.Secondary.AirDet.minRadius);
+                    }
+
+                    DamageAPI.ModdedDamageTypeHolderComponent mdc = toDetonate.GetComponent<DamageAPI.ModdedDamageTypeHolderComponent>();
+                    if (mdc)
+                    {
+                        if (mdc.Has(DamageTypes.ScaleForceToMass)) ba.AddModdedDamageType(DamageTypes.ScaleForceToMass);
+                        if (mdc.Has(DamageTypes.AirborneBonus)) ba.AddModdedDamageType(DamageTypes.AirborneBonus);
+                    }
+
+                    GameObject effectPrefab = EntityStates.RocketSurvivorSkills.Secondary.AirDet.explosionEffectPrefab;
+                    if (pd.damageType.HasFlag(DamageType.Silent) && pd.damageType.HasFlag(DamageType.Stun1s))
+                    {
+                        effectPrefab = EntityStates.RocketSurvivorSkills.Secondary.AirDet.concExplosionEffectPrefab;
+                    }
+
+                    EffectManager.SpawnEffect(effectPrefab, new EffectData { origin = toDetonate.transform.position, scale = ba.radius }, true);
+
+                    FlakShotgunComponent fsc = toDetonate.GetComponent<FlakShotgunComponent>();
+                    if (fsc)
+                    {
+                        fsc.FireFlakProjectiles(EntityStates.RocketSurvivorSkills.Secondary.AirDet.damageMult);
+                        effectPrefab = EntityStates.RocketSurvivorSkills.Special.FireFlak.explosionEffectPrefab;
+                    }
+
+                    ba.Fire();
+                    detonatedSuccessfully = true;
+                }
+            }
+            Destroy(toDetonate);
+            return detonatedSuccessfully;
         }
 
         [Server]
@@ -68,78 +175,18 @@ namespace RocketSurvivor.Components
             {
                 if (this.IsRocketAvailable())
                 {
-                    foreach (GameObject toDetonate in rocketList)
+                    foreach (RocketInfo info in rocketList)
                     {
-                        ProjectileDamage pd = toDetonate.GetComponent<ProjectileDamage>();
-                        ProjectileController pc = toDetonate.GetComponent<ProjectileController>();
-                        ProjectileImpactExplosion pie = toDetonate.GetComponent<ProjectileImpactExplosion>();
-                        BlastJumpComponent bjc = toDetonate.GetComponent<BlastJumpComponent>();
-                        TeamFilter tf = toDetonate.GetComponent<TeamFilter>();
+                        bool detonate = DetonateRocketInfo(info);
+                        detonatedSuccessfully = detonatedSuccessfully || detonate;
+                    }
 
-                        if (pc && pie)
-                        {
-                            //Handle self-knockback first
-                            if (bjc)
-                            {
-                                bjc.aoe *= EntityStates.RocketSurvivorSkills.Secondary.AirDet.radiusMult;
-                                bjc.force *= EntityStates.RocketSurvivorSkills.Secondary.AirDet.forceMult;
-                                bjc.BlastJump();
-                            }
-
-                            //Handle blastattack second
-                            if (tf && pd && pc.owner)
-                            {
-                                BlastAttack ba = new BlastAttack
-                                {
-                                    attacker = pc.owner,
-                                    attackerFiltering = AttackerFiltering.NeverHitSelf,
-                                    baseDamage = pd.damage * pie.blastDamageCoefficient * EntityStates.RocketSurvivorSkills.Secondary.AirDet.damageMult,
-                                    baseForce = pd.force * EntityStates.RocketSurvivorSkills.Secondary.AirDet.forceMult,
-                                    bonusForce = pie.bonusBlastForce * EntityStates.RocketSurvivorSkills.Secondary.AirDet.forceMult,
-                                    canRejectForce = pie.canRejectForce,
-                                    crit = pd.crit,
-                                    damageColorIndex = pd.damageColorIndex,
-                                    damageType = pd.damageType,
-                                    falloffModel = BlastAttack.FalloffModel.None,
-                                    inflictor = pc.owner,
-                                    position = toDetonate.transform.position,
-                                    procChainMask = default,
-                                    procCoefficient = pie.blastProcCoefficient,
-                                    radius = Mathf.Max(pie.blastRadius * EntityStates.RocketSurvivorSkills.Secondary.AirDet.radiusMult, EntityStates.RocketSurvivorSkills.Secondary.AirDet.minRadius),
-                                    teamIndex = tf.teamIndex
-                                };
-
-                                DamageAPI.ModdedDamageTypeHolderComponent mdc = toDetonate.GetComponent<DamageAPI.ModdedDamageTypeHolderComponent>();
-                                if (mdc)
-                                {
-                                    if (mdc.Has(DamageTypes.ScaleForceToMass)) ba.AddModdedDamageType(DamageTypes.ScaleForceToMass);
-                                    if (mdc.Has(DamageTypes.AirborneBonus)) ba.AddModdedDamageType(DamageTypes.AirborneBonus);
-                                    if (mdc.Has(DamageTypes.MarkForAirshot)) ba.AddModdedDamageType(DamageTypes.MarkForAirshot);
-                                }
-
-                                GameObject effectPrefab = EntityStates.RocketSurvivorSkills.Secondary.AirDet.explosionEffectPrefab;
-                                if (pd.damageType.HasFlag(DamageType.Silent) && pd.damageType.HasFlag(DamageType.Stun1s))
-                                {
-                                    effectPrefab = EntityStates.RocketSurvivorSkills.Secondary.AirDet.concExplosionEffectPrefab;
-                                }
-
-                                EffectManager.SpawnEffect(effectPrefab, new EffectData { origin = toDetonate.transform.position, scale = ba.radius }, true);
-
-                                FlakShotgunComponent fsc = toDetonate.GetComponent<FlakShotgunComponent>();
-                                if (fsc)
-                                {
-                                    fsc.FireFlakProjectiles(EntityStates.RocketSurvivorSkills.Secondary.AirDet.damageMult);
-                                    effectPrefab = EntityStates.RocketSurvivorSkills.Special.FireFlak.explosionEffectPrefab;
-                                }
-
-                                ba.Fire();
-                            }
-                        }
-                        Destroy(toDetonate);
-                        detonatedSuccessfully = true;
+                    foreach (RocketInfo info in c4List)
+                    {
+                        bool detonate = DetonateRocketInfo(info);
+                        detonatedSuccessfully = detonatedSuccessfully || detonate;
                     }
                 }
-
                 UpdateRocketAvailable();
             }
             return detonatedSuccessfully;
@@ -155,22 +202,6 @@ namespace RocketSurvivor.Components
             }
         }
 
-        [ClientRpc]
-        public void RpcAddSpecialStock()
-        {
-            if (!this.hasAuthority) return;
-            if (skillLocator & skillLocator.special.stock < skillLocator.special.maxStock)
-            {
-                skillLocator.special.AddOneStock();
-            }
-        }
-
-        [Command]
-        public void CmdDetonateRocket()
-        {
-            ServerDetonateRocket();
-        }
-
         //Is this redundant?
         public void ServerDetonateRocket()
         {
@@ -182,6 +213,20 @@ namespace RocketSurvivor.Components
                 {
                     RpcAddSecondaryStock();
                 }
+            }
+        }
+
+        public class RocketInfo
+        {
+            public GameObject gameObject;
+            public bool applyAirDetBonus;
+            public bool isC4;
+
+            public RocketInfo(GameObject gameObject, bool applyAirDetBonus, bool isC4 = false)
+            {
+                this.gameObject = gameObject;
+                this.applyAirDetBonus = applyAirDetBonus;
+                this.isC4 = isC4;
             }
         }
     }

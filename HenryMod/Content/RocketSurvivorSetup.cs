@@ -216,30 +216,30 @@ namespace RocketSurvivor.Modules.Survivors
             #endregion
 
             #region Utility
-            SkillDef concDef = SkillDef.CreateInstance<SkillDef>();
-            concDef.activationState = new SerializableEntityStateType(typeof(EntityStates.RocketSurvivorSkills.Utility.ConcRocket));
-            concDef.activationStateMachineName = "Weapon";
-            concDef.baseMaxStock = 1;
-            concDef.baseRechargeInterval = 5f;
-            concDef.beginSkillCooldownOnSkillEnd = false;
-            concDef.canceledFromSprinting = false;
-            concDef.dontAllowPastMaxStocks = true;
-            concDef.forceSprintDuringState = false;
-            concDef.fullRestockOnAssign = true;
-            concDef.icon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texSkillUtility_Conc" + (RocketSurvivorPlugin.msPaintIcons ? "_mspaint" : ""));
-            concDef.interruptPriority = InterruptPriority.PrioritySkill;
-            concDef.isCombatSkill = true;
-            concDef.keywordTokens = new string[] { };
-            concDef.mustKeyPress = false;
-            concDef.cancelSprintingOnActivation = false;
-            concDef.rechargeStock = 1;
-            concDef.requiredStock = 1;
-            concDef.skillName = "FireConcRocket";
-            concDef.skillNameToken = Rocket_Prefix + "UTILITY_NAME";
-            concDef.skillDescriptionToken = Rocket_Prefix + "UTILITY_DESCRIPTION";
-            concDef.stockToConsume = 1;
-            (concDef as ScriptableObject).name = "FireConcRocket";
-            Modules.Content.AddSkillDef(concDef);
+            SkillDef c4Def = SkillDef.CreateInstance<SkillDef>();
+            c4Def.activationState = new SerializableEntityStateType(typeof(EntityStates.RocketSurvivorSkills.Utility.C4));
+            c4Def.activationStateMachineName = "Weapon";
+            c4Def.baseMaxStock = 1;
+            c4Def.baseRechargeInterval = 5f;
+            c4Def.beginSkillCooldownOnSkillEnd = false;
+            c4Def.canceledFromSprinting = false;
+            c4Def.dontAllowPastMaxStocks = true;
+            c4Def.forceSprintDuringState = false;
+            c4Def.fullRestockOnAssign = true;
+            c4Def.icon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texSkillUtility_Conc" + (RocketSurvivorPlugin.msPaintIcons ? "_mspaint" : ""));
+            c4Def.interruptPriority = InterruptPriority.PrioritySkill;
+            c4Def.isCombatSkill = true;
+            c4Def.keywordTokens = new string[] { };
+            c4Def.mustKeyPress = false;
+            c4Def.cancelSprintingOnActivation = false;
+            c4Def.rechargeStock = 1;
+            c4Def.requiredStock = 1;
+            c4Def.skillName = "ThrowC4";
+            c4Def.skillNameToken = Rocket_Prefix + "UTILITY_NAME";
+            c4Def.skillDescriptionToken = Rocket_Prefix + "UTILITY_DESCRIPTION";
+            c4Def.stockToConsume = 1;
+            (c4Def as ScriptableObject).name = "ThrowC4";
+            Modules.Content.AddSkillDef(c4Def);
 
             SkillDef marketGardenDef = Modules.Skills.CreateSkillDef(new SkillDefInfo
             {
@@ -268,7 +268,7 @@ namespace RocketSurvivor.Modules.Survivors
             (marketGardenDef as ScriptableObject).name = "MarketGarden";
             Modules.Content.AddSkillDef(marketGardenDef);
 
-            Modules.Skills.AddUtilitySkills(bodyPrefab, new SkillDef[] { concDef, marketGardenDef });
+            Modules.Skills.AddUtilitySkills(bodyPrefab, new SkillDef[] { c4Def, marketGardenDef });
 
             #endregion
 

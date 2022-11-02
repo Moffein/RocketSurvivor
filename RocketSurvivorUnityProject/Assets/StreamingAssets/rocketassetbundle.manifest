@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 1234794063
+CRC: 2770067968
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: cdde44633445d044f4798b3bf00f994c
+    Hash: b2d399d7a9ca9ccd8d434e85ea01245a
   TypeTreeHash:
     serializedVersion: 2
-    Hash: ee1d7256862da8ce9889e5c97008e83f
+    Hash: 2bc06a99e32e5000812990bcc3a82d48
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -15,7 +15,11 @@ ClassTypes:
   Script: {instanceID: 0}
 - Class: 21
   Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
 - Class: 28
+  Script: {instanceID: 0}
+- Class: 33
   Script: {instanceID: 0}
 - Class: 43
   Script: {instanceID: 0}
@@ -56,6 +60,8 @@ ClassTypes:
 SerializeReferenceClassIdentifiers: []
 Assets:
 - Assets/RocketBundle/Animation/RocketGesture.mask
+- Assets/RocketBundle/icons/texSkillSpecial.png
+- Assets/RocketBundle/icons/texSkillSecondary.png
 - Assets/RocketBundle/icons/texSkillSpecial_Scepter_mspaint.png
 - Assets/RocketBundle/Materials/MatShovel.mat
 - Assets/RocketBundle/icons/texSkillPrimary_mspaint.png
@@ -64,11 +70,18 @@ Assets:
 - Assets/RocketBundle/textures/TexShovel.png
 - Assets/RocketBundle/mdlRocket.prefab
 - Assets/RocketBundle/textures/TexShovelEmissive.png
+- Assets/RocketBundle/icons/texSkillUtility_Conc.png
 - Assets/RocketBundle/Animation/animRocket.controller
 - Assets/RocketBundle/RocketDisplay.prefab
 - Assets/RocketBundle/icons/texRocketSkinDefault.png
+- Assets/RocketBundle/mdlC4.prefab
+- Assets/RocketBundle/icons/texSkillPrimary_DirectHit.png
 - Assets/RocketBundle/icons/texSkillPrimary_DirectHit_mspaint.png
 - Assets/RocketBundle/textures/TexBlackBox.png
+- Assets/RocketBundle/icons/texSkillPassive.png
+- Assets/RocketBundle/icons/texSkillUtility_Shovel.png
+- Assets/RocketBundle/icons/texSkillPrimary.png
+- Assets/RocketBundle/textures/texC4.png
 - Assets/RocketBundle/Materials/MatBlackBox.mat
 - Assets/RocketBundle/icons/texSkillUtility_Shovel_mspaint.png
 - Assets/RocketBundle/Materials/MatGrenade.mat
@@ -76,6 +89,7 @@ Assets:
 - Assets/RocketBundle/icons/texSkillSpecial_mspaint.png
 - Assets/RocketBundle/Materials/MatRocketBackpack.mat
 - Assets/RocketBundle/icons/texSkillUtility_Conc_mspaint.png
+- Assets/RocketBundle/Materials/matC4.mat
 - Assets/RocketBundle/Materials/MatRocket.mat
 - Assets/RocketBundle/textures/TexRocketBackpack.png
 - Assets/RocketBundle/icons/texSkillPassive_mspaint.png

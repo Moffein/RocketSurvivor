@@ -5,6 +5,7 @@
 			<ChildrenList>
 				<SoundBank Name="RocketSoundbank" ID="{200DF3CA-FB24-4498-94A5-0CE4FC2CFC3E}">
 					<ObjectInclusionList>
+						<ObjectRef Name="Play_Moffein_RocketSurvivor_C4_Land" ID="{4E930C9B-21AD-40D2-9CE9-F5535A3E0F2F}" WorkUnitID="{BD8F92EA-735A-4F3E-A5C9-A7984FDEEDAF}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_Moffein_RocketSurvivor_R_Alt_Swing" ID="{7347EF6E-BDC6-41F6-8DFE-5293F2774F54}" WorkUnitID="{BD8F92EA-735A-4F3E-A5C9-A7984FDEEDAF}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_Moffein_RocketSurvivor_M2_Trigger" ID="{0C7F433E-4F20-41FB-90B8-539EFBA05FA9}" WorkUnitID="{BD8F92EA-735A-4F3E-A5C9-A7984FDEEDAF}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_Moffein_RocketSurvivor_M2_Explode" ID="{6BE5DC3A-8D79-43F0-B77F-40FF571AA2A3}" WorkUnitID="{BD8F92EA-735A-4F3E-A5C9-A7984FDEEDAF}" Origin="Manual" Filter="7"/>

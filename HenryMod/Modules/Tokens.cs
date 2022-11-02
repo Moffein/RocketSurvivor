@@ -35,14 +35,14 @@ namespace RocketSurvivor.Modules
             LanguageAPI.Add(prefix + "PRIMARY_ALT_DESCRIPTION", "<style=cIsUtility>Agile</style>. Fire a heat-seeking precision rocket for <style=cIsDamage>650% damage</style>. Deals <style=cIsDamage>+30% damage</style> against <style=cIsUtility>airborne targets</style>. Can hold up to 4.");
 
             LanguageAPI.Add(prefix + "SECONDARY_NAME", "Remote Detonator");
-            LanguageAPI.Add(prefix + "SECONDARY_DESCRIPTION", "Detonate <style=cIsDamage>all rockets</style>, increasing their <style=cIsDamage>damage</style> and <style=cIsDamage>blast radius</style> by <style=cIsDamage>50%</style>.");
+            LanguageAPI.Add(prefix + "SECONDARY_DESCRIPTION", "Detonate <style=cIsDamage>all explosives</style>. Detonated <style=cIsDamage>rockets</style> gain <style=cIsDamage>50%</style> extra <style=cIsDamage>damage</style> and <style=cIsDamage>blast radius</style>.");
 
-            LanguageAPI.Add(prefix + "UTILITY_NAME", "Concussion Blast");
-            LanguageAPI.Add(prefix + "UTILITY_DESCRIPTION", "<style=cIsDamage>Stunning</style>. Toss a nonlethal grenade that <style=cIsUtility>pushes</style> enemies away and <style=cIsDamage>reduces their armor</style> by <style=cIsDamage>40</style> while <style=cIsUtility>airborne</style>.");
+            LanguageAPI.Add(prefix + "UTILITY_NAME", "Demolition Charge");
+            LanguageAPI.Add(prefix + "UTILITY_DESCRIPTION", "<style=cIsDamage>Stunning</style>. Place a demolition charge. Use <style=cIsDamage>Remote Detonator</style> to detonate it for <style=cIsDamage>1000% damage</style>.");
 
             //Unlock Condition: Kill 5 enemies in a single rocket jump.
             LanguageAPI.Add(prefix + "UTILITY_ALT_NAME", "Bombing Run");
-            LanguageAPI.Add(prefix + "UTILITY_ALT_DESCRIPTION", "<style=cIsDamage>Stunning</style>. Swing an explosive at an enemy for <style=cIsDamage>1000% damage</style>. Deals <style=cIsDamage>Critical Strikes</style> while <style=cIsUtility>rocket jumping</style>.");
+            LanguageAPI.Add(prefix + "UTILITY_ALT_DESCRIPTION", "<style=cIsDamage>Stunning</style>. Swing your explosive shovel at an enemy for <style=cIsDamage>1000% damage</style>. Deals <style=cIsDamage>Critical Strikes</style> while <style=cIsUtility>rocket jumping</style>.");
 
             LanguageAPI.Add(prefix + "SPECIAL_NAME", "Rapid Rearm");
             LanguageAPI.Add(prefix + "SPECIAL_DESCRIPTION", "Rapidly <style=cIsDamage>fire 4 rockets</style>, then <style=cIsUtility>reload your weapon</style>.");

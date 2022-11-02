@@ -66,7 +66,7 @@ namespace EntityStates.RocketSurvivorSkills.Utility
                     {
                         attacker = base.gameObject,
                         attackerFiltering = AttackerFiltering.NeverHitSelf,
-                        baseDamage = base.damageStat * 10f,
+                        baseDamage = ComicallyLargeSpoon.blastDamageCoefficient,
                         baseForce = 2400f,
                         bonusForce = Vector3.zero,
                         canRejectForce = true,
@@ -107,5 +107,6 @@ namespace EntityStates.RocketSurvivorSkills.Utility
         }
 
         private bool firedExplosion = false;
+        public static float blastDamageCoefficient = 10f;
     }
 }

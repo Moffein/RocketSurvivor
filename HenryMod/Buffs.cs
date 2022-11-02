@@ -13,7 +13,6 @@ namespace RocketSurvivor
     public class Buffs
     {
         public static BuffDef RocketJumpSpeedBuff;
-        public static BuffDef AirshotVulnerableDebuff;
 
         public static bool initialized = false;
 
@@ -24,20 +23,11 @@ namespace RocketSurvivor
             BuffDef vanillaSpeedBuff = Addressables.LoadAssetAsync<BuffDef>("RoR2/Base/SprintOutOfCombat/bdWhipBoost.asset").WaitForCompletion();    //Steal icon + color from here
             RocketJumpSpeedBuff = CreateBuffDef("RocketSurvivorRocketJumpSpeedBuff", false, false, false, new Color(0.376f, 0.843f, 0.898f), vanillaSpeedBuff.iconSprite);
 
-
-            BuffDef vanillaCritBuff = Addressables.LoadAssetAsync<BuffDef>("RoR2/Base/CritOnUse/bdFullCrit.asset").WaitForCompletion();    //Steal icon + color from here
-            AirshotVulnerableDebuff = CreateBuffDef("RocketSurvivorAirshotVulnerableDebuff", false, false, true, Modules.Survivors.RocketSurvivorSetup.RocketSurvivorColor, vanillaCritBuff.iconSprite);
-
             R2API.RecalculateStatsAPI.GetStatCoefficients += (sender, args) =>
             {
                 if (sender.HasBuff(RocketJumpSpeedBuff))
                 {
                     args.moveSpeedMultAdd += 0.4f;
-                }
-
-                if (sender.HasBuff(AirshotVulnerableDebuff))
-                {
-                    args.armorAdd -= 40f;
                 }
             };
 
