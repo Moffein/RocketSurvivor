@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 3109826173
+CRC: 1841046498
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 102f450ea4a6baa74bddfa16cd920f70
+    Hash: e556970917c6eae2540d9bf8ad4f3132
   TypeTreeHash:
     serializedVersion: 2
     Hash: b94259b1f9704646133d7ae03425307e
@@ -85,6 +85,7 @@ Assets:
 - Assets/RocketBundle/textures/TexBlackBox.png
 - Assets/RocketBundle/icons/texSkillPassive.png
 - Assets/RocketBundle/icons/texSkillUtility_Shovel.png
+- Assets/RocketBundle/icons/texSkillUtility_C4_mspaint.png
 - Assets/RocketBundle/icons/texSkillPrimary.png
 - Assets/RocketBundle/textures/texC4.png
 - Assets/RocketBundle/Materials/MatBlackBox.mat
@@ -100,6 +101,7 @@ Assets:
 - Assets/RocketBundle/icons/texSkillPassive_mspaint.png
 - Assets/RocketBundle/textures/TexRocketEmissive.png
 - Assets/RocketBundle/Particles/matRing.mat
+- Assets/RocketBundle/icons/texSkillUtility_C4.png
 - Assets/RocketBundle/textures/TexRocket.png
 - Assets/RocketBundle/textures/TexRocketProjectile.png
 Dependencies: []

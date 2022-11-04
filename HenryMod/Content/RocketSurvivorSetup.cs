@@ -42,6 +42,7 @@ namespace RocketSurvivor.Modules.Survivors
             damage = 12f,
 
             jumpCount = 1,
+            aimOriginPosition = new Vector3(0f, 1.1f, -0.1f)
         };
 
         public override CustomRendererInfo[] customRendererInfos { get; set; } 
@@ -226,7 +227,7 @@ namespace RocketSurvivor.Modules.Survivors
             c4Def.dontAllowPastMaxStocks = true;
             c4Def.forceSprintDuringState = false;
             c4Def.fullRestockOnAssign = true;
-            c4Def.icon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texSkillUtility_Conc" + (RocketSurvivorPlugin.msPaintIcons ? "_mspaint" : ""));
+            c4Def.icon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texSkillUtility_C4" + (RocketSurvivorPlugin.msPaintIcons ? "_mspaint" : ""));
             c4Def.interruptPriority = InterruptPriority.PrioritySkill;
             c4Def.isCombatSkill = true;
             c4Def.keywordTokens = new string[] { };
