@@ -199,6 +199,7 @@ namespace RocketSurvivor.Modules
             mdc.Add(DamageTypes.ScaleForceToMass);
 
             ProjectileController pc = c4Projectile.GetComponent<ProjectileController>();
+            pc.allowPrediction = false;
 
             ProjectileStickOnImpact pst = c4Projectile.AddComponent<ProjectileStickOnImpact>();
             pst.alignNormals = true;
