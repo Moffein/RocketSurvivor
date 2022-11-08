@@ -68,6 +68,8 @@ namespace RocketSurvivor.Modules.Survivors
             survivorDef.desiredSortPosition = sortPosition;
             survivorDef.unlockableDef = unlockableDef;
 
+            survivorDef.cachedName = survivorDef.displayNameToken;
+
             Modules.Content.AddSurvivorDef(survivorDef);
         }
 
