@@ -17,6 +17,8 @@ namespace RocketSurvivor.Modules.Survivors
     {
         public override string bodyName => "Rocket";
 
+        public override string cachedName => "RocketSurvivor";
+
         public const string Rocket_Prefix = RocketSurvivorPlugin.DEVELOPER_PREFIX + "_ROCKET_BODY_";
         //used when registering your survivor's language tokens
         public override string survivorTokenPrefix => Rocket_Prefix;
