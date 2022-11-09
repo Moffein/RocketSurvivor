@@ -152,6 +152,9 @@ namespace RocketSurvivor.Modules
                 pdtf.SearchMode = BullseyeSearch.SortMode.Angle;
             }
 
+            ProjectileController pc = rocketPrefab.GetComponent<ProjectileController>();
+            pc.allowPrediction = false;
+
             AddProjectile(rocketPrefab);
 
             EntityStates.RocketSurvivorSkills.Primary.FireRocketAlt.projectilePrefab = rocketPrefab;
