@@ -80,6 +80,7 @@ namespace RocketSurvivor.Modules.Survivors
         {
             base.InitializeCharacter();
             base.bodyPrefab.AddComponent<RocketTrackerComponent>();
+            base.bodyPrefab.AddComponent<NetworkedBodyBlastJumpHandler>();
         }
 
         public override void InitializeUnlockables()

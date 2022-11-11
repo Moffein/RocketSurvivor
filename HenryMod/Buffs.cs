@@ -1,5 +1,6 @@
 ﻿using Mono.Cecil.Cil;
 using MonoMod.Cil;
+using RocketSurvivor.Components;
 using RoR2;
 using System;
 using System.Collections.Generic;
@@ -35,11 +36,15 @@ namespace RocketSurvivor
             On.RoR2.CharacterMotor.FixedUpdate += (orig, self) =>
             {
                 orig(self);
-                if (NetworkServer.active && self.isGrounded && self.body)
+                if (self.hasAuthority && self.isGrounded && self.body)
                 {
                     if (self.body.HasBuff(RocketJumpSpeedBuff))
                     {
-                        self.body.RemoveBuff(RocketJumpSpeedBuff);
+                        NetworkedBodyBlastJumpHandler nb = self.GetComponent<NetworkedBodyBlastJumpHandler>();
+                        if (nb)
+                        {
+                            nb.CmdRemoveRocketJumpBuff();
+                        }
                     }
                 }
             };
@@ -48,9 +53,13 @@ namespace RocketSurvivor
             On.RoR2.CharacterMotor.Jump += (orig, self, hMult, vMult, vault) =>
             {
                 orig(self, hMult, vMult, vault);
-                if (NetworkServer.active && self.body.HasBuff(RocketJumpSpeedBuff))
+                if (self.hasAuthority && self.body.HasBuff(RocketJumpSpeedBuff))
                 {
-                    self.body.RemoveBuff(RocketJumpSpeedBuff);
+                    NetworkedBodyBlastJumpHandler nb = self.GetComponent<NetworkedBodyBlastJumpHandler>();
+                    if (nb)
+                    {
+                        nb.CmdRemoveRocketJumpBuff();
+                    }
                 }
             };
 
