@@ -19,7 +19,6 @@ namespace RocketSurvivor.Components
         {
             if (base.hasAuthority && characterBody && characterBody.characterMotor)
             {
-                GameObject owner = base.gameObject;
                 CharacterMotor cm = characterBody.characterMotor;
                 if (cm)
                 {
