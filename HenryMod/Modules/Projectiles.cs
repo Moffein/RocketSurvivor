@@ -73,6 +73,7 @@ namespace RocketSurvivor.Modules
 
             DamageAPI.ModdedDamageTypeHolderComponent mdc = rocketPrefab.AddComponent<DamageAPI.ModdedDamageTypeHolderComponent>();
             mdc.Add(DamageTypes.ScaleForceToMass);
+            mdc.Add(DamageTypes.SweetSpotModifier);
 
             AddProjectile(rocketPrefab);
 

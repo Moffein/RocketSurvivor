@@ -1,7 +1,10 @@
-﻿using R2API;
+﻿using Mono.Cecil.Cil;
+using MonoMod.Cil;
+using R2API;
 using RocketSurvivor.Components;
 using RoR2;
 using UnityEngine;
+using System;
 
 namespace RocketSurvivor
 {
@@ -12,6 +15,7 @@ namespace RocketSurvivor
         public static DamageAPI.ModdedDamageType AirborneBonus;
         public static DamageAPI.ModdedDamageType MarketGarden;
         public static DamageAPI.ModdedDamageType SlamDunk;
+        public static DamageAPI.ModdedDamageType SweetSpotModifier;
 
         public static void Initialize()
         {
@@ -21,6 +25,28 @@ namespace RocketSurvivor
             AirborneBonus = DamageAPI.ReserveDamageType();
             MarketGarden = DamageAPI.ReserveDamageType();
             SlamDunk = DamageAPI.ReserveDamageType();
+            SweetSpotModifier = DamageAPI.ReserveDamageType();   //Makes sweetspot falloff do -50% instead of -75%
+
+            IL.RoR2.BlastAttack.HandleHits += (il) =>
+            {
+                ILCursor c = new ILCursor(il);
+                if(c.TryGotoNext(MoveType.After, x => x.MatchLdcR4(0.75f)))
+                {
+                    c.Emit(OpCodes.Ldarg_0);
+                    c.EmitDelegate<Func<float, BlastAttack, float>>((damagePenalty, self) =>
+                    {
+                        if (self.HasModdedDamageType(SweetSpotModifier))
+                        {
+                            damagePenalty *= 0.6666666666f;
+                        }
+                        return damagePenalty;
+                    });
+                }
+                else
+                {
+                    Debug.LogError("RocketSurvivor: SweetSpotModifier IL Hook failed.");
+                }
+            };
 
             On.RoR2.HealthComponent.TakeDamage += HealthComponent_TakeDamage;
 
