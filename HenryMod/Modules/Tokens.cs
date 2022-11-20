@@ -42,7 +42,7 @@ namespace RocketSurvivor.Modules
 
             //Unlock Condition: Kill 5 enemies in a single rocket jump.
             LanguageAPI.Add(prefix + "UTILITY_ALT_NAME", "Bombing Run");
-            LanguageAPI.Add(prefix + "UTILITY_ALT_DESCRIPTION", "<style=cIsDamage>Stunning</style>. Swing your explosive shovel at an enemy for <style=cIsDamage>1200% damage</style>. Deals <style=cIsDamage>Critical Strikes</style> while <style=cIsUtility>rocket jumping</style>.");
+            LanguageAPI.Add(prefix + "UTILITY_ALT_DESCRIPTION", "<style=cIsDamage>Stunning</style>. Swing your explosive shovel at an enemy for <style=cIsDamage>1200% damage</style>. Deals <style=cIsDamage>Critical Strikes</style> while <style=cIsUtility>blast jumping</style>.");
 
             LanguageAPI.Add(prefix + "SPECIAL_NAME", "Rapid Rearm");
             LanguageAPI.Add(prefix + "SPECIAL_DESCRIPTION", "Rapidly <style=cIsDamage>fire 4 rockets</style>, then <style=cIsUtility>reload your weapon</style>.");

@@ -21,6 +21,7 @@ namespace RocketSurvivor.Modules
             Modules.Content.AddEntityState(typeof(FireAllRockets));
             Modules.Content.AddEntityState(typeof(FireAllRocketsScepter));
             Modules.Content.AddEntityState(typeof(Rearm));
+            Modules.Content.AddEntityState(typeof(PrepComicallyLargeSpoon));
             Modules.Content.AddEntityState(typeof(ComicallyLargeSpoon));
             Modules.Content.AddEntityState(typeof(C4));
         }
