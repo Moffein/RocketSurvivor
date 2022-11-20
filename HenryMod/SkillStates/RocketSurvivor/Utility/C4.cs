@@ -53,7 +53,7 @@ namespace EntityStates.RocketSurvivorSkills.Utility
 		public static string attackSoundString = "Play_commando_M2_grenade_throw";//"Play_Moffein_RocketSurvivor_R_Shoot";//"Play_MULT_m1_grenade_launcher_shoot";
 		public static GameObject projectilePrefab;
 		public static GameObject effectPrefab = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Commando/MuzzleflashFMJ.prefab").WaitForCompletion();    //Use a less threatening VFX for this
-		public static float damageCoefficient = 10f;
+		public static float damageCoefficient = 12f;
 		public static float force = 2400f;
 
 		public static float baseDuration = 0.8f;

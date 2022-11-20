@@ -10,6 +10,7 @@ using UnityEngine;
 using UnityEngine.AddressableAssets;
 using R2API;
 using System.Runtime.CompilerServices;
+using System.Linq;
 
 namespace RocketSurvivor.Modules.Survivors
 {
@@ -81,6 +82,15 @@ namespace RocketSurvivor.Modules.Survivors
             base.InitializeCharacter();
             base.bodyPrefab.AddComponent<RocketTrackerComponent>();
             base.bodyPrefab.AddComponent<NetworkedBodyBlastJumpHandler>();
+
+            EntityStateMachine offhandMachine = base.bodyPrefab.AddComponent<EntityStateMachine>();
+            offhandMachine.customName = "Offhand";
+            offhandMachine.mainStateType = new SerializableEntityStateType(typeof(EntityStates.BaseBodyAttachmentState));
+
+            NetworkStateMachine nsm = base.bodyPrefab.GetComponent<NetworkStateMachine>();
+            List<EntityStateMachine> stateMachines = nsm.stateMachines.ToList();
+            stateMachines.Add(offhandMachine);
+            nsm.stateMachines = stateMachines.ToArray();
         }
 
         public override void InitializeUnlockables()
@@ -222,7 +232,7 @@ namespace RocketSurvivor.Modules.Survivors
             #region Utility
             SkillDef c4Def = SkillDef.CreateInstance<SkillDef>();
             c4Def.activationState = new SerializableEntityStateType(typeof(EntityStates.RocketSurvivorSkills.Utility.C4));
-            c4Def.activationStateMachineName = "Weapon";
+            c4Def.activationStateMachineName = "Offhand";
             c4Def.baseMaxStock = 1;
             c4Def.baseRechargeInterval = 5f;
             c4Def.beginSkillCooldownOnSkillEnd = false;
@@ -252,7 +262,7 @@ namespace RocketSurvivor.Modules.Survivors
                 skillDescriptionToken = Rocket_Prefix + "UTILITY_ALT_DESCRIPTION",
                 skillIcon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texSkillUtility_Shovel" + (RocketSurvivorPlugin.msPaintIcons ? "_mspaint" : "")),
                 activationState = new EntityStates.SerializableEntityStateType(typeof(EntityStates.RocketSurvivorSkills.Utility.ComicallyLargeSpoon)),
-                activationStateMachineName = "Weapon",
+                activationStateMachineName = "Offhand",
                 baseMaxStock = 1,
                 baseRechargeInterval = 5f,
                 beginSkillCooldownOnSkillEnd = false,

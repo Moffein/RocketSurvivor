@@ -107,6 +107,6 @@ namespace EntityStates.RocketSurvivorSkills.Utility
         }
 
         private bool firedExplosion = false;
-        public static float blastDamageCoefficient = 10f;
+        public static float blastDamageCoefficient = 12f;
     }
 }

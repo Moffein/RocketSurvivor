@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 1841046498
+CRC: 1092817008
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: e556970917c6eae2540d9bf8ad4f3132
+    Hash: ec75335f378c3133415514438c85661a
   TypeTreeHash:
     serializedVersion: 2
     Hash: b94259b1f9704646133d7ae03425307e
@@ -64,6 +64,7 @@ ClassTypes:
 SerializeReferenceClassIdentifiers: []
 Assets:
 - Assets/RocketBundle/Animation/RocketGesture.mask
+- Assets/RocketBundle/icons/texSkillSpecial_Scepter.png
 - Assets/RocketBundle/icons/texSkillSpecial.png
 - Assets/RocketBundle/icons/texSkillSecondary.png
 - Assets/RocketBundle/icons/texSkillSpecial_Scepter_mspaint.png
