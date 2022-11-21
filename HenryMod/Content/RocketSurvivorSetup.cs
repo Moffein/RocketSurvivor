@@ -40,9 +40,15 @@ namespace RocketSurvivor.Modules.Survivors
             podPrefab = RoR2.LegacyResourcesAPI.Load<GameObject>("Prefabs/NetworkedObjects/SurvivorPod"),
 
             maxHealth = 110f,
+            healthGrowth = 110f * 0.3f,
+
             healthRegen = 1f,
+            regenGrowth = 1f * 0.2f,
+
             armor = 0f,
+
             damage = 12f,
+            damageGrowth = 12f * 0.2f,
 
             jumpCount = 1,
             aimOriginPosition = new Vector3(0f, 1.1f, -0.1f)
