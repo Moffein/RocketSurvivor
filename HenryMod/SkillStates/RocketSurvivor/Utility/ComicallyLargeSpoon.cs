@@ -82,13 +82,19 @@ namespace EntityStates.RocketSurvivorSkills.Utility
             {
                 firedExplosion = true;
 
+                float speed = 0f;
+                if (base.characterMotor)
+                {
+                    speed = base.characterMotor.velocity.magnitude;
+                }
+
                 if (base.characterBody)
                 {
                     BlastAttack ba = new BlastAttack
                     {
                         attacker = base.gameObject,
                         attackerFiltering = AttackerFiltering.NeverHitSelf,
-                        baseDamage = ComicallyLargeSpoon.blastDamageCoefficient * this.damageStat,
+                        baseDamage = (ComicallyLargeSpoon.blastDamageCoefficient + speed * ComicallyLargeSpoon.speedDamageCoefficient) * this.damageStat,
                         baseForce = 2400f,
                         bonusForce = Vector3.zero,
                         canRejectForce = true,
@@ -120,6 +126,7 @@ namespace EntityStates.RocketSurvivorSkills.Utility
         }
 
         private bool firedExplosion = false;
-        public static float blastDamageCoefficient = 12f;
+        public static float blastDamageCoefficient = 13f;
+        public static float speedDamageCoefficient = 0.2f;  //Loader is 0.3
     }
 }

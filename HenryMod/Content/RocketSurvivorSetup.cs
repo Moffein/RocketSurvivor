@@ -40,15 +40,15 @@ namespace RocketSurvivor.Modules.Survivors
             podPrefab = RoR2.LegacyResourcesAPI.Load<GameObject>("Prefabs/NetworkedObjects/SurvivorPod"),
 
             maxHealth = 110f,
-            healthGrowth = 110f * 0.3f,
+            healthGrowth = 33f,
 
             healthRegen = 1f,
-            regenGrowth = 1f * 0.2f,
+            regenGrowth = 0.2f,
 
             armor = 0f,
 
-            damage = 12f,
-            damageGrowth = 12f * 0.2f,
+            damage = 14f,
+            damageGrowth = 2.8f,
 
             jumpCount = 1,
             aimOriginPosition = new Vector3(0f, 1.1f, -0.1f)
@@ -194,7 +194,7 @@ namespace RocketSurvivor.Modules.Survivors
             airDetTrackerDef.activationState = new EntityStates.SerializableEntityStateType(typeof(EntityStates.RocketSurvivorSkills.Secondary.AirDet));
             airDetTrackerDef.activationStateMachineName = "Slide";
             airDetTrackerDef.baseMaxStock = 1;
-            airDetTrackerDef.baseRechargeInterval = 3f;
+            airDetTrackerDef.baseRechargeInterval = 2f;
             airDetTrackerDef.beginSkillCooldownOnSkillEnd = false;
             airDetTrackerDef.canceledFromSprinting = false;
             airDetTrackerDef.dontAllowPastMaxStocks = true;
@@ -283,7 +283,7 @@ namespace RocketSurvivor.Modules.Survivors
                 rechargeStock = 1,
                 requiredStock = 1,
                 stockToConsume = 1,
-                keywordTokens = new string[] { "KEYWORD_STUNNING" }
+                keywordTokens = new string[] { "KEYWORD_HEAVY", "KEYWORD_STUNNING" }
             });
             (marketGardenDef as ScriptableObject).name = "MarketGarden";
             Modules.Content.AddSkillDef(marketGardenDef);
@@ -303,7 +303,7 @@ namespace RocketSurvivor.Modules.Survivors
                 activationState = new EntityStates.SerializableEntityStateType(typeof(EntityStates.RocketSurvivorSkills.Special.FireAllRockets)),
                 activationStateMachineName = "Weapon",
                 baseMaxStock = 1,
-                baseRechargeInterval = 10f,
+                baseRechargeInterval = 8f,
                 beginSkillCooldownOnSkillEnd = true,
                 canceledFromSprinting = false,
                 forceSprintDuringState = false,
@@ -312,7 +312,7 @@ namespace RocketSurvivor.Modules.Survivors
                 resetCooldownTimerOnUse = false,
                 isCombatSkill = true,
                 mustKeyPress = false,
-                cancelSprintingOnActivation = true,
+                cancelSprintingOnActivation = false,
                 rechargeStock = 1,
                 requiredStock = 1,
                 stockToConsume = 1
