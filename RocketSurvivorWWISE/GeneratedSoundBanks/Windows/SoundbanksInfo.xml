@@ -16,11 +16,19 @@
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
 		</SoundBank>
-		<SoundBank Id="1554628720" Language="SFX" Hash="524469754">
+		<SoundBank Id="1554628720" Language="SFX" Hash="13996287">
 			<ObjectPath>\SoundBanks\Default Work Unit\RocketSoundbank</ObjectPath>
 			<ShortName>RocketSoundbank</ShortName>
 			<Path>RocketSoundbank.bnk</Path>
 			<IncludedEvents>
+				<Event Id="628393261" Name="Play_Moffein_RocketSurvivor_C4_Land" ObjectPath="\Events\Default Work Unit\Play_Moffein_RocketSurvivor_C4_Land">
+					<IncludedMemoryFiles>
+						<File Id="588972692" Language="SFX">
+							<ShortName>breach_land_01.wav</ShortName>
+							<Path>SFX\breach_land_01_3F75BDB9.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
 				<Event Id="1154839090" Name="Play_Moffein_RocketSurvivor_M1_Alt_Explode" ObjectPath="\Events\Default Work Unit\Play_Moffein_RocketSurvivor_M1_Alt_Explode">
 					<IncludedMemoryFiles>
 						<File Id="12427387" Language="SFX">
@@ -90,6 +98,14 @@
 						<File Id="442034263" Language="SFX">
 							<ShortName>bottle_hit_flesh1.wav</ShortName>
 							<Path>SFX\bottle_hit_flesh1_3F75BDB9.wem</Path>
+						</File>
+					</IncludedMemoryFiles>
+				</Event>
+				<Event Id="2772939066" Name="Play_Moffein_RocketSurvivor_R_Alt_Prep" ObjectPath="\Events\Default Work Unit\Play_Moffein_RocketSurvivor_R_Alt_Prep">
+					<IncludedMemoryFiles>
+						<File Id="311484885" Language="SFX">
+							<ShortName>draw_shovel_soldier.wav</ShortName>
+							<Path>SFX\draw_shovel_soldier_3F75BDB9.wem</Path>
 						</File>
 					</IncludedMemoryFiles>
 				</Event>

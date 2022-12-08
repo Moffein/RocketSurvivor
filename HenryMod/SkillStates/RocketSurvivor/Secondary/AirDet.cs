@@ -30,7 +30,7 @@ namespace EntityStates.RocketSurvivorSkills.Secondary
                 RocketTrackerComponent rtc = base.GetComponent<RocketTrackerComponent>();
                 if (rtc)
                 {
-                    rtc.CmdDetonateRocket();
+                    rtc.ServerDetonateRocket();
                 }
             }
         }

@@ -14,7 +14,7 @@ namespace RocketSurvivor.Modules
         {
             CreateRocket();
             CreateRocketAlt();
-            CreateConcRocket();
+            CreateC4();
             CreateFlak();
         }
 
@@ -34,7 +34,7 @@ namespace RocketSurvivor.Modules
             ProjectileImpactExplosion pie = rocketPrefab.GetComponent<ProjectileImpactExplosion>();
             InitializeImpactExplosion(pie);
 
-            GameObject explosionEffect = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Common/VFX/OmniExplosionVFX.prefab").WaitForCompletion().InstantiateClone("RocketSurvivorRocketExplosionVFX", false);
+            GameObject explosionEffect = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Common/VFX/OmniExplosionVFXQuick.prefab").WaitForCompletion().InstantiateClone("RocketSurvivorRocketExplosionVFX", false);
             EffectComponent ec = explosionEffect.GetComponent<EffectComponent>();
             ec.soundName = "Play_Moffein_RocketSurvivor_M1_Explode";
             Modules.Content.AddEffectDef(new EffectDef(explosionEffect));
@@ -73,6 +73,7 @@ namespace RocketSurvivor.Modules
 
             DamageAPI.ModdedDamageTypeHolderComponent mdc = rocketPrefab.AddComponent<DamageAPI.ModdedDamageTypeHolderComponent>();
             mdc.Add(DamageTypes.ScaleForceToMass);
+            mdc.Add(DamageTypes.SweetSpotModifier);
 
             AddProjectile(rocketPrefab);
 
@@ -92,7 +93,7 @@ namespace RocketSurvivor.Modules
             ProjectileImpactExplosion pie = rocketPrefab.GetComponent<ProjectileImpactExplosion>();
             InitializeImpactExplosion(pie);
 
-            GameObject explosionEffect = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Common/VFX/OmniExplosionVFX.prefab").WaitForCompletion().InstantiateClone("RocketSurvivorRocketAltExplosionVFX", false);
+            GameObject explosionEffect = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Common/VFX/OmniExplosionVFXQuick.prefab").WaitForCompletion().InstantiateClone("RocketSurvivorRocketAltExplosionVFX", false);
             EffectComponent ec = explosionEffect.GetComponent<EffectComponent>();
             ec.soundName = "Play_Moffein_RocketSurvivor_M1_Alt_Explode";
             Modules.Content.AddEffectDef(new EffectDef(explosionEffect));
@@ -152,69 +153,80 @@ namespace RocketSurvivor.Modules
                 pdtf.SearchMode = BullseyeSearch.SortMode.Angle;
             }
 
+            ProjectileController pc = rocketPrefab.GetComponent<ProjectileController>();
+            pc.allowPrediction = false;
+
             AddProjectile(rocketPrefab);
 
             EntityStates.RocketSurvivorSkills.Primary.FireRocketAlt.projectilePrefab = rocketPrefab;
         }
 
-        //Use a different model that's distinct from the regular rockets.
-        private static void CreateConcRocket()
+        private static void CreateC4()
         {
-            GameObject rocketPrefab = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Commando/CommandoGrenadeProjectile.prefab").WaitForCompletion().InstantiateClone("RocketSurvivorConcProjectile", true);
+            GameObject c4Projectile = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Commando/CommandoGrenadeProjectile.prefab").WaitForCompletion().InstantiateClone("RocketSurvivorC4Projectile", true);
 
-            ProjectileSimple ps = rocketPrefab.GetComponent<ProjectileSimple>();
+            ProjectileSimple ps = c4Projectile.GetComponent<ProjectileSimple>();
             //ps.desiredForwardSpeed = 100f;
-            ps.lifetime = 12f;
+            ps.lifetime = 9999999f;
 
-            ProjectileImpactExplosion pie = rocketPrefab.GetComponent<ProjectileImpactExplosion>();
+            GameObject c4Effect = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Common/VFX/OmniExplosionVFX.prefab").WaitForCompletion().InstantiateClone("RocketSurvivorConcEffect", false);
+            EffectComponent ec = c4Effect.GetComponent<EffectComponent>();
+            ec.soundName = "Play_Moffein_RocketSurvivor_R_Flak_Explode";
+            Content.AddEffectDef(new EffectDef(c4Effect));
+
+            ProjectileImpactExplosion pie = c4Projectile.GetComponent<ProjectileImpactExplosion>();
             InitializeImpactExplosion(pie);
-
-            GameObject concEffect = LegacyResourcesAPI.Load<GameObject>("prefabs/effects/muzzleflashes/Bandit2SmokeBomb").InstantiateClone("RocketSurvivorConcEffect", false);
-            EffectComponent ec = concEffect.GetComponent<EffectComponent>();
-            ec.soundName = "Play_railgunner_shift_explo";
-            Content.AddEffectDef(new EffectDef(concEffect));
-            GameObject explosionEffect = concEffect;//Addressables.LoadAssetAsync<GameObject>("RoR2/DLC1/Railgunner/RailgunnerMineExplosion.prefab").WaitForCompletion();
 
             pie.blastDamageCoefficient = 1f;
             pie.blastRadius = 12f;
-            pie.destroyOnEnemy = true;
-            pie.destroyOnWorld = true;
-            pie.lifetime = 12f;
-            pie.impactEffect = explosionEffect;
+            pie.destroyOnEnemy = false;
+            pie.destroyOnWorld = false;
+            pie.lifetime = 9999999f;
+            pie.impactEffect = c4Effect;
             pie.timerAfterImpact = false;
-            pie.lifetimeAfterImpact = 0f;
             pie.blastAttackerFiltering = AttackerFiltering.NeverHitSelf;
-            pie.falloffModel = BlastAttack.FalloffModel.SweetSpot;
+            pie.falloffModel = BlastAttack.FalloffModel.None;
 
-            //Remove built-in sounds
-            /*AkEvent[] akEvents = rocketPrefab.GetComponentsInChildren<AkEvent>();
-            for (int i = 0; i < akEvents.Length; i++)
-            {
-                UnityEngine.Object.Destroy(akEvents[i]);
-            }
+            AddToRocketTrackerComponent atr = c4Projectile.AddComponent<AddToRocketTrackerComponent>();
+            atr.applyAirDetBonus = false;
+            atr.isC4 = true;
 
-            AkGameObj akgo = rocketPrefab.GetComponent<AkGameObj>();
-            if (akgo)
-            {
-                UnityEngine.Object.Destroy(akgo);
-            }*/
-
-            rocketPrefab.AddComponent<AddToRocketTrackerComponent>();
-            BlastJumpComponent bjc = rocketPrefab.AddComponent<BlastJumpComponent>();
+            BlastJumpComponent bjc = c4Projectile.AddComponent<BlastJumpComponent>();
             bjc.force = 3600f;
             bjc.horizontalMultiplier = 1f;
-            bjc.requireAirborne = true;
+            bjc.requireAirborne = false;
 
-            ProjectileDamage pd = rocketPrefab.GetComponent<ProjectileDamage>();
-            pd.damageType = DamageType.Stun1s | DamageType.Silent;
+            ProjectileDamage pd = c4Projectile.GetComponent<ProjectileDamage>();
+            pd.damageType = DamageType.Stun1s;
 
-            DamageAPI.ModdedDamageTypeHolderComponent mdc = rocketPrefab.AddComponent<DamageAPI.ModdedDamageTypeHolderComponent>();
+            DamageAPI.ModdedDamageTypeHolderComponent mdc = c4Projectile.AddComponent<DamageAPI.ModdedDamageTypeHolderComponent>();
             mdc.Add(DamageTypes.ScaleForceToMass);
-            mdc.Add(DamageTypes.MarkForAirshot);
 
-            AddProjectile(rocketPrefab);
+            ProjectileController pc = c4Projectile.GetComponent<ProjectileController>();
+            pc.allowPrediction = false;
 
-            EntityStates.RocketSurvivorSkills.Utility.ConcRocket.projectilePrefab = rocketPrefab;
+            ProjectileStickOnImpact pst = c4Projectile.AddComponent<ProjectileStickOnImpact>();
+            pst.alignNormals = true;
+            pst.stickSoundString = "Play_Moffein_RocketSurvivor_C4_Land";
+
+            Collider[] existingColliders = c4Projectile.GetComponentsInChildren<Collider>();
+            foreach (Collider c in existingColliders)
+            {
+                UnityEngine.Object.Destroy(c);
+            }
+
+            BoxCollider bc = c4Projectile.AddComponent<BoxCollider>();
+            bc.size = new Vector3(0.5f, 0.3f, 0.7f);
+
+            GameObject c4Ghost = Modules.Assets.mainAssetBundle.LoadAsset<GameObject>("mdlC4").InstantiateClone("RocketSurvivorC4Ghost", false);
+            c4Ghost.layer = LayerIndex.noCollision.intVal;
+            //Modules.Assets.ConvertAllRenderersToHopooShader(c4Ghost);
+            //Breaks ring
+            c4Ghost.AddComponent<ProjectileGhostController>();
+            pc.ghostPrefab = c4Ghost;
+
+            AddProjectile(c4Projectile);
+            EntityStates.RocketSurvivorSkills.Utility.C4.projectilePrefab = c4Projectile;
         }
 
         private static void CreateFlak()

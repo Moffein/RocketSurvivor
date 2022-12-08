@@ -5,6 +5,7 @@
 			<ChildrenList>
 				<SoundBank Name="RocketSoundbank" ID="{200DF3CA-FB24-4498-94A5-0CE4FC2CFC3E}">
 					<ObjectInclusionList>
+						<ObjectRef Name="Play_Moffein_RocketSurvivor_C4_Land" ID="{4E930C9B-21AD-40D2-9CE9-F5535A3E0F2F}" WorkUnitID="{BD8F92EA-735A-4F3E-A5C9-A7984FDEEDAF}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_Moffein_RocketSurvivor_R_Alt_Swing" ID="{7347EF6E-BDC6-41F6-8DFE-5293F2774F54}" WorkUnitID="{BD8F92EA-735A-4F3E-A5C9-A7984FDEEDAF}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_Moffein_RocketSurvivor_M2_Trigger" ID="{0C7F433E-4F20-41FB-90B8-539EFBA05FA9}" WorkUnitID="{BD8F92EA-735A-4F3E-A5C9-A7984FDEEDAF}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_Moffein_RocketSurvivor_M2_Explode" ID="{6BE5DC3A-8D79-43F0-B77F-40FF571AA2A3}" WorkUnitID="{BD8F92EA-735A-4F3E-A5C9-A7984FDEEDAF}" Origin="Manual" Filter="7"/>
@@ -12,6 +13,7 @@
 						<ObjectRef Name="Play_Moffein_RocketSurvivor_M1_Explode" ID="{0E25958B-45EC-46BC-BE44-0660C9550775}" WorkUnitID="{BD8F92EA-735A-4F3E-A5C9-A7984FDEEDAF}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_Moffein_RocketSurvivor_M1_Reload" ID="{F31CE634-F920-46ED-8E90-C8D05DD3CD5D}" WorkUnitID="{BD8F92EA-735A-4F3E-A5C9-A7984FDEEDAF}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_Moffein_RocketSurvivor_R_Alt_Hit" ID="{F064D73D-F8A8-4749-A2B0-425B9DEAC58C}" WorkUnitID="{BD8F92EA-735A-4F3E-A5C9-A7984FDEEDAF}" Origin="Manual" Filter="7"/>
+						<ObjectRef Name="Play_Moffein_RocketSurvivor_R_Alt_Prep" ID="{318CBC54-0A60-47F4-BCD4-555286425B3B}" WorkUnitID="{BD8F92EA-735A-4F3E-A5C9-A7984FDEEDAF}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_Moffein_RocketSurvivor_M1_Shoot" ID="{0697D57A-4EE6-4824-BA32-3F498688DE76}" WorkUnitID="{BD8F92EA-735A-4F3E-A5C9-A7984FDEEDAF}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_Moffein_RocketSurvivor_M1_Alt_Explode" ID="{05026AAE-1329-4948-9480-70DAF834A12E}" WorkUnitID="{BD8F92EA-735A-4F3E-A5C9-A7984FDEEDAF}" Origin="Manual" Filter="7"/>
 						<ObjectRef Name="Play_Moffein_RocketSurvivor_Shift_Rearm" ID="{08777F61-7D2A-4B49-8463-8BF348FB14E7}" WorkUnitID="{BD8F92EA-735A-4F3E-A5C9-A7984FDEEDAF}" Origin="Manual" Filter="7"/>

@@ -10,12 +10,15 @@ using UnityEngine;
 using UnityEngine.AddressableAssets;
 using R2API;
 using System.Runtime.CompilerServices;
+using System.Linq;
 
 namespace RocketSurvivor.Modules.Survivors
 {
     internal class RocketSurvivorSetup : SurvivorBase
     {
         public override string bodyName => "Rocket";
+
+        public override string cachedName => "RocketSurvivor";
 
         public const string Rocket_Prefix = RocketSurvivorPlugin.DEVELOPER_PREFIX + "_ROCKET_BODY_";
         //used when registering your survivor's language tokens
@@ -37,11 +40,18 @@ namespace RocketSurvivor.Modules.Survivors
             podPrefab = RoR2.LegacyResourcesAPI.Load<GameObject>("Prefabs/NetworkedObjects/SurvivorPod"),
 
             maxHealth = 110f,
+            healthGrowth = 33f,
+
             healthRegen = 1f,
+            regenGrowth = 0.2f,
+
             armor = 0f,
-            damage = 12f,
+
+            damage = 14f,
+            damageGrowth = 2.8f,
 
             jumpCount = 1,
+            aimOriginPosition = new Vector3(0f, 1.1f, -0.1f)
         };
 
         public override CustomRendererInfo[] customRendererInfos { get; set; } 
@@ -77,6 +87,16 @@ namespace RocketSurvivor.Modules.Survivors
         {
             base.InitializeCharacter();
             base.bodyPrefab.AddComponent<RocketTrackerComponent>();
+            base.bodyPrefab.AddComponent<NetworkedBodyBlastJumpHandler>();
+
+            EntityStateMachine offhandMachine = base.bodyPrefab.AddComponent<EntityStateMachine>();
+            offhandMachine.customName = "Offhand";
+            offhandMachine.mainStateType = new SerializableEntityStateType(typeof(EntityStates.BaseBodyAttachmentState));
+
+            NetworkStateMachine nsm = base.bodyPrefab.GetComponent<NetworkStateMachine>();
+            List<EntityStateMachine> stateMachines = nsm.stateMachines.ToList();
+            stateMachines.Add(offhandMachine);
+            nsm.stateMachines = stateMachines.ToArray();
         }
 
         public override void InitializeUnlockables()
@@ -174,7 +194,7 @@ namespace RocketSurvivor.Modules.Survivors
             airDetTrackerDef.activationState = new EntityStates.SerializableEntityStateType(typeof(EntityStates.RocketSurvivorSkills.Secondary.AirDet));
             airDetTrackerDef.activationStateMachineName = "Slide";
             airDetTrackerDef.baseMaxStock = 1;
-            airDetTrackerDef.baseRechargeInterval = 3f;
+            airDetTrackerDef.baseRechargeInterval = 2f;
             airDetTrackerDef.beginSkillCooldownOnSkillEnd = false;
             airDetTrackerDef.canceledFromSprinting = false;
             airDetTrackerDef.dontAllowPastMaxStocks = true;
@@ -216,30 +236,30 @@ namespace RocketSurvivor.Modules.Survivors
             #endregion
 
             #region Utility
-            SkillDef concDef = SkillDef.CreateInstance<SkillDef>();
-            concDef.activationState = new SerializableEntityStateType(typeof(EntityStates.RocketSurvivorSkills.Utility.ConcRocket));
-            concDef.activationStateMachineName = "Weapon";
-            concDef.baseMaxStock = 1;
-            concDef.baseRechargeInterval = 5f;
-            concDef.beginSkillCooldownOnSkillEnd = false;
-            concDef.canceledFromSprinting = false;
-            concDef.dontAllowPastMaxStocks = true;
-            concDef.forceSprintDuringState = false;
-            concDef.fullRestockOnAssign = true;
-            concDef.icon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texSkillUtility_Conc" + (RocketSurvivorPlugin.msPaintIcons ? "_mspaint" : ""));
-            concDef.interruptPriority = InterruptPriority.PrioritySkill;
-            concDef.isCombatSkill = true;
-            concDef.keywordTokens = new string[] { };
-            concDef.mustKeyPress = false;
-            concDef.cancelSprintingOnActivation = false;
-            concDef.rechargeStock = 1;
-            concDef.requiredStock = 1;
-            concDef.skillName = "FireConcRocket";
-            concDef.skillNameToken = Rocket_Prefix + "UTILITY_NAME";
-            concDef.skillDescriptionToken = Rocket_Prefix + "UTILITY_DESCRIPTION";
-            concDef.stockToConsume = 1;
-            (concDef as ScriptableObject).name = "FireConcRocket";
-            Modules.Content.AddSkillDef(concDef);
+            SkillDef c4Def = SkillDef.CreateInstance<SkillDef>();
+            c4Def.activationState = new SerializableEntityStateType(typeof(EntityStates.RocketSurvivorSkills.Utility.C4));
+            c4Def.activationStateMachineName = "Offhand";
+            c4Def.baseMaxStock = 1;
+            c4Def.baseRechargeInterval = 5f;
+            c4Def.beginSkillCooldownOnSkillEnd = false;
+            c4Def.canceledFromSprinting = false;
+            c4Def.dontAllowPastMaxStocks = true;
+            c4Def.forceSprintDuringState = false;
+            c4Def.fullRestockOnAssign = true;
+            c4Def.icon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texSkillUtility_C4" + (RocketSurvivorPlugin.msPaintIcons ? "_mspaint" : ""));
+            c4Def.interruptPriority = InterruptPriority.PrioritySkill;
+            c4Def.isCombatSkill = true;
+            c4Def.keywordTokens = new string[] { };
+            c4Def.mustKeyPress = false;
+            c4Def.cancelSprintingOnActivation = false;
+            c4Def.rechargeStock = 1;
+            c4Def.requiredStock = 1;
+            c4Def.skillName = "ThrowC4";
+            c4Def.skillNameToken = Rocket_Prefix + "UTILITY_NAME";
+            c4Def.skillDescriptionToken = Rocket_Prefix + "UTILITY_DESCRIPTION";
+            c4Def.stockToConsume = 1;
+            (c4Def as ScriptableObject).name = "ThrowC4";
+            Modules.Content.AddSkillDef(c4Def);
 
             SkillDef marketGardenDef = Modules.Skills.CreateSkillDef(new SkillDefInfo
             {
@@ -247,28 +267,28 @@ namespace RocketSurvivor.Modules.Survivors
                 skillNameToken = Rocket_Prefix + "UTILITY_ALT_NAME",
                 skillDescriptionToken = Rocket_Prefix + "UTILITY_ALT_DESCRIPTION",
                 skillIcon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texSkillUtility_Shovel" + (RocketSurvivorPlugin.msPaintIcons ? "_mspaint" : "")),
-                activationState = new EntityStates.SerializableEntityStateType(typeof(EntityStates.RocketSurvivorSkills.Utility.ComicallyLargeSpoon)),
-                activationStateMachineName = "Weapon",
+                activationState = new EntityStates.SerializableEntityStateType(typeof(EntityStates.RocketSurvivorSkills.Utility.PrepComicallyLargeSpoon)),
+                activationStateMachineName = "Offhand",
                 baseMaxStock = 1,
                 baseRechargeInterval = 5f,
-                beginSkillCooldownOnSkillEnd = false,
+                beginSkillCooldownOnSkillEnd = true,
                 canceledFromSprinting = false,
                 forceSprintDuringState = false,
                 fullRestockOnAssign = true,
                 interruptPriority = EntityStates.InterruptPriority.PrioritySkill,
                 resetCooldownTimerOnUse = false,
                 isCombatSkill = true,
-                mustKeyPress = false,
+                mustKeyPress = true,
                 cancelSprintingOnActivation = false,
                 rechargeStock = 1,
                 requiredStock = 1,
                 stockToConsume = 1,
-                keywordTokens = new string[] { "KEYWORD_STUNNING" }
+                keywordTokens = new string[] { "KEYWORD_HEAVY", "KEYWORD_STUNNING" }
             });
             (marketGardenDef as ScriptableObject).name = "MarketGarden";
             Modules.Content.AddSkillDef(marketGardenDef);
 
-            Modules.Skills.AddUtilitySkills(bodyPrefab, new SkillDef[] { concDef, marketGardenDef });
+            Modules.Skills.AddUtilitySkills(bodyPrefab, new SkillDef[] { c4Def, marketGardenDef });
 
             #endregion
 
@@ -283,7 +303,7 @@ namespace RocketSurvivor.Modules.Survivors
                 activationState = new EntityStates.SerializableEntityStateType(typeof(EntityStates.RocketSurvivorSkills.Special.FireAllRockets)),
                 activationStateMachineName = "Weapon",
                 baseMaxStock = 1,
-                baseRechargeInterval = 10f,
+                baseRechargeInterval = 8f,
                 beginSkillCooldownOnSkillEnd = true,
                 canceledFromSprinting = false,
                 forceSprintDuringState = false,
@@ -292,7 +312,7 @@ namespace RocketSurvivor.Modules.Survivors
                 resetCooldownTimerOnUse = false,
                 isCombatSkill = true,
                 mustKeyPress = false,
-                cancelSprintingOnActivation = true,
+                cancelSprintingOnActivation = false,
                 rechargeStock = 1,
                 requiredStock = 1,
                 stockToConsume = 1
@@ -354,7 +374,7 @@ namespace RocketSurvivor.Modules.Survivors
             });
             (flakDef as ScriptableObject).name = "Flak";
             Modules.Content.AddSkillDef(flakDef);
-            Modules.Skills.AddSpecialSkills(bodyPrefab, flakDef);
+            //Modules.Skills.AddSpecialSkills(bodyPrefab, flakDef);
 
 
             SkillDef flakScepterDef = Modules.Skills.CreateSkillDef(new SkillDefInfo
@@ -382,8 +402,8 @@ namespace RocketSurvivor.Modules.Survivors
             });
             (flakScepterDef as ScriptableObject).name = "FlakScepter";
             Modules.Content.AddSkillDef(flakScepterDef);
-            RocketSurvivor.RocketSurvivorPlugin.SetupScepterClassic("RocketSurvivorBody", flakScepterDef, flakDef);
-            RocketSurvivor.RocketSurvivorPlugin.SetupScepterStandalone("RocketSurvivorBody", flakScepterDef, SkillSlot.Special, 1);
+            //RocketSurvivor.RocketSurvivorPlugin.SetupScepterClassic("RocketSurvivorBody", flakScepterDef, flakDef);
+            //RocketSurvivor.RocketSurvivorPlugin.SetupScepterStandalone("RocketSurvivorBody", flakScepterDef, SkillSlot.Special, 1);
             #endregion
         }
 

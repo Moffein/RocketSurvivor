@@ -11,6 +11,8 @@ namespace RocketSurvivor.Modules.Survivors
     internal abstract class SurvivorBase : CharacterBase
     {
         public abstract string survivorTokenPrefix { get; }
+
+        public abstract string cachedName { get; }
         
         public abstract UnlockableDef characterUnlockableDef { get; }
 
@@ -39,7 +41,7 @@ namespace RocketSurvivor.Modules.Survivors
 
         protected virtual void InitializeSurvivor()
         {
-            RegisterNewSurvivor(bodyPrefab, displayPrefab, Color.grey, survivorTokenPrefix, characterUnlockableDef, bodyInfo.sortPosition);
+            RegisterNewSurvivor(bodyPrefab, displayPrefab, Color.grey, survivorTokenPrefix, characterUnlockableDef, bodyInfo.sortPosition, cachedName);
         }
 
         protected virtual void InitializeDisplayPrefab()
@@ -49,11 +51,7 @@ namespace RocketSurvivor.Modules.Survivors
         public virtual void InitializeUnlockables()
         {
         }
-
-        public static void RegisterNewSurvivor(GameObject bodyPrefab, GameObject displayPrefab, Color charColor, string tokenPrefix) { RegisterNewSurvivor(bodyPrefab, displayPrefab, charColor, tokenPrefix, null, 100f); }
-        public static void RegisterNewSurvivor(GameObject bodyPrefab, GameObject displayPrefab, Color charColor, string tokenPrefix, float sortPosition) { RegisterNewSurvivor(bodyPrefab, displayPrefab, charColor, tokenPrefix, null, sortPosition); }
-        public static void RegisterNewSurvivor(GameObject bodyPrefab, GameObject displayPrefab, Color charColor, string tokenPrefix, UnlockableDef unlockableDef) { RegisterNewSurvivor(bodyPrefab, displayPrefab, charColor, tokenPrefix, unlockableDef, 100f); }
-        public static void RegisterNewSurvivor(GameObject bodyPrefab, GameObject displayPrefab, Color charColor, string tokenPrefix, UnlockableDef unlockableDef, float sortPosition)
+        public static void RegisterNewSurvivor(GameObject bodyPrefab, GameObject displayPrefab, Color charColor, string tokenPrefix, UnlockableDef unlockableDef, float sortPosition, string cachedName)
         {
             SurvivorDef survivorDef = ScriptableObject.CreateInstance<SurvivorDef>();
             survivorDef.bodyPrefab = bodyPrefab;
@@ -67,6 +65,7 @@ namespace RocketSurvivor.Modules.Survivors
 
             survivorDef.desiredSortPosition = sortPosition;
             survivorDef.unlockableDef = unlockableDef;
+            survivorDef.cachedName = cachedName;
 
             Modules.Content.AddSurvivorDef(survivorDef);
         }

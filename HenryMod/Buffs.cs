@@ -1,5 +1,6 @@
 ﻿using Mono.Cecil.Cil;
 using MonoMod.Cil;
+using RocketSurvivor.Components;
 using RoR2;
 using System;
 using System.Collections.Generic;
@@ -13,7 +14,6 @@ namespace RocketSurvivor
     public class Buffs
     {
         public static BuffDef RocketJumpSpeedBuff;
-        public static BuffDef AirshotVulnerableDebuff;
 
         public static bool initialized = false;
 
@@ -24,20 +24,11 @@ namespace RocketSurvivor
             BuffDef vanillaSpeedBuff = Addressables.LoadAssetAsync<BuffDef>("RoR2/Base/SprintOutOfCombat/bdWhipBoost.asset").WaitForCompletion();    //Steal icon + color from here
             RocketJumpSpeedBuff = CreateBuffDef("RocketSurvivorRocketJumpSpeedBuff", false, false, false, new Color(0.376f, 0.843f, 0.898f), vanillaSpeedBuff.iconSprite);
 
-
-            BuffDef vanillaCritBuff = Addressables.LoadAssetAsync<BuffDef>("RoR2/Base/CritOnUse/bdFullCrit.asset").WaitForCompletion();    //Steal icon + color from here
-            AirshotVulnerableDebuff = CreateBuffDef("RocketSurvivorAirshotVulnerableDebuff", false, false, true, Modules.Survivors.RocketSurvivorSetup.RocketSurvivorColor, vanillaCritBuff.iconSprite);
-
             R2API.RecalculateStatsAPI.GetStatCoefficients += (sender, args) =>
             {
                 if (sender.HasBuff(RocketJumpSpeedBuff))
                 {
                     args.moveSpeedMultAdd += 0.4f;
-                }
-
-                if (sender.HasBuff(AirshotVulnerableDebuff))
-                {
-                    args.armorAdd -= 40f;
                 }
             };
 
@@ -45,11 +36,15 @@ namespace RocketSurvivor
             On.RoR2.CharacterMotor.FixedUpdate += (orig, self) =>
             {
                 orig(self);
-                if (NetworkServer.active && self.isGrounded && self.body)
+                if (self.hasAuthority && self.isGrounded && self.body)
                 {
                     if (self.body.HasBuff(RocketJumpSpeedBuff))
                     {
-                        self.body.RemoveBuff(RocketJumpSpeedBuff);
+                        NetworkedBodyBlastJumpHandler nb = self.GetComponent<NetworkedBodyBlastJumpHandler>();
+                        if (nb)
+                        {
+                            nb.CmdRemoveRocketJumpBuff();
+                        }
                     }
                 }
             };
@@ -58,9 +53,13 @@ namespace RocketSurvivor
             On.RoR2.CharacterMotor.Jump += (orig, self, hMult, vMult, vault) =>
             {
                 orig(self, hMult, vMult, vault);
-                if (NetworkServer.active && self.body.HasBuff(RocketJumpSpeedBuff))
+                if (self.hasAuthority && self.body.HasBuff(RocketJumpSpeedBuff))
                 {
-                    self.body.RemoveBuff(RocketJumpSpeedBuff);
+                    NetworkedBodyBlastJumpHandler nb = self.GetComponent<NetworkedBodyBlastJumpHandler>();
+                    if (nb)
+                    {
+                        nb.CmdRemoveRocketJumpBuff();
+                    }
                 }
             };
 

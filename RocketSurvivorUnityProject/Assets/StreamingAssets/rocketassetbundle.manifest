@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 1234794063
+CRC: 1552071337
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: cdde44633445d044f4798b3bf00f994c
+    Hash: 988a79d2248eaa484cf0efc6d3606302
   TypeTreeHash:
     serializedVersion: 2
-    Hash: ee1d7256862da8ce9889e5c97008e83f
+    Hash: b94259b1f9704646133d7ae03425307e
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -15,7 +15,11 @@ ClassTypes:
   Script: {instanceID: 0}
 - Class: 21
   Script: {instanceID: 0}
+- Class: 23
+  Script: {instanceID: 0}
 - Class: 28
+  Script: {instanceID: 0}
+- Class: 33
   Script: {instanceID: 0}
 - Class: 43
   Script: {instanceID: 0}
@@ -49,6 +53,10 @@ ClassTypes:
   Script: {instanceID: 0}
 - Class: 144
   Script: {instanceID: 0}
+- Class: 198
+  Script: {instanceID: 0}
+- Class: 199
+  Script: {instanceID: 0}
 - Class: 213
   Script: {instanceID: 0}
 - Class: 319
@@ -56,6 +64,9 @@ ClassTypes:
 SerializeReferenceClassIdentifiers: []
 Assets:
 - Assets/RocketBundle/Animation/RocketGesture.mask
+- Assets/RocketBundle/icons/texSkillSpecial_Scepter.png
+- Assets/RocketBundle/icons/texSkillSpecial.png
+- Assets/RocketBundle/icons/texSkillSecondary.png
 - Assets/RocketBundle/icons/texSkillSpecial_Scepter_mspaint.png
 - Assets/RocketBundle/Materials/MatShovel.mat
 - Assets/RocketBundle/icons/texSkillPrimary_mspaint.png
@@ -64,11 +75,20 @@ Assets:
 - Assets/RocketBundle/textures/TexShovel.png
 - Assets/RocketBundle/mdlRocket.prefab
 - Assets/RocketBundle/textures/TexShovelEmissive.png
+- Assets/RocketBundle/icons/texSkillUtility_Conc.png
+- Assets/RocketBundle/Particles/texRing.png
 - Assets/RocketBundle/Animation/animRocket.controller
 - Assets/RocketBundle/RocketDisplay.prefab
 - Assets/RocketBundle/icons/texRocketSkinDefault.png
+- Assets/RocketBundle/mdlC4.prefab
+- Assets/RocketBundle/icons/texSkillPrimary_DirectHit.png
 - Assets/RocketBundle/icons/texSkillPrimary_DirectHit_mspaint.png
 - Assets/RocketBundle/textures/TexBlackBox.png
+- Assets/RocketBundle/icons/texSkillPassive.png
+- Assets/RocketBundle/icons/texSkillUtility_Shovel.png
+- Assets/RocketBundle/icons/texSkillUtility_C4_mspaint.png
+- Assets/RocketBundle/icons/texSkillPrimary.png
+- Assets/RocketBundle/textures/texC4.png
 - Assets/RocketBundle/Materials/MatBlackBox.mat
 - Assets/RocketBundle/icons/texSkillUtility_Shovel_mspaint.png
 - Assets/RocketBundle/Materials/MatGrenade.mat
@@ -76,10 +96,13 @@ Assets:
 - Assets/RocketBundle/icons/texSkillSpecial_mspaint.png
 - Assets/RocketBundle/Materials/MatRocketBackpack.mat
 - Assets/RocketBundle/icons/texSkillUtility_Conc_mspaint.png
+- Assets/RocketBundle/Materials/matC4.mat
 - Assets/RocketBundle/Materials/MatRocket.mat
 - Assets/RocketBundle/textures/TexRocketBackpack.png
 - Assets/RocketBundle/icons/texSkillPassive_mspaint.png
 - Assets/RocketBundle/textures/TexRocketEmissive.png
+- Assets/RocketBundle/Particles/matRing.mat
+- Assets/RocketBundle/icons/texSkillUtility_C4.png
 - Assets/RocketBundle/textures/TexRocket.png
 - Assets/RocketBundle/textures/TexRocketProjectile.png
 Dependencies: []
