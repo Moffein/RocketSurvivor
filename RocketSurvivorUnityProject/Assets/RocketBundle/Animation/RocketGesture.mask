@@ -13,6 +13,8 @@ AvatarMask:
     m_Weight: 1
   - m_Path: Armature
     m_Weight: 0
+  - m_Path: Armature/RocketAmmo
+    m_Weight: 1
   - m_Path: Armature/Root
     m_Weight: 0
   - m_Path: Armature/Root/Base
@@ -164,6 +166,8 @@ AvatarMask:
   - m_Path: Giftmaker 2.0
     m_Weight: 0
   - m_Path: Rocket
+    m_Weight: 0
+  - m_Path: Rocket Missile
     m_Weight: 0
   - m_Path: Shovel
     m_Weight: 0

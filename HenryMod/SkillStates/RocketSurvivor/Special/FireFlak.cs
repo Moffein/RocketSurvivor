@@ -91,7 +91,7 @@ namespace EntityStates.RocketSurvivorSkills.Special
             {
                 EffectManager.SimpleMuzzleFlash(effectPrefab, base.gameObject, FireFlak.muzzleString, false);
             }
-            base.PlayAnimation("Gesture, Additive", "Shoot", "Shoot.playbackRate", 0.169f);
+            base.PlayAnimation("Gesture, Override", "Shoot", "Shoot.playbackRate", 0.169f);
             Util.PlaySound(FireRocket.attackSoundString, base.gameObject);
             shotsRemaining--;
         }
@@ -100,7 +100,7 @@ namespace EntityStates.RocketSurvivorSkills.Special
         {
             return InterruptPriority.Pain;
         }
-
+        
         private bool isCrit;
         private float fireStopwatch;
 

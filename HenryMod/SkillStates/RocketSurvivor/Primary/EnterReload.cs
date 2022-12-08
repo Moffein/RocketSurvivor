@@ -19,7 +19,7 @@ namespace EntityStates.RocketSurvivorSkills.Primary
 		public override void OnEnter()
 		{
 			base.OnEnter();
-			//base.PlayCrossfade("Gesture, Additive", "EnterReload", "Reload.playbackRate", this.duration, 0.1f);
+			//base.PlayCrossfade("Gesture, Override", "EnterReload", "Reload.playbackRate", this.duration, 0.1f);
 			//Util.PlaySound(EnterReload.enterSoundString, base.gameObject);
 		}
 

@@ -25,9 +25,10 @@ namespace EntityStates.RocketSurvivorSkills.Primary
 		{
 			base.OnEnter();
 			//base.PlayAnimation("Gesture, Additive", (base.characterBody.isSprinting && base.characterMotor && base.characterMotor.isGrounded) ? "ReloadSimple" : "Reload", "Reload.playbackRate", this.duration);
+			base.PlayCrossfade("Gesture, Override", "EnterReload", "Reload.playbackRate", this.duration, 0.1f);
 			Util.PlayAttackSpeedSound(Reload.enterSoundString, base.gameObject, Reload.enterSoundPitch);
 		}
-
+		
 		public override void FixedUpdate()
 		{
 			base.FixedUpdate();
