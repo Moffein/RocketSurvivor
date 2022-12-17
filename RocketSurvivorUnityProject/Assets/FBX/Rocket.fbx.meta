@@ -256,7 +256,7 @@ ModelImporter:
       takeName: Armature|Shoot
       internalID: 0
       firstFrame: 0
-      lastFrame: 24
+      lastFrame: 17.5
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -406,19 +406,12 @@ ModelImporter:
           postInfinity: 3
           rotationOrder: 4
       events:
-      - time: 0.13636364
-        functionName: Reparent
+      - time: 0.11082474
+        functionName: HoldShovel
         data: 
         objectReferenceParameter: {instanceID: 0}
         floatParameter: 0
         intParameter: 1
-        messageOptions: 0
-      - time: 0.838843
-        functionName: Reparent
-        data: 
-        objectReferenceParameter: {instanceID: 0}
-        floatParameter: 0
-        intParameter: 0
         messageOptions: 0
       transformMask: []
       maskType: 3
@@ -694,7 +687,7 @@ ModelImporter:
             inWeight: 0
             outWeight: 0
           - serializedVersion: 3
-            time: 0.6915584
+            time: 0.6584523
             value: 0
             inSlope: 0
             outSlope: 0
@@ -703,7 +696,7 @@ ModelImporter:
             inWeight: 0
             outWeight: 0
           - serializedVersion: 3
-            time: 0.70788705
+            time: 0.6747809
             value: 1
             inSlope: 0
             outSlope: 0
@@ -723,7 +716,14 @@ ModelImporter:
           preInfinity: 3
           postInfinity: 3
           rotationOrder: 4
-      events: []
+      events:
+      - time: 0.7122148
+        functionName: HoldShovel
+        data: 
+        objectReferenceParameter: {instanceID: 0}
+        floatParameter: 0
+        intParameter: 1
+        messageOptions: 0
       transformMask: []
       maskType: 3
       maskSource: {instanceID: 0}
@@ -791,7 +791,7 @@ ModelImporter:
       takeName: Armature|NitroCharge
       internalID: 0
       firstFrame: 0
-      lastFrame: 20
+      lastFrame: 18
       wrapMode: 0
       orientationOffsetY: 0
       level: 0
@@ -820,7 +820,7 @@ ModelImporter:
       takeName: Armature|RemoteDet
       internalID: 0
       firstFrame: 0
-      lastFrame: 30
+      lastFrame: 16.5
       wrapMode: 0
       orientationOffsetY: 0
       level: 0

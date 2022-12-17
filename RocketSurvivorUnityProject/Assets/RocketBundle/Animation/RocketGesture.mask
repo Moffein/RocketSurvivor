@@ -13,8 +13,6 @@ AvatarMask:
     m_Weight: 1
   - m_Path: Armature
     m_Weight: 0
-  - m_Path: Armature/RocketAmmo
-    m_Weight: 1
   - m_Path: Armature/Root
     m_Weight: 0
   - m_Path: Armature/Root/Base
@@ -88,6 +86,8 @@ AvatarMask:
   - m_Path: Armature/Root/Base/spine1/spine2/spine3/shoulder.L/upper_arm.L/forearm.L/hand.L/f_ring.01.L/f_ring.02.L/f_ring.03.L
     m_Weight: 1
   - m_Path: Armature/Root/Base/spine1/spine2/spine3/shoulder.L/upper_arm.L/forearm.L/hand.L/Grenade
+    m_Weight: 1
+  - m_Path: Armature/Root/Base/spine1/spine2/spine3/shoulder.L/upper_arm.L/forearm.L/hand.L/RocketAmmo
     m_Weight: 1
   - m_Path: Armature/Root/Base/spine1/spine2/spine3/shoulder.L/upper_arm.L/forearm.L/hand.L/ShovelHand
     m_Weight: 1
@@ -167,7 +167,7 @@ AvatarMask:
     m_Weight: 0
   - m_Path: Rocket
     m_Weight: 0
-  - m_Path: Rocket Missile
+  - m_Path: RocketRocket
     m_Weight: 0
   - m_Path: Shovel
     m_Weight: 0

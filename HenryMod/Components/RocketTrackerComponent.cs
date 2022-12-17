@@ -8,8 +8,7 @@ using RocketSurvivor.Components.Projectile;
 using R2API;
 using RocketSurvivor.Modules.Survivors;
 
-namespace RocketSurvivor.Components
-{
+namespace RocketSurvivor.Components {
     public class RocketTrackerComponent : NetworkBehaviour
     {
         private List<RocketInfo> rocketList;

@@ -15,7 +15,7 @@ namespace EntityStates.RocketSurvivorSkills.Utility
 			Ray aimRay = base.GetAimRay();
 			base.StartAimMode(aimRay, 3f, false);
 
-			base.PlayAnimation("Gesture, Override", "ThrowBomb", "ThrowBomb.playbackRate", this.duration); //TODO: REPLACE
+			base.PlayAnimation("Gesture, Override", "NitroCharge", "ThrowBomb.playbackRate", this.duration); //TODO: REPLACE
 			Util.PlaySound(attackSoundString, base.gameObject);
 
 			if (C4.effectPrefab)
@@ -36,7 +36,7 @@ namespace EntityStates.RocketSurvivorSkills.Utility
 			{
 				buttonReleased = true;
 			}
-
+			
 			if (base.fixedAge >= this.duration && base.isAuthority)
 			{
 				this.outer.SetNextStateToMain();

@@ -33,6 +33,8 @@ namespace EntityStates.RocketSurvivorSkills.Secondary
                     rtc.ServerDetonateRocket();
                 }
             }
+
+            PlayAnimation("Gesture, Additive", "RemoteDet");
         }
 
         public override void FixedUpdate()

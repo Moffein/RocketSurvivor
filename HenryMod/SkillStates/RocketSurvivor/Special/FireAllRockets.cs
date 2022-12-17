@@ -117,7 +117,8 @@ namespace EntityStates.RocketSurvivorSkills.Special
             {
                 EffectManager.SimpleMuzzleFlash(effectPrefab, base.gameObject, GetMuzzleString(), false);
             }
-            base.PlayAnimation("Gesture, Override", "Shoot", "Shoot.playbackRate", 0.169f);
+            //"SpecialShoot" for the one with the exhuast anim
+            base.PlayAnimation("Gesture, Override", "Shoot"/*, "Shoot.playbackRate", 0.169f*/);
             Util.PlaySound(FireRocket.attackSoundString, base.gameObject);
             shotsRemaining--;
         }

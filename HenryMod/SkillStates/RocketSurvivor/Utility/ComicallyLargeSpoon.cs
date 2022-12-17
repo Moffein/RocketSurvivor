@@ -8,11 +8,13 @@ namespace EntityStates.RocketSurvivorSkills.Utility
 {
     public class PrepComicallyLargeSpoon : BaseState
     {
+        bool success = false;
 
         public override void OnEnter()
         {
             base.OnEnter();
             Util.PlayAttackSpeedSound("Play_Moffein_RocketSurvivor_R_Alt_Prep", base.gameObject, base.attackSpeedStat);
+            PlayAnimation("Shovel, Override", "HoldShovel");
         }
 
         public override void FixedUpdate()
@@ -21,6 +23,7 @@ namespace EntityStates.RocketSurvivorSkills.Utility
             if (base.isAuthority && !(base.inputBank && base.inputBank.skill3.down))
             {
                 this.outer.SetNextState(new ComicallyLargeSpoon());
+                success = true;
                 return;
             }
         }
@@ -28,6 +31,13 @@ namespace EntityStates.RocketSurvivorSkills.Utility
         public override InterruptPriority GetMinimumInterruptPriority()
         {
             return InterruptPriority.PrioritySkill;
+        }
+
+        public override void OnExit() {
+            base.OnExit();
+            if (!success) {
+                PlayAnimation("Shovel, Override", "BufferEmpty");
+            }
         }
     }
 
@@ -65,8 +75,8 @@ namespace EntityStates.RocketSurvivorSkills.Utility
         protected override void PlayAttackAnimation()
         {
             base.PlayAttackAnimation();
-
-            PlayCrossfade("Gesture, Additive", "SwingShovel", "Swing.playbackRate", duration, 0.05f);
+            
+            PlayCrossfade("Gesture, Override", "SwingShovel", "Swing.playbackRate", duration * 2, 0.05f);
         }
 
         protected override void PlaySwingEffect()

@@ -54,6 +54,7 @@ namespace RocketSurvivor.Modules.Survivors
             aimOriginPosition = new Vector3(0f, 1.1f, -0.1f)
         };
 
+        //taken care of by characterbody on prefab
         public override CustomRendererInfo[] customRendererInfos { get; set; } 
         //    = new CustomRendererInfo[] 
         //{
