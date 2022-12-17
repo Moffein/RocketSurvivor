@@ -11,6 +11,7 @@ using UnityEngine.AddressableAssets;
 using R2API;
 using System.Runtime.CompilerServices;
 using System.Linq;
+using EntityStates.RocketSurvivorSkills;
 
 namespace RocketSurvivor.Modules.Survivors
 {
@@ -74,7 +75,7 @@ namespace RocketSurvivor.Modules.Survivors
 
         public override UnlockableDef characterUnlockableDef => null;
 
-        public override Type characterMainState => typeof(EntityStates.GenericCharacterMain);
+        public override Type characterMainState => typeof(RocketMainState);
 
         public override ItemDisplaysBase itemDisplays => new HenryItemDisplays();
 
@@ -91,12 +92,20 @@ namespace RocketSurvivor.Modules.Survivors
 
             EntityStateMachine offhandMachine = base.bodyPrefab.AddComponent<EntityStateMachine>();
             offhandMachine.customName = "Offhand";
-            offhandMachine.mainStateType = new SerializableEntityStateType(typeof(EntityStates.BaseBodyAttachmentState));
+            offhandMachine.mainStateType = new SerializableEntityStateType(typeof(EntityStates.Idle));
 
             NetworkStateMachine nsm = base.bodyPrefab.GetComponent<NetworkStateMachine>();
             List<EntityStateMachine> stateMachines = nsm.stateMachines.ToList();
             stateMachines.Add(offhandMachine);
             nsm.stateMachines = stateMachines.ToArray();
+
+            SetStateOnHurt ssoh = bodyPrefab.GetComponent<SetStateOnHurt>();
+            if (ssoh)
+            {
+                List<EntityStateMachine> idleStateMachines = ssoh.idleStateMachine.ToList();
+                idleStateMachines.Add(offhandMachine);
+                ssoh.idleStateMachine = idleStateMachines.ToArray();
+            }
         }
 
         public override void InitializeUnlockables()

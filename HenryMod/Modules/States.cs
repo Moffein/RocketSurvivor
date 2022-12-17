@@ -2,6 +2,7 @@
 using RocketSurvivor.SkillStates.BaseStates;
 using System.Collections.Generic;
 using System;
+using EntityStates.RocketSurvivorSkills;
 using EntityStates.RocketSurvivorSkills.Primary;
 using EntityStates.RocketSurvivorSkills.Secondary;
 using EntityStates.RocketSurvivorSkills.Utility;
@@ -13,6 +14,7 @@ namespace RocketSurvivor.Modules
     {
         internal static void RegisterStates()
         {
+            Modules.Content.AddEntityState(typeof(RocketMainState));
             Modules.Content.AddEntityState(typeof(FireRocket));
             Modules.Content.AddEntityState(typeof(FireRocketAlt));
             Modules.Content.AddEntityState(typeof(EnterReload));
