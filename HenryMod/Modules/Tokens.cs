@@ -28,21 +28,21 @@ namespace RocketSurvivor.Modules
             LanguageAPI.Add(prefix + "PASSIVE_DESCRIPTION", "Your explosives can be used to <style=cIsUtility>blast jump</style>.");
 
             LanguageAPI.Add(prefix + "PRIMARY_NAME", "HG4 Rocket Launcher");
-            LanguageAPI.Add(prefix + "PRIMARY_DESCRIPTION", "<style=cIsUtility>Agile</style>. Fire a rocket for <style=cIsDamage>640% damage</style>. Can hold up to 4.");
+            LanguageAPI.Add(prefix + "PRIMARY_DESCRIPTION", "<style=cIsUtility>Agile</style>. Fire a rocket for <style=cIsDamage>600% damage</style>. Can hold up to 4.");
 
             //Unlock Condition: Hit 20 airshots.
             LanguageAPI.Add(prefix + "PRIMARY_ALT_NAME", "HG4 SAM Launcher");
-            LanguageAPI.Add(prefix + "PRIMARY_ALT_DESCRIPTION", "<style=cIsUtility>Agile</style>. Fire a heat-seeking precision rocket for <style=cIsDamage>640% damage</style>. Deals <style=cIsDamage>+30% damage</style> against <style=cIsUtility>airborne targets</style>. Can hold up to 4.");
+            LanguageAPI.Add(prefix + "PRIMARY_ALT_DESCRIPTION", "<style=cIsUtility>Agile</style>. Fire a heat-seeking precision rocket for <style=cIsDamage>600% damage</style>. Deals <style=cIsDamage>+30% damage</style> against <style=cIsUtility>airborne targets</style>. Can hold up to 4.");
 
             LanguageAPI.Add(prefix + "SECONDARY_NAME", "Remote Detonator");
             LanguageAPI.Add(prefix + "SECONDARY_DESCRIPTION", "Detonate <style=cIsDamage>all explosives</style>. Detonated <style=cIsDamage>rockets</style> gain <style=cIsDamage>50%</style> extra <style=cIsDamage>damage</style> and <style=cIsDamage>blast radius</style>.");
 
             LanguageAPI.Add(prefix + "UTILITY_NAME", "Nitro Charge");
-            LanguageAPI.Add(prefix + "UTILITY_DESCRIPTION", "<style=cIsDamage>Stunning</style>. Place an explosive charge. Use <style=cIsDamage>Remote Detonator</style> to detonate it for <style=cIsDamage>1300% damage</style>.");
+            LanguageAPI.Add(prefix + "UTILITY_DESCRIPTION", "<style=cIsDamage>Stunning</style>. Place an explosive charge. Use <style=cIsDamage>Remote Detonator</style> to detonate it for <style=cIsDamage>1200% damage</style>.");
 
             //Unlock Condition: Kill 5 enemies in a single rocket jump.
             LanguageAPI.Add(prefix + "UTILITY_ALT_NAME", "Bombing Run");
-            LanguageAPI.Add(prefix + "UTILITY_ALT_DESCRIPTION", "<style=cIsUtility>Heavy</style>. <style=cIsDamage>Stunning</style>. Swing your explosive shovel at an enemy for <style=cIsDamage>1300% damage</style>. Deals <style=cIsDamage>Critical Strikes</style> while <style=cIsUtility>blast jumping</style>.");
+            LanguageAPI.Add(prefix + "UTILITY_ALT_DESCRIPTION", "<style=cIsUtility>Heavy</style>. <style=cIsDamage>Stunning</style>. Swing your explosive shovel at an enemy for <style=cIsDamage>1200% damage</style>. Deals <style=cIsDamage>Critical Strikes</style> while <style=cIsUtility>blast jumping</style>.");
 
             LanguageAPI.Add(prefix + "SPECIAL_NAME", "Rapid Rearm");
             LanguageAPI.Add(prefix + "SPECIAL_DESCRIPTION", "Rapidly <style=cIsDamage>fire 4 rockets</style>, then <style=cIsUtility>reload your weapon</style>.");

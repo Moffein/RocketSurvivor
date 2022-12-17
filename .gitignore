@@ -260,3 +260,7 @@ paket-files/
 # Python Tools for Visual Studio (PTVS)
 __pycache__/
 *.pyc
+/RocketSurvivorUnityProject/AssetBundles/StandaloneWindows/StandaloneWindows.manifest
+/RocketSurvivorUnityProject/AssetBundles/StandaloneWindows/StandaloneWindows
+/RocketSurvivorUnityProject/AssetBundles/StandaloneWindows/rocketassetbundle.manifest
+/RocketSurvivorUnityProject/AssetBundles/StandaloneWindows/rocketassetbundle
