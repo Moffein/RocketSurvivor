@@ -34,7 +34,7 @@ namespace EntityStates.RocketSurvivorSkills.Secondary
                 }
             }
 
-            PlayAnimation("Gesture, Additive", "RemoteDet");
+            PlayAnimation("LeftArm, Override", "RemoteDet");
         }
 
         public override void FixedUpdate()

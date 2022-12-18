@@ -13,9 +13,12 @@ public class BootlegCopyTransformsConstraint : MonoBehaviour
     [SerializeField]
     private Transform shovelHand;
 
+    [SerializeField]
+    private string animatorParameter;
+
     bool holdingShovel = true;
 
-    public void HoldShovel () {
+    public void Reparent () {
 
     }
 }

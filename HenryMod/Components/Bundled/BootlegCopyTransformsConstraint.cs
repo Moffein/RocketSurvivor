@@ -10,12 +10,15 @@ public class BootlegCopyTransformsConstraint : MonoBehaviour {
     
     [SerializeField]
     private Transform shovelHand;
+
+    [SerializeField]
+    private string animatorParameter;
     
     bool holdingShovel = false;
 
     void FixedUpdate() {
         if (holdingShovel) {
-            if (animator.GetFloat("ShovelParent") < 1) {
+            if (animator.GetFloat(animatorParameter) < 1) {
                 holdingShovel = false;
             }
         }
@@ -28,7 +31,7 @@ public class BootlegCopyTransformsConstraint : MonoBehaviour {
         }
     }
 
-    public void HoldShovel() {
+    public void Reparent() {
         holdingShovel = true;
     }
 }

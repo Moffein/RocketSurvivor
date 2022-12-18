@@ -87,7 +87,7 @@ namespace EntityStates.RocketSurvivorSkills.Utility
         protected override void OnHitEnemyAuthority()
         {
             base.OnHitEnemyAuthority();
-
+            
             if (!firedExplosion)
             {
                 firedExplosion = true;
@@ -133,6 +133,11 @@ namespace EntityStates.RocketSurvivorSkills.Utility
         public override InterruptPriority GetMinimumInterruptPriority()
         {
             return InterruptPriority.PrioritySkill;
+        }
+
+        public override void OnExit() {
+            base.OnExit();
+            PlayAnimation("Shovel, Override", "BufferEmpty");
         }
 
         private bool firedExplosion = false;
