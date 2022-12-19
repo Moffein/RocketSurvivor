@@ -164,7 +164,7 @@ namespace EntityStates.RocketSurvivorSkills.Emote {
 
     public class Sit : BaseEmote {
         public override void OnEnter() {
-            this.animString = "Sit";
+            this.animString = "TauntSit";
             this.duration = -1;
             base.OnEnter();
         }
@@ -179,9 +179,10 @@ namespace EntityStates.RocketSurvivorSkills.Emote {
 
         public override void FixedUpdate() {
             base.FixedUpdate();
-                                                                 //update this when animation gets updated to reset to idle
+
             if (!explosion && base.fixedAge / this.duration >= (1f / 1f)) {
                 //EXPLOSION
+                //and blast jump to get out of the animation (If he survives)
             }
         }
     }

@@ -180,7 +180,7 @@ MonoBehaviour:
     transform: {fileID: 2640380884932458243}
   - name: spine1
     transform: {fileID: 8238236677988290462}
-  - name: spine3
+  - name: Chest
     transform: {fileID: 197104631817464707}
   - name: head
     transform: {fileID: 7104065165210581719}
@@ -226,6 +226,22 @@ MonoBehaviour:
   shovel: {fileID: 6887705308961598976}
   shovelHand: {fileID: 5123057683369654030}
   animatorParameter: ShovelHandL
+--- !u!114 &8020168493335891220
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7281104788991602446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a180f758dc188f64b8e53552a8bfc436, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 4080351708368138190}
+  shovel: {fileID: 6887705308961598976}
+  shovelHand: {fileID: 4039917349551308496}
+  animatorParameter: ShovelHandR
 --- !u!114 &8111917177684706174
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -275,22 +291,6 @@ MonoBehaviour:
     defaultShadowCastingMode: 0
     ignoreOverlays: 0
     hideOnDeath: 0
---- !u!114 &8020168493335891220
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7281104788991602446}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a180f758dc188f64b8e53552a8bfc436, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  animator: {fileID: 4080351708368138190}
-  shovel: {fileID: 6887705308961598976}
-  shovelHand: {fileID: 4039917349551308496}
-  animatorParameter: ShovelHandR
 --- !u!54 &733821364609255773
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -4016,6 +4016,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 48.534184
+      objectReference: {fileID: 0}
+    - target: {fileID: -610643720511684662, guid: 25c521f7536da2c4aab55ffef0661d69,
+        type: 3}
+      propertyPath: m_UpdateWhenOffscreen
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -610643720511684662, guid: 25c521f7536da2c4aab55ffef0661d69,
         type: 3}
