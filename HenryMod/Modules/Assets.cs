@@ -22,6 +22,8 @@ namespace RocketSurvivor.Modules
 
         internal static GameObject bombExplosionEffect;
 
+        internal static GameObject smokeEffect;
+
         // networked hit sounds
         internal static NetworkSoundEventDef spoonHitSoundEvent;
 
@@ -106,6 +108,8 @@ namespace RocketSurvivor.Modules
                     cycleOffset = 0f
                 };
             }
+
+            smokeEffect = LoadEffect("SmokeEffect", "some sound");
 
             //Set these to something else later.
             //spoonSwingEffect = Assets.LoadEffect("HenrySwordSwingEffect", true);

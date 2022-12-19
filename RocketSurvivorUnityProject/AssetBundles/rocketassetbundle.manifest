@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 2024273123
+CRC: 1604615653
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: f4bb0ae916bb9f2f74c0b93ed6885630
+    Hash: 35361d6bc5a96d9aee6e81d9c163e6ed
   TypeTreeHash:
     serializedVersion: 2
-    Hash: e4484909226fc6bc772f23d74dc9f7a4
+    Hash: a86c4bb48043520e8da6b0289dd9d8b1
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -45,6 +45,8 @@ ClassTypes:
   Script: {fileID: 11500000, guid: 261c50d8a80898e4ebf2e8e415ea6766, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 751bd37d2e55f5f448dbb0d97812d9ba, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: 86f9ef24536bf5e41b4089649b61b394, type: 3}
 - Class: 115
   Script: {instanceID: 0}
 - Class: 135
@@ -84,6 +86,7 @@ Assets:
 - Assets/RocketBundle/RocketDisplay.prefab
 - Assets/RocketBundle/icons/texRocketSkinDefault.png
 - Assets/RocketBundle/mdlC4.prefab
+- Assets/RocketBundle/SmokeEffect.prefab
 - Assets/RocketBundle/icons/texSkillPrimary_DirectHit.png
 - Assets/RocketBundle/icons/texSkillPrimary_DirectHit_mspaint.png
 - Assets/RocketBundle/textures/TexBlackBox.png
