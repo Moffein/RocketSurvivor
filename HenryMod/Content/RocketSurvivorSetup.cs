@@ -48,8 +48,8 @@ namespace RocketSurvivor.Modules.Survivors
 
             armor = 0f,
 
-            damage = 14f,
-            damageGrowth = 2.8f,
+            damage = 12f,
+            damageGrowth = 2.4f,
 
             jumpCount = 1,
             aimOriginPosition = new Vector3(0f, 1.1f, -0.1f)
