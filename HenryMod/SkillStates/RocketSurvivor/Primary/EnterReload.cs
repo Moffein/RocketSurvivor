@@ -1,5 +1,6 @@
 ﻿using RoR2;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 
 namespace EntityStates.RocketSurvivorSkills.Primary
 {

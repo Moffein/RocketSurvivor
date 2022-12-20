@@ -9,6 +9,6 @@ public class AnimationPlaySmokeParticle : MonoBehaviour {
 
     public void Smoke() {
         //uncomment this to disable
-        smokeParticleSystem.Play();
+        //smokeParticleSystem.Play();
     }
 }

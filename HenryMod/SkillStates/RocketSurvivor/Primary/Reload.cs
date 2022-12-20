@@ -1,5 +1,6 @@
 ﻿using RoR2;
 using UnityEngine;
+using UnityEngine.AddressableAssets;
 
 namespace EntityStates.RocketSurvivorSkills.Primary
 {
@@ -8,7 +9,7 @@ namespace EntityStates.RocketSurvivorSkills.Primary
 		public static float enterSoundPitch = 1f;
 		public static float exitSoundPitch = 1f;
 		public static string enterSoundString = "Play_Moffein_RocketSurvivor_M1_Reload";
-		public static GameObject reloadEffectPrefab = LegacyResourcesAPI.Load<GameObject>("prefabs/effects/Bandit2Reload");
+		public static GameObject reloadEffectPrefab = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Common/VFX/MuzzleflashSmokeRing.prefab").WaitForCompletion();
 		public static float baseDuration = 0.8f;
 
 		private bool hasGivenStock;
@@ -62,6 +63,10 @@ namespace EntityStates.RocketSurvivorSkills.Primary
 			if (base.isAuthority && base.skillLocator.primary.stock < base.skillLocator.primary.maxStock)
 			{
 				base.skillLocator.primary.AddOneStock();
+			}
+			if (Reload.reloadEffectPrefab)
+			{
+				EffectManager.SimpleMuzzleFlash(Reload.reloadEffectPrefab, base.gameObject, "MuzzleRocketLauncher", false);
 			}
 			this.hasGivenStock = true;
 		}

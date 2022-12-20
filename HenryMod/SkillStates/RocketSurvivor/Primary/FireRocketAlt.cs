@@ -69,10 +69,10 @@ namespace EntityStates.RocketSurvivorSkills.Primary
 		}
 
 		public static GameObject explosionEffectPrefab;
-		public static string muzzleString = "MuzzleCenter";
+		public static string muzzleString = "MuzzleRocketLauncher";
 		public static string attackSoundString = "Play_Moffein_RocketSurvivor_M1_Alt_Shoot";
 		public static GameObject projectilePrefab;
-		public static GameObject effectPrefab = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Commando/MuzzleflashFMJ.prefab").WaitForCompletion();
+		public static GameObject effectPrefab = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Common/VFX/MuzzleflashBarrage.prefab").WaitForCompletion();
 		public static float damageCoefficient = 6f;
 		public static float force = 2250f;
 		public static float baseDuration = 0.8f;

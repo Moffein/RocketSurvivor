@@ -7,9 +7,12 @@ namespace EntityStates.RocketSurvivorSkills.Special
 {
     public class Rearm : BaseState
     {
+        public static GameObject effectPrefab = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Loader/OmniImpactVFXLoader.prefab").WaitForCompletion();
         public static string soundString = "Play_Moffein_RocketSurvivor_Shift_Rearm";
         public static float baseDuration = 0.96f;
+        public static float vfxPercent = 0.75f;
         private float duration;
+        private bool playedEffect = false;
 
         public override void OnEnter()
         {
@@ -22,7 +25,13 @@ namespace EntityStates.RocketSurvivorSkills.Special
         {
             base.FixedUpdate();
 
-            if (base.fixedAge > duration && base.isAuthority)
+            if (!playedEffect && base.fixedAge >= duration * vfxPercent )
+            {
+                playedEffect = true;
+                EffectManager.SimpleMuzzleFlash(Rearm.effectPrefab, base.gameObject, "Exhaust", false);
+            }
+
+            if (base.fixedAge >= duration && base.isAuthority)
             {
                 if (base.skillLocator)
                 {
