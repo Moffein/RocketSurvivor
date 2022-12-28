@@ -5161,15 +5161,6 @@ BlendTree:
   m_Name: RocketJump
   m_Childs:
   - serializedVersion: 2
-    m_Motion: {fileID: -5392195937436897604, guid: 25c521f7536da2c4aab55ffef0661d69,
-      type: 3}
-    m_Threshold: -48
-    m_Position: {x: 0, y: 0}
-    m_TimeScale: 1
-    m_CycleOffset: 0
-    m_DirectBlendParameter: forwardSpeed
-    m_Mirror: 0
-  - serializedVersion: 2
     m_Motion: {fileID: 6694596093745604975, guid: 25c521f7536da2c4aab55ffef0661d69,
       type: 3}
     m_Threshold: 10

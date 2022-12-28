@@ -1,12 +1,12 @@
 ManifestFileVersion: 0
-CRC: 1552071337
+CRC: 706237723
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: 988a79d2248eaa484cf0efc6d3606302
+    Hash: fcf5023153561d1b74a1c3ab97b2b978
   TypeTreeHash:
     serializedVersion: 2
-    Hash: b94259b1f9704646133d7ae03425307e
+    Hash: 7c96043ea960881e6368d4d6a0d67c30
 HashAppended: 0
 ClassTypes:
 - Class: 1
@@ -38,7 +38,11 @@ ClassTypes:
 - Class: 95
   Script: {instanceID: 0}
 - Class: 114
+  Script: {fileID: 11500000, guid: 86f9ef24536bf5e41b4089649b61b394, type: 3}
+- Class: 114
   Script: {fileID: 11500000, guid: 30f7d466d2d378944b2fc847c6e27ab3, type: 3}
+- Class: 114
+  Script: {fileID: 11500000, guid: a180f758dc188f64b8e53552a8bfc436, type: 3}
 - Class: 114
   Script: {fileID: 11500000, guid: 261c50d8a80898e4ebf2e8e415ea6766, type: 3}
 - Class: 114
@@ -75,16 +79,19 @@ Assets:
 - Assets/RocketBundle/textures/TexShovel.png
 - Assets/RocketBundle/mdlRocket.prefab
 - Assets/RocketBundle/textures/TexShovelEmissive.png
+- Assets/RocketBundle/Materials/MatRocketProjectile.mat
 - Assets/RocketBundle/icons/texSkillUtility_Conc.png
 - Assets/RocketBundle/Particles/texRing.png
 - Assets/RocketBundle/Animation/animRocket.controller
 - Assets/RocketBundle/RocketDisplay.prefab
 - Assets/RocketBundle/icons/texRocketSkinDefault.png
 - Assets/RocketBundle/mdlC4.prefab
+- Assets/RocketBundle/SmokeEffect.prefab
 - Assets/RocketBundle/icons/texSkillPrimary_DirectHit.png
 - Assets/RocketBundle/icons/texSkillPrimary_DirectHit_mspaint.png
 - Assets/RocketBundle/textures/TexBlackBox.png
 - Assets/RocketBundle/icons/texSkillPassive.png
+- Assets/RocketBundle/Animation/animRocketDisplay.controller
 - Assets/RocketBundle/icons/texSkillUtility_Shovel.png
 - Assets/RocketBundle/icons/texSkillUtility_C4_mspaint.png
 - Assets/RocketBundle/icons/texSkillPrimary.png
@@ -97,6 +104,7 @@ Assets:
 - Assets/RocketBundle/Materials/MatRocketBackpack.mat
 - Assets/RocketBundle/icons/texSkillUtility_Conc_mspaint.png
 - Assets/RocketBundle/Materials/matC4.mat
+- Assets/RocketBundle/Animation/RocketLeftArm.mask
 - Assets/RocketBundle/Materials/MatRocket.mat
 - Assets/RocketBundle/textures/TexRocketBackpack.png
 - Assets/RocketBundle/icons/texSkillPassive_mspaint.png
