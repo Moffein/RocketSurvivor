@@ -14,6 +14,7 @@ using System.Runtime.CompilerServices;
 
 namespace RocketSurvivor
 {
+    [BepInDependency("com.weliveinasociety.CustomEmotesAPI", BepInDependency.DependencyFlags.SoftDependency)]
     [BepInDependency("HIFU.Inferno", BepInDependency.DependencyFlags.SoftDependency)]
     [BepInDependency("com.DestroyedClone.AncientScepter", BepInDependency.DependencyFlags.SoftDependency)]
     [BepInDependency("com.ThinkInvisible.ClassicItems", BepInDependency.DependencyFlags.SoftDependency)]
@@ -43,6 +44,7 @@ namespace RocketSurvivor
         public static bool infernoPluginLoaded = false;
         public static bool scepterStandaloneLoaded = false;
         public static bool scepterClassicLoaded = false;
+        public static bool emoteAPILoaded = false;
 
         public static bool msPaintIcons = false;
         public static bool pocketICBM = true;
@@ -55,6 +57,7 @@ namespace RocketSurvivor
             infernoPluginLoaded = BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey("HIFU.Inferno");
             scepterStandaloneLoaded = BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey("com.DestroyedClone.AncientScepter");
             scepterClassicLoaded = BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey("com.ThinkInvisible.ClassicItems");
+            emoteAPILoaded = BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey("com.weliveinasociety.CustomEmotesAPI");
 
             Log.Init(Logger);
 
@@ -75,6 +78,25 @@ namespace RocketSurvivor
 
             // now make a content pack and add it- this part will change with the next update
             new Modules.ContentPacks().Initialize();
+            if (emoteAPILoaded) EmoteAPICompat();
+        }
+
+        [MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
+        private void EmoteAPICompat()
+        {
+            On.RoR2.SurvivorCatalog.Init += (orig) =>
+            {
+                orig();
+                foreach (var item in SurvivorCatalog.allSurvivorDefs)
+                {
+                    if (item.bodyPrefab.name == "RocketSurvivorBody")
+                    {
+                        var skele = Modules.Assets.mainAssetBundle.LoadAsset<UnityEngine.GameObject>("animRocketEmote.prefab");
+                        EmotesAPI.CustomEmotesAPI.ImportArmature(item.bodyPrefab, skele);
+                        skele.GetComponentInChildren<BoneMapper>().scale = 1.5f;
+                    }
+                }
+            };
         }
 
         private void ReadConfig()
