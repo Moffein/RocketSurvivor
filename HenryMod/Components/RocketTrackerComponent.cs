@@ -36,6 +36,17 @@ namespace RocketSurvivor.Components {
             }
         }
 
+        public void OnDestroy()
+        {
+            if (NetworkServer.active && c4List != null)
+            {
+                foreach (RocketInfo ri in c4List)
+                {
+                    if (ri.gameObject) Destroy(ri.gameObject);
+                }
+            }
+        }
+
         [Server]
         private void UpdateRocketAvailable()
         {

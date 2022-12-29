@@ -134,8 +134,9 @@ namespace EntityStates.RocketSurvivorSkills.Emote {
             //emote cancels
             if (base.isAuthority && base.characterMotor.isGrounded) {
 
-                CheckEmote<Sit>(Config.KeybindEmote1);
-                CheckEmote<Explode>(Config.KeybindEmote2);
+                CheckEmote<Sit>(Config.KeybindEmoteSit);
+                CheckEmote<Explode>(Config.KeybindEmoteShovel);
+                CheckEmote<MenuPose>(Config.KeybindEmoteCSS);
             }
 
             if (this.duration > 0 && base.fixedAge >= this.duration) flag = true;
@@ -181,9 +182,45 @@ namespace EntityStates.RocketSurvivorSkills.Emote {
             base.FixedUpdate();
 
             if (!explosion && base.fixedAge / this.duration >= (1f / 1f)) {
-                //EXPLOSION
-                //and blast jump to get out of the animation (If he survives)
+                if (base.isAuthority)
+                {
+                    BlastAttack ba = new BlastAttack
+                    {
+                        attacker = null,
+                        attackerFiltering = AttackerFiltering.AlwaysHit,
+                        baseDamage = 100f * this.damageStat,
+                        baseForce = 8000f,
+                        bonusForce = Vector3.zero,
+                        canRejectForce = true,
+                        crit = base.RollCrit(),
+                        damageColorIndex = DamageColorIndex.Default,
+                        damageType = DamageType.Stun1s | DamageType.BypassOneShotProtection,
+                        falloffModel = BlastAttack.FalloffModel.SweetSpot,
+                        inflictor = null,
+                        position = base.characterBody.corePosition,
+                        procChainMask = default,
+                        procCoefficient = 1f,
+                        radius = 12f,
+                        teamIndex = base.GetTeam()
+                    };
+
+                    ba.Fire();
+
+                    EffectManager.SpawnEffect(EntityStates.RocketSurvivorSkills.Secondary.AirDet.explosionEffectPrefab, new EffectData { origin = base.characterBody.corePosition, scale = ba.radius }, true);
+
+                    if (base.characterMotor) base.SmallHop(base.characterMotor, 36f);
+                }
             }
+        }
+    }
+
+    public class MenuPose: BaseEmote
+    {
+        public override void OnEnter()
+        {
+            this.animString = "TauntCSS";
+            this.duration = -1;
+            base.OnEnter();
         }
     }
 }

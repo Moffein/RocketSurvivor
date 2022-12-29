@@ -12,6 +12,7 @@ using R2API;
 using System.Runtime.CompilerServices;
 using System.Linq;
 using EntityStates.RocketSurvivorSkills;
+using RoR2.CharacterAI;
 
 namespace RocketSurvivor.Modules.Survivors
 {
@@ -25,7 +26,7 @@ namespace RocketSurvivor.Modules.Survivors
         //used when registering your survivor's language tokens
         public override string survivorTokenPrefix => Rocket_Prefix;
 
-        public static SkillDef FireRocketSkillDef, FireRocketAltSkillDef, AirDetDef;
+        public static SkillDef FireRocketSkillDef, FireRocketAltSkillDef, AirDetDef, C4Def, ShovelDef;
         public static Color RocketSurvivorColor = new Color(62f / 255f, 137f / 255f, 72f / 255f);
 
         public override BodyInfo bodyInfo { get; set; } = new BodyInfo
@@ -84,6 +85,129 @@ namespace RocketSurvivor.Modules.Survivors
         public override ConfigEntry<bool> characterEnabledConfig => null; //Modules.Config.CharacterEnableConfig(bodyName);
 
         private static UnlockableDef masterySkinUnlockableDef;
+
+        //Doesnt use secondary since it has no clue how to use it well.
+        public override void InitializeDoppelganger(string clone)
+        {
+            GameObject doppelganger = PrefabAPI.InstantiateClone(LegacyResourcesAPI.Load<GameObject>("Prefabs/CharacterMasters/CommandoMonsterMaster"), bodyName + "MonsterMaster", true);
+            doppelganger.GetComponent<CharacterMaster>().bodyPrefab = bodyPrefab;
+            Modules.ContentPacks.masterPrefabs.Add(doppelganger);
+            Modules.Prefabs.RemoveAISkillDrivers(doppelganger);
+
+            Modules.Prefabs.AddAISkillDriver(doppelganger, "Utility", SkillSlot.Utility, RocketSurvivorSetup.ShovelDef,
+                true, false,
+                Mathf.NegativeInfinity, Mathf.Infinity,
+                Mathf.NegativeInfinity, Mathf.Infinity,
+                0f, 8f,
+                true, false, false, -1,
+                AISkillDriver.TargetType.CurrentEnemy,
+                true, false, false,
+                AISkillDriver.MovementType.ChaseMoveTarget, 1f,
+                AISkillDriver.AimType.AtCurrentEnemy,
+                false,
+                false,
+                false,
+                AISkillDriver.ButtonPressType.TapContinuous,
+                -1,
+                false,
+                true,
+                null);
+
+            Modules.Prefabs.AddAISkillDriver(doppelganger, "Utility", SkillSlot.Utility, RocketSurvivorSetup.C4Def,
+                true, false,
+                Mathf.NegativeInfinity, Mathf.Infinity,
+                Mathf.NegativeInfinity, Mathf.Infinity,
+                0f, 20f,
+                true, false, false, -1,
+                AISkillDriver.TargetType.CurrentEnemy,
+                true, false, false,
+                AISkillDriver.MovementType.StrafeMovetarget, 1f,
+                AISkillDriver.AimType.AtCurrentEnemy,
+                false,
+                false,
+                false,
+                AISkillDriver.ButtonPressType.Hold,
+                -1,
+                false,
+                false,
+                null);
+
+            Modules.Prefabs.AddAISkillDriver(doppelganger, "Special", SkillSlot.Special, null,
+                true, false,
+                Mathf.NegativeInfinity, Mathf.Infinity,
+                Mathf.NegativeInfinity, Mathf.Infinity,
+                0f, 25f,
+                true, false, true, -1,
+                AISkillDriver.TargetType.CurrentEnemy,
+                true, true, true,
+                AISkillDriver.MovementType.StrafeMovetarget, 1f,
+                AISkillDriver.AimType.AtCurrentEnemy,
+                false,
+                false,
+                false,
+                AISkillDriver.ButtonPressType.Hold,
+                -1,
+                false,
+                false,
+                null);
+
+            Modules.Prefabs.AddAISkillDriver(doppelganger, "Primary", SkillSlot.Primary, null,
+                true, false,
+                Mathf.NegativeInfinity, Mathf.Infinity,
+                Mathf.NegativeInfinity, Mathf.Infinity,
+                0f, 50f,
+                true, false, true, -1,
+                AISkillDriver.TargetType.CurrentEnemy,
+                true, true, true,
+                AISkillDriver.MovementType.StrafeMovetarget, 1f,
+                AISkillDriver.AimType.AtCurrentEnemy,
+                false,
+                false,
+                false,
+                AISkillDriver.ButtonPressType.Hold,
+                -1,
+                false,
+                false,
+                null);
+
+            Modules.Prefabs.AddAISkillDriver(doppelganger, "Strafe", SkillSlot.None, null,
+                false, false,
+                Mathf.NegativeInfinity, Mathf.Infinity,
+                Mathf.NegativeInfinity, Mathf.Infinity,
+                0f, 20f,
+                false, false, false, -1,
+                AISkillDriver.TargetType.CurrentEnemy,
+                false, false, false,
+                AISkillDriver.MovementType.StrafeMovetarget, 1f,
+                AISkillDriver.AimType.AtCurrentEnemy,
+                false,
+                true,
+                false,
+                AISkillDriver.ButtonPressType.Abstain,
+                -1,
+                false,
+                false,
+                null);
+
+            Modules.Prefabs.AddAISkillDriver(doppelganger, "Chase", SkillSlot.None, null,
+                false, false,
+                Mathf.NegativeInfinity, Mathf.Infinity,
+                Mathf.NegativeInfinity, Mathf.Infinity,
+                20f, Mathf.Infinity,
+                false, false, false, -1,
+                AISkillDriver.TargetType.CurrentEnemy,
+                false, false, false,
+                AISkillDriver.MovementType.ChaseMoveTarget, 1f,
+                AISkillDriver.AimType.AtCurrentEnemy,
+                false,
+                true,
+                false,
+                AISkillDriver.ButtonPressType.Abstain,
+                -1,
+                false,
+                false,
+                null);
+        }
 
         public override void InitializeCharacter()
         {
@@ -270,6 +394,7 @@ namespace RocketSurvivor.Modules.Survivors
             c4Def.stockToConsume = 1;
             (c4Def as ScriptableObject).name = "ThrowC4";
             Modules.Content.AddSkillDef(c4Def);
+            RocketSurvivorSetup.C4Def = c4Def;
 
             SkillDef marketGardenDef = Modules.Skills.CreateSkillDef(new SkillDefInfo
             {
@@ -297,6 +422,7 @@ namespace RocketSurvivor.Modules.Survivors
             });
             (marketGardenDef as ScriptableObject).name = "MarketGarden";
             Modules.Content.AddSkillDef(marketGardenDef);
+            RocketSurvivorSetup.ShovelDef = ShovelDef;
 
             Modules.Skills.AddUtilitySkills(bodyPrefab, new SkillDef[] { c4Def, marketGardenDef });
 

@@ -1,18 +1,35 @@
 ﻿using BepInEx.Configuration;
+using RiskOfOptions;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 
 namespace RocketSurvivor.Modules
 {
     public static class Config
     {
-        public static ConfigEntry<KeyboardShortcut> KeybindEmote1 { get; private set; }
-        public static ConfigEntry<KeyboardShortcut> KeybindEmote2 { get; private set; }
+        public static ConfigEntry<KeyboardShortcut> KeybindEmoteSit { get; private set; }
+        public static ConfigEntry<KeyboardShortcut> KeybindEmoteShovel { get; private set; }
+        public static ConfigEntry<KeyboardShortcut> KeybindEmoteCSS { get; private set; }
 
         public static void ReadConfig()
         {
 
-            KeybindEmote1 = RocketSurvivorPlugin.instance.Config.Bind("Keybinds", "Emote - Sit", new KeyboardShortcut(KeyCode.Alpha1), "Button to play this emote.");
-            KeybindEmote2 = RocketSurvivorPlugin.instance.Config.Bind("Keybinds", "Emote - Over-Enthusiasm", new KeyboardShortcut(KeyCode.Alpha2), "Button to play this emote.");
+            KeybindEmoteSit = RocketSurvivorPlugin.instance.Config.Bind("Keybinds", "Emote - Sit", new KeyboardShortcut(KeyCode.Alpha1), "Button to play this emote.");
+            KeybindEmoteCSS = RocketSurvivorPlugin.instance.Config.Bind("Keybinds", "Emote - Pose", new KeyboardShortcut(KeyCode.Alpha2), "Button to play this emote.");
+            KeybindEmoteShovel = RocketSurvivorPlugin.instance.Config.Bind("Keybinds", "Emote - Over-Enthusiasm", new KeyboardShortcut(KeyCode.Alpha3), "Button to play this emote.");
+
+            if (RocketSurvivorPlugin.riskOfOptionsLoaded)
+            {
+                RiskOfOptionsCompat();
+            }
+        }
+
+        [MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
+        private static void RiskOfOptionsCompat()
+        {
+            ModSettingsManager.AddOption(new RiskOfOptions.Options.KeyBindOption(KeybindEmoteSit));
+            ModSettingsManager.AddOption(new RiskOfOptions.Options.KeyBindOption(KeybindEmoteShovel));
+            ModSettingsManager.AddOption(new RiskOfOptions.Options.KeyBindOption(KeybindEmoteCSS));
         }
 
         // this helper automatically makes config entries for disabling survivors

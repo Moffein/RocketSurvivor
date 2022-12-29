@@ -14,6 +14,7 @@ using System.Runtime.CompilerServices;
 
 namespace RocketSurvivor
 {
+    [BepInDependency("com.rune580.riskofoptions", BepInDependency.DependencyFlags.SoftDependency)]
     [BepInDependency("com.weliveinasociety.CustomEmotesAPI", BepInDependency.DependencyFlags.SoftDependency)]
     [BepInDependency("HIFU.Inferno", BepInDependency.DependencyFlags.SoftDependency)]
     [BepInDependency("com.DestroyedClone.AncientScepter", BepInDependency.DependencyFlags.SoftDependency)]
@@ -45,6 +46,7 @@ namespace RocketSurvivor
         public static bool scepterStandaloneLoaded = false;
         public static bool scepterClassicLoaded = false;
         public static bool emoteAPILoaded = false;
+        public static bool riskOfOptionsLoaded = false;
 
         public static bool msPaintIcons = false;
         public static bool pocketICBM = true;
@@ -58,6 +60,7 @@ namespace RocketSurvivor
             scepterStandaloneLoaded = BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey("com.DestroyedClone.AncientScepter");
             scepterClassicLoaded = BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey("com.ThinkInvisible.ClassicItems");
             emoteAPILoaded = BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey("com.weliveinasociety.CustomEmotesAPI");
+            riskOfOptionsLoaded = BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey("com.rune580.riskofoptions");
 
             Log.Init(Logger);
 

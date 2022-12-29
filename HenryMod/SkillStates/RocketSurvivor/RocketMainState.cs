@@ -45,8 +45,8 @@ namespace EntityStates.RocketSurvivorSkills {
             }
 
             if (base.isAuthority && base.characterMotor.isGrounded) {
-                CheckEmote<Emote.Sit>(Config.KeybindEmote1);
-                CheckEmote<Emote.Explode>(Config.KeybindEmote2);
+                CheckEmote<Emote.Sit>(Config.KeybindEmoteSit);
+                CheckEmote<Emote.Explode>(Config.KeybindEmoteShovel);
             }
         }
 
