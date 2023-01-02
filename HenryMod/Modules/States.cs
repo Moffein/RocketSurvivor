@@ -7,6 +7,7 @@ using EntityStates.RocketSurvivorSkills.Primary;
 using EntityStates.RocketSurvivorSkills.Secondary;
 using EntityStates.RocketSurvivorSkills.Utility;
 using EntityStates.RocketSurvivorSkills.Special;
+using EntityStates.RocketSurvivorSkills.Emote;
 
 namespace RocketSurvivor.Modules
 {
@@ -14,6 +15,12 @@ namespace RocketSurvivor.Modules
     {
         internal static void RegisterStates()
         {
+
+            Modules.Content.AddEntityState(typeof(BaseEmote));
+            Modules.Content.AddEntityState(typeof(Sit));
+            Modules.Content.AddEntityState(typeof(Explode));
+            Modules.Content.AddEntityState(typeof(MenuPose));
+
             Modules.Content.AddEntityState(typeof(RocketMainState));
             Modules.Content.AddEntityState(typeof(FireRocket));
             Modules.Content.AddEntityState(typeof(FireRocketAlt));
