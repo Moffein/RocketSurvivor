@@ -21,9 +21,9 @@ namespace RocketSurvivor.Modules.Characters
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayAfterburnerShoulderRing"),
                             childName = "Chest",
-                            localPos = new Vector3(0.8F, 0.45F, 0F),
-                            localAngles = new Vector3(0F, 0F, 270F),
-                            localScale = new Vector3(4F, 4F, 4F),
+                            localPos = new Vector3(-0.15F, -0.3F, 0.15F),
+                            localAngles = new Vector3(0F, 0F, 0F),
+                            localScale = new Vector3(0.5F, 0.5F, 0.5F),
                             limbMask = LimbFlags.None
                         },
 
@@ -32,9 +32,9 @@ namespace RocketSurvivor.Modules.Characters
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayAfterburnerShoulderRing"),
                             childName = "Chest",
-                            localPos = new Vector3(-0.8F, 0.45F, 0F),
-                            localAngles = new Vector3(0F, 0F, 90F),
-                            localScale = new Vector3(4F, 4F, 4F),
+                            localPos = new Vector3(0.15F, -0.3F, 0.15F),
+                            localAngles = new Vector3(0F, 0F, 0F),
+                            localScale = new Vector3(0.5F, 0.5F, 0.5F),
                             limbMask = LimbFlags.None
                         }
                     }
@@ -52,10 +52,10 @@ namespace RocketSurvivor.Modules.Characters
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayGlasses"),
-                            childName = "Chest",
-                        localPos = new Vector3(0.00117F, 1.1492F, 1.10514F),
-                        localAngles = new Vector3(350F, 0F, 0F),
-                        localScale = new Vector3(1.8F, 1.3F, 1F),
+                            childName = "head",
+                            localPos = new Vector3(0.11325F, 0.09901F, 0.00031F),
+                            localAngles = new Vector3(0F, 90F, 0F),
+                            localScale = new Vector3(0.25F, 0.25F, 0.25F),
                             limbMask = LimbFlags.None
                         }
                     }
@@ -74,9 +74,9 @@ namespace RocketSurvivor.Modules.Characters
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayBrooch"),
                             childName = "Chest",
-                            localPos = new Vector3(-0.49409F, 0.53226F, 1.71343F),
-                            localAngles = new Vector3(90F, 0F, 0F),
-                            localScale = new Vector3(3F, 3F, 3F),
+                            localPos = new Vector3(0.24198F, 0.12164F, 0.12876F),
+                            localAngles = new Vector3(82.89831F, 96.5509F, 14.80744F),
+                            localScale = new Vector3(0.5F, 0.5F, 0.5F),
                             limbMask = LimbFlags.None
                         }
                     }
@@ -94,10 +94,10 @@ namespace RocketSurvivor.Modules.Characters
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplaySteakCurved"),
-                            childName = "Pelvis",
-                            localPos = new Vector3(-0.67035F, 0.36531F, 0.8628F),
-                            localAngles = new Vector3(0F, 340F, 0F),
-                            localScale = new Vector3(0.4F, 0.4F, 0.4F),
+                            childName = "BlackBox",
+                            localPos = new Vector3(-0.07683F, 0.13896F, -0.23516F),
+                            localAngles = new Vector3(6.56995F, 197.1438F, 90.81477F),
+                            localScale = new Vector3(0.15F, 0.15F, 0.15F),
                             limbMask = LimbFlags.None
                         }
                     }
@@ -116,9 +116,9 @@ namespace RocketSurvivor.Modules.Characters
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayUkulele"),
                             childName = "Chest",
-                            localPos = new Vector3(0.0381F, 0.51783F, -1.5441F),
-                            localAngles = new Vector3(0F, 180F, 45F),
-                            localScale = new Vector3(2F, 2F, 2F),
+                            localPos = new Vector3(-0.31876F, -0.20022F, -0.01413F),
+                            localAngles = new Vector3(10.94715F, 267.9672F, 359.9721F),
+                            localScale = new Vector3(0.5F, 0.5F, 0.5F),
                             limbMask = LimbFlags.None
                         }
                     }
@@ -137,9 +137,9 @@ namespace RocketSurvivor.Modules.Characters
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayMissileLauncher"),
                             childName = "Chest",
-                            localPos = new Vector3(1.90966F, 1.72965F, 0.02362F),
-                            localAngles = new Vector3(0F, 0F, 0F),
-                            localScale = new Vector3(0.3F, 0.3F, 0.3F),
+                            localPos = new Vector3(-0.29088F, 0.60404F, 0.16637F),
+                            localAngles = new Vector3(350F, 90F, 0F),
+                            localScale = new Vector3(0.1F, 0.1F, 0.1F),
                             limbMask = LimbFlags.None
                         }
                     }
@@ -157,10 +157,10 @@ namespace RocketSurvivor.Modules.Characters
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayShippingRequestForm"),
-                            childName = "Head",
-                            localPos = new Vector3(-0.5366F, 0.22825F, -1.1064F),
-                            localAngles = new Vector3(87.00272F, 65.25777F, 244.977F),
-                            localScale = new Vector3(2F, 2F, 2F),
+                            childName = "Chest",
+                            localPos = new Vector3(-0.19799F, 0.14881F, 0.28538F),
+                            localAngles = new Vector3(74.28713F, 36.18357F, 34.10617F),
+                            localScale = new Vector3(0.4F, 0.4F, 0.4F),
                             limbMask = LimbFlags.None
                         }
                     }
@@ -178,10 +178,10 @@ namespace RocketSurvivor.Modules.Characters
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayMask"),
-                            childName = "Head",
-                            localPos = new Vector3(0F, 0.60038F, 1.12111F),
-                            localAngles = new Vector3(0F, 0F, 0F),
-                            localScale = new Vector3(2.1F, 2.1F, 2.1F),
+                            childName = "head",
+                            localPos = new Vector3(0.06116F, 0.10089F, 0.0002F),
+                            localAngles = new Vector3(0F, 90F, 0F),
+                            localScale = new Vector3(0.6F, 0.6F, 0.6F),
                             limbMask = LimbFlags.None
                         }
                     }
@@ -200,9 +200,9 @@ namespace RocketSurvivor.Modules.Characters
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayScythe"),
                             childName = "Chest",
-                            localPos = new Vector3(0.06198F, 0.77824F, -1.45844F),
-                            localAngles = new Vector3(313.678F, 264.9834F, 92.05762F),
-                            localScale = new Vector3(0.7F, 0.7F, 0.7F),
+                            localPos = new Vector3(-0.36095F, 0.158F, 0.06549F),
+                            localAngles = new Vector3(335.9662F, 356.3005F, 86.66456F),
+                            localScale = new Vector3(0.3F, 0.3F, 0.3F),
                             limbMask = LimbFlags.None
                         }
                     }
@@ -221,9 +221,9 @@ namespace RocketSurvivor.Modules.Characters
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayMissileLauncherVoid"),
                             childName = "Chest",
-                            localPos = new Vector3(1.90966F, 1.72965F, 0.02362F),
-                            localAngles = new Vector3(0F, 0F, 0F),
-                            localScale = new Vector3(0.3F, 0.3F, 0.3F),
+                            localPos = new Vector3(-0.29088F, 0.60404F, 0.16637F),
+                            localAngles = new Vector3(350F, 90F, 0F),
+                            localScale = new Vector3(0.1F, 0.1F, 0.1F),
                             limbMask = LimbFlags.None
                         }
                     }
@@ -241,10 +241,10 @@ namespace RocketSurvivor.Modules.Characters
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayPauldron"),
-                            childName = "ShoulderL",
-                            localPos = new Vector3(-0.00343F, 1.39271F, -0.00379F),
-                            localAngles = new Vector3(335.2361F, 359.5875F, 11.45406F),
-                            localScale = new Vector3(3F, 3F, 3F),
+                            childName = "upper_arm.L",
+                            localPos = new Vector3(-0.004F, 0.09409F, 0.15495F),
+                            localAngles = new Vector3(77.01176F, 25.74254F, 16.90174F),
+                            localScale = new Vector3(0.5F, 0.5F, 0.5F),
                             limbMask = LimbFlags.None
                         }
                     }
@@ -262,10 +262,10 @@ namespace RocketSurvivor.Modules.Characters
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayRazorwireLeft"),
-                            childName = "UpperArmL",
-                            localPos = new Vector3(0F, 0F, 0F),
-                            localAngles = new Vector3(0F, 0F, 0F),
-                            localScale = new Vector3(3.6F, 3.6F, 3.6F),
+                            childName = "upper_arm.L",
+                            localPos = new Vector3(-0.02503F, -0.00728F, -0.05589F),
+                            localAngles = new Vector3(289.3377F, 333.4814F, 62.5005F),
+                            localScale = new Vector3(0.6F, 0.6F, 0.4F),
                             limbMask = LimbFlags.None
                         }
                     }
@@ -283,10 +283,10 @@ namespace RocketSurvivor.Modules.Characters
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayWolfPelt"),
-                            childName = "Hat",
-                            localPos = new Vector3(-0.06115F, 0.61931F, 0.07598F),
-                            localAngles = new Vector3(0F, 324F, 0F),
-                            localScale = new Vector3(1.6F, 1.6F, 1.6F),
+                            childName = "head",
+                            localPos = new Vector3(0.04811F, 0.14521F, 0.00029F),
+                            localAngles = new Vector3(0F, 90F, 0F),
+                            localScale = new Vector3(0.5F, 0.5F, 0.5F),
                             limbMask = LimbFlags.None
                         }
                     }
@@ -304,10 +304,10 @@ namespace RocketSurvivor.Modules.Characters
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayBirdEye"),
-                            childName = "Head",
-                            localPos = new Vector3(-0.00049F, 0.50231F, 1.23207F),
-                            localAngles = new Vector3(270F, 0F, 0F),
-                            localScale = new Vector3(1.6F, 1.6F, 1.6F),
+                            childName = "head",
+                            localPos = new Vector3(0.10919F, 0.09035F, -0.00007F),
+                            localAngles = new Vector3(90F, 270F, 0F),
+                            localScale = new Vector3(0.25F, 0.25F, 0.25F),
                             limbMask = LimbFlags.None
                         }
                     }
@@ -325,20 +325,20 @@ namespace RocketSurvivor.Modules.Characters
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayAntler"),
-                            childName = "Head",
-                            localPos = new Vector3(-1.27693F, 0.88377F, 0F),
-                            localAngles = new Vector3(0F, 90F, 0F),
-                            localScale = new Vector3(1.4F, 1.4F, -1.4F),
+                            childName = "head",
+                            localPos = new Vector3(0.02297F, 0.18346F, 0.05443F),
+                            localAngles = new Vector3(0F, 0F, 0F),
+                            localScale = new Vector3(0.25F, 0.25F, 0.25F),
                             limbMask = LimbFlags.None
                         },
                         new ItemDisplayRule
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayAntler"),
-                            childName = "Head",
-                            localPos = new Vector3(1.27693F, 0.88377F, 0F),
-                            localAngles = new Vector3(0F, 90F, 0F),
-                            localScale = new Vector3(1.4F, 1.4F, 1.4F),
+                            childName = "head",
+                            localPos = new Vector3(0.02297F, 0.18346F, -0.05443F),
+                            localAngles = new Vector3(0F, 0F, 0F),
+                            localScale = new Vector3(0.25F, 0.25F, -0.25F),
                             limbMask = LimbFlags.None
                         }
                     }
@@ -356,10 +356,10 @@ namespace RocketSurvivor.Modules.Characters
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayBrainstalk"),
-                            childName = "Head",
-                            localPos = new Vector3(0.45889F, 0.76346F, -0.45378F),
+                            childName = "head",
+                            localPos = new Vector3(-0.0584F, 0.11946F, -0.00023F),
                             localAngles = new Vector3(0F, 0F, 0F),
-                            localScale = new Vector3(1F, 1F, 1F),
+                            localScale = new Vector3(0.2F, 0.2F, 0.2F),
                             limbMask = LimbFlags.None
                         }
                     }
@@ -377,20 +377,20 @@ namespace RocketSurvivor.Modules.Characters
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayDevilHorns"),
-                            childName = "Head",
-                            localPos = new Vector3(0.97387F, 0.15372F, 0.73159F),
-                            localAngles = new Vector3(0F, 0F, 0F),
-                            localScale = new Vector3(3F, 3F, 3F),
+                            childName = "head",
+                            localPos = new Vector3(0.06951F, -0.0104F, 0.07066F),
+                            localAngles = new Vector3(0F, 90F, 0F),
+                            localScale = new Vector3(-0.4F, 0.4F, 0.4F),
                             limbMask = LimbFlags.None
                         },
                         new ItemDisplayRule
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayDevilHorns"),
-                            childName = "Head",
-                            localPos = new Vector3(-0.97387F, 0.15372F, 0.73159F),
-                            localAngles = new Vector3(0F, 0F, 0F),
-                            localScale = new Vector3(-3F, 3F, 3F),
+                            childName = "head",
+                            localPos = new Vector3(0.06951F, -0.0104F, -0.07066F),
+                            localAngles = new Vector3(0F, 90F, 0F),
+                            localScale = new Vector3(0.4F, 0.4F, 0.4F),
                             limbMask = LimbFlags.None
                         }
                     }
@@ -408,10 +408,10 @@ namespace RocketSurvivor.Modules.Characters
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayGlassesVoid"),
-                            childName = "Chest",
-                        localPos = new Vector3(0.00117F, 1.1492F, 1.10514F),
-                        localAngles = new Vector3(350F, 0F, 0F),
-                        localScale = new Vector3(1.8F, 1.3F, 1F),
+                            childName = "head",
+                            localPos = new Vector3(0.11325F, 0.09901F, 0.00031F),
+                            localAngles = new Vector3(0F, 90F, 0F),
+                            localScale = new Vector3(0.25F, 0.25F, 0.25F),
                             limbMask = LimbFlags.None
                         }
                     }
@@ -430,9 +430,9 @@ namespace RocketSurvivor.Modules.Characters
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayUkuleleVoid"),
                             childName = "Chest",
-                            localPos = new Vector3(0.0381F, 0.51783F, -1.5441F),
-                            localAngles = new Vector3(0F, 180F, 45F),
-                            localScale = new Vector3(2F, 2F, 2F),
+                            localPos = new Vector3(-0.31876F, -0.20022F, -0.01413F),
+                            localAngles = new Vector3(10.94715F, 267.9672F, 359.9721F),
+                            localScale = new Vector3(0.5F, 0.5F, 0.5F),
                             limbMask = LimbFlags.None
                         }
                     }
@@ -450,10 +450,10 @@ namespace RocketSurvivor.Modules.Characters
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayBoneCrown"),
-                            childName = "Head",
-                            localPos = new Vector3(-0.27599F, 0.82905F, 0.29295F),
-                            localAngles = new Vector3(0F, 270F, 0F),
-                            localScale = new Vector3(4.3F, 4F, 4F),
+                            childName = "head",
+                            localPos = new Vector3(0.00015F, 0.19498F, 0.00007F),
+                            localAngles = new Vector3(0F, 0F, 0F),
+                            localScale = new Vector3(0.5F, 0.5F, 0.5F),
                             limbMask = LimbFlags.None
                         }
                     }
@@ -472,9 +472,9 @@ namespace RocketSurvivor.Modules.Characters
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayCorpseFlower"),
                             childName = "Chest",
-                            localPos = new Vector3(-0.53163F, 0.54281F, 1.80412F),
-                            localAngles = new Vector3(90F, 0F, 0F),
-                            localScale = new Vector3(1.4F, 1.4F, 1.4F),
+                            localPos = new Vector3(0.26814F, 0.11961F, -0.00742F),
+                            localAngles = new Vector3(90F, 90F, 0F),
+                            localScale = new Vector3(0.3F, 0.3F, 0.3F),
                             limbMask = LimbFlags.None
                         }
                     }
@@ -493,9 +493,9 @@ namespace RocketSurvivor.Modules.Characters
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayBear"),
                             childName = "Chest",
-                            localPos = new Vector3(1.19505F, 1.09496F, -1.05765F),
-                            localAngles = new Vector3(300F, 135F, 0F),
-                            localScale = new Vector3(0.7F, 0.7F, 0.7F),
+                            localPos = new Vector3(-0.27389F, -0.31403F, 0.22502F),
+                            localAngles = new Vector3(24.00994F, 284.4804F, 358.3748F),
+                            localScale = new Vector3(0.2F, 0.2F, 0.2F),
                             limbMask = LimbFlags.None
                         }
                     }
@@ -514,9 +514,9 @@ namespace RocketSurvivor.Modules.Characters
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayHippo"),
                             childName = "Chest",
-                            localPos = new Vector3(-1.09314F, 1.12391F, -0.96432F),
-                            localAngles = new Vector3(299.2325F, 214.607F, 359.5162F),
-                            localScale = new Vector3(0.7F, 0.7F, 0.7F),
+                            localPos = new Vector3(-0.23171F, -0.27644F, -0.19953F),
+                            localAngles = new Vector3(4.41725F, 242.9914F, 339.2958F),
+                            localScale = new Vector3(0.2F, 0.2F, 0.2F),
                             limbMask = LimbFlags.None
                         }
                     }
@@ -535,9 +535,9 @@ namespace RocketSurvivor.Modules.Characters
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayBearVoid"),
                             childName = "Chest",
-                            localPos = new Vector3(1.19505F, 1.09496F, -1.05765F),
-                            localAngles = new Vector3(300F, 135F, 0F),
-                            localScale = new Vector3(0.7F, 0.7F, 0.7F),
+                            localPos = new Vector3(-0.27389F, -0.31403F, 0.22502F),
+                            localAngles = new Vector3(24.00994F, 284.4804F, 358.3748F),
+                            localScale = new Vector3(0.2F, 0.2F, 0.2F),
                             limbMask = LimbFlags.None
                         }
                     }
@@ -556,9 +556,9 @@ namespace RocketSurvivor.Modules.Characters
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayHippoVoid"),
                             childName = "Chest",
-                            localPos = new Vector3(-1.09314F, 1.12391F, -0.96432F),
-                            localAngles = new Vector3(299.2325F, 214.607F, 359.5162F),
-                            localScale = new Vector3(0.7F, 0.7F, 0.7F),
+                            localPos = new Vector3(-0.23171F, -0.27644F, -0.19953F),
+                            localAngles = new Vector3(4.41725F, 242.9914F, 339.2958F),
+                            localScale = new Vector3(0.2F, 0.2F, 0.2F),
                             limbMask = LimbFlags.None
                         }
                     }
@@ -576,10 +576,10 @@ namespace RocketSurvivor.Modules.Characters
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayFireballsOnHit"),
-                            childName = "CalfL",
-                            localPos = new Vector3(0.00184F, 0.54564F, -0.51508F),
-                            localAngles = new Vector3(5.1886F, 184.2728F, 1.12512F),
-                            localScale = new Vector3(0.2F, 0.2F, 0.2F),
+                            childName = "shin.L",
+                            localPos = new Vector3(-0.11949F, 0.29492F, 0.00465F),
+                            localAngles = new Vector3(0F, 270F, 0F),
+                            localScale = new Vector3(0.05F, 0.05F, 0.05F),
                             limbMask = LimbFlags.None
                         }
                     }
@@ -597,10 +597,10 @@ namespace RocketSurvivor.Modules.Characters
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayChargedPerforator"),
-                            childName = "CalfR",
-                            localPos = new Vector3(-0.0512F, 0.51225F, -0.34084F),
-                            localAngles = new Vector3(274.27F, 356.7444F, 188.4236F),
-                            localScale = new Vector3(3.4F, 3.4F, 3.4F),
+                            childName = "shin.R",
+                            localPos = new Vector3(0.08189F, 0.18201F, -0.0171F),
+                            localAngles = new Vector3(292.1182F, 93.53685F, 348.4989F),
+                            localScale = new Vector3(1F, 1F, 1F),
                             limbMask = LimbFlags.None
                         }
                     }
@@ -618,10 +618,10 @@ namespace RocketSurvivor.Modules.Characters
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayClover"),
-                            childName = "Head",
-                            localPos = new Vector3(1.27222F, 0.81641F, 0.92007F),
-                            localAngles = new Vector3(61.65746F, 32.00563F, 318.2274F),
-                            localScale = new Vector3(2.4F, 2.4F, 2.4F),
+                            childName = "BlackBox",
+                            localPos = new Vector3(-0.13435F, 0.73569F, -0.1419F),
+                            localAngles = new Vector3(270F, 49.00001F, 0F),
+                            localScale = new Vector3(0.75F, 0.75F, 0.75F),
                             limbMask = LimbFlags.None
                         }
                     }
@@ -640,9 +640,9 @@ namespace RocketSurvivor.Modules.Characters
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayRainCoatBelt"),
                             childName = "Pelvis",
-                            localPos = new Vector3(0F, -0.15464F, -0.39029F),
-                            localAngles = new Vector3(-0.00001F, 0F, 180F),
-                            localScale = new Vector3(3F, 3F, 3F),
+                            localPos = new Vector3(0.10174F, 0.03791F, -0.00687F),
+                            localAngles = new Vector3(0F, 270F, 0F),
+                            localScale = new Vector3(0.5F, 0.5F, 0.5F),
                             limbMask = LimbFlags.None
                         }
                     }
@@ -660,10 +660,10 @@ namespace RocketSurvivor.Modules.Characters
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayIceRing"),
-                            childName = "LowerArmR",
-                            localPos = new Vector3(0.04706F, -0.05544F, -0.03281F),
-                            localAngles = new Vector3(274.3965F, 90F, 270F),
-                            localScale = new Vector3(3F, 3F, 3F),
+                            childName = "Chest",
+                            localPos = new Vector3(-0.23907F, -0.37337F, -0.13266F),
+                            localAngles = new Vector3(90F, 90F, 0F),
+                            localScale = new Vector3(0.3F, 0.3F, 0.3F),
                             limbMask = LimbFlags.None
                         }
                     }
@@ -681,10 +681,10 @@ namespace RocketSurvivor.Modules.Characters
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayFireRing"),
-                            childName = "LowerArmL",
-                            localPos = new Vector3(0.00143F, -0.06617F, -0.02875F),
-                            localAngles = new Vector3(274.3965F, 90F, 270F),
-                            localScale = new Vector3(3F, 3F, 3F),
+                            childName = "Chest",
+                            localPos = new Vector3(-0.25441F, -0.36859F, 0.12988F),
+                            localAngles = new Vector3(90F, 90F, 0F),
+                            localScale = new Vector3(0.3F, 0.3F, 0.3F),
                             limbMask = LimbFlags.None
                         }
                     }
@@ -702,20 +702,20 @@ namespace RocketSurvivor.Modules.Characters
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayVoidRing"),
-                            childName = "LowerArmR",
-                            localPos = new Vector3(0.04706F, -0.05544F, -0.03281F),
-                            localAngles = new Vector3(274.3965F, 90F, 270F),
-                            localScale = new Vector3(3F, 3F, 3F),
+                            childName = "Chest",
+                            localPos = new Vector3(-0.23907F, -0.37337F, -0.13266F),
+                            localAngles = new Vector3(90F, 90F, 0F),
+                            localScale = new Vector3(0.3F, 0.3F, 0.3F),
                             limbMask = LimbFlags.None
                         },
                         new ItemDisplayRule
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayVoidRing"),
-                            childName = "LowerArmL",
-                            localPos = new Vector3(0.00143F, -0.06617F, -0.02875F),
-                            localAngles = new Vector3(274.3965F, 90F, 270F),
-                            localScale = new Vector3(3F, 3F, 3F),
+                            childName = "Chest",
+                            localPos = new Vector3(-0.25441F, -0.36859F, 0.12988F),
+                            localAngles = new Vector3(90F, 90F, 0F),
+                            localScale = new Vector3(0.3F, 0.3F, 0.3F),
                             limbMask = LimbFlags.None
                         }
 
@@ -734,20 +734,20 @@ namespace RocketSurvivor.Modules.Characters
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayGravBoots"),
-                            childName = "CalfL",
-                            localPos = new Vector3(-0.02269F, 0.5767F, 0.11436F),
-                            localAngles = new Vector3(0F, 0F, 0F),
-                            localScale = new Vector3(1F, 1F, 1F),
+                            childName = "shin.L",
+                            localPos = new Vector3(-0.00886F, 0.34068F, -0.01127F),
+                            localAngles = new Vector3(0F, 90F, 0F),
+                            localScale = new Vector3(0.2F, 0.2F, 0.2F),
                             limbMask = LimbFlags.None
                         },
                         new ItemDisplayRule
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayGravBoots"),
-                            childName = "CalfR",
-                            localPos = new Vector3(-0.02269F, 0.5767F, 0.11436F),
-                            localAngles = new Vector3(0F, 0F, 0F),
-                            localScale = new Vector3(1F, 1F, 1F),
+                            childName = "shin.R",
+                            localPos = new Vector3(0.00086F, 0.30939F, -0.00501F),
+                            localAngles = new Vector3(0F, 90F, 0F),
+                            localScale = new Vector3(0.2F, 0.2F, 0.2F),
                             limbMask = LimbFlags.None
                         }
                     }
@@ -766,9 +766,9 @@ namespace RocketSurvivor.Modules.Characters
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayMissileRack"),
                             childName = "Chest",
-                            localPos = new Vector3(0.01969F, 1.12364F, -1.5036F),
-                            localAngles = new Vector3(60F, 180F, 0F),
-                            localScale = new Vector3(2F, 2F, 2F),
+                            localPos = new Vector3(-0.41391F, 0.26816F, -0.00826F),
+                            localAngles = new Vector3(90F, 270F, 0F),
+                            localScale = new Vector3(0.5F, 0.5F, 0.5F),
                             limbMask = LimbFlags.None
                         }
                     }
@@ -786,10 +786,10 @@ namespace RocketSurvivor.Modules.Characters
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayRecycler"),
-                            childName = "Pelvis",
-                            localPos = new Vector3(0F, 0.44293F, 1.08265F),
-                            localAngles = new Vector3(-0.00001F, 90F, 180F),
-                            localScale = new Vector3(0.34F, 0.34F, 0.34F),
+                            childName = "Chest",
+                            localPos = new Vector3(-0.33053F, -0.32771F, -0.02181F),
+                            localAngles = new Vector3(0F, 180F, 340F),
+                            localScale = new Vector3(0.07F, 0.07F, 0.07F),
                             limbMask = LimbFlags.None
                         }
                     }
@@ -808,9 +808,9 @@ namespace RocketSurvivor.Modules.Characters
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayBatteryArray"),
                             childName = "Chest",
-                            localPos = new Vector3(-0.00277F, 0.6F, -1.8278F),
-                            localAngles = new Vector3(-0.00001F, 0.00001F, 180F),
-                            localScale = new Vector3(1.5F, 1.5F, 1.5F),
+                            localPos = new Vector3(-0.42627F, 0.10849F, -0.02038F),
+                            localAngles = new Vector3(0F, 90F, 0F),
+                            localScale = new Vector3(0.3F, 0.3F, 0.3F),
                             limbMask = LimbFlags.None
                         }
                     }
@@ -828,10 +828,10 @@ namespace RocketSurvivor.Modules.Characters
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayHoof"),
-                            childName = "CalfR",
-                            localPos = new Vector3(0.02358F, 1.03058F, -0.0098F),
-                            localAngles = new Vector3(90F, 0F, 0F),
-                            localScale = new Vector3(0.3F, 0.3F, 0.3F),
+                            childName = "shin.R",
+                            localPos = new Vector3(0.0761F, 0.332F, -0.00939F),
+                            localAngles = new Vector3(73.49909F, 281.5324F, 10.85596F),
+                            localScale = new Vector3(0.1F, 0.1F, 0.1F),
                             limbMask = LimbFlags.None
                         },
                         new ItemDisplayRule {
@@ -853,10 +853,10 @@ namespace RocketSurvivor.Modules.Characters
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplaySoda"),
-                            childName = "PipesL",
-                            localPos = new Vector3(0.008F, 0.34211F, -0.01367F),
-                            localAngles = new Vector3(275.6745F, 200.5645F, 251.6839F),
-                            localScale = new Vector3(1.1F, 1.1F, 1.1F),
+                            childName = "head",
+                            localPos = new Vector3(0.11707F, -0.06219F, 0.16896F),
+                            localAngles = new Vector3(331.5194F, 213.9179F, 334.7563F),
+                            localScale = new Vector3(0.25F, 0.25F, 0.25F),
                             limbMask = LimbFlags.None
                         }
                     }
@@ -874,10 +874,10 @@ namespace RocketSurvivor.Modules.Characters
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayRepulsionArmorPlate"),
-                            childName = "CalfR",
-                            localPos = new Vector3(-0.10042F, 0.58704F, -0.13391F),
-                            localAngles = new Vector3(90F, 0F, 0F),
-                            localScale = new Vector3(1F, 1F, 1F),
+                            childName = "shin.R",
+                            localPos = new Vector3(0.02657F, 0.19809F, -0.03492F),
+                            localAngles = new Vector3(90F, 270F, 0F),
+                            localScale = new Vector3(0.3F, 0.3F, 0.3F),
                             limbMask = LimbFlags.None
                         }
                     }
@@ -895,10 +895,10 @@ namespace RocketSurvivor.Modules.Characters
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayDiamond"),
-                            childName = "HandL",
-                            localPos = new Vector3(-0.29584F, 0.411F, 0.00169F),
-                            localAngles = new Vector3(274.3965F, 90F, 270F),
-                            localScale = new Vector3(0.25F, 0.25F, 0.25F),
+                            childName = "hand.L",
+                            localPos = new Vector3(-0.01665F, 0.06641F, 0.05308F),
+                            localAngles = new Vector3(0F, 0F, 0F),
+                            localScale = new Vector3(0.05F, 0.05F, 0.05F),
                             limbMask = LimbFlags.None
                         }
                     }
@@ -916,10 +916,10 @@ namespace RocketSurvivor.Modules.Characters
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayDeathMark"),
-                            childName = "HandR",
-                            localPos = new Vector3(0.24536F, 0.41648F, 0.06635F),
-                            localAngles = new Vector3(270F, 90F, 0F),
-                            localScale = new Vector3(0.12F, 0.12F, 0.12F),
+                            childName = "hand.R",
+                            localPos = new Vector3(-0.00222F, 0.06918F, 0.0349F),
+                            localAngles = new Vector3(272.2585F, 329.3112F, 39.65874F),
+                            localScale = new Vector3(0.015F, 0.015F, 0.015F),
                             limbMask = LimbFlags.None
                         }
                     }
@@ -937,10 +937,10 @@ namespace RocketSurvivor.Modules.Characters
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayWarbanner"),
-                            childName = "Pelvis",
-                            localPos = new Vector3(0F, 0.54329F, 0.93286F),
-                            localAngles = new Vector3(90F, 90F, 0F),
-                            localScale = new Vector3(1.3F, 1.3F, 1.3F),
+                            childName = "Chest",
+                            localPos = new Vector3(-0.16248F, -0.39429F, -0.02158F),
+                            localAngles = new Vector3(90F, 0F, 0F),
+                            localScale = new Vector3(0.3F, 0.3F, 0.3F),
                             limbMask = LimbFlags.None
                         }
                     }
@@ -958,10 +958,10 @@ namespace RocketSurvivor.Modules.Characters
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayTeamWarCry"),
-                            childName = "Pelvis",
-                            localPos = new Vector3(0F, 0.5221F, 1.23498F),
-                            localAngles = new Vector3(0F, 0F, 180F),
-                            localScale = new Vector3(0.3F, 0.3F, 0.3F),
+                            childName = "Chest",
+                            localPos = new Vector3(-0.26639F, -0.40845F, 0.00426F),
+                            localAngles = new Vector3(40F, 270F, 0F),
+                            localScale = new Vector3(0.07F, 0.07F, 0.07F),
                             limbMask = LimbFlags.None
                         }
                     }
@@ -979,10 +979,10 @@ namespace RocketSurvivor.Modules.Characters
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayStealthkit"),
-                            childName = "Chest",
-                            localPos = new Vector3(0.37466F, 0.50156F, -1.50662F),
-                            localAngles = new Vector3(90F, 0F, 0F),
-                            localScale = new Vector3(1.1F, 1.1F, 1.1F),
+                            childName = "BlackBox",
+                            localPos = new Vector3(-0.17843F, 0.50701F, -0.0175F),
+                            localAngles = new Vector3(90F, 90F, 0F),
+                            localScale = new Vector3(0.25F, 0.25F, 0.25F),
                             limbMask = LimbFlags.None
                         }
                     }
@@ -1001,9 +1001,9 @@ namespace RocketSurvivor.Modules.Characters
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayDeathProjectile"),
                             childName = "Pelvis",
-                            localPos = new Vector3(0F, 0.57203F, 1.2946F),
-                            localAngles = new Vector3(0F, 0F, 180F),
-                            localScale = new Vector3(0.5F, 0.5F, 0.5F),
+                            localPos = new Vector3(-0.4476F, 0.10744F, -0.03256F),
+                            localAngles = new Vector3(0F, 270F, 0F),
+                            localScale = new Vector3(0.1F, 0.1F, 0.1F),
                             limbMask = LimbFlags.None
                         }
                     }
@@ -1021,10 +1021,10 @@ namespace RocketSurvivor.Modules.Characters
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayNeuralImplant"),
-                            childName = "Head",
-                            localPos = new Vector3(-0.00003F, 0.52758F, 2.14767F),
-                            localAngles = new Vector3(0F, 0F, 0F),
-                            localScale = new Vector3(1F, 1F, 1F),
+                            childName = "head",
+                            localPos = new Vector3(0.22279F, 0.09023F, 0.00121F),
+                            localAngles = new Vector3(0F, 90F, 0F),
+                            localScale = new Vector3(0.25F, 0.25F, 0.25F),
                             limbMask = LimbFlags.None
                         }
                     }
@@ -1043,9 +1043,9 @@ namespace RocketSurvivor.Modules.Characters
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayBugWings"),
                             childName = "Chest",
-                            localPos = new Vector3(0F, 0.2765F, -1.1505F),
-                            localAngles = new Vector3(330F, 0F, 0F),
-                            localScale = new Vector3(0.5F, 0.5F, 0.5F),
+                            localPos = new Vector3(-0.25716F, 0.16879F, -0.00041F),
+                            localAngles = new Vector3(330F, 90F, 0F),
+                            localScale = new Vector3(0.1F, 0.1F, 0.1F),
                             limbMask = LimbFlags.None
                         }
                     }
@@ -1064,9 +1064,9 @@ namespace RocketSurvivor.Modules.Characters
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayScanner"),
                             childName = "Chest",
-                            localPos = new Vector3(-2.22625F, 0.59025F, 0.00979F),
-                            localAngles = new Vector3(270F, 0F, 0F),
-                            localScale = new Vector3(1F, 1F, 1F),
+                            localPos = new Vector3(-0.25047F, 0.24361F, 0.30629F),
+                            localAngles = new Vector3(270F, 90F, 0F),
+                            localScale = new Vector3(0.25F, 0.25F, 0.25F),
                             limbMask = LimbFlags.None
                         }
                     }
@@ -1084,10 +1084,10 @@ namespace RocketSurvivor.Modules.Characters
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayWhip"),
-                            childName = "Pelvis",
-                            localPos = new Vector3(-1.85379F, 0.49299F, 0.0422F),
-                            localAngles = new Vector3(0F, 0F, 0F),
-                            localScale = new Vector3(2F, 2F, 2F),
+                            childName = "thigh.L",
+                            localPos = new Vector3(-0.05048F, 0.2272F, 0.19001F),
+                            localAngles = new Vector3(25.92106F, 68.89613F, 9.05436F),
+                            localScale = new Vector3(0.3F, 0.3F, 0.3F),
                             limbMask = LimbFlags.None
                         }
                     }
@@ -1106,9 +1106,9 @@ namespace RocketSurvivor.Modules.Characters
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayShieldGenerator"),
                             childName = "Chest",
-                            localPos = new Vector3(-1.13876F, 0.557F, 1.35612F),
-                            localAngles = new Vector3(90F, 130F, 0F),
-                            localScale = new Vector3(0.8F, 0.8F, 0.8F),
+                            localPos = new Vector3(-0.20987F, 0.30923F, 0.06612F),
+                            localAngles = new Vector3(-0.00001F, 270F, 180F),
+                            localScale = new Vector3(0.1F, 0.1F, 0.1F),
                             limbMask = LimbFlags.None
                         }
                     }
@@ -1127,9 +1127,9 @@ namespace RocketSurvivor.Modules.Characters
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayGoldGat"),
                             childName = "Pelvis",
-                            localPos = new Vector3(0F, 2.01706F, -0.07716F),
-                            localAngles = new Vector3(0F, 270F, 0F),
-                            localScale = new Vector3(0.7F, 0.7F, 0.7F),
+                            localPos = new Vector3(0.09424F, -0.2048F, 0.00633F),
+                            localAngles = new Vector3(-0.00001F, 0.00001F, 180F),
+                            localScale = new Vector3(0.1F, 0.1F, 0.1F),
                             limbMask = LimbFlags.None
                         }
                     }
@@ -1147,10 +1147,10 @@ namespace RocketSurvivor.Modules.Characters
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayCoffee"),
-                            childName = "PipesR",
-                            localPos = new Vector3(-0.0117F, 0.33519F, -0.05378F),
-                            localAngles = new Vector3(354.3912F, 155.4135F, 357.7732F),
-                            localScale = new Vector3(0.7F, 0.7F, 0.7F),
+                            childName = "head",
+                            localPos = new Vector3(0.10802F, -0.04007F, -0.14873F),
+                            localAngles = new Vector3(328.6051F, 188.3043F, 321.3932F),
+                            localScale = new Vector3(0.12F, 0.12F, 0.12F),
                             limbMask = LimbFlags.None
                         }
                     }
@@ -1168,10 +1168,10 @@ namespace RocketSurvivor.Modules.Characters
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayLifestealOnHit"),
-                            childName = "Head",
-                            localPos = new Vector3(0.04249F, 0.73979F, 1.95164F),
-                            localAngles = new Vector3(0F, 180F, 0F),
-                            localScale = new Vector3(0.5F, 0.5F, 0.5F),
+                            childName = "head",
+                            localPos = new Vector3(-0.04518F, 0.22121F, 0.25024F),
+                            localAngles = new Vector3(10.35725F, 178.6356F, 306.5674F),
+                            localScale = new Vector3(0.1F, 0.1F, 0.1F),
                             limbMask = LimbFlags.None
                         }
                     }
@@ -1189,10 +1189,10 @@ namespace RocketSurvivor.Modules.Characters
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayAPRound"),
-                            childName = "Head",
-                            localPos = new Vector3(-0.75299F, 1.25173F, 0.05481F),
-                            localAngles = new Vector3(90F, 90F, 0F),
-                            localScale = new Vector3(2F, 2F, 2F),
+                            childName = "BlackBox",
+                            localPos = new Vector3(-0.00161F, 0.0549F, 0.16283F),
+                            localAngles = new Vector3(0F, 90F, 90F),
+                            localScale = new Vector3(0.5F, 0.5F, 0.5F),
                             limbMask = LimbFlags.None
                         }
                     }
@@ -1210,10 +1210,10 @@ namespace RocketSurvivor.Modules.Characters
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayLaserTurbine"),
-                            childName = "ShoulderR",
-                            localPos = new Vector3(-0.00664F, 1.35992F, -0.06253F),
-                            localAngles = new Vector3(90F, 90F, 0F),
-                            localScale = new Vector3(1.5F, 1.5F, 1.5F),
+                            childName = "upper_arm.R",
+                            localPos = new Vector3(0.0057F, 0.12618F, 0.13453F),
+                            localAngles = new Vector3(0F, 0F, 0F),
+                            localScale = new Vector3(0.25F, 0.25F, 0.25F),
                             limbMask = LimbFlags.None
                         }
                     }
@@ -1231,10 +1231,10 @@ namespace RocketSurvivor.Modules.Characters
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayBrokenMask"),
-                            childName = "UpperArmR",
-                            localPos = new Vector3(-0.06679F, 0.06875F, -1.08445F),
-                            localAngles = new Vector3(0F, 180F, 0F),
-                            localScale = new Vector3(1F, 1F, 1F),
+                            childName = "upper_arm.R",
+                            localPos = new Vector3(-0.00171F, 0.28462F, 0.09237F),
+                            localAngles = new Vector3(317.6798F, 344.9018F, 8.77585F),
+                            localScale = new Vector3(0.2F, 0.2F, 0.2F),
                             limbMask = LimbFlags.None
                         }
                     }
@@ -1252,10 +1252,10 @@ namespace RocketSurvivor.Modules.Characters
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayAegis"),
-                            childName = "ShoulderR",
-                            localPos = new Vector3(0.05644F, 1.24216F, 0.02307F),
-                            localAngles = new Vector3(10.26635F, 9.64574F, 168.3789F),
-                            localScale = new Vector3(1F, 1F, 1F),
+                            childName = "upper_arm.R",
+                            localPos = new Vector3(-0.02107F, 0.11274F, 0.1467F),
+                            localAngles = new Vector3(84.9562F, 345.7832F, 180.0037F),
+                            localScale = new Vector3(0.2F, 0.2F, 0.2F),
                             limbMask = LimbFlags.None
                         }
                     }
@@ -1274,8 +1274,8 @@ namespace RocketSurvivor.Modules.Characters
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayTalisman"),
                             childName = "Base",
-                            localPos = new Vector3(2.46906F, 8.9101F, 1.75943F),
-                            localAngles = new Vector3(0F, 0F, 0F),
+                            localPos = new Vector3(0.72246F, -1.16838F, 0.67102F),
+                            localAngles = new Vector3(90F, 90F, 0F),
                             localScale = new Vector3(1F, 1F, 1F),
                             limbMask = LimbFlags.None
                         }
@@ -1295,9 +1295,9 @@ namespace RocketSurvivor.Modules.Characters
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayEgg"),
                             childName = "Pelvis",
-                            localPos = new Vector3(0F, 0.69845F, 0.95915F),
-                            localAngles = new Vector3(90F, 0F, 0F),
-                            localScale = new Vector3(1.5F, 1.5F, 1.5F),
+                            localPos = new Vector3(-0.08616F, -0.15141F, -0.02741F),
+                            localAngles = new Vector3(300F, 0F, 0F),
+                            localScale = new Vector3(0.3F, 0.3F, 0.3F),
                             limbMask = LimbFlags.None
                         }
                     }
@@ -1315,10 +1315,10 @@ namespace RocketSurvivor.Modules.Characters
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayFruit"),
-                            childName = "Chest",
-                            localPos = new Vector3(0.46711F, -0.18246F, -0.5095F),
-                            localAngles = new Vector3(0F, 90F, 0F),
-                            localScale = new Vector3(1F, 1F, 1F),
+                            childName = "BlackBox",
+                            localPos = new Vector3(-0.1127F, -0.18666F, -0.20254F),
+                            localAngles = new Vector3(2.66166F, 9.13922F, 2.10484F),
+                            localScale = new Vector3(0.25F, 0.25F, 0.25F),
                             limbMask = LimbFlags.None
                         }
                     }
@@ -1336,10 +1336,10 @@ namespace RocketSurvivor.Modules.Characters
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayElephantFigure"),
-                            childName = "Head",
-                            localPos = new Vector3(0.59913F, 1.41596F, -0.00379F),
-                            localAngles = new Vector3(0F, 0F, 0F),
-                            localScale = new Vector3(3F, 3F, 3F),
+                            childName = "head",
+                            localPos = new Vector3(-0.03173F, 0.2814F, -0.00308F),
+                            localAngles = new Vector3(0F, 90F, 0F),
+                            localScale = new Vector3(0.5F, 0.5F, 0.5F),
                             limbMask = LimbFlags.None
                         }
                     }
@@ -1358,9 +1358,9 @@ namespace RocketSurvivor.Modules.Characters
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayWaterPack"),
                             childName = "Chest",
-                            localPos = new Vector3(0F, -0.24706F, -1.38775F),
-                            localAngles = new Vector3(0F, 180F, 0F),
-                            localScale = new Vector3(0.6F, 0.6F, 0.6F),
+                            localPos = new Vector3(-0.35044F, -0.03202F, -0.02215F),
+                            localAngles = new Vector3(0F, 270F, 0F),
+                            localScale = new Vector3(0.15F, 0.15F, 0.15F),
                             limbMask = LimbFlags.None
                         }
                     }
@@ -1378,10 +1378,10 @@ namespace RocketSurvivor.Modules.Characters
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayRadio"),
-                            childName = "Head",
-                            localPos = new Vector3(0.5646F, 0.88416F, -1.21746F),
-                            localAngles = new Vector3(0F, 180F, 0F),
-                            localScale = new Vector3(2F, 2F, 2F),
+                            childName = "Chest",
+                            localPos = new Vector3(-0.2603F, 0.26105F, 0.26701F),
+                            localAngles = new Vector3(0F, 0F, 0F),
+                            localScale = new Vector3(0.5F, 0.5F, 0.5F),
                             limbMask = LimbFlags.None
                         }
                     }
@@ -1399,10 +1399,10 @@ namespace RocketSurvivor.Modules.Characters
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayLightningArmRight"),
-                            childName = "UpperArmR",
+                            childName = "upper_arm.R",
                             localPos = new Vector3(0F, 0F, 0F),
                             localAngles = new Vector3(0F, 0F, 0F),
-                            localScale = new Vector3(-4F, 4F, 4F),
+                            localScale = new Vector3(-1F, 1F, 1F),
                             limbMask = LimbFlags.None
                         }
                     }
@@ -1420,10 +1420,10 @@ namespace RocketSurvivor.Modules.Characters
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayGasoline"),
-                            childName = "ThighR",
-                            localPos = new Vector3(-0.00513F, -0.66323F, -0.99841F),
-                            localAngles = new Vector3(44.46998F, 354.5271F, 272.6279F),
-                            localScale = new Vector3(2F, 2F, 2F),
+                            childName = "thigh.R",
+                            localPos = new Vector3(-0.02865F, 0.27608F, 0.1778F),
+                            localAngles = new Vector3(90F, 270F, 0F),
+                            localScale = new Vector3(0.5F, 0.5F, 0.5F),
                             limbMask = LimbFlags.None
                         }
                     }
@@ -1441,10 +1441,10 @@ namespace RocketSurvivor.Modules.Characters
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayPearl"),
-                            childName = "LowerArmR",
-                            localPos = new Vector3(0.04706F, -0.05544F, -0.03281F),
-                            localAngles = new Vector3(274.3965F, 90F, 270F),
-                            localScale = new Vector3(0.3F, 0.3F, 0.3F),
+                            childName = "forearm.R",
+                            localPos = new Vector3(0F, 0F, 0F),
+                            localAngles = new Vector3(0F, 0F, 0F),
+                            localScale = new Vector3(0.07F, 0.07F, 0.07F),
                             limbMask = LimbFlags.None
                         }
                     }
@@ -1462,10 +1462,10 @@ namespace RocketSurvivor.Modules.Characters
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayShinyPearl"),
-                            childName = "LowerArmL",
-                            localPos = new Vector3(0.04706F, -0.05544F, -0.03281F),
-                            localAngles = new Vector3(274.3965F, 90F, 270F),
-                            localScale = new Vector3(0.3F, 0.3F, 0.3F),
+                            childName = "forearm.L",
+                            localPos = new Vector3(0.047F, 0F, 0F),
+                            localAngles = new Vector3(0F, 0F, 0F),
+                            localScale = new Vector3(0.07F, 0.07F, 0.07F),
                             limbMask = LimbFlags.None
                         }
                     }
@@ -1484,7 +1484,7 @@ namespace RocketSurvivor.Modules.Characters
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayGravCube"),
                             childName = "Base",
-                            localPos = new Vector3(-3.39581F, 7.99995F, 0F),
+                            localPos = new Vector3(0.79323F, -0.86552F, -1.14181F),
                             localAngles = new Vector3(0F, 0F, 0F),
                             localScale = new Vector3(1F, 1F, 1F),
                             limbMask = LimbFlags.None
@@ -1505,9 +1505,9 @@ namespace RocketSurvivor.Modules.Characters
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplaySawmerangFollower"),
                             childName = "Base",
-                            localPos = new Vector3(-4.12416F, 7.98507F, -0.81386F),
-                            localAngles = new Vector3(75.0001F, 176F, 180F),
-                            localScale = new Vector3(0.5F, 0.5F, 0.5F),
+                            localPos = new Vector3(1.17442F, -0.43597F, -1.13607F),
+                            localAngles = new Vector3(0F, 90F, 0F),
+                            localScale = new Vector3(0.12F, 0.12F, 0.12F),
                             limbMask = LimbFlags.None
                         }
                     }
@@ -1525,10 +1525,10 @@ namespace RocketSurvivor.Modules.Characters
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayCloverVoid"),
-                            childName = "Head",
-                            localPos = new Vector3(1.27222F, 0.81641F, 0.92007F),
-                            localAngles = new Vector3(61.65746F, 32.00563F, 318.2274F),
-                            localScale = new Vector3(2.4F, 2.4F, 2.4F),
+                            childName = "BlackBox",
+                            localPos = new Vector3(-0.13435F, 0.73569F, -0.1419F),
+                            localAngles = new Vector3(270F, 49.00001F, 0F),
+                            localScale = new Vector3(0.75F, 0.75F, 0.75F),
                             limbMask = LimbFlags.None
                         }
                     }
@@ -1547,8 +1547,8 @@ namespace RocketSurvivor.Modules.Characters
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayFrostRelic"),
                             childName = "Base",
-                            localPos = new Vector3(-3.69212F, 7.95687F, 0F),
-                            localAngles = new Vector3(90F, 0F, 0F),
+                            localPos = new Vector3(0.98768F, -1.30929F, 1.33158F),
+                            localAngles = new Vector3(0F, 0F, 0F),
                             localScale = new Vector3(1F, 1F, 1F),
                             limbMask = LimbFlags.None
                         }
@@ -1567,10 +1567,10 @@ namespace RocketSurvivor.Modules.Characters
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayTriTipVoid"),
-                            childName = "Head",
-                            localPos = new Vector3(-1.37354F, 1.59668F, -0.88525F),
-                            localAngles = new Vector3(56.87689F, 35.16671F, 334.2393F),
-                            localScale = new Vector3(1.5F, 1.5F, 1.5F),
+                            childName = "BlackBox",
+                            localPos = new Vector3(-0.26201F, 0.4183F, -0.18316F),
+                            localAngles = new Vector3(356.4491F, 54.87337F, 88.95774F),
+                            localScale = new Vector3(0.3F, 0.3F, 0.3F),
                             limbMask = LimbFlags.None
                         }
                     }
@@ -1588,10 +1588,10 @@ namespace RocketSurvivor.Modules.Characters
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayLaserSight"),
-                            childName = "Head",
-                            localPos = new Vector3(-1.46901F, 0.43275F, -0.00668F),
-                            localAngles = new Vector3(270F, 90F, 0F),
-                            localScale = new Vector3(0.5F, 0.5F, 0.5F),
+                            childName = "BlackBox",
+                            localPos = new Vector3(-0.06503F, 0.71731F, 0.12467F),
+                            localAngles = new Vector3(0F, 270F, 270F),
+                            localScale = new Vector3(0.15F, 0.15F, 0.15F),
                             limbMask = LimbFlags.None
                         }
                     }
@@ -1609,9 +1609,9 @@ namespace RocketSurvivor.Modules.Characters
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayDagger"),
-                            childName = "ShoulderR",
-                            localPos = new Vector3(-0.26594F, 0.65644F, -0.07889F),
-                            localAngles = new Vector3(0F, 0F, 90F),
+                            childName = "BlackBox",
+                            localPos = new Vector3(-0.07525F, 0.02831F, -0.12299F),
+                            localAngles = new Vector3(48.26704F, 153.2701F, 261.1328F),
                             localScale = new Vector3(3.6F, 3.6F, 3.6F),
                             limbMask = LimbFlags.None
                         }
@@ -1630,16 +1630,17 @@ namespace RocketSurvivor.Modules.Characters
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayTriTip"),
-                            childName = "LowerArmR",
-                            localPos = new Vector3(0.65617F, 2.2126F, 0.25271F),
-                            localAngles = new Vector3(270F, 0F, 0F),
-                            localScale = new Vector3(2F, 2F, 2F),
+                            childName = "BlackBox",
+                            localPos = new Vector3(-0.30421F, 0.39528F, -0.19594F),
+                            localAngles = new Vector3(352.0393F, 51.04779F, 3.9237F),
+                            localScale = new Vector3(0.3F, 0.3F, 0.3F),
                             limbMask = LimbFlags.None
                         }
                     }
                 }
             });
 
+            //STOPPING POINT. TODO: FINISH THE REST
             itemDisplayRules.Add(new ItemDisplayRuleSet.KeyAssetRuleGroup
             {
                 keyAsset = RoR2Content.Equipment.Meteor,
@@ -1693,7 +1694,7 @@ namespace RocketSurvivor.Modules.Characters
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayMolotov"),
-                            childName = "Head",
+                            childName = "head",
                             localPos = new Vector3(-1.67488F, 0.312456F, 0.05488F),
                             localAngles = new Vector3(0F, 0F, 0F),
                             localScale = new Vector3(1F, 1F, 1F),
@@ -1703,7 +1704,7 @@ namespace RocketSurvivor.Modules.Characters
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayMolotov"),
-                            childName = "Head",
+                            childName = "head",
                             localPos = new Vector3(1.67488F, 0.312456F, 0.05488F),
                             localAngles = new Vector3(0F, 0F, 0F),
                             localScale = new Vector3(-1F, 1F, 1F),
@@ -1745,7 +1746,7 @@ namespace RocketSurvivor.Modules.Characters
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayGummyClone"),
-                            childName = "Head",
+                            childName = "head",
                             localPos = new Vector3(0.49778F, 1.34068F, -1.17572F),
                             localAngles = new Vector3(0F, 0F, 0F),
                             localScale = new Vector3(0.5F, 0.5F, 0.5F),
@@ -1787,7 +1788,7 @@ namespace RocketSurvivor.Modules.Characters
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayVendingMachine"),
-                            childName = "Head",
+                            childName = "head",
                             localPos = new Vector3(0.47835F, 0.98633F, -1.11264F),
                             localAngles = new Vector3(0F, 180F, 0F),
                             localScale = new Vector3(0.8F, 0.8F, 0.8F),
@@ -1808,7 +1809,7 @@ namespace RocketSurvivor.Modules.Characters
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayAffixVoid"),
-                            childName = "Head",
+                            childName = "head",
                             localPos = new Vector3(0F, 0.40845F, 1.20601F),
                             localAngles = new Vector3(90F, 0F, 0F),
                             localScale = new Vector3(0.8F, 0.8F, 0.8F),
@@ -1829,7 +1830,7 @@ namespace RocketSurvivor.Modules.Characters
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayEliteHorn"),
-                            childName = "Head",
+                            childName = "head",
                             localPos = new Vector3(1.22185F, 0.88893F, 0.0065F),
                             localAngles = new Vector3(0F, 0F, 0F),
                             localScale = new Vector3(0.5F, 0.5F, 0.5F),
@@ -1840,7 +1841,7 @@ namespace RocketSurvivor.Modules.Characters
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayEliteHorn"),
-                            childName = "Head",
+                            childName = "head",
                             localPos = new Vector3(-1.22185F, 0.88893F, 0.0065F),
                             localAngles = new Vector3(0F, 0F, 0F),
                             localScale = new Vector3(-0.5F, 0.5F, 0.5F),
@@ -1861,7 +1862,7 @@ namespace RocketSurvivor.Modules.Characters
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayEliteIceCrown"),
-                            childName = "Head",
+                            childName = "head",
                             localPos = new Vector3(0F, 1.60141F, 0F),
                             localAngles = new Vector3(270F, 0F, 0F),
                             localScale = new Vector3(0.2F, 0.2F, 0.2F),
@@ -1882,7 +1883,7 @@ namespace RocketSurvivor.Modules.Characters
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayEliteRhinoHorn"),
-                            childName = "Head",
+                            childName = "head",
                             localPos = new Vector3(0.0385F, 0.81658F, 0.82963F),
                             localAngles = new Vector3(315F, 0F, 0F),
                             localScale = new Vector3(0.7F, 0.7F, 0.7F),
@@ -1893,7 +1894,7 @@ namespace RocketSurvivor.Modules.Characters
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayEliteRhinoHorn"),
-                            childName = "Head",
+                            childName = "head",
                             localPos = new Vector3(0.03906F, 0.72268F, 0.96535F),
                             localAngles = new Vector3(340F, 0F, 0F),
                             localScale = new Vector3(1F, 1F, 1F),
@@ -1914,7 +1915,7 @@ namespace RocketSurvivor.Modules.Characters
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayTricornGhost"),
-                            childName = "Hat",
+                            childName = "head",
                             localPos = new Vector3(0.03438F, 0.89773F, -0.24518F),
                             localAngles = new Vector3(0F, 0F, 0F),
                             localScale = new Vector3(3F, 3F, 3F),
@@ -1946,7 +1947,7 @@ namespace RocketSurvivor.Modules.Characters
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayTricornUsed"),
-                            childName = "Hat",
+                            childName = "head",
                             localPos = new Vector3(0.03438F, 0.89773F, -0.24518F),
                             localAngles = new Vector3(0F, 0F, 0F),
                             localScale = new Vector3(3F, 3F, 3F),
@@ -1967,7 +1968,7 @@ namespace RocketSurvivor.Modules.Characters
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayEliteMendingAntlers"),
-                            childName = "Head",
+                            childName = "head",
                             localPos = new Vector3(-0.00626F, 0.95351F, -0.39432F),
                             localAngles = new Vector3(0F, 0F, 0F),
                             localScale = new Vector3(4F, 4F, 4F),
@@ -1988,7 +1989,7 @@ namespace RocketSurvivor.Modules.Characters
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayEliteUrchinCrown"),
-                            childName = "Head",
+                            childName = "head",
                             localPos = new Vector3(-0.0298F, 0.96761F, -0.0052F),
                             localAngles = new Vector3(270F, 90F, 0F),
                             localScale = new Vector3(0.34F, 0.34F, 0.34F),
@@ -2009,7 +2010,7 @@ namespace RocketSurvivor.Modules.Characters
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayEliteStealthCrown"),
-                            childName = "Head",
+                            childName = "head",
                             localPos = new Vector3(0.01668F, 1.80998F, -0.23431F),
                             localAngles = new Vector3(90F, 180F, 0F),
                             localScale = new Vector3(0.4F, 0.4F, 0.4F),
@@ -2072,7 +2073,7 @@ namespace RocketSurvivor.Modules.Characters
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayBehemoth"),
-                            childName = "LowerArmL",
+                            childName = "forearm.L",
                             localPos = new Vector3(-0.99617F, 1.60066F, 0.18735F),
                             localAngles = new Vector3(358.5634F, 269.7381F, 357.2693F),
                             localScale = new Vector3(0.3F, 0.3F, 0.3F),
@@ -2093,7 +2094,7 @@ namespace RocketSurvivor.Modules.Characters
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayDelicateWatch"),
-                            childName = "HandL",
+                            childName = "hand.L",
                             localPos = new Vector3(-0.12222F, 0.34454F, 0.0291F),
                             localAngles = new Vector3(283.6929F, 128.8764F, 336.2239F),
                             localScale = new Vector3(3F, 3F, 3F),
@@ -2114,7 +2115,7 @@ namespace RocketSurvivor.Modules.Characters
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplaySunHead"),
-                            childName = "Head",
+                            childName = "head",
                             localPos = new Vector3(-0.00086F, 0.51444F, 1.16411F),
                             localAngles = new Vector3(0F, 0F, 0F),
                             localScale = new Vector3(2.1F, 2.1F, 2.1F),
@@ -2188,7 +2189,7 @@ namespace RocketSurvivor.Modules.Characters
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayBuckler"),
-                            childName = "LowerArmR",
+                            childName = "forearm.R",
                             localPos = new Vector3(0.55291F, 0.27591F, 0.22005F),
                             localAngles = new Vector3(24.13992F, 76.18073F, 355.0659F),
                             localScale = new Vector3(1F, 1F, 1F),
@@ -2209,7 +2210,7 @@ namespace RocketSurvivor.Modules.Characters
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayFeather"),
-                            childName = "UpperArmL",
+                            childName = "upper_arm.L",
                             localPos = new Vector3(-0.07067F, 1.58443F, 0.02026F),
                             localAngles = new Vector3(322.8272F, 200.6293F, 261.7263F),
                             localScale = new Vector3(0.1F, 0.1F, 0.1F),
@@ -2377,7 +2378,7 @@ namespace RocketSurvivor.Modules.Characters
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayShieldBug"),
-                            childName = "Head",
+                            childName = "head",
                             localPos = new Vector3(0.8F, 0.5F, 0F),
                             localAngles = new Vector3(0F, 0F, 0F),
                             localScale = new Vector3(1F, 1F, 1F),
@@ -2388,7 +2389,7 @@ namespace RocketSurvivor.Modules.Characters
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayShieldBug"),
-                            childName = "Head",
+                            childName = "head",
                             localPos = new Vector3(-0.8F, 0.5F, 0F),
                             localAngles = new Vector3(0F, 0F, 0F),
                             localScale = new Vector3(-1F, 1F, 1F),
@@ -2409,7 +2410,7 @@ namespace RocketSurvivor.Modules.Characters
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayICBM"),
-                            childName = "LowerArmR",
+                            childName = "forearm.R",
                             localPos = new Vector3(1.0526F, 0.92267F, 0.33512F),
                             localAngles = new Vector3(358.4739F, 196.2306F, 1.74141F),
                             localScale = new Vector3(0.8F, 0.8F, 0.8F),
@@ -2430,10 +2431,10 @@ namespace RocketSurvivor.Modules.Characters
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayLunarShoulderStone"),
-                            childName = "ShoulderL",
-                            localPos = new Vector3(-0.02389F, 1.55666F, 0.04708F),
-                            localAngles = new Vector3(2.76242F, 276.0806F, 302.8358F),
-                            localScale = new Vector3(3F, 3F, 3F),
+                            childName = "upper_arm.L",
+                            localPos = new Vector3(-0.004F, 0.09409F, 0.15495F),
+                            localAngles = new Vector3(77.01176F, 25.74254F, 16.90174F),
+                            localScale = new Vector3(0.5F, 0.5F, 0.5F),
                             limbMask = LimbFlags.None
                         }
                     }
@@ -2503,7 +2504,7 @@ namespace RocketSurvivor.Modules.Characters
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayRegeneratingScrap"),
-                            childName = "ThighL",
+                            childName = "thigh.L",
                             localPos = new Vector3(0.06018F, 0.99113F, 0.6685F),
                             localAngles = new Vector3(0F, 180F, 180F),
                             localScale = new Vector3(1F, 1F, 1F),
@@ -2566,7 +2567,7 @@ namespace RocketSurvivor.Modules.Characters
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayWaxBird"),
-                            childName = "Head",
+                            childName = "head",
                             localPos = new Vector3(0.97737F, -1.5143F, 0.0345F),
                             localAngles = new Vector3(0F, 350F, 0F),
                             localScale = new Vector3(4F, 4F, 4F),
@@ -2608,7 +2609,7 @@ namespace RocketSurvivor.Modules.Characters
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayInterstellarDeskPlant"),
-                            childName = "Head",
+                            childName = "head",
                             localPos = new Vector3(0.02259F, 0.54096F, 1.25526F),
                             localAngles = new Vector3(0F, 0F, 0F),
                             localScale = new Vector3(0.5F, 0.5F, 0.5F),
@@ -2650,7 +2651,7 @@ namespace RocketSurvivor.Modules.Characters
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayGuillotine"),
-                            childName = "LowerArmL",
+                            childName = "forearm.L",
                             localPos = new Vector3(-0.65809F, 2.0874F, 0.43508F),
                             localAngles = new Vector3(88.13177F, 341.1274F, 46.61266F),
                             localScale = new Vector3(1.3F, 1.3F, 1.3F),
@@ -2692,7 +2693,7 @@ namespace RocketSurvivor.Modules.Characters
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplaySeed"),
-                            childName = "ThighR",
+                            childName = "thigh.R",
                             localPos = new Vector3(-3.11582F, -1.36913F, 1.33288F),
                             localAngles = new Vector3(39.20604F, 345.9948F, 287.024F),
                             localScale = new Vector3(0.2F, 0.2F, 0.2F),
@@ -2879,7 +2880,7 @@ namespace RocketSurvivor.Modules.Characters
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayFirework"),
-                            childName = "Head",
+                            childName = "head",
                             localPos = new Vector3(1.46065F, 0.59488F, -0.8081F),
                             localAngles = new Vector3(274.7068F, 69.15612F, 52.48836F),
                             localScale = new Vector3(1.5F, 1.5F, 1.5F),
@@ -2900,7 +2901,7 @@ namespace RocketSurvivor.Modules.Characters
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayRollOfPennies"),
-                            childName = "Head",
+                            childName = "head",
                             localPos = new Vector3(0.53561F, 0.17481F, -1.16899F),
                             localAngles = new Vector3(90F, 270F, 0F),
                             localScale = new Vector3(3F, 3F, 3F),
@@ -2921,7 +2922,7 @@ namespace RocketSurvivor.Modules.Characters
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayLunarShoulderNature"),
-                            childName = "ShoulderR",
+                            childName = "upper_arm.R",
                             localPos = new Vector3(0.07999F, 1.29681F, 0.05322F),
                             localAngles = new Vector3(357.2791F, 282.0003F, 325.975F),
                             localScale = new Vector3(3F, 3F, 3F),
@@ -2984,7 +2985,7 @@ namespace RocketSurvivor.Modules.Characters
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayEffigy"),
-                            childName = "Head",
+                            childName = "head",
                             localPos = new Vector3(-0.10648F, 1.03051F, -0.20891F),
                             localAngles = new Vector3(0F, 330F, 0F),
                             localScale = new Vector3(1.5F, 1.5F, 1.5F),
@@ -3068,7 +3069,7 @@ namespace RocketSurvivor.Modules.Characters
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayWilloWisp"),
-                            childName = "ThighL",
+                            childName = "thigh.L",
                             localPos = new Vector3(0.07841F, -0.65349F, -1.1863F),
                             localAngles = new Vector3(356.158F, 263.7853F, 214.3699F),
                             localScale = new Vector3(0.25F, 0.25F, 0.25F),
@@ -3089,7 +3090,7 @@ namespace RocketSurvivor.Modules.Characters
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayWillowWispVoid"),
-                            childName = "ThighL",
+                            childName = "thigh.L",
                             localPos = new Vector3(0.07841F, -0.65349F, -1.1863F),
                             localAngles = new Vector3(356.158F, 263.7853F, 214.3699F),
                             localScale = new Vector3(0.25F, 0.25F, 0.25F),
@@ -3110,7 +3111,7 @@ namespace RocketSurvivor.Modules.Characters
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayStickyBomb"),
-                            childName = "ThighR",
+                            childName = "thigh.R",
                             localPos = new Vector3(-0.09277F, -0.25221F, -1.23408F),
                             localAngles = new Vector3(5.83502F, 336.0272F, 188.4757F),
                             localScale = new Vector3(1F, 1F, 1F),
@@ -3131,7 +3132,7 @@ namespace RocketSurvivor.Modules.Characters
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayDoubleMag"),
-                            childName = "ThighL",
+                            childName = "thigh.L",
                             localPos = new Vector3(-0.31077F, 0.35379F, -0.89277F),
                             localAngles = new Vector3(45.26951F, 355.9093F, 358.4541F),
                             localScale = new Vector3(0.25F, 0.25F, 0.25F),
@@ -3236,7 +3237,7 @@ namespace RocketSurvivor.Modules.Characters
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayGlowFlower"),
-                            childName = "Head",
+                            childName = "head",
                             localPos = new Vector3(-1.2569F, 0.84597F, 0.86491F),
                             localAngles = new Vector3(332.5085F, 317.2161F, 294.9464F),
                             localScale = new Vector3(2F, 2F, 2F),
@@ -3257,7 +3258,7 @@ namespace RocketSurvivor.Modules.Characters
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayTome"),
-                            childName = "Head",
+                            childName = "head",
                             localPos = new Vector3(-1.32706F, 0.47782F, -0.81946F),
                             localAngles = new Vector3(359.8251F, 234.1189F, 3.33783F),
                             localScale = new Vector3(0.3F, 0.3F, 0.3F),
@@ -3278,7 +3279,7 @@ namespace RocketSurvivor.Modules.Characters
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayGrappleHook"),
-                            childName = "Head",
+                            childName = "head",
                             localPos = new Vector3(-0.29667F, 1.8204F, -1.03377F),
                             localAngles = new Vector3(356.0622F, 232.2437F, 23.71056F),
                             localScale = new Vector3(0.5F, 0.5F, 0.5F),
@@ -3299,7 +3300,7 @@ namespace RocketSurvivor.Modules.Characters
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayAlienHead"),
-                            childName = "ThighL",
+                            childName = "thigh.L",
                             localPos = new Vector3(0.01926F, 1.13796F, -0.64938F),
                             localAngles = new Vector3(82.68488F, 359.6896F, 3.00337F),
                             localScale = new Vector3(4F, 4F, 4F),
@@ -3383,7 +3384,7 @@ namespace RocketSurvivor.Modules.Characters
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayJellyGuts"),
-                            childName = "Hat",
+                            childName = "head",
                             localPos = new Vector3(-0.05386F, 0.21865F, -0.36482F),
                             localAngles = new Vector3(0F, 0F, 0F),
                             localScale = new Vector3(0.5F, 0.5F, 0.5F),
@@ -3404,7 +3405,7 @@ namespace RocketSurvivor.Modules.Characters
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayBeads"),
-                            childName = "HandR",
+                            childName = "hand.R",
                             localPos = new Vector3(-0.02785F, 0.48068F, -0.11959F),
                             localAngles = new Vector3(77.51471F, 54.62633F, 162.8953F),
                             localScale = new Vector3(4F, 4F, 4F),
@@ -3446,7 +3447,7 @@ namespace RocketSurvivor.Modules.Characters
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayRandomDamageZone"),
-                            childName = "UpperArmL",
+                            childName = "upper_arm.L",
                             localPos = new Vector3(-0.87482F, 3.86063F, -1.42822F),
                             localAngles = new Vector3(12.79649F, 111.1767F, 232.5848F),
                             localScale = new Vector3(0.2F, 0.2F, 0.2F),
@@ -3467,7 +3468,7 @@ namespace RocketSurvivor.Modules.Characters
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayBirdFoot"),
-                            childName = "Head",
+                            childName = "head",
                             localPos = new Vector3(0.00188F, 1.33041F, -0.84227F),
                             localAngles = new Vector3(0F, 270F, 315F),
                             localScale = new Vector3(2F, 2F, 2F),
@@ -3593,7 +3594,7 @@ namespace RocketSurvivor.Modules.Characters
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayBleedOnHitAndExplode"),
-                            childName = "ThighR",
+                            childName = "thigh.R",
                             localPos = new Vector3(0.04262F, 1.43212F, -0.76796F),
                             localAngles = new Vector3(8.44587F, 143.2776F, 354.3725F),
                             localScale = new Vector3(0.25F, 0.25F, 0.25F),
@@ -3614,7 +3615,7 @@ namespace RocketSurvivor.Modules.Characters
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplaySiphonOnLowHealth"),
-                            childName = "ThighL",
+                            childName = "thigh.L",
                             localPos = new Vector3(0.0296F, 0.37825F, -1.4119F),
                             localAngles = new Vector3(343.3012F, 165.6642F, 176.9258F),
                             localScale = new Vector3(0.3F, 0.3F, 0.3F),
@@ -3635,7 +3636,7 @@ namespace RocketSurvivor.Modules.Characters
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayMonstersOnShrineUse"),
-                            childName = "ThighR",
+                            childName = "thigh.R",
                             localPos = new Vector3(0.03246F, 1.71885F, 0.16059F),
                             localAngles = new Vector3(327.9469F, 288.4993F, 5.56038F),
                             localScale = new Vector3(0.3F, 0.3F, 0.3F),
@@ -3668,7 +3669,7 @@ namespace RocketSurvivor.Modules.Characters
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = Addressables.LoadAssetAsync<GameObject>("RoR2/DLC1/DroneWeapons/DisplayDroneWeaponMinigun.prefab").WaitForCompletion(),
-                            childName = "Head",
+                            childName = "head",
                             localPos = new Vector3(1.31409F, 0.52271F, 0.11515F),
                             localAngles = new Vector3(90F, 270F, 0F),
                             localScale = new Vector3(1F, 1F, 1F),
@@ -3690,7 +3691,7 @@ namespace RocketSurvivor.Modules.Characters
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = Addressables.LoadAssetAsync<GameObject>("RoR2/DLC1/DroneWeapons/DisplayDroneWeaponRobotArm.prefab").WaitForCompletion(),
-                            childName = "ShoulderL",
+                            childName = "upper_arm.L",
                             localPos = new Vector3(0F, 1.25838F, 0.02986F),
                             localAngles = new Vector3(327.3969F, 181.9719F, 330.4663F),
                             localScale = new Vector3(1.5F, 1.5F, 1.5F),
