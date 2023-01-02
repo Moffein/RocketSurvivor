@@ -100,11 +100,12 @@ namespace EntityStates.RocketSurvivorSkills.Utility
 
                 if (base.characterBody)
                 {
+                    float speedFactor = (Mathf.Max(0f, speed - ComicallyLargeSpoon.minSpeedForDamageBonus)) * ComicallyLargeSpoon.speedDamageCoefficient;
                     BlastAttack ba = new BlastAttack
                     {
                         attacker = base.gameObject,
                         attackerFiltering = AttackerFiltering.NeverHitSelf,
-                        baseDamage = (ComicallyLargeSpoon.blastDamageCoefficient + speed * ComicallyLargeSpoon.speedDamageCoefficient) * this.damageStat,
+                        baseDamage = (ComicallyLargeSpoon.blastDamageCoefficient + speedFactor) * this.damageStat,
                         baseForce = 2400f,
                         bonusForce = Vector3.zero,
                         canRejectForce = true,
@@ -143,5 +144,6 @@ namespace EntityStates.RocketSurvivorSkills.Utility
         private bool firedExplosion = false;
         public static float blastDamageCoefficient = 12f;
         public static float speedDamageCoefficient = 0.2f;  //Loader is 0.3
+        public static float minSpeedForDamageBonus = 7f * 1.45f;    //base sprint speed
     }
 }
