@@ -15,7 +15,6 @@ namespace RocketSurvivor.Modules
             CreateRocket();
             CreateRocketAlt();
             CreateC4();
-            CreateFlak();
         }
 
         internal static void AddProjectile(GameObject projectileToAdd)
@@ -227,100 +226,6 @@ namespace RocketSurvivor.Modules
 
             AddProjectile(c4Projectile);
             EntityStates.RocketSurvivorSkills.Utility.C4.projectilePrefab = c4Projectile;
-        }
-
-        private static void CreateFlak()
-        {
-            GameObject explosionEffect = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Common/VFX/OmniExplosionVFX.prefab").WaitForCompletion().InstantiateClone("RocketSurvivorFlakExplosionVFX", false);
-            EffectComponent ec = explosionEffect.GetComponent<EffectComponent>();
-            ec.soundName = "Play_Moffein_RocketSurvivor_R_Flak_Explode";
-            Modules.Content.AddEffectDef(new EffectDef(explosionEffect));
-            EntityStates.RocketSurvivorSkills.Special.FireFlak.explosionEffectPrefab = explosionEffect;
-
-            CreateFlakMini();
-
-            GameObject flakProjectile = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Drones/PaladinRocket.prefab").WaitForCompletion().InstantiateClone("RocketSurvivorFlakProjectile", true);
-
-            flakProjectile.AddComponent<AddToRocketTrackerComponent>();
-            flakProjectile.AddComponent<FlakShotgunComponent>();
-            BlastJumpComponent bjc = flakProjectile.AddComponent<BlastJumpComponent>();
-            bjc.force = 2400f;
-            bjc.horizontalMultiplier = 1.5f;
-            bjc.aoe = 10f;
-            bjc.requireAirborne = true;
-
-            ProjectileImpactExplosion pie = flakProjectile.GetComponent<ProjectileImpactExplosion>();
-            InitializeImpactExplosion(pie);
-
-            pie.blastDamageCoefficient = 1f;
-            pie.blastRadius = 10f;
-            pie.destroyOnEnemy = true;
-            pie.destroyOnWorld = true;
-            pie.lifetime = 0.5f;
-            pie.impactEffect = EntityStates.RocketSurvivorSkills.Special.FireFlak.explosionEffectPrefab;
-            pie.timerAfterImpact = false;
-            pie.lifetimeAfterImpact = 0f;
-            pie.blastAttackerFiltering = AttackerFiltering.NeverHitSelf;
-            pie.falloffModel = BlastAttack.FalloffModel.SweetSpot;
-
-            ProjectileSimple ps = flakProjectile.GetComponent<ProjectileSimple>();
-            ps.desiredForwardSpeed = 100f;
-            ps.lifetime = 1f;
-
-            //Remove built-in sounds
-            AkEvent[] akEvents = flakProjectile.GetComponentsInChildren<AkEvent>();
-            for (int i = 0; i < akEvents.Length; i++)
-            {
-                UnityEngine.Object.Destroy(akEvents[i]);
-            }
-
-            AkGameObj akgo = flakProjectile.GetComponent<AkGameObj>();
-            if (akgo)
-            {
-                UnityEngine.Object.Destroy(akgo);
-            }
-
-            AddProjectile(flakProjectile);
-            EntityStates.RocketSurvivorSkills.Special.FireFlak.projectilePrefab = flakProjectile;
-        }
-
-        private static void CreateFlakMini()
-        {
-            GameObject projectilePrefab = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Drones/PaladinRocket.prefab").WaitForCompletion().InstantiateClone("RocketSurvivorFlakMiniProjectile", true);
-            projectilePrefab.transform.localScale *= 0.3f;
-            ProjectileImpactExplosion pie = projectilePrefab.GetComponent<ProjectileImpactExplosion>();
-            InitializeImpactExplosion(pie);
-
-            pie.blastDamageCoefficient = 1f;
-            pie.blastRadius = 6f;
-            pie.destroyOnEnemy = true;
-            pie.destroyOnWorld = true;
-            pie.lifetime = 4f;
-            pie.impactEffect = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Common/VFX/OmniExplosionVFXQuick.prefab").WaitForCompletion();
-            pie.timerAfterImpact = false;
-            pie.lifetimeAfterImpact = 0f;
-            pie.blastAttackerFiltering = AttackerFiltering.NeverHitSelf;
-            pie.falloffModel = BlastAttack.FalloffModel.None;
-
-            ProjectileSimple ps = projectilePrefab.GetComponent<ProjectileSimple>();
-            ps.desiredForwardSpeed = 100f;
-            ps.lifetime = 5f;
-
-            //Remove built-in sounds
-            AkEvent[] akEvents = projectilePrefab.GetComponentsInChildren<AkEvent>();
-            for (int i = 0; i < akEvents.Length; i++)
-            {
-                UnityEngine.Object.Destroy(akEvents[i]);
-            }
-
-            AkGameObj akgo = projectilePrefab.GetComponent<AkGameObj>();
-            if (akgo)
-            {
-                UnityEngine.Object.Destroy(akgo);
-            }
-
-            AddProjectile(projectilePrefab);
-            FlakShotgunComponent.projectilePrefab = projectilePrefab;
         }
 
         private static void InitializeImpactExplosion(ProjectileImpactExplosion projectileImpactExplosion)

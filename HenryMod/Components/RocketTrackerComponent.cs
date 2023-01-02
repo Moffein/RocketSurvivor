@@ -162,13 +162,6 @@ namespace RocketSurvivor.Components {
 
                     EffectManager.SpawnEffect(effectPrefab, new EffectData { origin = toDetonate.transform.position, scale = ba.radius }, true);
 
-                    FlakShotgunComponent fsc = toDetonate.GetComponent<FlakShotgunComponent>();
-                    if (fsc)
-                    {
-                        fsc.FireFlakProjectiles(EntityStates.RocketSurvivorSkills.Secondary.AirDet.damageMult);
-                        effectPrefab = EntityStates.RocketSurvivorSkills.Special.FireFlak.explosionEffectPrefab;
-                    }
-
                     ba.Fire();
                     detonatedSuccessfully = true;
                 }
