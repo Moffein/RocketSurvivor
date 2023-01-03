@@ -317,7 +317,14 @@ namespace RocketSurvivor.Modules.Survivors
             primaryAltSkillDef.reloadInterruptPriority = InterruptPriority.Any;
             (primaryAltSkillDef as ScriptableObject).name = "FireRocketAlt";
             Modules.Content.AddSkillDef(primaryAltSkillDef);
-            Skills.AddSkillToFamily(sk.primary.skillFamily, primaryAltSkillDef);
+
+
+            UnlockableDef samUnlock = ScriptableObject.CreateInstance<UnlockableDef>();
+            samUnlock.cachedName = "Skills.MoffeinRocketSurvivor.Homing";
+            samUnlock.nameToken = "ACHIEVEMENT_MOFFEINROCKETHOMINGUNLOCK_NAME";
+            samUnlock.achievementIcon = primaryAltSkillDef.icon;
+            Modules.ContentPacks.unlockableDefs.Add(samUnlock);
+            Skills.AddSkillToFamily(sk.primary.skillFamily, primaryAltSkillDef, Config.ForceUnlock.Value ? null : samUnlock);
 
             RocketSurvivorSetup.FireRocketSkillDef = primarySkillDef;
             RocketSurvivorSetup.FireRocketAltSkillDef = primaryAltSkillDef;

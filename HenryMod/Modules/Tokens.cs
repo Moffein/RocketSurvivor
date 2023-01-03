@@ -46,8 +46,11 @@ namespace RocketSurvivor.Modules
             LanguageAPI.Add(prefix + "SPECIAL_SCEPTER_NAME", "Rocketstorm");
             LanguageAPI.Add(prefix + "SPECIAL_SCEPTER_DESCRIPTION", "Rapidly <style=cIsDamage>fire 8 rockets</style>, then <style=cIsUtility>reload your weapon</style>.");
 
+            LanguageAPI.Add("ACHIEVEMENT_MOFFEINROCKETHOMINGUNLOCK_NAME", "Rocket: Speed is Life");
+            LanguageAPI.Add("ACHIEVEMENT_MOFFEINROCKETHOMINGUNLOCK_DESCRIPTION", "As Rocket, reach and proceed through the Celestial Portal in 25 minutes or less.");
+
             LanguageAPI.Add("ACHIEVEMENT_MOFFEINROCKETMARKETGARDENUNLOCK_NAME", "Rocket: Pogo");
-            LanguageAPI.Add("ACHIEVEMENT_MOFFEINROCKETMARKETGARDENUNLOCK_DESCRIPTION", "Blast jump 10 times in a row without touching the ground.");
+            LanguageAPI.Add("ACHIEVEMENT_MOFFEINROCKETMARKETGARDENUNLOCK_DESCRIPTION", "As Rocket, blast jump 10 times in a row without touching the ground.");
         }
     }
 }
