@@ -216,11 +216,32 @@ namespace EntityStates.RocketSurvivorSkills.Emote {
 
     public class MenuPose: BaseEmote
     {
+        public static float thumpSoundDelay = 1.5f;
+        public static float loadSoundDelay = 8f / 30f;
+
+        private bool playedThump = false;
+        private bool playedLoad = false;
+
         public override void OnEnter()
         {
             this.animString = "TauntCSS";
             this.duration = -1;
             base.OnEnter();
+        }
+
+        public override void FixedUpdate()
+        {
+            base.FixedUpdate();
+            if (!playedLoad && base.fixedAge >= loadSoundDelay)
+            {
+                playedLoad = true;
+                Util.PlaySound("Play_Moffein_RocketSurvivor_Shift_Rearm", base.gameObject);
+            }
+            if (!playedThump && base.fixedAge >= thumpSoundDelay)
+            {
+                playedThump = true;
+                Util.PlaySound("Play_MULT_shift_hit", base.gameObject);
+            }
         }
     }
 }

@@ -209,6 +209,12 @@ namespace RocketSurvivor.Modules.Survivors
                 null);
         }
 
+        protected override void InitializeDisplayPrefab()
+        {
+            base.InitializeDisplayPrefab();
+            if (displayPrefab) displayPrefab.AddComponent<MenuSoundComponent>();
+        }
+
         public override void InitializeCharacter()
         {
             base.InitializeCharacter();

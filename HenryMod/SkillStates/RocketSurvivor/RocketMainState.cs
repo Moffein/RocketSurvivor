@@ -4,6 +4,7 @@ using RoR2;
 using BepInEx.Configuration;
 using RocketSurvivor.Modules;
 using System;
+using EntityStates.RocketSurvivorSkills.Emote;
 
 namespace EntityStates.RocketSurvivorSkills {
 
@@ -44,9 +45,11 @@ namespace EntityStates.RocketSurvivorSkills {
                 }
             }
 
-            if (base.isAuthority && base.characterMotor.isGrounded) {
-                CheckEmote<Emote.Sit>(Config.KeybindEmoteSit);
-                CheckEmote<Emote.Explode>(Config.KeybindEmoteShovel);
+            if (base.isAuthority && base.characterMotor.isGrounded)
+            {
+                CheckEmote<Sit>(Config.KeybindEmoteSit);
+                CheckEmote<Explode>(Config.KeybindEmoteShovel);
+                CheckEmote<MenuPose>(Config.KeybindEmoteCSS);
             }
         }
 
