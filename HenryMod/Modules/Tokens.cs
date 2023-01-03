@@ -1,4 +1,5 @@
 ﻿using R2API;
+using RocketSurvivor.Modules;
 using System;
 using System.Linq;
 using Zio.FileSystems;
@@ -7,14 +8,13 @@ namespace RocketSurvivor.Modules
 {
     internal class LanguageTokens
     {
-        public static SubFileSystem fileSystem;
         internal static string languageRoot => System.IO.Path.Combine(LanguageTokens.assemblyDir, "language");
 
         internal static string assemblyDir
         {
             get
             {
-                return System.IO.Path.GetDirectoryName(RocketSurvivor.RocketSurvivorPlugin.pluginInfo.Location);
+                return System.IO.Path.GetDirectoryName(Files.PluginInfo.Location);
             }
         }
         public LanguageTokens()

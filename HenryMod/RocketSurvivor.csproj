@@ -15,19 +15,17 @@
   <ItemGroup>
     <None Remove="HenryBank.bnk" />
     <None Remove="Modules\Characters\Henry.cs~RF6221a098.TMP" />
-    <None Remove="rocketassetbundle" />
     <None Remove="RocketSoundbank.bnk" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="RocketSoundbank.bnk" />
   </ItemGroup>
 
 	<ItemGroup>
 		<PackageReference Include="RiskOfRain2.GameLibs" Version="1.2.1-r.1" />
 		<PackageReference Include="UnityEngine.Modules" Version="2019.4.26" />
 	</ItemGroup>
-	
-  <ItemGroup>
-    <EmbeddedResource Include="rocketassetbundle" />
-    <EmbeddedResource Include="RocketSoundbank.bnk" />
-  </ItemGroup>
 
   <ItemGroup>
     <Reference Include="0Harmony">

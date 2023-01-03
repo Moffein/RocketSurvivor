@@ -8,6 +8,7 @@ using System.Security;
 using System.Security.Permissions;
 using RoR2.Skills;
 using System.Runtime.CompilerServices;
+using RocketSurvivor.Modules;
 
 [module: UnverifiableCode]
 [assembly: SecurityPermission(SecurityAction.RequestMinimum, SkipVerification = true)]
@@ -47,12 +48,10 @@ namespace RocketSurvivor
         public static bool emoteAPILoaded = false;
         public static bool riskOfOptionsLoaded = false;
 
-        public static PluginInfo pluginInfo;
-
         private void Awake()
         {
             instance = this;
-            pluginInfo = this.Info;
+            Files.PluginInfo = this.Info;
 
             infernoPluginLoaded = BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey("HIFU.Inferno");
             scepterStandaloneLoaded = BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey("com.DestroyedClone.AncientScepter");

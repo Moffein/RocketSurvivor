@@ -54,10 +54,7 @@ namespace RocketSurvivor.Modules
             {
                 if (mainAssetBundle == null)
                 {
-                    using (var assetStream = Assembly.GetExecutingAssembly().GetManifestResourceStream($"{csProjName}.{assetbundleName}"))
-                    {
-                        mainAssetBundle = AssetBundle.LoadFromStream(assetStream);
-                    }
+                    mainAssetBundle = AssetBundle.LoadFromFile(Files.GetPathToFile("AssetBundles", "rocketassetbundle"));
                 }
             }
             catch (Exception e)
@@ -70,7 +67,7 @@ namespace RocketSurvivor.Modules
         }
 
         internal static void LoadSoundbank()
-        {                                                                
+        {
             //soundbank currently broke, but this is how you should load yours
             using (Stream manifestResourceStream2 = Assembly.GetExecutingAssembly().GetManifestResourceStream($"{csProjName}.RocketSoundbank.bnk"))
             {
