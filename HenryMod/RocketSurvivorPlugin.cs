@@ -25,7 +25,6 @@ namespace RocketSurvivor
     [R2APISubmoduleDependency(new string[]
     {
         "PrefabAPI",
-        "LanguageAPI",
         "SoundAPI",
         "UnlockableAPI",
         nameof(R2API.DamageAPI),

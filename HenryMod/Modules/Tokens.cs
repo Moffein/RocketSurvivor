@@ -20,13 +20,6 @@ namespace RocketSurvivor.Modules
         public LanguageTokens()
         {
             RegisterLanguageTokens();
-            //string handPrefix = Content.HANDSurvivor.HANDSurvivor.HAND_PREFIX;
-
-            /*string rmorPrefix = Content.RMORSurvivor.RMORSurvivor.RMOR_PREFIX;
-            LanguageAPI.Add(rmorPrefix + "NAME", "R-MOR");
-
-            LanguageAPI.Add(rmorPrefix + "PRIMARY_NAME", "ERADICATE");
-            LanguageAPI.Add(rmorPrefix + "PRIMARY_DESC", "Charge up your cannons and fire a barrage of rockets for up to <style=cIsDamage>3x420% damage</style>.");*/
         }
 
         public static void RegisterLanguageTokens()

@@ -172,6 +172,13 @@ namespace EntityStates.RocketSurvivorSkills.Emote {
     }
 
     public class Explode : BaseEmote {
+
+        private const float startSoundDelay = 1f;
+        private bool playedStartSound = false;
+
+        private const float thump1Delay = 80f / 30f;
+        private bool playedThump1 = false;
+
         private bool explosion = false;
         public override void OnEnter() {
             this.animString = "TauntShovel";
@@ -181,7 +188,21 @@ namespace EntityStates.RocketSurvivorSkills.Emote {
         public override void FixedUpdate() {
             base.FixedUpdate();
 
+            if (!playedStartSound && base.fixedAge >= startSoundDelay)
+            {
+                playedStartSound = true;
+                Util.PlaySound("Play_Moffein_RocketSurvivor_R_Alt_Prep", base.gameObject);
+            }
+
+            if (!playedThump1 && base.fixedAge >= thump1Delay)
+            {
+                playedThump1 = true;
+                Util.PlaySound("Play_MULT_shift_hit", base.gameObject);
+            }
+
             if (!explosion && base.fixedAge / this.duration >= (1f / 1f)) {
+                explosion = true;
+                Util.PlaySound("Play_MULT_shift_hit", base.gameObject);
                 if (base.isAuthority)
                 {
                     BlastAttack ba = new BlastAttack
@@ -216,8 +237,8 @@ namespace EntityStates.RocketSurvivorSkills.Emote {
 
     public class MenuPose: BaseEmote
     {
-        public static float thumpSoundDelay = 1.5f;
-        public static float loadSoundDelay = 8f / 30f;
+        private const float thumpSoundDelay = 1.5f;
+        private const float loadSoundDelay = 8f / 30f;
 
         private bool playedThump = false;
         private bool playedLoad = false;

@@ -1,6 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
+﻿using UnityEngine;
 
 namespace EntityStates.RocketSurvivorSkills.Special
 {
@@ -8,7 +6,7 @@ namespace EntityStates.RocketSurvivorSkills.Special
     {
         public override void ModifyStats()
         {
-            this.shotsRemaining *= 2;
+            this.shotsRemaining = Mathf.FloorToInt(this.shotsRemaining * 2.5f);
             this.delayBetweenShots *= 0.5f;
         }
     }
