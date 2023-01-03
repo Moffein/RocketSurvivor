@@ -258,7 +258,7 @@ namespace RocketSurvivor.Modules.Survivors
             sk.passiveSkill.enabled = true;
             sk.passiveSkill.skillNameToken = Rocket_Prefix + "PASSIVE_NAME";
             sk.passiveSkill.skillDescriptionToken = Rocket_Prefix + "PASSIVE_DESCRIPTION";
-            sk.passiveSkill.icon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texSkillPassive" + (RocketSurvivorPlugin.msPaintIcons ? "_mspaint" : ""));
+            sk.passiveSkill.icon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texSkillPassive" + (Modules.Config.msPaintIcons.Value ? "_mspaint" : ""));
 
             #region Primary
             ReloadSkillDef primarySkillDef = ReloadSkillDef.CreateInstance<ReloadSkillDef>();
@@ -271,7 +271,7 @@ namespace RocketSurvivor.Modules.Survivors
             primarySkillDef.dontAllowPastMaxStocks = true;
             primarySkillDef.forceSprintDuringState = false;
             primarySkillDef.fullRestockOnAssign = true;
-            primarySkillDef.icon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texSkillPrimary" + (RocketSurvivorPlugin.msPaintIcons ? "_mspaint" : ""));
+            primarySkillDef.icon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texSkillPrimary" + (Modules.Config.msPaintIcons.Value ? "_mspaint" : ""));
             primarySkillDef.interruptPriority = InterruptPriority.Skill;
             primarySkillDef.isCombatSkill = true;
             primarySkillDef.keywordTokens = new string[] { "KEYWORD_AGILE" };
@@ -300,7 +300,7 @@ namespace RocketSurvivor.Modules.Survivors
             primaryAltSkillDef.dontAllowPastMaxStocks = true;
             primaryAltSkillDef.forceSprintDuringState = false;
             primaryAltSkillDef.fullRestockOnAssign = true;
-            primaryAltSkillDef.icon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texSkillPrimary_DirectHit" + (RocketSurvivorPlugin.msPaintIcons ? "_mspaint" : ""));
+            primaryAltSkillDef.icon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texSkillPrimary_DirectHit" + (Modules.Config.msPaintIcons.Value ? "_mspaint" : ""));
             primaryAltSkillDef.interruptPriority = InterruptPriority.Skill;
             primaryAltSkillDef.isCombatSkill = true;
             primaryAltSkillDef.keywordTokens = new string[] { "KEYWORD_AGILE" };
@@ -342,7 +342,7 @@ namespace RocketSurvivor.Modules.Survivors
             airDetTrackerDef.dontAllowPastMaxStocks = true;
             airDetTrackerDef.forceSprintDuringState = false;
             airDetTrackerDef.fullRestockOnAssign = true;
-            airDetTrackerDef.icon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texSkillSecondary" + (RocketSurvivorPlugin.msPaintIcons ? "_mspaint" : ""));
+            airDetTrackerDef.icon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texSkillSecondary" + (Modules.Config.msPaintIcons.Value ? "_mspaint" : ""));
             airDetTrackerDef.interruptPriority = InterruptPriority.Skill;
             airDetTrackerDef.isCombatSkill = false;
             airDetTrackerDef.keywordTokens = new string[] { };
@@ -388,7 +388,7 @@ namespace RocketSurvivor.Modules.Survivors
             c4Def.dontAllowPastMaxStocks = true;
             c4Def.forceSprintDuringState = false;
             c4Def.fullRestockOnAssign = true;
-            c4Def.icon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texSkillUtility_C4" + (RocketSurvivorPlugin.msPaintIcons ? "_mspaint" : ""));
+            c4Def.icon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texSkillUtility_C4" + (Modules.Config.msPaintIcons.Value ? "_mspaint" : ""));
             c4Def.interruptPriority = InterruptPriority.PrioritySkill;
             c4Def.isCombatSkill = true;
             c4Def.keywordTokens = new string[] { };
@@ -410,7 +410,7 @@ namespace RocketSurvivor.Modules.Survivors
                 skillName = "MarketGarden",
                 skillNameToken = Rocket_Prefix + "UTILITY_ALT_NAME",
                 skillDescriptionToken = Rocket_Prefix + "UTILITY_ALT_DESCRIPTION",
-                skillIcon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texSkillUtility_Shovel" + (RocketSurvivorPlugin.msPaintIcons ? "_mspaint" : "")),
+                skillIcon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texSkillUtility_Shovel" + (Modules.Config.msPaintIcons.Value ? "_mspaint" : "")),
                 activationState = new EntityStates.SerializableEntityStateType(typeof(EntityStates.RocketSurvivorSkills.Utility.PrepComicallyLargeSpoon)),
                 activationStateMachineName = "Offhand",
                 baseMaxStock = 1,
@@ -449,7 +449,7 @@ namespace RocketSurvivor.Modules.Survivors
                 skillName = "Rearm",
                 skillNameToken = Rocket_Prefix + "SPECIAL_NAME",
                 skillDescriptionToken = Rocket_Prefix + "SPECIAL_DESCRIPTION",
-                skillIcon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texSkillSpecial" + (RocketSurvivorPlugin.msPaintIcons ? "_mspaint" : "")),
+                skillIcon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texSkillSpecial" + (Modules.Config.msPaintIcons.Value ? "_mspaint" : "")),
                 activationState = new EntityStates.SerializableEntityStateType(typeof(EntityStates.RocketSurvivorSkills.Special.FireAllRockets)),
                 activationStateMachineName = "Weapon",
                 baseMaxStock = 1,
@@ -476,7 +476,7 @@ namespace RocketSurvivor.Modules.Survivors
                 skillName = "RearmScepter",
                 skillNameToken = Rocket_Prefix + "SPECIAL_SCEPTER_NAME",
                 skillDescriptionToken = Rocket_Prefix + "SPECIAL_SCEPTER_DESCRIPTION",
-                skillIcon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texSkillSpecial_Scepter" + (RocketSurvivorPlugin.msPaintIcons ? "_mspaint" : "")),
+                skillIcon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texSkillSpecial_Scepter" + (Modules.Config.msPaintIcons.Value ? "_mspaint" : "")),
                 activationState = new EntityStates.SerializableEntityStateType(typeof(EntityStates.RocketSurvivorSkills.Special.FireAllRocketsScepter)),
                 activationStateMachineName = "Weapon",
                 baseMaxStock = rearmDef.baseMaxStock,
@@ -516,7 +516,7 @@ namespace RocketSurvivor.Modules.Survivors
             List<SkinDef> skins = new List<SkinDef>();
 
             #region DefaultSkin
-            SkinDef defaultSkin = Modules.Skins.CreateSkinDef(Rocket_Prefix + "DEFAULT_SKIN_NAME",
+            SkinDef defaultSkin = Modules.Skins.CreateSkinDef("DEFAULT_SKIN",
                 Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texRocketSkinDefault"),
                 defaultRenderers,
                 mainRenderer,

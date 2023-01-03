@@ -48,14 +48,13 @@ namespace RocketSurvivor
         public static bool emoteAPILoaded = false;
         public static bool riskOfOptionsLoaded = false;
 
-        public static bool msPaintIcons = false;
-        public static bool pocketICBM = true;
-        public static bool pocketICBMEnableKnockback = false;
-        public static bool samTracking = true;
+        public static PluginInfo pluginInfo;
 
         private void Awake()
         {
             instance = this;
+            pluginInfo = this.Info;
+
             infernoPluginLoaded = BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey("HIFU.Inferno");
             scepterStandaloneLoaded = BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey("com.DestroyedClone.AncientScepter");
             scepterClassicLoaded = BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey("com.ThinkInvisible.ClassicItems");
@@ -64,8 +63,6 @@ namespace RocketSurvivor
 
             Log.Init(Logger);
 
-            ReadConfig();
-
             DamageTypes.Initialize();   //Init this first. Other things depend on this.
             Buffs.Initialize();
 
@@ -73,7 +70,7 @@ namespace RocketSurvivor
             Modules.Config.ReadConfig();
             Modules.States.RegisterStates(); // register states for networking
             Modules.Projectiles.RegisterProjectiles(); // add and register custom projectiles
-            Modules.Tokens.AddTokens(); // register name tokens
+            new Modules.LanguageTokens();
             Modules.ItemDisplays.PopulateDisplays(); // collect item display prefabs for use in our display rules
 
             // survivor initialization
@@ -100,14 +97,6 @@ namespace RocketSurvivor
                     }
                 }
             };
-        }
-
-        private void ReadConfig()
-        {
-            msPaintIcons = Config.Bind("General", "Use MSPaint icons", false, "Use the original MSPaint icons from the mod's release.").Value;
-            pocketICBM = Config.Bind("Gameplay", "Pocket ICBM Interaction", true, "Pocket ICBM works with Rocket's skills.").Value;
-            pocketICBMEnableKnockback = Config.Bind("Gameplay", "Pocket ICBM Knockback", false, "Extra rockets from Pocket ICBM have knockback.").Value;
-            samTracking = Config.Bind("Primaries - HG4 SAM Launcher", "Enable Homing (Server-Side)", true, "SAM Rockets will home towards targets.").Value;
         }
 
         public static float GetICBMDamageMult(CharacterBody body)

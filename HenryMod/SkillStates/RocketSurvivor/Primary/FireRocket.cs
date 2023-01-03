@@ -26,7 +26,7 @@ namespace EntityStates.RocketSurvivorSkills.Primary
 				float damageMult = RocketSurvivor.RocketSurvivorPlugin.GetICBMDamageMult(base.characterBody);
 
 				//Copied from Bandit2
-				if (RocketSurvivor.RocketSurvivorPlugin.pocketICBM && base.characterBody && base.characterBody.inventory && base.characterBody.inventory.GetItemCount(DLC1Content.Items.MoreMissile) > 0)
+				if (RocketSurvivor.Modules.Config.pocketICBM.Value && base.characterBody && base.characterBody.inventory && base.characterBody.inventory.GetItemCount(DLC1Content.Items.MoreMissile) > 0)
                 {
 					Vector3 rhs = Vector3.Cross(Vector3.up, aimRay.direction);
 					Vector3 axis = Vector3.Cross(aimRay.direction, rhs);
@@ -42,7 +42,7 @@ namespace EntityStates.RocketSurvivorSkills.Primary
 					Ray aimRay2 = new Ray(aimRay.origin, direction);
 					for (int i = 0; i < 3; i++)
 					{
-						ProjectileManager.instance.FireProjectile(FireRocket.projectilePrefab, aimRay2.origin, Util.QuaternionSafeLookRotation(aimRay2.direction), base.gameObject, damageMult * this.damageStat * FireRocket.damageCoefficient, ((i != 1 && !RocketSurvivor.RocketSurvivorPlugin.pocketICBMEnableKnockback) ? 0f : FireRocket.force), base.RollCrit(), DamageColorIndex.Default, null, -1f);
+						ProjectileManager.instance.FireProjectile(FireRocket.projectilePrefab, aimRay2.origin, Util.QuaternionSafeLookRotation(aimRay2.direction), base.gameObject, damageMult * this.damageStat * FireRocket.damageCoefficient, ((i != 1 && !RocketSurvivor.Modules.Config.pocketICBMEnableKnockback.Value) ? 0f : FireRocket.force), base.RollCrit(), DamageColorIndex.Default, null, -1f);
 						aimRay2.direction = rotation * aimRay2.direction;
 					}
 				}

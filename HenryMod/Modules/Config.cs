@@ -12,8 +12,19 @@ namespace RocketSurvivor.Modules
         public static ConfigEntry<KeyboardShortcut> KeybindEmoteShovel { get; private set; }
         public static ConfigEntry<KeyboardShortcut> KeybindEmoteCSS { get; private set; }
 
+        public static ConfigEntry<bool> msPaintIcons;
+        public static ConfigEntry<bool> pocketICBM;
+        public static ConfigEntry<bool> pocketICBMEnableKnockback;
+        public static ConfigEntry<bool> samTracking;
+
         public static void ReadConfig()
         {
+
+            msPaintIcons = RocketSurvivorPlugin.instance.Config.Bind("General", "Use MSPaint icons", false, "Use the original MSPaint icons from the mod's release.");
+            pocketICBM = RocketSurvivorPlugin.instance.Config.Bind("Gameplay", "Pocket ICBM Interaction", true, "Pocket ICBM works with Rocket's skills.");
+            pocketICBMEnableKnockback = RocketSurvivorPlugin.instance.Config.Bind("Gameplay", "Pocket ICBM Knockback", false, "Extra rockets from Pocket ICBM have knockback.");
+            samTracking = RocketSurvivorPlugin.instance.Config.Bind("Primaries - HG4 SAM Launcher", "Enable Homing (Server-Side)", true, "SAM Rockets will home towards targets.");
+
             ForceUnlock = RocketSurvivorPlugin.instance.Config.Bind("General", "Force Unlock", false, "Unlock all gameplay-related features.");
             KeybindEmoteSit = RocketSurvivorPlugin.instance.Config.Bind("Keybinds", "Emote - Sit", new KeyboardShortcut(KeyCode.Alpha1), "Button to play this emote.");
             KeybindEmoteCSS = RocketSurvivorPlugin.instance.Config.Bind("Keybinds", "Emote - Pose", new KeyboardShortcut(KeyCode.Alpha2), "Button to play this emote.");

@@ -133,7 +133,7 @@ namespace RocketSurvivor.Modules
             mdc.Add(DamageTypes.ScaleForceToMass);
             //mdc.Add(DamageTypes.AirborneBonus);
 
-            if (RocketSurvivorPlugin.samTracking)
+            if (Modules.Config.samTracking.Value)
             {
                 rocketPrefab.AddComponent<ProjectileTargetComponent>();
                 ProjectileSteerTowardTarget pstt = rocketPrefab.AddComponent<ProjectileSteerTowardTarget>();
