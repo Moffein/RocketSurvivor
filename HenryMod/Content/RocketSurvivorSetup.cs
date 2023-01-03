@@ -317,11 +317,10 @@ namespace RocketSurvivor.Modules.Survivors
             primaryAltSkillDef.reloadInterruptPriority = InterruptPriority.Any;
             (primaryAltSkillDef as ScriptableObject).name = "FireRocketAlt";
             Modules.Content.AddSkillDef(primaryAltSkillDef);
+            Skills.AddSkillToFamily(sk.primary.skillFamily, primaryAltSkillDef);
 
             RocketSurvivorSetup.FireRocketSkillDef = primarySkillDef;
             RocketSurvivorSetup.FireRocketAltSkillDef = primaryAltSkillDef;
-
-            if (Config.EnableHomingM1.Value) Skills.AddSkillToFamily(sk.primary.skillFamily, primaryAltSkillDef);
             #endregion
 
             #region Secondary

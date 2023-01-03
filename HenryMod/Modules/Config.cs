@@ -8,7 +8,6 @@ namespace RocketSurvivor.Modules
     public static class Config
     {
         public static ConfigEntry<bool> ForceUnlock { get; private set; }
-        public static ConfigEntry<bool> EnableHomingM1 { get; private set; }
         public static ConfigEntry<KeyboardShortcut> KeybindEmoteSit { get; private set; }
         public static ConfigEntry<KeyboardShortcut> KeybindEmoteShovel { get; private set; }
         public static ConfigEntry<KeyboardShortcut> KeybindEmoteCSS { get; private set; }
@@ -16,7 +15,6 @@ namespace RocketSurvivor.Modules
         public static void ReadConfig()
         {
             ForceUnlock = RocketSurvivorPlugin.instance.Config.Bind("General", "Force Unlock", false, "Unlock all gameplay-related features.");
-            EnableHomingM1 = RocketSurvivorPlugin.instance.Config.Bind("Cut Content", "Homing Alt M1", false, "Enable the homing alt m1 from beta builds.");
             KeybindEmoteSit = RocketSurvivorPlugin.instance.Config.Bind("Keybinds", "Emote - Sit", new KeyboardShortcut(KeyCode.Alpha1), "Button to play this emote.");
             KeybindEmoteCSS = RocketSurvivorPlugin.instance.Config.Bind("Keybinds", "Emote - Pose", new KeyboardShortcut(KeyCode.Alpha2), "Button to play this emote.");
             KeybindEmoteShovel = RocketSurvivorPlugin.instance.Config.Bind("Keybinds", "Emote - Over-Enthusiasm", new KeyboardShortcut(KeyCode.Alpha3), "Button to play this emote.");
