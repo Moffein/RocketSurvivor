@@ -12,9 +12,6 @@ namespace RocketSurvivor.Modules
 
             LanguageAPI.Add(prefix + "NAME", "Rocket");
 
-
-            LanguageAPI.Add(prefix + "DEFAULT_SKIN_NAME", "Default");
-
             LanguageAPI.Add(prefix + "SUBTITLE", "Shock and Awe");
 
             LanguageAPI.Add(prefix + "LORE", "bio: rocket was born with a special power");
@@ -31,7 +28,6 @@ namespace RocketSurvivor.Modules
             LanguageAPI.Add(prefix + "PRIMARY_NAME", "HG4 Rocket Launcher");
             LanguageAPI.Add(prefix + "PRIMARY_DESCRIPTION", "<style=cIsUtility>Agile</style>. Fire a rocket for <style=cIsDamage>600% damage</style>. Can hold up to 4.");
 
-            //Unlock Condition: Hit 20 airshots.
             LanguageAPI.Add(prefix + "PRIMARY_ALT_NAME", "HG4 SAM Launcher");
             LanguageAPI.Add(prefix + "PRIMARY_ALT_DESCRIPTION", "<style=cIsUtility>Agile</style>. Fire a heat-seeking precision rocket for <style=cIsDamage>600% damage</style>. Deals <style=cIsDamage>+30% damage</style> against <style=cIsUtility>airborne targets</style>. Can hold up to 4.");
 
@@ -41,7 +37,6 @@ namespace RocketSurvivor.Modules
             LanguageAPI.Add(prefix + "UTILITY_NAME", "Nitro Charge");
             LanguageAPI.Add(prefix + "UTILITY_DESCRIPTION", "<style=cIsDamage>Stunning</style>. Place an explosive charge. Use <style=cIsDamage>Remote Detonator</style> to detonate it for <style=cIsDamage>1200% damage</style>.");
 
-            //Unlock Condition: Kill 5 enemies in a single rocket jump.
             LanguageAPI.Add(prefix + "UTILITY_ALT_NAME", "Bombing Run");
             LanguageAPI.Add(prefix + "UTILITY_ALT_DESCRIPTION", "<style=cIsUtility>Heavy</style>. <style=cIsDamage>Stunning</style>. Swing your explosive shovel at an enemy for <style=cIsDamage>1200% damage</style>. Deals <style=cIsDamage>Critical Strikes</style> while <style=cIsUtility>blast jumping</style>.");
 
@@ -50,6 +45,9 @@ namespace RocketSurvivor.Modules
 
             LanguageAPI.Add(prefix + "SPECIAL_SCEPTER_NAME", "Rocketstorm");
             LanguageAPI.Add(prefix + "SPECIAL_SCEPTER_DESCRIPTION", "Rapidly <style=cIsDamage>fire 8 rockets</style>, then <style=cIsUtility>reload your weapon</style>.");
+
+            LanguageAPI.Add("ACHIEVEMENT_MOFFEINROCKETMARKETGARDENUNLOCK_NAME", "Rocket: Pogo");
+            LanguageAPI.Add("ACHIEVEMENT_MOFFEINROCKETMARKETGARDENUNLOCK_DESCRIPTION", "Blast jump 10 times in a row without touching the ground.");
         }
     }
 }

@@ -395,6 +395,7 @@ namespace RocketSurvivor.Modules.Survivors
             (c4Def as ScriptableObject).name = "ThrowC4";
             Modules.Content.AddSkillDef(c4Def);
             RocketSurvivorSetup.C4Def = c4Def;
+            Skills.AddSkillToFamily(sk.utility.skillFamily, c4Def);
 
             SkillDef marketGardenDef = Modules.Skills.CreateSkillDef(new SkillDefInfo
             {
@@ -424,7 +425,12 @@ namespace RocketSurvivor.Modules.Survivors
             Modules.Content.AddSkillDef(marketGardenDef);
             RocketSurvivorSetup.ShovelDef = ShovelDef;
 
-            Modules.Skills.AddUtilitySkills(bodyPrefab, new SkillDef[] { c4Def, marketGardenDef });
+            UnlockableDef spoonUnlock = ScriptableObject.CreateInstance<UnlockableDef>();
+            spoonUnlock.cachedName = "Skills.MoffeinRocketSurvivor.MarketGaden";
+            spoonUnlock.nameToken = "ACHIEVEMENT_MOFFEINROCKETMARKETGARDENUNLOCK_NAME";
+            spoonUnlock.achievementIcon = marketGardenDef.icon;
+            Modules.ContentPacks.unlockableDefs.Add(spoonUnlock);
+            Skills.AddSkillToFamily(sk.utility.skillFamily, c4Def, Config.ForceUnlock.Value ? null : spoonUnlock);
 
             #endregion
 

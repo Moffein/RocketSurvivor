@@ -9,6 +9,9 @@ namespace RocketSurvivor.Components
     public class NetworkedBodyBlastJumpHandler : NetworkBehaviour
     {
         public CharacterBody characterBody;
+        public delegate void BlastJumpDelegate(NetworkedBodyBlastJumpHandler self);
+        public static BlastJumpDelegate onBlastJumpClient;
+
         public void Awake()
         {
             characterBody = base.GetComponent<CharacterBody>();
@@ -52,6 +55,7 @@ namespace RocketSurvivor.Components
 
                                     cm.ApplyForce(finalForce, true, false);
 
+                                    onBlastJumpClient?.Invoke(this);
                                     CmdAddRocketJumpBuff();
 
                                     break;
