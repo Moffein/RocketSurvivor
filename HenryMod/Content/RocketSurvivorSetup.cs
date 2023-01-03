@@ -288,6 +288,7 @@ namespace RocketSurvivor.Modules.Survivors
             primarySkillDef.reloadInterruptPriority = InterruptPriority.Any;
             (primarySkillDef as ScriptableObject).name = "FireRocket";
             Modules.Content.AddSkillDef(primarySkillDef);
+            Skills.AddSkillToFamily(sk.primary.skillFamily, primarySkillDef);
 
             ReloadSkillDef primaryAltSkillDef = ReloadSkillDef.CreateInstance<ReloadSkillDef>();
             primaryAltSkillDef.activationState = new SerializableEntityStateType(typeof(EntityStates.RocketSurvivorSkills.Primary.FireRocketAlt));
@@ -319,7 +320,8 @@ namespace RocketSurvivor.Modules.Survivors
 
             RocketSurvivorSetup.FireRocketSkillDef = primarySkillDef;
             RocketSurvivorSetup.FireRocketAltSkillDef = primaryAltSkillDef;
-            Modules.Skills.AddPrimarySkills(bodyPrefab, new SkillDef[] { primarySkillDef, primaryAltSkillDef });
+
+            if (Config.EnableHomingM1.Value) Skills.AddSkillToFamily(sk.primary.skillFamily, primaryAltSkillDef);
             #endregion
 
             #region Secondary
@@ -430,7 +432,7 @@ namespace RocketSurvivor.Modules.Survivors
             spoonUnlock.nameToken = "ACHIEVEMENT_MOFFEINROCKETMARKETGARDENUNLOCK_NAME";
             spoonUnlock.achievementIcon = marketGardenDef.icon;
             Modules.ContentPacks.unlockableDefs.Add(spoonUnlock);
-            Skills.AddSkillToFamily(sk.utility.skillFamily, c4Def, Config.ForceUnlock.Value ? null : spoonUnlock);
+            Skills.AddSkillToFamily(sk.utility.skillFamily, marketGardenDef, Config.ForceUnlock.Value ? null : spoonUnlock);
 
             #endregion
 
