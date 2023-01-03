@@ -44,7 +44,6 @@ namespace RocketSurvivor.Modules
             }
 
             LoadAssetBundle();
-            LoadSoundbank();
             PopulateAssets();
         }
 
@@ -64,17 +63,6 @@ namespace RocketSurvivor.Modules
             }
 
             assetNames = mainAssetBundle.GetAllAssetNames();
-        }
-
-        internal static void LoadSoundbank()
-        {
-            //soundbank currently broke, but this is how you should load yours
-            using (Stream manifestResourceStream2 = Assembly.GetExecutingAssembly().GetManifestResourceStream($"{csProjName}.RocketSoundbank.bnk"))
-            {
-                byte[] array = new byte[manifestResourceStream2.Length];
-                manifestResourceStream2.Read(array, 0, array.Length);
-                SoundAPI.SoundBanks.Add(array);
-            }
         }
 
         internal static void PopulateAssets()

@@ -79,6 +79,11 @@ namespace RocketSurvivor
             if (emoteAPILoaded) EmoteAPICompat();
         }
 
+        private void Start()
+        {
+            SoundBanks.Init();
+        }
+
         [MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
         private void EmoteAPICompat()
         {

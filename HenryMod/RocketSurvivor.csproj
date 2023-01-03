@@ -15,11 +15,6 @@
   <ItemGroup>
     <None Remove="HenryBank.bnk" />
     <None Remove="Modules\Characters\Henry.cs~RF6221a098.TMP" />
-    <None Remove="RocketSoundbank.bnk" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <EmbeddedResource Include="RocketSoundbank.bnk" />
   </ItemGroup>
 
 	<ItemGroup>
