@@ -7,7 +7,7 @@ namespace RocketSurvivor.Modules
 {
     internal static class SoundBanks
     {
-
+        private static bool initialized = false;
         public static string SoundBankDirectory
         {
             get
@@ -18,6 +18,8 @@ namespace RocketSurvivor.Modules
 
         public static void Init()
         {
+            if (initialized) return;
+            initialized = true;
             AKRESULT akResult = AkSoundEngine.AddBasePath(SoundBankDirectory);
 
             AkSoundEngine.LoadBank("RocketSoundbank.bnk", out _);
