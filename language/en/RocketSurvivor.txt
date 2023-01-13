@@ -32,7 +32,7 @@
 	"MOFFEIN_ROCKET_BODY_SPECIAL_DESCRIPTION" : "Rapidly <style=cIsDamage>fire 4 rockets</style>, then <style=cIsUtility>reload your weapon</style>.",
 	
 	"MOFFEIN_ROCKET_BODY_SPECIAL_SCEPTER_NAME" : "Rocketstorm",
-	"MOFFEIN_ROCKET_BODY_SPECIAL_DESCRIPTION" : "Rapidly <style=cIsDamage>fire 10 rockets</style>, then <style=cIsUtility>reload your weapon</style>.",
+	"MOFFEIN_ROCKET_BODY_SPECIAL_SCEPTER_DESCRIPTION" : "Rapidly <style=cIsDamage>fire 10 rockets</style>, then <style=cIsUtility>reload your weapon</style>.",
 	
 	"ACHIEVEMENT_MOFFEINROCKETHOMINGUNLOCK_NAME" : "Rocket: Speed is Life",
 	"ACHIEVEMENT_MOFFEINROCKETHOMINGUNLOCK_DESCRIPTION" : "As Rocket, reach and proceed through the Celestial Portal in 25 minutes or less.",
