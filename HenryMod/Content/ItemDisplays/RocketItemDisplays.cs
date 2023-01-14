@@ -1610,9 +1610,9 @@ namespace RocketSurvivor.Modules.Characters
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
                             followerPrefab = ItemDisplays.LoadDisplay("DisplayDagger"),
                             childName = "BlackBox",
-                            localPos = new Vector3(-0.07525F, 0.02831F, -0.12299F),
-                            localAngles = new Vector3(48.26704F, 153.2701F, 261.1328F),
-                            localScale = new Vector3(3.6F, 3.6F, 3.6F),
+                            localPos = new Vector3(-0.04167F, 0.02887F, -0.04628F),
+                            localAngles = new Vector3(9.21868F, 250.6985F, 147.5233F),
+                            localScale = new Vector3(0.8F, 0.8F, 0.8F),
                             limbMask = LimbFlags.None
                         }
                     }
