@@ -13,8 +13,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Modules\Achievements\Mastery.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="HenryBank.bnk" />
     <None Remove="Modules\Characters\Henry.cs~RF6221a098.TMP" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Include="Modules\Achievements\Mastery.cs" />
   </ItemGroup>
 
 	<ItemGroup>
