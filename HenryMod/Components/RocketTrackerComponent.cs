@@ -18,8 +18,8 @@ namespace RocketSurvivor.Components {
         public static NetworkSoundEventDef detonateSuccess;
         public static NetworkSoundEventDef detonateFail;
 
-        [SyncVar]
-        private bool _rocketAvailable = false;
+        //[SyncVar]
+        //private bool _rocketAvailable = false;
 
         public void Awake()
         {
@@ -31,10 +31,10 @@ namespace RocketSurvivor.Components {
         public void FixedUpdate()
         {
             ClearEmptyRockets();
-            if (NetworkServer.active)
+            /*if (NetworkServer.active)
             {
                 UpdateRocketAvailable();
-            }
+            }*/
         }
 
         public void OnDestroy()
@@ -54,7 +54,7 @@ namespace RocketSurvivor.Components {
             rocketList.RemoveAll(item => item.gameObject == null);
         }
 
-        [Server]
+        /*[Server]
         private void UpdateRocketAvailable()
         {
             if (!NetworkServer.active) return;
@@ -69,11 +69,12 @@ namespace RocketSurvivor.Components {
             {
                 _rocketAvailable = newRocketAvailable;
             }
-        }
+        }*/
 
         public bool IsRocketAvailable()
         {
-            return _rocketAvailable;
+            return rocketList.Count + c4List.Count > 0;
+            //return _rocketAvailable;
         }
 
         public void AddRocket(GameObject rocket, bool applyAirDetBuff, bool isC4 = false)
@@ -215,7 +216,8 @@ namespace RocketSurvivor.Components {
                         detonatedSuccessfully = detonatedSuccessfully || detonate;
                     }
                 }
-                UpdateRocketAvailable();
+                ClearEmptyRockets();
+                //UpdateRocketAvailable();
             }
             return detonatedSuccessfully;
         }
@@ -235,11 +237,13 @@ namespace RocketSurvivor.Components {
             if (NetworkServer.active)
             {
                 bool success = DetonateRocket();
-                EffectManager.SimpleSoundEffect(success ? detonateSuccess.index : detonateFail.index, base.transform.position, true); //Moved from AirDet.cs to here
+
+                //No need for this anymore since the detonation check is Clientside and ensures that you'll at least get to blast jump if you trigger it.
+                /*EffectManager.SimpleSoundEffect(success ? detonateSuccess.index : detonateFail.index, base.transform.position, true); //Moved from AirDet.cs to here
                 if (!success)
                 {
-                    RpcAddSecondaryStock();
-                }
+                    RpcAddSecondaryStock();   
+                }*/
             }
         }
 
