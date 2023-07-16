@@ -65,7 +65,10 @@ namespace RocketSurvivor.Components {
                 newRocketAvailable = true;
             }
 
-            if (newRocketAvailable != _rocketAvailable) _rocketAvailable = newRocketAvailable;
+            if (newRocketAvailable != _rocketAvailable)
+            {
+                _rocketAvailable = newRocketAvailable;
+            }
         }
 
         public bool IsRocketAvailable()
@@ -240,11 +243,9 @@ namespace RocketSurvivor.Components {
         {
             if (!info.gameObject) return;
             GameObject toDetonate = info.gameObject;
-            ProjectileController pc = toDetonate.GetComponent<ProjectileController>();
-            ProjectileImpactExplosion pie = toDetonate.GetComponent<ProjectileImpactExplosion>();
             BlastJumpComponent bjc = toDetonate.GetComponent<BlastJumpComponent>();
 
-            if (!pc || !pie || !bjc) return;
+            if (!bjc) return;
 
             float origAoe = bjc.aoe;
             float origForce = bjc.force;

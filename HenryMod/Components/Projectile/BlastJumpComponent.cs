@@ -63,13 +63,15 @@ namespace RocketSurvivor.Components.Projectile
 
         public void BlastJump()
         {
-            if (fired || (pd && pd.force <= 0f) || !pc || !pc.owner) return;
+            Debug.Log("Attempting blast jump");
+            if (fired || !pc || !pc.owner || (pd && pd.force <= 0f)) return;
 
             NetworkedBodyBlastJumpHandler nb = pc.owner.GetComponent<NetworkedBodyBlastJumpHandler>();
             if (nb && nb.hasAuthority)
             {
                 fired = true;
                 nb.BlastJumpAuthority(base.transform.position, aoe, force, horizontalMultiplier, requireAirborne);
+                if (!triggerOnImpact) Debug.Log("Triggered Blast Jump on C4");
             }
         }
 

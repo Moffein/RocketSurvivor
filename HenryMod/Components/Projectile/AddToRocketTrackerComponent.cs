@@ -14,11 +14,20 @@ namespace RocketSurvivor.Components.Projectile
         public void Start()
         {
             ProjectileController pc = base.GetComponent<ProjectileController>();
+            Debug.Log("Attempting add rocket");
             if (pc && pc.owner)
             {
                 RocketTrackerComponent rtc = pc.owner.GetComponent<RocketTrackerComponent>();
                 if (rtc)
                 {
+                    if (isC4)
+                    {
+                        Debug.Log("Adding C4");
+                    }
+                    else
+                    {
+                        Debug.Log("Adding Rocket");
+                    }
                     rtc.AddRocket(base.gameObject, applyAirDetBonus, isC4); //Add on both client and server so clients can immediately trigger blast jump from M2.
                 }
             }

@@ -17,11 +17,11 @@ namespace RocketSurvivor.Components
             characterBody = base.GetComponent<CharacterBody>();
         }
 
-        [ClientRpc]
+        /*[ClientRpc]
         public void RpcBlastJump(Vector3 position, float radius, float force, float horizontalMultiplier, bool requireAirborne)
         {
             BlastJumpAuthority(position, radius, force, horizontalMultiplier, requireAirborne);
-        }
+        }*/
 
         public void BlastJumpAuthority(Vector3 position, float radius, float force, float horizontalMultiplier, bool requireAirborne)
         {
