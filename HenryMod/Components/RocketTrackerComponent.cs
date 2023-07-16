@@ -18,8 +18,8 @@ namespace RocketSurvivor.Components {
         public static NetworkSoundEventDef detonateSuccess;
         public static NetworkSoundEventDef detonateFail;
 
-        [SyncVar]
-        private bool _rocketAvailable = false;
+        //[SyncVar]
+        //private bool _rocketAvailable = false;
 
         public void Awake()
         {
@@ -30,10 +30,11 @@ namespace RocketSurvivor.Components {
 
         public void FixedUpdate()
         {
-            if (NetworkServer.active)
+            ClearEmptyRockets();
+            /*if (NetworkServer.active)
             {
                 UpdateRocketAvailable();
-            }
+            }*/
         }
 
         public void OnDestroy()
@@ -47,25 +48,33 @@ namespace RocketSurvivor.Components {
             }
         }
 
-        [Server]
+        private void ClearEmptyRockets()
+        {
+            c4List.RemoveAll(item => item.gameObject == null);
+            rocketList.RemoveAll(item => item.gameObject == null);
+        }
+
+        /*[Server]
         private void UpdateRocketAvailable()
         {
             if (!NetworkServer.active) return;
             bool newRocketAvailable = false;
 
-            c4List.RemoveAll(item => item.gameObject == null);
-            rocketList.RemoveAll(item => item.gameObject == null);
             if ((rocketList.Count + c4List.Count) > 0)
             {
                 newRocketAvailable = true;
             }
 
-            if (newRocketAvailable != _rocketAvailable) _rocketAvailable = newRocketAvailable;
-        }
+            if (newRocketAvailable != _rocketAvailable)
+            {
+                _rocketAvailable = newRocketAvailable;
+            }
+        }*/
 
         public bool IsRocketAvailable()
         {
-            return _rocketAvailable;
+            return rocketList.Count + c4List.Count > 0;
+            //return _rocketAvailable;
         }
 
         public void AddRocket(GameObject rocket, bool applyAirDetBuff, bool isC4 = false)
@@ -100,12 +109,29 @@ namespace RocketSurvivor.Components {
             ProjectileDamage pd = toDetonate.GetComponent<ProjectileDamage>();
             ProjectileController pc = toDetonate.GetComponent<ProjectileController>();
             ProjectileImpactExplosion pie = toDetonate.GetComponent<ProjectileImpactExplosion>();
-            BlastJumpComponent bjc = toDetonate.GetComponent<BlastJumpComponent>();
             TeamFilter tf = toDetonate.GetComponent<TeamFilter>();
+            BlastJumpComponent bjc = toDetonate.GetComponent<BlastJumpComponent>();
+
+            if (bjc && bjc.runOnServer)
+            {
+                float origAoe = bjc.aoe;
+                float origForce = bjc.force;
+                if (info.applyAirDetBonus)
+                {
+                    bjc.aoe *= EntityStates.RocketSurvivorSkills.Secondary.AirDet.radiusMult;
+                    bjc.force *= EntityStates.RocketSurvivorSkills.Secondary.AirDet.forceMult;
+                }
+                bjc.AttemptBlastJump();
+
+                //Reset these in case it attempts to stack after a failed detonation or something weird.
+                bjc.aoe = origAoe;
+                bjc.force = origForce;
+            }
 
             if (pc && pie)
             {
                 //Handle self-knockback first
+                /*BlastJumpComponent bjc = toDetonate.GetComponent<BlastJumpComponent>();
                 if (bjc)
                 {
                     if (info.applyAirDetBonus)
@@ -114,7 +140,7 @@ namespace RocketSurvivor.Components {
                         bjc.force *= EntityStates.RocketSurvivorSkills.Secondary.AirDet.forceMult;
                     }
                     bjc.BlastJump();
-                }
+                }*/
 
                 //Handle blastattack second
                 if (tf && pd && pc.owner)
@@ -190,7 +216,8 @@ namespace RocketSurvivor.Components {
                         detonatedSuccessfully = detonatedSuccessfully || detonate;
                     }
                 }
-                UpdateRocketAvailable();
+                ClearEmptyRockets();
+                //UpdateRocketAvailable();
             }
             return detonatedSuccessfully;
         }
@@ -205,18 +232,54 @@ namespace RocketSurvivor.Components {
             }
         }
 
-        //Is this redundant?
         public void ServerDetonateRocket()
         {
             if (NetworkServer.active)
             {
                 bool success = DetonateRocket();
-                EffectManager.SimpleSoundEffect(success ? detonateSuccess.index : detonateFail.index, base.transform.position, true); //Moved from AirDet.cs to here
+
+                //No need for this anymore since the detonation check is Clientside and ensures that you'll at least get to blast jump if you trigger it.
+                /*EffectManager.SimpleSoundEffect(success ? detonateSuccess.index : detonateFail.index, base.transform.position, true); //Moved from AirDet.cs to here
                 if (!success)
                 {
-                    RpcAddSecondaryStock();
-                }
+                    RpcAddSecondaryStock();   
+                }*/
             }
+        }
+
+        public void ClientDetonateBlastJump()
+        {
+            foreach (RocketInfo info in rocketList)
+            {
+                TriggerBlastJump(info);
+            }
+
+            foreach (RocketInfo info in c4List)
+            {
+                TriggerBlastJump(info);
+            }
+        }
+
+        private void TriggerBlastJump(RocketInfo info)
+        {
+            if (!info.gameObject) return;
+            GameObject toDetonate = info.gameObject;
+            BlastJumpComponent bjc = toDetonate.GetComponent<BlastJumpComponent>();
+
+            if (!bjc || bjc.runOnServer) return;
+
+            float origAoe = bjc.aoe;
+            float origForce = bjc.force;
+            if (info.applyAirDetBonus)
+            {
+                bjc.aoe *= EntityStates.RocketSurvivorSkills.Secondary.AirDet.radiusMult;
+                bjc.force *= EntityStates.RocketSurvivorSkills.Secondary.AirDet.forceMult;
+            }
+            bjc.AttemptBlastJump();
+
+            //Reset these in case it attempts to stack after a failed detonation or something weird.
+            bjc.aoe = origAoe;
+            bjc.force = origForce;
         }
 
         public class RocketInfo

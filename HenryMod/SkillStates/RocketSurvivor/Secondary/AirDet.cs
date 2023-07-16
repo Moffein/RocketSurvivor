@@ -25,13 +25,11 @@ namespace EntityStates.RocketSurvivorSkills.Secondary
         {
             base.OnEnter();
 
-            if (NetworkServer.active)
+            RocketTrackerComponent rtc = base.GetComponent<RocketTrackerComponent>();
+            if (rtc)
             {
-                RocketTrackerComponent rtc = base.GetComponent<RocketTrackerComponent>();
-                if (rtc)
-                {
-                    rtc.ServerDetonateRocket();
-                }
+                if (base.isAuthority) rtc.ClientDetonateBlastJump();
+                if (NetworkServer.active) rtc.ServerDetonateRocket();
             }
 
             PlayAnimation("LeftArm, Override", "RemoteDet");

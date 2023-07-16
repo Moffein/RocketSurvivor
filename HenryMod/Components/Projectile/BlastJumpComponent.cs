@@ -12,12 +12,12 @@ namespace RocketSurvivor.Components.Projectile
         private ProjectileController pc;
         private ProjectileDamage pd;
 
-        private HealthComponent healthComponent;
-
         public float force = 0f;
         public float aoe = 0f;
         public float horizontalMultiplier = 1f;
         public bool requireAirborne = true;
+        public bool triggerOnImpact = true;
+        public bool runOnServer = false;    //Set to true for isPrediction projectiles that need to explode on impact.
 
         public static Vector3 bodyPositionOffset = new Vector3(0f, 0.5f, 0f);
 
@@ -42,8 +42,6 @@ namespace RocketSurvivor.Components.Projectile
 
         public void FixedUpdate()
         {
-            if (!NetworkServer.active) return;
-
             if (fired)
             {
                 Destroy(this);
@@ -52,13 +50,26 @@ namespace RocketSurvivor.Components.Projectile
 
             if (!pie.alive)
             {
-                BlastJump();
+                AttemptBlastJump();
             }
         }
 
         public void OnDestroy()
         {
-            if (NetworkServer.active && !fired && !pie.alive)
+            if (!pie.alive)
+            {
+                AttemptBlastJump();
+            }
+        }
+
+        //Other 2 methods are still public because there are cases where you'd want to use them even if runOnServer is on/off, maybe.
+        public void AttemptBlastJump()
+        {
+            if (runOnServer)
+            {
+                BlastJumpServer();
+            }
+            else
             {
                 BlastJump();
             }
@@ -66,11 +77,21 @@ namespace RocketSurvivor.Components.Projectile
 
         public void BlastJump()
         {
+            //Removed force check because it doesnt work with new Blast Jump stuff.
+            if (fired || !pc || !pc.owner) return; // || (pd && pd.force <= 0f)
+
+            NetworkedBodyBlastJumpHandler nb = pc.owner.GetComponent<NetworkedBodyBlastJumpHandler>();
+            if (nb && nb.hasAuthority)
+            {
+                fired = true;
+                nb.BlastJumpAuthority(base.transform.position, aoe, force, horizontalMultiplier, requireAirborne);
+            }
+        }
+
+        public void BlastJumpServer()
+        {
             if (!NetworkServer.active) return;
             fired = true;
-
-            //Used to disable rocket jumps on extra ICBM rockets.
-            if (pd && pd.force <= 0f) return;
 
             if (pc && pc.owner)
             {

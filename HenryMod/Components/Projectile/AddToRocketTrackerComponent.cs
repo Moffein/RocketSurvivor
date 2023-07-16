@@ -13,16 +13,13 @@ namespace RocketSurvivor.Components.Projectile
 
         public void Start()
         {
-            if (NetworkServer.active)
+            ProjectileController pc = base.GetComponent<ProjectileController>();
+            if (pc && pc.owner)
             {
-                ProjectileController pc = base.GetComponent<ProjectileController>();
-                if (pc && pc.owner)
+                RocketTrackerComponent rtc = pc.owner.GetComponent<RocketTrackerComponent>();
+                if (rtc)
                 {
-                    RocketTrackerComponent rtc = pc.owner.GetComponent<RocketTrackerComponent>();
-                    if (rtc)
-                    {
-                        rtc.AddRocket(base.gameObject, applyAirDetBonus, isC4);
-                    }
+                    rtc.AddRocket(base.gameObject, applyAirDetBonus, isC4); //Add on both client and server so clients can immediately trigger blast jump from M2.
                 }
             }
             Destroy(this);

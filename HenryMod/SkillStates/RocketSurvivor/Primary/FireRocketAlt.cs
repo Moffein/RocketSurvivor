@@ -42,13 +42,14 @@ namespace EntityStates.RocketSurvivorSkills.Primary
 					Ray aimRay2 = new Ray(aimRay.origin, direction);
 					for (int i = 0; i < 3; i++)
 					{
-						ProjectileManager.instance.FireProjectile(FireRocketAlt.projectilePrefab, aimRay2.origin, Util.QuaternionSafeLookRotation(aimRay2.direction), base.gameObject, damageMult * this.damageStat * FireRocket.damageCoefficient, ((i != 1 && !RocketSurvivor.Modules.Config.pocketICBMEnableKnockback.Value) ? 0f : FireRocket.force), base.RollCrit(), DamageColorIndex.Default, null, -1f);
+						bool isCenterRocket = i != 1 && !RocketSurvivor.Modules.Config.pocketICBMEnableKnockback.Value;
+						ProjectileManager.instance.FireProjectile(isCenterRocket ? FireRocketAlt.projectilePrefabICBM : FireRocketAlt.projectilePrefab, aimRay2.origin, Util.QuaternionSafeLookRotation(aimRay2.direction), base.gameObject, damageMult * this.damageStat * FireRocketAlt.damageCoefficient, isCenterRocket ? 0f : FireRocketAlt.force, base.RollCrit(), DamageColorIndex.Default, null, -1f);
 						aimRay2.direction = rotation * aimRay2.direction;
 					}
 				}
 				else
 				{
-					ProjectileManager.instance.FireProjectile(FireRocketAlt.projectilePrefab, aimRay.origin, Util.QuaternionSafeLookRotation(aimRay.direction), base.gameObject, this.damageStat * FireRocket.damageCoefficient, FireRocket.force, base.RollCrit(), DamageColorIndex.Default, null, -1f);
+					ProjectileManager.instance.FireProjectile(FireRocketAlt.projectilePrefab, aimRay.origin, Util.QuaternionSafeLookRotation(aimRay.direction), base.gameObject, this.damageStat * FireRocketAlt.damageCoefficient, FireRocketAlt.force, base.RollCrit(), DamageColorIndex.Default, null, -1f);
 				}
 			}
 		}
@@ -72,6 +73,7 @@ namespace EntityStates.RocketSurvivorSkills.Primary
 		public static string muzzleString = "MuzzleRocketLauncher";
 		public static string attackSoundString = "Play_Moffein_RocketSurvivor_M1_Alt_Shoot";
 		public static GameObject projectilePrefab;
+		public static GameObject projectilePrefabICBM;
 		public static GameObject effectPrefab = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Common/VFX/MuzzleflashBarrage.prefab").WaitForCompletion();
 		public static float damageCoefficient = 6f;
 		public static float force = 2250f;
