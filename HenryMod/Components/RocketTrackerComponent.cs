@@ -237,10 +237,9 @@ namespace RocketSurvivor.Components {
             if (NetworkServer.active)
             {
                 bool success = DetonateRocket();
-
+                EffectManager.SimpleSoundEffect(success ? detonateSuccess.index : detonateFail.index, base.transform.position, true); //Play a sound to let the player know if they whiffed on the server.
                 //No need for this anymore since the detonation check is Clientside and ensures that you'll at least get to blast jump if you trigger it.
-                /*EffectManager.SimpleSoundEffect(success ? detonateSuccess.index : detonateFail.index, base.transform.position, true); //Moved from AirDet.cs to here
-                if (!success)
+                /*if (!success)
                 {
                     RpcAddSecondaryStock();   
                 }*/
