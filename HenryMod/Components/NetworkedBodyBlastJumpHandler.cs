@@ -20,48 +20,47 @@ namespace RocketSurvivor.Components
         [ClientRpc]
         public void RpcBlastJump(Vector3 position, float radius, float force, float horizontalMultiplier, bool requireAirborne)
         {
-            if (base.hasAuthority && characterBody && characterBody.characterMotor)
+            BlastJumpAuthority(position, radius, force, horizontalMultiplier, requireAirborne);
+        }
+
+        public void BlastJumpAuthority(Vector3 position, float radius, float force, float horizontalMultiplier, bool requireAirborne)
+        {
+            if (!base.hasAuthority || !characterBody || !characterBody.characterMotor || (requireAirborne && characterBody.characterMotor.isGrounded) || !characterBody.healthComponent) return;
+
+            CharacterMotor cm = characterBody.characterMotor;
+            HealthComponent healthComponent = characterBody.healthComponent;
+
+            Collider[] array = Physics.OverlapSphere(position, radius, LayerIndex.entityPrecise.mask);
+            for (int i = 0; i < array.Length; i++)
             {
-                CharacterMotor cm = characterBody.characterMotor;
-                if (cm)
+                HurtBox hurtBox = array[i].GetComponent<HurtBox>();
+                if (hurtBox)
                 {
-                    HealthComponent healthComponent = characterBody.healthComponent;
-                    if (healthComponent && healthComponent.body && healthComponent.body.characterMotor && (!requireAirborne || !healthComponent.body.characterMotor.isGrounded))
+                    HealthComponent hc = hurtBox.healthComponent;
+                    if (hc == healthComponent)
                     {
-                        Collider[] array = Physics.OverlapSphere(position, radius, LayerIndex.entityPrecise.mask);
-                        for (int i = 0; i < array.Length; i++)
+                        Vector3 dist = characterBody.corePosition + BlastJumpComponent.bodyPositionOffset - position;
+
+                        Vector3 finalForce = dist.normalized * force;
+
+                        //Attempt to break your fall, should help with pogos
+                        if (cm.velocity.y < 0f)
                         {
-                            HurtBox hurtBox = array[i].GetComponent<HurtBox>();
-                            if (hurtBox)
-                            {
-                                HealthComponent hc = hurtBox.healthComponent;
-                                if (hc == healthComponent)
-                                {
-                                    Vector3 dist = characterBody.corePosition + BlastJumpComponent.bodyPositionOffset - position;
+                            cm.velocity.y = 0f;
 
-                                    Vector3 finalForce = dist.normalized * force;
-
-                                    //Attempt to break your fall, should help with pogos
-                                    if (cm.velocity.y < 0f)
-                                    {
-                                        cm.velocity.y = 0f;
-
-                                        //Not much use to downwards launch, just results in accidental craters
-                                        if (finalForce.y < 0f) finalForce.y = 0f;
-                                    }
-
-                                    finalForce.x *= horizontalMultiplier;
-                                    finalForce.z *= horizontalMultiplier;
-
-                                    cm.ApplyForce(finalForce, true, false);
-
-                                    onBlastJumpClient?.Invoke(this);
-                                    CmdAddRocketJumpBuff();
-
-                                    break;
-                                }
-                            }
+                            //Not much use to downwards launch, just results in accidental craters
+                            if (finalForce.y < 0f) finalForce.y = 0f;
                         }
+
+                        finalForce.x *= horizontalMultiplier;
+                        finalForce.z *= horizontalMultiplier;
+
+                        cm.ApplyForce(finalForce, true, false);
+
+                        onBlastJumpClient?.Invoke(this);
+                        CmdAddRocketJumpBuff();
+
+                        break;
                     }
                 }
             }

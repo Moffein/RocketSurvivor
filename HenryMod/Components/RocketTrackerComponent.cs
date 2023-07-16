@@ -30,6 +30,7 @@ namespace RocketSurvivor.Components {
 
         public void FixedUpdate()
         {
+            ClearEmptyRockets();
             if (NetworkServer.active)
             {
                 UpdateRocketAvailable();
@@ -47,14 +48,18 @@ namespace RocketSurvivor.Components {
             }
         }
 
+        private void ClearEmptyRockets()
+        {
+            c4List.RemoveAll(item => item.gameObject == null);
+            rocketList.RemoveAll(item => item.gameObject == null);
+        }
+
         [Server]
         private void UpdateRocketAvailable()
         {
             if (!NetworkServer.active) return;
             bool newRocketAvailable = false;
 
-            c4List.RemoveAll(item => item.gameObject == null);
-            rocketList.RemoveAll(item => item.gameObject == null);
             if ((rocketList.Count + c4List.Count) > 0)
             {
                 newRocketAvailable = true;
@@ -100,12 +105,12 @@ namespace RocketSurvivor.Components {
             ProjectileDamage pd = toDetonate.GetComponent<ProjectileDamage>();
             ProjectileController pc = toDetonate.GetComponent<ProjectileController>();
             ProjectileImpactExplosion pie = toDetonate.GetComponent<ProjectileImpactExplosion>();
-            BlastJumpComponent bjc = toDetonate.GetComponent<BlastJumpComponent>();
             TeamFilter tf = toDetonate.GetComponent<TeamFilter>();
 
             if (pc && pie)
             {
                 //Handle self-knockback first
+                /*BlastJumpComponent bjc = toDetonate.GetComponent<BlastJumpComponent>();
                 if (bjc)
                 {
                     if (info.applyAirDetBonus)
@@ -114,7 +119,7 @@ namespace RocketSurvivor.Components {
                         bjc.force *= EntityStates.RocketSurvivorSkills.Secondary.AirDet.forceMult;
                     }
                     bjc.BlastJump();
-                }
+                }*/
 
                 //Handle blastattack second
                 if (tf && pd && pc.owner)
@@ -205,7 +210,6 @@ namespace RocketSurvivor.Components {
             }
         }
 
-        //Is this redundant?
         public void ServerDetonateRocket()
         {
             if (NetworkServer.active)
@@ -217,6 +221,43 @@ namespace RocketSurvivor.Components {
                     RpcAddSecondaryStock();
                 }
             }
+        }
+
+        public void ClientDetonateBlastJump()
+        {
+            foreach (RocketInfo info in rocketList)
+            {
+                TriggerBlastJump(info);
+            }
+
+            foreach (RocketInfo info in c4List)
+            {
+                TriggerBlastJump(info);
+            }
+        }
+
+        private void TriggerBlastJump(RocketInfo info)
+        {
+            if (!info.gameObject) return;
+            GameObject toDetonate = info.gameObject;
+            ProjectileController pc = toDetonate.GetComponent<ProjectileController>();
+            ProjectileImpactExplosion pie = toDetonate.GetComponent<ProjectileImpactExplosion>();
+            BlastJumpComponent bjc = toDetonate.GetComponent<BlastJumpComponent>();
+
+            if (!pc || !pie || !bjc) return;
+
+            float origAoe = bjc.aoe;
+            float origForce = bjc.force;
+            if (info.applyAirDetBonus)
+            {
+                bjc.aoe *= EntityStates.RocketSurvivorSkills.Secondary.AirDet.radiusMult;
+                bjc.force *= EntityStates.RocketSurvivorSkills.Secondary.AirDet.forceMult;
+            }
+            bjc.BlastJump();
+
+            //Reset these in case it attempts to stack after a failed detonation or something weird.
+            bjc.aoe = origAoe;
+            bjc.force = origForce;
         }
 
         public class RocketInfo

@@ -194,6 +194,7 @@ namespace RocketSurvivor.Modules
             bjc.force = 3600f;
             bjc.horizontalMultiplier = 1f;
             bjc.requireAirborne = false;
+            bjc.triggerOnImpact = false;
 
             ProjectileDamage pd = c4Projectile.GetComponent<ProjectileDamage>();
             pd.damageType = DamageType.Stun1s;

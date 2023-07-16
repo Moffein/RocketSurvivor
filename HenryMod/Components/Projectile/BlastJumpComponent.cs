@@ -6,18 +6,17 @@ using UnityEngine.Networking;
 
 namespace RocketSurvivor.Components.Projectile
 {
-    public class BlastJumpComponent : MonoBehaviour
+    public class BlastJumpComponent : MonoBehaviour, IProjectileImpactBehavior
     {
         private ProjectileImpactExplosion pie;
         private ProjectileController pc;
         private ProjectileDamage pd;
 
-        private HealthComponent healthComponent;
-
         public float force = 0f;
         public float aoe = 0f;
         public float horizontalMultiplier = 1f;
         public bool requireAirborne = true;
+        public bool triggerOnImpact = true;
 
         public static Vector3 bodyPositionOffset = new Vector3(0f, 0.5f, 0f);
 
@@ -42,8 +41,6 @@ namespace RocketSurvivor.Components.Projectile
 
         public void FixedUpdate()
         {
-            if (!NetworkServer.active) return;
-
             if (fired)
             {
                 Destroy(this);
@@ -58,7 +55,7 @@ namespace RocketSurvivor.Components.Projectile
 
         public void OnDestroy()
         {
-            if (NetworkServer.active && !fired && !pie.alive)
+            if (!pie.alive)
             {
                 BlastJump();
             }
@@ -66,20 +63,19 @@ namespace RocketSurvivor.Components.Projectile
 
         public void BlastJump()
         {
-            if (!NetworkServer.active) return;
-            fired = true;
+            if (fired || (pd && pd.force <= 0f) || !pc || !pc.owner) return;
 
-            //Used to disable rocket jumps on extra ICBM rockets.
-            if (pd && pd.force <= 0f) return;
-
-            if (pc && pc.owner)
+            NetworkedBodyBlastJumpHandler nb = pc.owner.GetComponent<NetworkedBodyBlastJumpHandler>();
+            if (nb && nb.hasAuthority)
             {
-                NetworkedBodyBlastJumpHandler nb = pc.owner.GetComponent<NetworkedBodyBlastJumpHandler>();
-                if (nb)
-                {
-                    nb.RpcBlastJump(base.transform.position, aoe, force, horizontalMultiplier, requireAirborne);
-                }
+                fired = true;
+                nb.BlastJumpAuthority(base.transform.position, aoe, force, horizontalMultiplier, requireAirborne);
             }
+        }
+
+        public void OnProjectileImpact(ProjectileImpactInfo impactInfo)
+        {
+            if (triggerOnImpact) BlastJump();
         }
     }
 }
