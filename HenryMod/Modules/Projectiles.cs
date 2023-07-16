@@ -15,12 +15,16 @@ namespace RocketSurvivor.Modules
             CreateRocket();
             CreateRocketAlt();
             CreateC4();
+
+            CreateRocketNoBlastJump();
+            CreateRocketAltNoBlastJump();
         }
 
         internal static void AddProjectile(GameObject projectileToAdd)
         {
             Modules.Content.AddProjectilePrefab(projectileToAdd);
         }
+
 
         private static void CreateRocket()
         {
@@ -33,11 +37,19 @@ namespace RocketSurvivor.Modules
             ProjectileImpactExplosion pie = rocketPrefab.GetComponent<ProjectileImpactExplosion>();
             InitializeImpactExplosion(pie);
 
-            GameObject explosionEffect = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Common/VFX/OmniExplosionVFXQuick.prefab").WaitForCompletion().InstantiateClone("RocketSurvivorRocketExplosionVFX", false);
-            EffectComponent ec = explosionEffect.GetComponent<EffectComponent>();
-            ec.soundName = "Play_Moffein_RocketSurvivor_M1_Explode";
-            Modules.Content.AddEffectDef(new EffectDef(explosionEffect));
-            EntityStates.RocketSurvivorSkills.Primary.FireRocket.explosionEffectPrefab = explosionEffect;
+            GameObject explosionEffect;
+            if (!EntityStates.RocketSurvivorSkills.Primary.FireRocket.explosionEffectPrefab)
+            {
+                explosionEffect = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Common/VFX/OmniExplosionVFXQuick.prefab").WaitForCompletion().InstantiateClone("RocketSurvivorRocketExplosionVFX", false);
+                EffectComponent ec = explosionEffect.GetComponent<EffectComponent>();
+                ec.soundName = "Play_Moffein_RocketSurvivor_M1_Explode";
+                Modules.Content.AddEffectDef(new EffectDef(explosionEffect));
+                EntityStates.RocketSurvivorSkills.Primary.FireRocket.explosionEffectPrefab = explosionEffect;
+            }
+            else
+            {
+                explosionEffect = EntityStates.RocketSurvivorSkills.Primary.FireRocket.explosionEffectPrefab;
+            }
 
             pie.blastDamageCoefficient = 1f;
             pie.blastRadius = 8f;
@@ -69,6 +81,7 @@ namespace RocketSurvivor.Modules
             bjc.horizontalMultiplier = 1.5f;
             bjc.aoe = 8f;
             bjc.requireAirborne = true;
+            rocketPrefab.AddComponent<ProjectileImpactBlastJump>();
 
             DamageAPI.ModdedDamageTypeHolderComponent mdc = rocketPrefab.AddComponent<DamageAPI.ModdedDamageTypeHolderComponent>();
             mdc.Add(DamageTypes.ScaleForceToMass);
@@ -77,6 +90,66 @@ namespace RocketSurvivor.Modules
             AddProjectile(rocketPrefab);
 
             EntityStates.RocketSurvivorSkills.Primary.FireRocket.projectilePrefab = rocketPrefab;
+        }
+
+        private static void CreateRocketNoBlastJump()
+        {
+            GameObject rocketPrefab = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Toolbot/ToolbotGrenadeLauncherProjectile.prefab").WaitForCompletion().InstantiateClone("RocketSurvivorRocketNoBlastJumpProjectile", true);//"RoR2/Base/Drones/PaladinRocket.prefab"
+
+            ProjectileSimple ps = rocketPrefab.GetComponent<ProjectileSimple>();
+            ps.desiredForwardSpeed = 75f;// 20.96f should be equivalent to tf2 rockets (1100HU/S) but this doesn't seem to be the case in-game.
+            ps.lifetime = 20f;
+
+            ProjectileImpactExplosion pie = rocketPrefab.GetComponent<ProjectileImpactExplosion>();
+            InitializeImpactExplosion(pie);
+
+            GameObject explosionEffect;
+            if (!EntityStates.RocketSurvivorSkills.Primary.FireRocket.explosionEffectPrefab)
+            {
+                explosionEffect = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Common/VFX/OmniExplosionVFXQuick.prefab").WaitForCompletion().InstantiateClone("RocketSurvivorRocketExplosionVFX", false);
+                EffectComponent ec = explosionEffect.GetComponent<EffectComponent>();
+                ec.soundName = "Play_Moffein_RocketSurvivor_M1_Explode";
+                Modules.Content.AddEffectDef(new EffectDef(explosionEffect));
+                EntityStates.RocketSurvivorSkills.Primary.FireRocket.explosionEffectPrefab = explosionEffect;
+            }
+            else
+            {
+                explosionEffect = EntityStates.RocketSurvivorSkills.Primary.FireRocket.explosionEffectPrefab;
+            }
+
+            pie.blastDamageCoefficient = 1f;
+            pie.blastRadius = 8f;
+            pie.destroyOnEnemy = true;
+            pie.destroyOnWorld = true;
+            pie.lifetime = 12f;
+            pie.impactEffect = explosionEffect;
+            pie.timerAfterImpact = false;
+            pie.lifetimeAfterImpact = 0f;
+            pie.blastAttackerFiltering = AttackerFiltering.NeverHitSelf;
+            pie.falloffModel = BlastAttack.FalloffModel.SweetSpot;
+
+            //Remove built-in sounds
+            /*AkEvent[] akEvents = rocketPrefab.GetComponentsInChildren<AkEvent>();
+            for (int i = 0; i < akEvents.Length; i++)
+            {
+                UnityEngine.Object.Destroy(akEvents[i]);
+            }
+
+            AkGameObj akgo = rocketPrefab.GetComponent<AkGameObj>();
+            if (akgo)
+            {
+                UnityEngine.Object.Destroy(akgo);
+            }*/
+
+            rocketPrefab.AddComponent<AddToRocketTrackerComponent>();
+
+            DamageAPI.ModdedDamageTypeHolderComponent mdc = rocketPrefab.AddComponent<DamageAPI.ModdedDamageTypeHolderComponent>();
+            mdc.Add(DamageTypes.ScaleForceToMass);
+            mdc.Add(DamageTypes.SweetSpotModifier);
+
+            AddProjectile(rocketPrefab);
+
+            EntityStates.RocketSurvivorSkills.Primary.FireRocket.projectilePrefabICBM = rocketPrefab;
         }
 
         //Use a different rocket model for this.
@@ -92,11 +165,19 @@ namespace RocketSurvivor.Modules
             ProjectileImpactExplosion pie = rocketPrefab.GetComponent<ProjectileImpactExplosion>();
             InitializeImpactExplosion(pie);
 
-            GameObject explosionEffect = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Common/VFX/OmniExplosionVFXQuick.prefab").WaitForCompletion().InstantiateClone("RocketSurvivorRocketAltExplosionVFX", false);
-            EffectComponent ec = explosionEffect.GetComponent<EffectComponent>();
-            ec.soundName = "Play_Moffein_RocketSurvivor_M1_Alt_Explode";
-            Modules.Content.AddEffectDef(new EffectDef(explosionEffect));
-            EntityStates.RocketSurvivorSkills.Primary.FireRocketAlt.explosionEffectPrefab = explosionEffect;
+            GameObject explosionEffect;
+            if (!EntityStates.RocketSurvivorSkills.Primary.FireRocketAlt.explosionEffectPrefab)
+            {
+                explosionEffect = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Common/VFX/OmniExplosionVFXQuick.prefab").WaitForCompletion().InstantiateClone("RocketSurvivorRocketAltExplosionVFX", false);
+                EffectComponent ec = explosionEffect.GetComponent<EffectComponent>();
+                ec.soundName = "Play_Moffein_RocketSurvivor_M1_Alt_Explode";
+                Modules.Content.AddEffectDef(new EffectDef(explosionEffect));
+                EntityStates.RocketSurvivorSkills.Primary.FireRocketAlt.explosionEffectPrefab = explosionEffect;
+            }
+            else
+            {
+                explosionEffect = EntityStates.RocketSurvivorSkills.Primary.FireRocketAlt.explosionEffectPrefab;
+            }
 
             pie.blastDamageCoefficient = 1f;
             pie.blastRadius = 4.5f;   //Artificer is 2
@@ -128,6 +209,8 @@ namespace RocketSurvivor.Modules
             bjc.horizontalMultiplier = 1.5f;
             bjc.aoe = 8f;  //Keep the Rocket Jump AoE the same for consistency
             bjc.requireAirborne = true;
+            bjc.runOnServer = true;
+            //rocketPrefab.AddComponent<ProjectileImpactBlastJump>();   //isPrediction prevents this from running on clients
 
             DamageAPI.ModdedDamageTypeHolderComponent mdc = rocketPrefab.AddComponent<DamageAPI.ModdedDamageTypeHolderComponent>();
             mdc.Add(DamageTypes.ScaleForceToMass);
@@ -158,6 +241,89 @@ namespace RocketSurvivor.Modules
             AddProjectile(rocketPrefab);
 
             EntityStates.RocketSurvivorSkills.Primary.FireRocketAlt.projectilePrefab = rocketPrefab;
+        }
+
+        private static void CreateRocketAltNoBlastJump()
+        {
+            GameObject rocketPrefab = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Toolbot/ToolbotGrenadeLauncherProjectile.prefab").WaitForCompletion().InstantiateClone("RocketSurvivorRocketAltNoBlastJumpProjectile", true);//"RoR2/Base/Drones/PaladinRocket.prefab"
+
+            ProjectileSimple ps = rocketPrefab.GetComponent<ProjectileSimple>();
+            ps.desiredForwardSpeed = 75f * 1.8f;// 20.96f should be equivalent to tf2 rockets (1100HU/S) but this doesn't seem to be the case in-game.
+            ps.lifetime = 20f;
+            ps.updateAfterFiring = true;
+
+            ProjectileImpactExplosion pie = rocketPrefab.GetComponent<ProjectileImpactExplosion>();
+            InitializeImpactExplosion(pie);
+
+            GameObject explosionEffect;
+            if (!EntityStates.RocketSurvivorSkills.Primary.FireRocketAlt.explosionEffectPrefab)
+            {
+                explosionEffect = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Common/VFX/OmniExplosionVFXQuick.prefab").WaitForCompletion().InstantiateClone("RocketSurvivorRocketAltExplosionVFX", false);
+                EffectComponent ec = explosionEffect.GetComponent<EffectComponent>();
+                ec.soundName = "Play_Moffein_RocketSurvivor_M1_Alt_Explode";
+                Modules.Content.AddEffectDef(new EffectDef(explosionEffect));
+                EntityStates.RocketSurvivorSkills.Primary.FireRocketAlt.explosionEffectPrefab = explosionEffect;
+            }
+            else
+            {
+                explosionEffect = EntityStates.RocketSurvivorSkills.Primary.FireRocketAlt.explosionEffectPrefab;
+            }
+
+            pie.blastDamageCoefficient = 1f;
+            pie.blastRadius = 4.5f;   //Artificer is 2
+            pie.destroyOnEnemy = true;
+            pie.destroyOnWorld = true;
+            pie.lifetime = 12f;
+            pie.impactEffect = explosionEffect;
+            pie.timerAfterImpact = false;
+            pie.lifetimeAfterImpact = 0f;
+            pie.blastAttackerFiltering = AttackerFiltering.NeverHitSelf;
+            pie.falloffModel = BlastAttack.FalloffModel.None;   //Sweetspot becomes unreliable at low radius.
+
+            //Remove built-in sounds
+            /*AkEvent[] akEvents = rocketPrefab.GetComponentsInChildren<AkEvent>();
+            for (int i = 0; i < akEvents.Length; i++)
+            {
+                UnityEngine.Object.Destroy(akEvents[i]);
+            }
+
+            AkGameObj akgo = rocketPrefab.GetComponent<AkGameObj>();
+            if (akgo)
+            {
+                UnityEngine.Object.Destroy(akgo);
+            }*/
+
+            rocketPrefab.AddComponent<AddToRocketTrackerComponent>();
+
+            DamageAPI.ModdedDamageTypeHolderComponent mdc = rocketPrefab.AddComponent<DamageAPI.ModdedDamageTypeHolderComponent>();
+            mdc.Add(DamageTypes.ScaleForceToMass);
+            //mdc.Add(DamageTypes.AirborneBonus);
+
+            if (Modules.Config.samTracking.Value)
+            {
+                rocketPrefab.AddComponent<ProjectileTargetComponent>();
+                ProjectileSteerTowardTarget pstt = rocketPrefab.AddComponent<ProjectileSteerTowardTarget>();
+                pstt.yAxisOnly = false;
+                pstt.rotationSpeed = 60f;   //90f
+
+                ProjectileDirectionalTargetFinder2 pdtf = rocketPrefab.AddComponent<ProjectileDirectionalTargetFinder2>();
+                pdtf.lookRange = 60f;   //25f
+                pdtf.lookCone = 12f;    //20f
+                pdtf.targetSearchInterval = 0.1f;
+                pdtf.onlySearchIfNoTarget = true;
+                pdtf.allowTargetLoss = false;
+                pdtf.testLoS = true;
+                pdtf.ignoreAir = false;
+                pdtf.flierAltitudeTolerance = Mathf.Infinity;
+                pdtf.SearchMode = BullseyeSearch.SortMode.Angle;
+            }
+
+            ProjectileController pc = rocketPrefab.GetComponent<ProjectileController>();
+            pc.allowPrediction = false;
+
+            AddProjectile(rocketPrefab);
+
+            EntityStates.RocketSurvivorSkills.Primary.FireRocketAlt.projectilePrefabICBM = rocketPrefab;
         }
 
         private static void CreateC4()

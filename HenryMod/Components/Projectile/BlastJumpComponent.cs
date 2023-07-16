@@ -6,7 +6,7 @@ using UnityEngine.Networking;
 
 namespace RocketSurvivor.Components.Projectile
 {
-    public class BlastJumpComponent : MonoBehaviour, IProjectileImpactBehavior
+    public class BlastJumpComponent : MonoBehaviour
     {
         private ProjectileImpactExplosion pie;
         private ProjectileController pc;
@@ -17,6 +17,7 @@ namespace RocketSurvivor.Components.Projectile
         public float horizontalMultiplier = 1f;
         public bool requireAirborne = true;
         public bool triggerOnImpact = true;
+        public bool runOnServer = false;    //Set to true for isPrediction projectiles that need to explode on impact.
 
         public static Vector3 bodyPositionOffset = new Vector3(0f, 0.5f, 0f);
 
@@ -49,7 +50,7 @@ namespace RocketSurvivor.Components.Projectile
 
             if (!pie.alive)
             {
-                BlastJump();
+                AttemptBlastJump();
             }
         }
 
@@ -57,27 +58,49 @@ namespace RocketSurvivor.Components.Projectile
         {
             if (!pie.alive)
             {
+                AttemptBlastJump();
+            }
+        }
+
+        //Other 2 methods are still public because there are cases where you'd want to use them even if runOnServer is on/off, maybe.
+        public void AttemptBlastJump()
+        {
+            if (runOnServer)
+            {
+                BlastJumpServer();
+            }
+            else
+            {
                 BlastJump();
             }
         }
 
         public void BlastJump()
         {
-            Debug.Log("Attempting blast jump");
-            if (fired || !pc || !pc.owner || (pd && pd.force <= 0f)) return;
+            //Removed force check because it doesnt work with new Blast Jump stuff.
+            if (fired || !pc || !pc.owner) return; // || (pd && pd.force <= 0f)
 
             NetworkedBodyBlastJumpHandler nb = pc.owner.GetComponent<NetworkedBodyBlastJumpHandler>();
             if (nb && nb.hasAuthority)
             {
                 fired = true;
                 nb.BlastJumpAuthority(base.transform.position, aoe, force, horizontalMultiplier, requireAirborne);
-                if (!triggerOnImpact) Debug.Log("Triggered Blast Jump on C4");
             }
         }
 
-        public void OnProjectileImpact(ProjectileImpactInfo impactInfo)
+        public void BlastJumpServer()
         {
-            if (triggerOnImpact) BlastJump();
+            if (!NetworkServer.active) return;
+            fired = true;
+
+            if (pc && pc.owner)
+            {
+                NetworkedBodyBlastJumpHandler nb = pc.owner.GetComponent<NetworkedBodyBlastJumpHandler>();
+                if (nb)
+                {
+                    nb.RpcBlastJump(base.transform.position, aoe, force, horizontalMultiplier, requireAirborne);
+                }
+            }
         }
     }
 }

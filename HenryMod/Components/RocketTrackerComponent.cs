@@ -109,6 +109,23 @@ namespace RocketSurvivor.Components {
             ProjectileController pc = toDetonate.GetComponent<ProjectileController>();
             ProjectileImpactExplosion pie = toDetonate.GetComponent<ProjectileImpactExplosion>();
             TeamFilter tf = toDetonate.GetComponent<TeamFilter>();
+            BlastJumpComponent bjc = toDetonate.GetComponent<BlastJumpComponent>();
+
+            if (bjc && bjc.runOnServer)
+            {
+                float origAoe = bjc.aoe;
+                float origForce = bjc.force;
+                if (info.applyAirDetBonus)
+                {
+                    bjc.aoe *= EntityStates.RocketSurvivorSkills.Secondary.AirDet.radiusMult;
+                    bjc.force *= EntityStates.RocketSurvivorSkills.Secondary.AirDet.forceMult;
+                }
+                bjc.AttemptBlastJump();
+
+                //Reset these in case it attempts to stack after a failed detonation or something weird.
+                bjc.aoe = origAoe;
+                bjc.force = origForce;
+            }
 
             if (pc && pie)
             {
@@ -245,7 +262,7 @@ namespace RocketSurvivor.Components {
             GameObject toDetonate = info.gameObject;
             BlastJumpComponent bjc = toDetonate.GetComponent<BlastJumpComponent>();
 
-            if (!bjc) return;
+            if (!bjc || bjc.runOnServer) return;
 
             float origAoe = bjc.aoe;
             float origForce = bjc.force;
@@ -254,7 +271,7 @@ namespace RocketSurvivor.Components {
                 bjc.aoe *= EntityStates.RocketSurvivorSkills.Secondary.AirDet.radiusMult;
                 bjc.force *= EntityStates.RocketSurvivorSkills.Secondary.AirDet.forceMult;
             }
-            bjc.BlastJump();
+            bjc.AttemptBlastJump();
 
             //Reset these in case it attempts to stack after a failed detonation or something weird.
             bjc.aoe = origAoe;
