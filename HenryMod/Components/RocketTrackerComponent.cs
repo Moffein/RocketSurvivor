@@ -92,6 +92,16 @@ namespace RocketSurvivor.Components {
                 {
                     RocketInfo oldestC4 = c4List.FirstOrDefault<RocketInfo>();
                     c4List.Remove(oldestC4);
+
+                    if (oldestC4.gameObject)
+                    {
+                        BlastJumpComponent bjc = oldestC4.gameObject.GetComponent<BlastJumpComponent>();
+                        if (bjc)
+                        {
+                            bjc.BlastJumpServer();
+                        }
+                    }
+
                     DetonateRocketInfo(oldestC4);
                 }
                 c4List.Add(info);

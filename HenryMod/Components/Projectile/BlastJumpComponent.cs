@@ -17,6 +17,7 @@ namespace RocketSurvivor.Components.Projectile
         public float horizontalMultiplier = 1f;
         public bool requireAirborne = true;
         public bool triggerOnImpact = true;
+        public bool blastJumpOnDestroy = true;  //Set to false for C4 so that the server can handle it
         public bool runOnServer = false;    //Set to true for isPrediction projectiles that need to explode on impact.
 
         public static Vector3 bodyPositionOffset = new Vector3(0f, 0.5f, 0f);
@@ -56,7 +57,7 @@ namespace RocketSurvivor.Components.Projectile
 
         public void OnDestroy()
         {
-            if (!pie.alive)
+            if (!pie.alive && blastJumpOnDestroy)
             {
                 AttemptBlastJump();
             }
