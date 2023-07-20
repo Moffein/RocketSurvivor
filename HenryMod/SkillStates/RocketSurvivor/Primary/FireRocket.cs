@@ -42,8 +42,8 @@ namespace EntityStates.RocketSurvivorSkills.Primary
 					Ray aimRay2 = new Ray(aimRay.origin, direction);
 					for (int i = 0; i < 3; i++)
 					{
-						bool isCenterRocket = i != 1 && !RocketSurvivor.Modules.Config.pocketICBMEnableKnockback.Value;
-						ProjectileManager.instance.FireProjectile(isCenterRocket ? FireRocket.projectilePrefabICBM : FireRocket.projectilePrefab, aimRay2.origin, Util.QuaternionSafeLookRotation(aimRay2.direction), base.gameObject, damageMult * this.damageStat * FireRocket.damageCoefficient, isCenterRocket ? 0f : FireRocket.force, base.RollCrit(), DamageColorIndex.Default, null, -1f);
+						bool isNotCenterRocket = i != 1 && !RocketSurvivor.Modules.Config.pocketICBMEnableKnockback.Value;
+						ProjectileManager.instance.FireProjectile(isNotCenterRocket ? FireRocket.projectilePrefabICBM : FireRocket.projectilePrefab, aimRay2.origin, Util.QuaternionSafeLookRotation(aimRay2.direction), base.gameObject, damageMult * this.damageStat * FireRocket.damageCoefficient, isNotCenterRocket ? 0f : FireRocket.force, base.RollCrit(), DamageColorIndex.Default, null, -1f);
 						aimRay2.direction = rotation * aimRay2.direction;
 					}
 				}
