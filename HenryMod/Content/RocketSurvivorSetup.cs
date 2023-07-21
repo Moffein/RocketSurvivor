@@ -224,12 +224,12 @@ namespace RocketSurvivor.Modules.Survivors
             EntityStateMachine offhandMachine = base.bodyPrefab.AddComponent<EntityStateMachine>();
             offhandMachine.customName = "Offhand";
             offhandMachine.mainStateType = new SerializableEntityStateType(typeof(EntityStates.Idle));
+            offhandMachine.initialStateType = new SerializableEntityStateType(typeof(EntityStates.Idle));
 
             NetworkStateMachine nsm = base.bodyPrefab.GetComponent<NetworkStateMachine>();
             List<EntityStateMachine> stateMachines = nsm.stateMachines.ToList();
             stateMachines.Add(offhandMachine);
             nsm.stateMachines = stateMachines.ToArray();
-
             SetStateOnHurt ssoh = bodyPrefab.GetComponent<SetStateOnHurt>();
             if (ssoh)
             {
@@ -437,7 +437,7 @@ namespace RocketSurvivor.Modules.Survivors
             });
             (marketGardenDef as ScriptableObject).name = "MarketGarden";
             Modules.Content.AddSkillDef(marketGardenDef);
-            RocketSurvivorSetup.ShovelDef = ShovelDef;
+            RocketSurvivorSetup.ShovelDef = marketGardenDef;
 
             UnlockableDef spoonUnlock = ScriptableObject.CreateInstance<UnlockableDef>();
             spoonUnlock.cachedName = "Skills.MoffeinRocketSurvivor.MarketGaden";
