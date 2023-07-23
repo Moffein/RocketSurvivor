@@ -95,7 +95,8 @@ namespace EntityStates.RocketSurvivorSkills.Special
                             //aimDirection = Util.ApplySpread(aimRay2.direction, 0f, 3f, 1f, 1f);
                         }
 
-                        ProjectileManager.instance.FireProjectile(GetProjectilePrefab(), aimRay2.origin, Util.QuaternionSafeLookRotation(aimDirection), base.gameObject, damageMult * this.damageStat * GetDamageCoefficient(), ((i != 1 && !RocketSurvivor.Modules.Config.pocketICBMEnableKnockback.Value) ? 0f : GetForce() * 0.25f), isCrit, DamageColorIndex.Default, null, -1f);
+                        bool isNotCenterRocket = (i != 1 && !RocketSurvivor.Modules.Config.pocketICBMEnableKnockback.Value);
+                        ProjectileManager.instance.FireProjectile(GetProjectilePrefab(isNotCenterRocket), aimRay2.origin, Util.QuaternionSafeLookRotation(aimDirection), base.gameObject, damageMult * this.damageStat * GetDamageCoefficient(), (isNotCenterRocket ? 0f : GetForce() * 0.25f), isCrit, DamageColorIndex.Default, null, -1f);
                         aimRay2.direction = rotation * aimRay2.direction;
                     }
                 }
@@ -123,15 +124,30 @@ namespace EntityStates.RocketSurvivorSkills.Special
             shotsRemaining--;
         }
 
-        private GameObject GetProjectilePrefab()
+        private GameObject GetProjectilePrefab(bool enableKnockback = true)
         {
-            if (selectedPrimarySkill == RocketSurvivorSetup.FireRocketAltSkillDef)
+            if (enableKnockback)
             {
-                return FireRocketAlt.projectilePrefab;
+                if (selectedPrimarySkill == RocketSurvivorSetup.FireRocketAltSkillDef)
+                {
+                    return FireRocketAlt.projectilePrefab;
+                }
+                else
+                {
+                    return FireRocket.projectilePrefab;
+                }
             }
             else
             {
-                return FireRocket.projectilePrefab;
+
+                if (selectedPrimarySkill == RocketSurvivorSetup.FireRocketAltSkillDef)
+                {
+                    return FireRocketAlt.projectilePrefabICBM;
+                }
+                else
+                {
+                    return FireRocket.projectilePrefabICBM;
+                }
             }
         }
 
