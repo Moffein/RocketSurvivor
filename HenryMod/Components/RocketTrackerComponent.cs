@@ -116,6 +116,8 @@ namespace RocketSurvivor.Components {
         {
             bool detonatedSuccessfully = false;
             GameObject toDetonate = info.gameObject;
+            if (!toDetonate) return false;
+
             ProjectileDamage pd = toDetonate.GetComponent<ProjectileDamage>();
             ProjectileController pc = toDetonate.GetComponent<ProjectileController>();
             ProjectileImpactExplosion pie = toDetonate.GetComponent<ProjectileImpactExplosion>();
@@ -140,19 +142,6 @@ namespace RocketSurvivor.Components {
 
             if (pc && pie)
             {
-                //Handle self-knockback first
-                /*BlastJumpComponent bjc = toDetonate.GetComponent<BlastJumpComponent>();
-                if (bjc)
-                {
-                    if (info.applyAirDetBonus)
-                    {
-                        bjc.aoe *= EntityStates.RocketSurvivorSkills.Secondary.AirDet.radiusMult;
-                        bjc.force *= EntityStates.RocketSurvivorSkills.Secondary.AirDet.forceMult;
-                    }
-                    bjc.BlastJump();
-                }*/
-
-                //Handle blastattack second
                 if (tf && pd && pc.owner)
                 {
                     BlastAttack ba = new BlastAttack
