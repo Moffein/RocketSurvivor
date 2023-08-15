@@ -243,6 +243,10 @@ MonoBehaviour:
     transform: {fileID: 8641996545964261124}
   - name: Base
     transform: {fileID: 4053510790761746343}
+  - name: FootL
+    transform: {fileID: 1931596227369093418}
+  - name: FootR
+    transform: {fileID: 4996453282158713041}
 --- !u!114 &3376894291509369367
 MonoBehaviour:
   m_ObjectHideFlags: 0
