@@ -27,7 +27,7 @@ namespace EntityStates.RocketSurvivorSkills.Utility
 
 			base.StartAimMode(aimRay, 3f, false);
 
-			base.PlayAnimation("Gesture, Override", "NitroCharge", "ThrowBomb.playbackRate", this.duration); //TODO: REPLACE
+			base.PlayAnimation("Gesture, Override", "NitroCharge", "ThrowBomb.playbackRate", this.duration);
 			Util.PlaySound(attackSoundString, base.gameObject);
 
 			if (C4.effectPrefab)
@@ -45,7 +45,7 @@ namespace EntityStates.RocketSurvivorSkills.Utility
         {
 			Ray aimRay = base.GetAimRay();
 
-			if (VRAPI.Utils.IsInVR(this) && base.characterBody && VRAPI.Utils.IsUsingMotionControls(base.characterBody))
+			if (VRAPI.Utils.IsUsingMotionControls(this))
             {
 				aimRay = vrUseOffhand.Value ? VRAPI.MotionControls.nonDominantHand.aimRay : VRAPI.MotionControls.dominantHand.aimRay;
             }
