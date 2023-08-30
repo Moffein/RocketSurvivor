@@ -24,7 +24,7 @@ namespace RocketSurvivor.Modules
             pocketICBM = RocketSurvivorPlugin.instance.Config.Bind("Gameplay", "Pocket ICBM Interaction", true, "Pocket ICBM works with Rocket's skills.");
             pocketICBMEnableKnockback = RocketSurvivorPlugin.instance.Config.Bind("Gameplay", "Pocket ICBM Knockback", false, "Extra rockets from Pocket ICBM have knockback.");
             samTracking = RocketSurvivorPlugin.instance.Config.Bind("Primaries - HG4 SAM Launcher", "Enable Homing (Server-Side)", true, "SAM Rockets will home towards targets.");
-            EntityStates.RocketSurvivorSkills.Utility.C4.vrUseDominantHand = RocketSurvivorPlugin.instance.Config.Bind("Utilities - Nitro Charge", "VR: Throw from Dominant Hand", true, "When VR Motion Controls are enabled, throw C4 from your dominant hand. Throws from your nondominant hand if false.");
+            EntityStates.RocketSurvivorSkills.Utility.C4.vrUseOffhand = RocketSurvivorPlugin.instance.Config.Bind("Utilities - Nitro Charge", "VR: Throw from Offhand", true, "When VR Motion Controls are enabled, throw C4 from your nondominant hand. Throws from your dominant hand if false.");
 
             ForceUnlock = RocketSurvivorPlugin.instance.Config.Bind("General", "Force Unlock", false, "Unlock all gameplay-related features.");
             KeybindEmoteSit = RocketSurvivorPlugin.instance.Config.Bind("Keybinds", "Emote - Sit", new KeyboardShortcut(KeyCode.Alpha1), "Button to play this emote.");
@@ -43,7 +43,7 @@ namespace RocketSurvivor.Modules
             ModSettingsManager.AddOption(new RiskOfOptions.Options.KeyBindOption(KeybindEmoteSit));
             ModSettingsManager.AddOption(new RiskOfOptions.Options.KeyBindOption(KeybindEmoteShovel));
             ModSettingsManager.AddOption(new RiskOfOptions.Options.KeyBindOption(KeybindEmoteCSS));
-            ModSettingsManager.AddOption(new RiskOfOptions.Options.CheckBoxOption(EntityStates.RocketSurvivorSkills.Utility.C4.vrUseDominantHand));
+            ModSettingsManager.AddOption(new RiskOfOptions.Options.CheckBoxOption(EntityStates.RocketSurvivorSkills.Utility.C4.vrUseOffhand));
         }
 
         // this helper automatically makes config entries for disabling survivors

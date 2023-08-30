@@ -47,7 +47,7 @@ namespace EntityStates.RocketSurvivorSkills.Utility
 
 			if (VRAPI.VR.enabled && VRAPI.MotionControls.enabled && VRAPI.Utils.IsInVR(this) && base.characterBody && VRAPI.Utils.IsUsingMotionControls(base.characterBody))
             {
-				aimRay = vrUseDominantHand.Value ? VRAPI.MotionControls.dominantHand.aimRay : VRAPI.MotionControls.nonDominantHand.aimRay;
+				aimRay = vrUseOffhand.Value ? VRAPI.MotionControls.nonDominantHand.aimRay : VRAPI.MotionControls.dominantHand.aimRay;
             }
 
 			return aimRay;
@@ -80,7 +80,7 @@ namespace EntityStates.RocketSurvivorSkills.Utility
 		public static GameObject effectPrefab = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Commando/MuzzleflashFMJ.prefab").WaitForCompletion();    //Use a less threatening VFX for this
 		public static float damageCoefficient = 12f;
 		public static float force = 2400f;
-		public static ConfigEntry<bool> vrUseDominantHand;
+		public static ConfigEntry<bool> vrUseOffhand;
 
 		public static float baseDuration = 0.8f;
 		public static float baseMinDuration = 0.2f;
