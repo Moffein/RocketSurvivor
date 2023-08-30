@@ -296,6 +296,17 @@ namespace RocketSurvivor.Modules.Survivors
             Modules.Content.AddSkillDef(primarySkillDef);
             Skills.AddSkillToFamily(sk.primary.skillFamily, primarySkillDef);
 
+            EntityStates.RocketSurvivorSkills.Special.FireAllRockets.rocketSkillInfoList.Add(new EntityStates.RocketSurvivorSkills.Special.FireAllRockets.RocketSkillInfo
+            {
+                skillDef = primarySkillDef,
+                projectilePrefab = EntityStates.RocketSurvivorSkills.Primary.FireRocket.projectilePrefab,
+                projectilePrefabICBM = EntityStates.RocketSurvivorSkills.Primary.FireRocket.projectilePrefabICBM,
+                effectPrefab = EntityStates.RocketSurvivorSkills.Primary.FireRocket.effectPrefab,
+                muzzleString = EntityStates.RocketSurvivorSkills.Primary.FireRocket.muzzleString,
+                damageCoefficient = EntityStates.RocketSurvivorSkills.Primary.FireRocket.damageCoefficient,
+                force = EntityStates.RocketSurvivorSkills.Primary.FireRocket.force
+            });
+
             ReloadSkillDef primaryAltSkillDef = ReloadSkillDef.CreateInstance<ReloadSkillDef>();
             primaryAltSkillDef.activationState = new SerializableEntityStateType(typeof(EntityStates.RocketSurvivorSkills.Primary.FireRocketAlt));
             primaryAltSkillDef.activationStateMachineName = "Weapon";
@@ -324,6 +335,16 @@ namespace RocketSurvivor.Modules.Survivors
             (primaryAltSkillDef as ScriptableObject).name = "FireRocketAlt";
             Modules.Content.AddSkillDef(primaryAltSkillDef);
 
+            EntityStates.RocketSurvivorSkills.Special.FireAllRockets.rocketSkillInfoList.Add(new EntityStates.RocketSurvivorSkills.Special.FireAllRockets.RocketSkillInfo
+            {
+                skillDef = primaryAltSkillDef,
+                projectilePrefab = EntityStates.RocketSurvivorSkills.Primary.FireRocketAlt.projectilePrefab,
+                projectilePrefabICBM = EntityStates.RocketSurvivorSkills.Primary.FireRocketAlt.projectilePrefabICBM,
+                effectPrefab = EntityStates.RocketSurvivorSkills.Primary.FireRocketAlt.effectPrefab,
+                muzzleString = EntityStates.RocketSurvivorSkills.Primary.FireRocketAlt.muzzleString,
+                damageCoefficient = EntityStates.RocketSurvivorSkills.Primary.FireRocketAlt.damageCoefficient,
+                force = EntityStates.RocketSurvivorSkills.Primary.FireRocketAlt.force
+            });
 
             UnlockableDef samUnlock = ScriptableObject.CreateInstance<UnlockableDef>();
             samUnlock.cachedName = "Skills.MoffeinRocketSurvivor.Homing";

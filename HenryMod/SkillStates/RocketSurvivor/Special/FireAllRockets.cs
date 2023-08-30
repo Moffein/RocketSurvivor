@@ -3,6 +3,7 @@ using RocketSurvivor.Modules.Survivors;
 using RoR2;
 using RoR2.Projectile;
 using RoR2.Skills;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 
@@ -18,13 +19,13 @@ namespace EntityStates.RocketSurvivorSkills.Special
             shotsRemaining = base.skillLocator && base.skillLocator.primary ? base.skillLocator.primary.maxStock : FireAllRockets.baseShotCount;
             isCrit = base.RollCrit();
 
-            selectedPrimarySkill = RocketSurvivorSetup.FireRocketSkillDef;
             if (base.skillLocator)
             {
-                if (base.skillLocator.primary.skillDef == RocketSurvivorSetup.FireRocketAltSkillDef)
-                {
-                    selectedPrimarySkill = RocketSurvivorSetup.FireRocketAltSkillDef;
-                }
+                selectedPrimarySkill = base.skillLocator.primary.skillDef;
+            }
+            else
+            {
+                selectedPrimarySkill = RocketSurvivorSetup.FireRocketSkillDef;
             }
 
             ModifyStats();
@@ -95,8 +96,8 @@ namespace EntityStates.RocketSurvivorSkills.Special
                             //aimDirection = Util.ApplySpread(aimRay2.direction, 0f, 3f, 1f, 1f);
                         }
 
-                        bool isNotCenterRocket = (i != 1 && !RocketSurvivor.Modules.Config.pocketICBMEnableKnockback.Value);
-                        ProjectileManager.instance.FireProjectile(GetProjectilePrefab(isNotCenterRocket), aimRay2.origin, Util.QuaternionSafeLookRotation(aimDirection), base.gameObject, damageMult * this.damageStat * GetDamageCoefficient(), (isNotCenterRocket ? 0f : GetForce() * 0.25f), isCrit, DamageColorIndex.Default, null, -1f);
+                        bool centerRocket = i == 1 || RocketSurvivor.Modules.Config.pocketICBMEnableKnockback.Value;
+                        ProjectileManager.instance.FireProjectile(GetProjectilePrefab(centerRocket), aimRay2.origin, Util.QuaternionSafeLookRotation(aimDirection), base.gameObject, damageMult * this.damageStat * GetDamageCoefficient(), (centerRocket ? GetForce() * 0.25f : 0f), isCrit, DamageColorIndex.Default, null, -1f);
                         aimRay2.direction = rotation * aimRay2.direction;
                     }
                 }
@@ -126,78 +127,45 @@ namespace EntityStates.RocketSurvivorSkills.Special
 
         private GameObject GetProjectilePrefab(bool enableKnockback = true)
         {
+            RocketSkillInfo rs = FindRocketSkillInfo(selectedPrimarySkill);
+            if (rs == null) return null;
             if (enableKnockback)
             {
-                if (selectedPrimarySkill == RocketSurvivorSetup.FireRocketAltSkillDef)
-                {
-                    return FireRocketAlt.projectilePrefab;
-                }
-                else
-                {
-                    return FireRocket.projectilePrefab;
-                }
+                return rs.projectilePrefab;
             }
             else
             {
-
-                if (selectedPrimarySkill == RocketSurvivorSetup.FireRocketAltSkillDef)
-                {
-                    return FireRocketAlt.projectilePrefabICBM;
-                }
-                else
-                {
-                    return FireRocket.projectilePrefabICBM;
-                }
+               return rs.projectilePrefabICBM;
             }
         }
 
         private GameObject GetEffectPrefab()
         {
-            if (selectedPrimarySkill == RocketSurvivorSetup.FireRocketAltSkillDef)
-            {
-                return FireRocketAlt.effectPrefab;
-            }
-            else
-            {
-                return FireRocket.effectPrefab;
-            }
+            RocketSkillInfo rs = FindRocketSkillInfo(selectedPrimarySkill);
+            if (rs != null) return rs.effectPrefab;
+            return null;
         }
 
         private string GetMuzzleString()
         {
-            if (selectedPrimarySkill == RocketSurvivorSetup.FireRocketAltSkillDef)
-            {
-                return FireRocketAlt.muzzleString;
-            }
-            else
-            {
-                return FireRocket.muzzleString;
-            }
+            RocketSkillInfo rs = FindRocketSkillInfo(selectedPrimarySkill);
+            if (rs != null) return rs.muzzleString;
+            return string.Empty;
         }
 
 
         private float GetDamageCoefficient()
         {
-            if (selectedPrimarySkill == RocketSurvivorSetup.FireRocketAltSkillDef)
-            {
-                return FireRocketAlt.damageCoefficient;
-            }
-            else
-            {
-                return FireRocket.damageCoefficient;
-            }
+            RocketSkillInfo rs = FindRocketSkillInfo(selectedPrimarySkill);
+            if (rs != null) return rs.damageCoefficient;
+            return 0f;
         }
 
         private float GetForce()
         {
-            if (selectedPrimarySkill == RocketSurvivorSetup.FireRocketAltSkillDef)
-            {
-                return FireRocketAlt.force;
-            }
-            else
-            {
-                return FireRocket.force;
-            }
+            RocketSkillInfo rs = FindRocketSkillInfo(selectedPrimarySkill);
+            if (rs != null) return rs.force;
+            return 0f;
         }
 
         public override InterruptPriority GetMinimumInterruptPriority()
@@ -214,5 +182,27 @@ namespace EntityStates.RocketSurvivorSkills.Special
 
         public static int baseShotCount = 4;
         public static float baseDelayBetweenShots = 0.2f;
+
+        public static List<RocketSkillInfo> rocketSkillInfoList = new List<RocketSkillInfo>();
+        public class RocketSkillInfo
+        {
+            public SkillDef skillDef;
+
+            public GameObject projectilePrefab;
+            public GameObject projectilePrefabICBM; //Extra rockets fired when using ICBM. Has blast jump component disabled.
+
+            public GameObject effectPrefab;
+            public string muzzleString;
+            public float damageCoefficient;
+            public float force;
+        }
+        public static RocketSkillInfo FindRocketSkillInfo(SkillDef sd)
+        {
+            foreach(RocketSkillInfo rs in rocketSkillInfoList)
+            {
+                if (rs.skillDef == sd) return rs;
+            }
+            return null;
+        }
     }
 }
