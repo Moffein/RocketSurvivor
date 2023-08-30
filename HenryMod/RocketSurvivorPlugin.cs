@@ -80,7 +80,7 @@ namespace RocketSurvivor
             if (emoteAPILoaded) EmoteAPICompat();
 
             if (BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey("com.DrBibop.VRAPI")) {
-                VRAPILoaded = true
+                VRAPILoaded = true;
         }
         
         private void Start()
