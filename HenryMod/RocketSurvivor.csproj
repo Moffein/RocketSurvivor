@@ -361,6 +361,9 @@
     <Reference Include="UnityEngine.XRModule">
       <HintPath>..\libs\UnityEngine.XRModule.dll</HintPath>
     </Reference>
+    <Reference Include="VRAPI">
+      <HintPath>..\libs\SoftDependencies\VRAPI.dll</HintPath>
+    </Reference>
     <Reference Include="Wwise">
       <HintPath>..\libs\Wwise.dll</HintPath>
     </Reference>

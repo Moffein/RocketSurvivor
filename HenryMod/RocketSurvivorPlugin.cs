@@ -36,7 +36,7 @@ namespace RocketSurvivor
     {
         public const string MODUID = "com.EnforcerGang.RocketSurvivor";
         public const string MODNAME = "RocketSurvivor";
-        public const string MODVERSION = "0.8.5";
+        public const string MODVERSION = "0.8.7";
 
         // a prefix for name tokens to prevent conflicts- please capitalize all name tokens for convention
         public const string DEVELOPER_PREFIX = "MOFFEIN";
@@ -59,6 +59,7 @@ namespace RocketSurvivor
             scepterClassicLoaded = BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey("com.ThinkInvisible.ClassicItems");
             emoteAPILoaded = BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey("com.weliveinasociety.CustomEmotesAPI");
             riskOfOptionsLoaded = BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey("com.rune580.riskofoptions");
+            VRAPILoaded = BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey("com.DrBibop.VRAPI");
 
             Log.Init(Logger);
 
@@ -78,9 +79,6 @@ namespace RocketSurvivor
             // now make a content pack and add it- this part will change with the next update
             new Modules.ContentPacks().Initialize();
             if (emoteAPILoaded) EmoteAPICompat();
-
-            if (BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey("com.DrBibop.VRAPI")) {
-                VRAPILoaded = true
         }
         
         private void Start()

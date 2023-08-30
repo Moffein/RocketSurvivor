@@ -1,5 +1,7 @@
-﻿using RoR2;
+﻿using BepInEx.Configuration;
+using RoR2;
 using RoR2.Projectile;
+using System.Runtime.CompilerServices;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
 
@@ -12,11 +14,17 @@ namespace EntityStates.RocketSurvivorSkills.Utility
 			base.OnEnter();
 			this.duration = C4.baseDuration / this.attackSpeedStat;
 			this.minDuration = C4.baseMinDuration / this.attackSpeedStat;
-			Ray aimray;
-			if (VRAPILoaded && this.IsUsingMotionControls())
-				aimray = MotionControls.nonDominantHand.aimRay;
+
+			Ray aimRay;
+			if (RocketSurvivor.RocketSurvivorPlugin.VRAPILoaded)
+            {
+				aimRay = GetVRAimRay();
+            }
 			else
+            {
 				aimRay = base.GetAimRay();
+			}				
+
 			base.StartAimMode(aimRay, 3f, false);
 
 			base.PlayAnimation("Gesture, Override", "NitroCharge", "ThrowBomb.playbackRate", this.duration); //TODO: REPLACE
@@ -31,6 +39,19 @@ namespace EntityStates.RocketSurvivorSkills.Utility
 				ProjectileManager.instance.FireProjectile(C4.projectilePrefab, aimRay.origin, Util.QuaternionSafeLookRotation(aimRay.direction), base.gameObject, this.damageStat * C4.damageCoefficient, C4.force, false, DamageColorIndex.Default, null, -1f);
 			}
 		}
+
+		[MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
+		private Ray GetVRAimRay()
+        {
+			Ray aimRay = base.GetAimRay();
+
+			if (VRAPI.VR.enabled && VRAPI.MotionControls.enabled && VRAPI.Utils.IsInVR(this) && base.characterBody && VRAPI.Utils.IsUsingMotionControls(base.characterBody))
+            {
+				aimRay = vrUseDominantHand.Value ? VRAPI.MotionControls.dominantHand.aimRay : VRAPI.MotionControls.nonDominantHand.aimRay;
+            }
+
+			return aimRay;
+        }
 
 		public override void FixedUpdate()
 		{
@@ -59,6 +80,7 @@ namespace EntityStates.RocketSurvivorSkills.Utility
 		public static GameObject effectPrefab = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Commando/MuzzleflashFMJ.prefab").WaitForCompletion();    //Use a less threatening VFX for this
 		public static float damageCoefficient = 12f;
 		public static float force = 2400f;
+		public static ConfigEntry<bool> vrUseDominantHand;
 
 		public static float baseDuration = 0.8f;
 		public static float baseMinDuration = 0.2f;
