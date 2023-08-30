@@ -304,7 +304,8 @@ namespace RocketSurvivor.Modules.Survivors
                 effectPrefab = EntityStates.RocketSurvivorSkills.Primary.FireRocket.effectPrefab,
                 muzzleString = EntityStates.RocketSurvivorSkills.Primary.FireRocket.muzzleString,
                 damageCoefficient = EntityStates.RocketSurvivorSkills.Primary.FireRocket.damageCoefficient,
-                force = EntityStates.RocketSurvivorSkills.Primary.FireRocket.force
+                force = EntityStates.RocketSurvivorSkills.Primary.FireRocket.force,
+                attackSoundString = EntityStates.RocketSurvivorSkills.Primary.FireRocket.attackSoundString
             });
 
             ReloadSkillDef primaryAltSkillDef = ReloadSkillDef.CreateInstance<ReloadSkillDef>();
@@ -343,7 +344,8 @@ namespace RocketSurvivor.Modules.Survivors
                 effectPrefab = EntityStates.RocketSurvivorSkills.Primary.FireRocketAlt.effectPrefab,
                 muzzleString = EntityStates.RocketSurvivorSkills.Primary.FireRocketAlt.muzzleString,
                 damageCoefficient = EntityStates.RocketSurvivorSkills.Primary.FireRocketAlt.damageCoefficient,
-                force = EntityStates.RocketSurvivorSkills.Primary.FireRocketAlt.force
+                force = EntityStates.RocketSurvivorSkills.Primary.FireRocketAlt.force,
+                attackSoundString = EntityStates.RocketSurvivorSkills.Primary.FireRocketAlt.attackSoundString
             });
 
             UnlockableDef samUnlock = ScriptableObject.CreateInstance<UnlockableDef>();

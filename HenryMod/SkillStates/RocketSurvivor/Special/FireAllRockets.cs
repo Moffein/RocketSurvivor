@@ -123,8 +123,14 @@ namespace EntityStates.RocketSurvivorSkills.Special
             }
             //"SpecialShoot" for the one with the exhuast anim
             base.PlayAnimation("Gesture, Override", "SpecialShoot"/*, "Shoot.playbackRate", 0.169f*/);
-            Util.PlaySound(FireRocket.attackSoundString, base.gameObject);
+            Util.PlaySound(GetAttackSoundString(), base.gameObject);
             shotsRemaining--;
+        }
+
+        private string GetAttackSoundString()
+        {
+            if (selectedRocketSkill != null) return selectedRocketSkill.attackSoundString;
+            return FireRocket.attackSoundString;
         }
 
         private GameObject GetProjectilePrefab(bool enableKnockback = true)
@@ -190,6 +196,7 @@ namespace EntityStates.RocketSurvivorSkills.Special
 
             public GameObject effectPrefab;
             public string muzzleString;
+            public string attackSoundString;
             public float damageCoefficient;
             public float force;
         }
