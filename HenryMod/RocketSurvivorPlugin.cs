@@ -18,6 +18,7 @@ namespace RocketSurvivor
     [BepInDependency("com.rune580.riskofoptions", BepInDependency.DependencyFlags.SoftDependency)]
     [BepInDependency("com.weliveinasociety.CustomEmotesAPI", BepInDependency.DependencyFlags.SoftDependency)]
     [BepInDependency("HIFU.Inferno", BepInDependency.DependencyFlags.SoftDependency)]
+    [BepInDependency("com.DrBibop.VRAPI", BepInDependency.DependencyFlags.SoftDependency)]
     [BepInDependency("com.DestroyedClone.AncientScepter", BepInDependency.DependencyFlags.SoftDependency)]
     [BepInDependency("com.ThinkInvisible.ClassicItems", BepInDependency.DependencyFlags.SoftDependency)]
     [BepInDependency("com.bepis.r2api", BepInDependency.DependencyFlags.HardDependency)]
@@ -46,6 +47,7 @@ namespace RocketSurvivor
         public static bool scepterClassicLoaded = false;
         public static bool emoteAPILoaded = false;
         public static bool riskOfOptionsLoaded = false;
+        public static bool VRAPILoaded = false;
 
         private void Awake()
         {
@@ -76,13 +78,16 @@ namespace RocketSurvivor
             // now make a content pack and add it- this part will change with the next update
             new Modules.ContentPacks().Initialize();
             if (emoteAPILoaded) EmoteAPICompat();
-        }
 
+            if (BepInEx.Bootstrap.Chainloader.PluginInfos.ContainsKey("com.DrBibop.VRAPI")) {
+                VRAPILoaded = true
+        }
+        
         private void Start()
         {
             SoundBanks.Init();
         }
-
+        
         [MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
         private void EmoteAPICompat()
         {

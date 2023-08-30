@@ -12,7 +12,11 @@ namespace EntityStates.RocketSurvivorSkills.Utility
 			base.OnEnter();
 			this.duration = C4.baseDuration / this.attackSpeedStat;
 			this.minDuration = C4.baseMinDuration / this.attackSpeedStat;
-			Ray aimRay = base.GetAimRay();
+			Ray aimray;
+			if (VRAPILoaded && this.IsUsingMotionControls())
+				aimray = MotionControls.nonDominantHand.aimRay;
+			else
+				aimRay = base.GetAimRay();
 			base.StartAimMode(aimRay, 3f, false);
 
 			base.PlayAnimation("Gesture, Override", "NitroCharge", "ThrowBomb.playbackRate", this.duration); //TODO: REPLACE
