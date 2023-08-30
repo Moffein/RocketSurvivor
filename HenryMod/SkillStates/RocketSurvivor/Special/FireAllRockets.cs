@@ -15,7 +15,7 @@ namespace EntityStates.RocketSurvivorSkills.Special
             base.OnEnter();
             fireStopwatch = 0f;
             delayBetweenShots = FireAllRockets.baseDelayBetweenShots / base.attackSpeedStat;
-            shotsRemaining = FireAllRockets.baseShotCount;    //Skill felt underwhelming when it was tied to primary stocks: only useful when primary is fully loaded, which is the opposite of the skill's intended purpose.
+            shotsRemaining = base.skillLocator && base.skillLocator.primary ? base.skillLocator.primary.maxStock : FireAllRockets.baseShotCount;
             isCrit = base.RollCrit();
 
             selectedPrimarySkill = RocketSurvivorSetup.FireRocketSkillDef;
