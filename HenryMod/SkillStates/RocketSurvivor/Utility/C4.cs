@@ -45,7 +45,7 @@ namespace EntityStates.RocketSurvivorSkills.Utility
         {
 			Ray aimRay = base.GetAimRay();
 
-			if (VRAPI.VR.enabled && VRAPI.MotionControls.enabled && VRAPI.Utils.IsInVR(this) && base.characterBody && VRAPI.Utils.IsUsingMotionControls(base.characterBody))
+			if (VRAPI.Utils.IsInVR(this) && base.characterBody && VRAPI.Utils.IsUsingMotionControls(base.characterBody))
             {
 				aimRay = vrUseOffhand.Value ? VRAPI.MotionControls.nonDominantHand.aimRay : VRAPI.MotionControls.dominantHand.aimRay;
             }
