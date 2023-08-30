@@ -19,6 +19,7 @@ namespace EntityStates.RocketSurvivorSkills.Special
             shotsRemaining = base.skillLocator && base.skillLocator.primary ? base.skillLocator.primary.maxStock : FireAllRockets.baseShotCount;
             isCrit = base.RollCrit();
 
+            SkillDef selectedPrimarySkill;
             if (base.skillLocator)
             {
                 selectedPrimarySkill = base.skillLocator.primary.skillDef;
@@ -27,6 +28,7 @@ namespace EntityStates.RocketSurvivorSkills.Special
             {
                 selectedPrimarySkill = RocketSurvivorSetup.FireRocketSkillDef;
             }
+            selectedRocketSkill = FindRocketSkillInfo(selectedPrimarySkill);
 
             ModifyStats();
         }
@@ -127,44 +129,39 @@ namespace EntityStates.RocketSurvivorSkills.Special
 
         private GameObject GetProjectilePrefab(bool enableKnockback = true)
         {
-            RocketSkillInfo rs = FindRocketSkillInfo(selectedPrimarySkill);
-            if (rs == null) return null;
+            if (selectedRocketSkill == null) return null;
             if (enableKnockback)
             {
-                return rs.projectilePrefab;
+                return selectedRocketSkill.projectilePrefab;
             }
             else
             {
-               return rs.projectilePrefabICBM;
+               return selectedRocketSkill.projectilePrefabICBM;
             }
         }
 
         private GameObject GetEffectPrefab()
         {
-            RocketSkillInfo rs = FindRocketSkillInfo(selectedPrimarySkill);
-            if (rs != null) return rs.effectPrefab;
+            if (selectedRocketSkill != null) return selectedRocketSkill.effectPrefab;
             return null;
         }
 
         private string GetMuzzleString()
         {
-            RocketSkillInfo rs = FindRocketSkillInfo(selectedPrimarySkill);
-            if (rs != null) return rs.muzzleString;
+            if (selectedRocketSkill != null) return selectedRocketSkill.muzzleString;
             return string.Empty;
         }
 
 
         private float GetDamageCoefficient()
         {
-            RocketSkillInfo rs = FindRocketSkillInfo(selectedPrimarySkill);
-            if (rs != null) return rs.damageCoefficient;
+            if (selectedRocketSkill != null) return selectedRocketSkill.damageCoefficient;
             return 0f;
         }
 
         private float GetForce()
         {
-            RocketSkillInfo rs = FindRocketSkillInfo(selectedPrimarySkill);
-            if (rs != null) return rs.force;
+            if (selectedRocketSkill != null) return selectedRocketSkill.force;
             return 0f;
         }
 
@@ -173,7 +170,7 @@ namespace EntityStates.RocketSurvivorSkills.Special
             return InterruptPriority.Pain;
         }
 
-        private SkillDef selectedPrimarySkill;
+        private RocketSkillInfo selectedRocketSkill;
         private bool isCrit;
         private float fireStopwatch;
 
