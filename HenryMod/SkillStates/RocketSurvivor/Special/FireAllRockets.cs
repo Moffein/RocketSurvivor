@@ -22,7 +22,7 @@ namespace EntityStates.RocketSurvivorSkills.Special
             SkillDef selectedPrimarySkill;
             if (base.skillLocator)
             {
-                selectedPrimarySkill = base.skillLocator.primary.skillDef;
+                selectedPrimarySkill = base.skillLocator.primary.baseSkill;
             }
             else
             {
