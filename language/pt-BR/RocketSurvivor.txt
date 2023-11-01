@@ -1,0 +1,51 @@
+{
+	strings:
+	{
+	"MOFFEIN_ROCKET_BODY_NAME" : "Rocket",
+	"MOFFEIN_ROCKET_BODY_SUBTITLE" : "Choque e Pavor",
+	"MOFFEIN_ROCKET_BODY_LORE" : "bio: rocket nasceu com um poder especial",
+	"MOFFEIN_ROCKET_BODY_DESCRIPTION" : "O Rocket é um ágil especialista em explosivos que causa um devastador dano em área.<style=cSub>\r\n\r\n< ! > Decolagem permite andar rapidamente pelo mapa e escapar de qualquer perigo!\r\n\r\n< ! > Seu Lança-Foguetes causa uma grande repulsão contra os inimigos. Use isso para jogar eles para fora do mapa.\r\n\r\n< ! > Detonador Remoto é útil contra inimigos voadores, além de poder ser usado para mobilidade.\r\n\r\n< ! > Carga de Nitro é ótimo tanto para causar dano em área quanto para mobilidade.\r\n\r\n< ! > Recarregamento Rápido pode ser usado para ignorar seu lento recarregamento do Lança-Foguetes.",
+	
+	"MOFFEIN_ROCKET_BODY_OUTRO_FLAVOR" : "... e assim ele se foi, se lançando novamente.",
+	"MOFFEIN_ROCKET_BODY_MAIN_ENDING_ESCAPE_FAILURE_FLAVOR" : "... e assim ele desapareceu, nunca mais tocando o chão.",
+	
+	"MOFFEIN_ROCKET_BODY_PASSIVE_NAME" : "Decolagem",
+	"MOFFEIN_ROCKET_BODY_PASSIVE_DESCRIPTION" : "Seus explosivos podem ser usados para realizar um <style=cIsUtility>salto explosivo</style>.",
+	
+	"MOFFEIN_ROCKET_BODY_PRIMARY_NAME" : "Lança-Foguetes HG4",
+	"MOFFEIN_ROCKET_BODY_PRIMARY_DESCRIPTION" : "<style=cIsUtility>Ágil</style>. Atire um foguete que causa <style=cIsDamage>600% de dano</style>. Máximo de 4.",
+	
+	
+	"MOFFEIN_ROCKET_BODY_PRIMARY_ALT_NAME" : "Lançador SAM HG4",
+	"MOFFEIN_ROCKET_BODY_PRIMARY_ALT_DESCRIPTION" : "<style=cIsUtility>Ágil</style>. Dispare um míssil <style=cIsUtility>teleguiado</style> com um <style=cIsHealth>raio de explosão menor</style> que causa <style=cIsDamage>600% de dano</style>. Máximo de 4.",
+	
+	"MOFFEIN_ROCKET_BODY_SECONDARY_NAME" : "Detonador Remoto",
+	"MOFFEIN_ROCKET_BODY_SECONDARY_DESCRIPTION" : "Detone <style=cIsDamage>todos os explosivos</style>. <style=cIsDamage>Foguetes</style> detonados ganham <style=cIsDamage>50%</style> de <style=cIsDamage>dano</style> e <style=cIsDamage>raio de explosão</style> extras.",
+	
+	"MOFFEIN_ROCKET_BODY_UTILITY_NAME" : "Carga de Nitro",
+	"MOFFEIN_ROCKET_BODY_UTILITY_DESCRIPTION" : "<style=cIsDamage>Atordoante</style>. Coloque uma carga de explosivo. Use o <style=cIsDamage>Detonador Remoto</style> para explodí-lo, causando <style=cIsDamage>1200% de dano</style>.",
+	
+	"MOFFEIN_ROCKET_BODY_UTILITY_ALT_NAME" : "Bombardeio",
+	"MOFFEIN_ROCKET_BODY_UTILITY_ALT_DESCRIPTION" : "<style=cIsUtility>Pesado</style>. <style=cIsDamage>Atordoante</style>. Balance sua pá explosiva contra um inimigo para causar <style=cIsDamage>1200% de dano</style>. Realiza <style=cIsDamage>Acertos Críticos</style> durante <style=cIsUtility>saltos explosivos</style>.",
+	
+	"MOFFEIN_ROCKET_BODY_SPECIAL_NAME" : "Recarregamento Rápido",
+	"MOFFEIN_ROCKET_BODY_SPECIAL_DESCRIPTION" : "Rapidamente <style=cIsDamage>atire 4 foguetes</style>, e então <style=cIsUtility>recarregue sua arma</style>.",
+	
+	"MOFFEIN_ROCKET_BODY_SPECIAL_SCEPTER_NAME" : "Tempestade de Foguetes",
+	"MOFFEIN_ROCKET_BODY_SPECIAL_SCEPTER_DESCRIPTION" : "Rapidamente <style=cIsDamage>atire 10 foguetes</style>, e então <style=cIsUtility>recarregue sua arma</style>.",
+	
+	"ACHIEVEMENT_MOFFEINROCKETHOMINGUNLOCK_NAME" : "Rocket: Velocidade é Vida",
+	"ACHIEVEMENT_MOFFEINROCKETHOMINGUNLOCK_DESCRIPTION" : "Como Rocket, acesse e conclua o Portal Celestial em 25 minutos ou menos.",
+	
+	"ACHIEVEMENT_MOFFEINROCKETMARKETGARDENUNLOCK_NAME" : "Rocket: Pula Pula",
+	"ACHIEVEMENT_MOFFEINROCKETMARKETGARDENUNLOCK_DESCRIPTION" : "Como Rocket, realize um salto explosivo 15 vezes seguidas sem tocar o chão.",
+
+	"MOFFEIN_ROCKET_BODY_MASTERY_SKIN_NAME" : "Bombardeiro",
+	"ACHIEVEMENT_MOFFEINROCKETCLEARGAMEMONSOON_NAME" : "Rocket: Domínio",
+	"ACHIEVEMENT_MOFFEINROCKETCLEARGAMEMONSOON_DESCRIPTION" : "Como Rocket, vença o jogo ou aniquile em Monção.",
+	
+	"MOFFEIN_ROCKET_BODY_GRANDMASTERY_SKIN_NAME" : "Patrulheiro",
+	"ACHIEVEMENT_MOFFEINROCKETCLEARGAMETYPHOON_NAME" : "Rocket: Grande Domínio",
+	"ACHIEVEMENT_MOFFEINROCKETCLEARGAMETYPHOON_DESCRIPTION" : "Como Rocket, vença o jogo ou aniquile em Tufão ou Eclipse.\n<color=#8888>(A dificuldade Tufão requer o mod Starstorm 2)</color>",
+	}
+}
