@@ -55,7 +55,8 @@ Drop the dll into \BepInEx\plugins\
 
 `0.9.7`
 
-- Fixed Rocket's Base permanently rotating when using EmoteAPI emotes.
+- Made emote skeleton less buggy.
+	- No more getting permanently rotated, but your height/hip position can still permanently change.
 
 <details>
 
