@@ -1,0 +1,51 @@
+{
+	strings:
+	{
+	"MOFFEIN_ROCKET_BODY_NAME" : "Ракета",
+	"MOFFEIN_ROCKET_BODY_SUBTITLE" : "Shock and Awe",
+	"MOFFEIN_ROCKET_BODY_LORE" : "bio: rocket was born with a special power",
+	"MOFFEIN_ROCKET_BODY_DESCRIPTION" : "Ракета - это высокомобильный эксперт по взрывчатке, наносящий разрушительный урон по площади.<style=cSub>\r\n\r\n< ! > Чтобы быстро преодолеть карту и избежать опасности, часто совершайте взрывные прыжки!\r\n\r\n< ! > Ракетная установка обладает высокой отдачей по врагам. Используйте ее, чтобы сбивать их с уступов.\r\n\r\n< ! > Дистанционный детонатор полезен для поражения летающих врагов, а также может быть использован для мобильности.\r\n\r\n< ! > Нитро-заряд отлично подходит как для нанесения урона по площади, так и для мобильности.\r\n\r\n< ! > Быстрое перезаряжание позволяет отказаться от длительной перезарядки ракетной установки.",
+	
+	"MOFFEIN_ROCKET_BODY_OUTRO_FLAVOR" : "..И вот он ушел, снова взорвавшись.",
+	"MOFFEIN_ROCKET_BODY_MAIN_ENDING_ESCAPE_FAILURE_FLAVOR" : "..И вот он исчез, чтобы никогда больше не коснуться земли.",
+	
+	"MOFFEIN_ROCKET_BODY_PASSIVE_NAME" : "Взрывная волна",
+	"MOFFEIN_ROCKET_BODY_PASSIVE_DESCRIPTION" : "Взрывчатка может быть использована для <style=cIsUtility>взрывного прыжка</style>.",
+	
+	"MOFFEIN_ROCKET_BODY_PRIMARY_NAME" : "Ракетная установка HG4",
+	"MOFFEIN_ROCKET_BODY_PRIMARY_DESCRIPTION" : "<style=cIsUtility>Маневренность</style>. Выпускает ракету, наносящую <style=cIsDamage>600% урона</style>. Может вмещать до 4 патрон.",
+	
+	
+	"MOFFEIN_ROCKET_BODY_PRIMARY_ALT_NAME" : "Пусковая установка ЗРК HG4",
+	"MOFFEIN_ROCKET_BODY_PRIMARY_ALT_DESCRIPTION" : "<style=cIsUtility>Маневренность</style>. Выпускает <style=cIsUtility>наводящуюся на тепло</style> ракету с <style=cIsHealth>меньшим радиусом взрыва</style>, наносящую <style=cIsDamage>600% урона</style>. Может вмещать до 4-х штук.",
+	
+	"MOFFEIN_ROCKET_BODY_SECONDARY_NAME" : "Дистанционный детонатор",
+	"MOFFEIN_ROCKET_BODY_SECONDARY_DESCRIPTION" : "Детонировать <style=cIsDamage>все взрывчатые вещества</style>. Детонированные <style=cIsDamage>ракеты</style> получают <style=cIsDamage>50%</style> дополнительного <style=cIsDamage>урона</style> и <style=cIsDamage>радиуса взрыва</style>.",
+	
+	"MOFFEIN_ROCKET_BODY_UTILITY_NAME" : "Нитро-заряд",
+	"MOFFEIN_ROCKET_BODY_UTILITY_DESCRIPTION" : "<style=cIsDamage>Оглушающий</style>. Установите заряд взрывчатки. Используйте <style=cIsDamage>Дистанционный Детонатор</style>, чтобы взорвать его, получив <style=cIsDamage>1200% урона</style>.",
+	
+	"MOFFEIN_ROCKET_BODY_UTILITY_ALT_NAME" : "Бомбометание",
+	"MOFFEIN_ROCKET_BODY_UTILITY_ALT_DESCRIPTION" : "<style=cIsUtility>Тяжелый</style>. <style=cIsDamage>Оглушительный</style>. Размахнуться взрывной лопатой и нанести противнику <style=cIsDamage>1200% урона</style>. Наносит <style=cIsDamage>Критические Удары</style> во время <style=cIsUtility>взрывного прыжка</style>.",
+	
+	"MOFFEIN_ROCKET_BODY_SPECIAL_NAME" : "Быстрое вооружение",
+	"MOFFEIN_ROCKET_BODY_SPECIAL_DESCRIPTION" : "Быстро <style=cIsDamage>выпустите 4 ракеты</style>, затем <style=cIsUtility>перезарядите оружие</style>.",
+	
+	"MOFFEIN_ROCKET_BODY_SPECIAL_SCEPTER_NAME" : "Ракетный шторм",
+	"MOFFEIN_ROCKET_BODY_SPECIAL_SCEPTER_DESCRIPTION" : "Быстро <style=cIsDamage>выпустите 10 ракет</style>, затем <style=cIsUtility>перезарядите оружие</style>.",
+	
+	"ACHIEVEMENT_MOFFEINROCKETHOMINGUNLOCK_NAME" : "Ракета: Скорость - это жизнь",
+	"ACHIEVEMENT_MOFFEINROCKETHOMINGUNLOCK_DESCRIPTION" : "Как Ракета, достичь и пройти через Небесный Портал за 25 минут или менее.",
+	
+	"ACHIEVEMENT_MOFFEINROCKETMARKETGARDENUNLOCK_NAME" : "Ракета: Pogo",
+	"ACHIEVEMENT_MOFFEINROCKETMARKETGARDENUNLOCK_DESCRIPTION" : "В роли Ракеты - взрывной прыжок 10 раз подряд без касания земли.",
+
+	"MOFFEIN_ROCKET_BODY_MASTERY_SKIN_NAME" : "Бомбардье",
+	"ACHIEVEMENT_MOFFEINROCKETCLEARGAMEMONSOON_NAME" : "Ракета: Мастерство",
+	"ACHIEVEMENT_MOFFEINROCKETCLEARGAMEMONSOON_DESCRIPTION" : "Как Ракета, победите в игре или уничтожьте Monsoon.",
+	
+	"MOFFEIN_ROCKET_BODY_GRANDMASTERY_SKIN_NAME" : "Рейнджер",
+	"ACHIEVEMENT_MOFFEINROCKETCLEARGAMETYPHOON_NAME" : "Ракета: Великое мастерство",
+	"ACHIEVEMENT_MOFFEINROCKETCLEARGAMETYPHOON_DESCRIPTION" : "В роли Ракеты пройдите игру или уничтожьте ее на сложности "Тайфун" или "Затмение".\n<color=#8888>(Для игры на сложности "Тайфун" требуется Starstorm 2)</color>",
+	}
+}
