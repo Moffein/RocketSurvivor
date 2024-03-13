@@ -3,7 +3,7 @@
 	{
 	"MOFFEIN_ROCKET_BODY_NAME" : "Ракетомётчик",  
 	"MOFFEIN_ROCKET_BODY_SUBTITLE" : "Шок и трепет",
-	"MOFFEIN_ROCKET_BODY_LORE" : "био: ракетомётчик родился с особой силой",
+	"MOFFEIN_ROCKET_BODY_LORE" : "Био: Ракетомётчик родился с особой силой",
 	"MOFFEIN_ROCKET_BODY_DESCRIPTION" : "Ракетомётчик — очень мобильный эксперт по взрывчатым веществам, который наносит разрушительный урон по площади.<style=cSub>\r\n\r\n< ! > Часто совершайте взрывные прыжки, чтобы быстро перемещаться по карте и избегать опасностей!\r\n\r\n< ! > У вашей ракетницы сильное отбрасывание от врагов. Используйте это, чтобы сбить их с уступов.\r\n\r\n< ! > Дистанционный детонатор полезен для поражения летающих врагов, а также может использоваться для мобильности.\r\n\r\n< ! > Заряд нитро отлично подходит как для урона по области, так и для мобильности.\r\n\r\n< ! > Быструю перезарядку можно использовать, чтобы избежать длительной перезарядки ракетницы.",
 	
 	"MOFFEIN_ROCKET_BODY_OUTRO_FLAVOR" : "..и он ушел, отрываясь от земли снова.",
@@ -17,35 +17,35 @@
 	
 	
 	"MOFFEIN_ROCKET_BODY_PRIMARY_ALT_NAME" : "Пусковая установка ЗРК HG4",
-	"MOFFEIN_ROCKET_BODY_PRIMARY_ALT_DESCRIPTION" : "<style=cIsUtility>Подвижность</style>. Выстреливает ракетой с <style=cIsUtility>тепловым наведением</style> и с <style=cIsHealth>меньшим радиусом взрыва</style>, которая наносит <style=cIsDamage>600% урона</style>. Может вместить до 4 ракет.",
+	"MOFFEIN_ROCKET_BODY_PRIMARY_ALT_DESCRIPTION" : "<style=cIsUtility>Подвижность</style>. Выстреливает ракетой с <style=cIsUtility>тепловым наведением</style>, обладающей <style=cIsHealth>меньшим радиусом взрыва</style> и наносящей <style=cIsDamage>600% урона</style>. Может вместить до 4 ракет.",
 	
 	"MOFFEIN_ROCKET_BODY_SECONDARY_NAME" : "Дистанционный детонатор",
-	"MOFFEIN_ROCKET_BODY_SECONDARY_DESCRIPTION" : "Взрывает <style=cIsDamage>всю взрывчатку</style> на карте. Взорванные <style=cIsDamage>ракеты</style> получают <style=cIsDamage>50%</style> дополнительного <style=cIsDamage>урона</style> и <style=cIsDamage>радиуса взрыва</style>.",
+	"MOFFEIN_ROCKET_BODY_SECONDARY_DESCRIPTION" : "Подрывает <style=cIsDamage>всю взрывчатку</style> на карте. Взорванные <style=cIsDamage>ракеты</style> получают <style=cIsDamage>50%</style> дополнительного <style=cIsDamage>урона</style> и <style=cIsDamage>радиуса взрыва</style>.",
 	
 	"MOFFEIN_ROCKET_BODY_UTILITY_NAME" : "Заряд нитро",
-	"MOFFEIN_ROCKET_BODY_UTILITY_DESCRIPTION" : "<style=cIsDamage>Оглушение</style>. Размещает заряд взрывчатого вещества. Используйте <style=cIsDamage>Дистанционный детонатор</style> чтобы взорвать его. Взрыв наносит <style=cIsDamage>1200% урона</style>.",
+	"MOFFEIN_ROCKET_BODY_UTILITY_DESCRIPTION" : "<style=cIsDamage>Оглушение</style>. Размещает заряд взрывчатого вещества. Используйте <style=cIsDamage>Дистанционный детонатор</style>, чтобы подорвать его. Взрыв наносит <style=cIsDamage>1200% урона</style>.",
 	
-	"MOFFEIN_ROCKET_BODY_UTILITY_ALT_NAME" : "Бомбардировка",
-	"MOFFEIN_ROCKET_BODY_UTILITY_ALT_DESCRIPTION" : "<style=cIsUtility>Пробивание</style>. <style=cIsDamage>Оглушение</style>. Взмахните взрывной лопатой по врагу, чтобы нанести <style=cIsDamage>1200% урона</style>. Наносит <style=cIsDamage>критические удары</style> во время <style=cIsUtility>взрывного прыжка</style>.",
+	"MOFFEIN_ROCKET_BODY_UTILITY_ALT_NAME" : "Сапёрная лопата",
+	"MOFFEIN_ROCKET_BODY_UTILITY_ALT_DESCRIPTION" : "<style=cIsUtility>Пробивание</style>. <style=cIsDamage>Оглушение</style>. Ударьте взрывной лопатой по врагу, чтобы нанести <style=cIsDamage>1200% урона</style>. Наносит <style=cIsDamage>критические удары</style> во время <style=cIsUtility>взрывного прыжка</style>.",
 	
-	"MOFFEIN_ROCKET_BODY_SPECIAL_NAME" : "Быстрая перезарядка",
-	"MOFFEIN_ROCKET_BODY_SPECIAL_DESCRIPTION" : "Быстро <style=cIsDamage>выстреливает 4 ракеты</style>, затем <style=cIsUtility>перезаряжает ваше оружие</style>.",
+	"MOFFEIN_ROCKET_BODY_SPECIAL_NAME" : "Шустрая перезарядка",
+	"MOFFEIN_ROCKET_BODY_SPECIAL_DESCRIPTION" : "Быстро <style=cIsDamage>выстреливает ракетами (4)</style>, затем <style=cIsUtility>перезаряжает оружие</style>.",
 	
 	"MOFFEIN_ROCKET_BODY_SPECIAL_SCEPTER_NAME" : "Ракетный шторм",
-	"MOFFEIN_ROCKET_BODY_SPECIAL_SCEPTER_DESCRIPTION" : "Быстро <style=cIsDamage>выстреливает 10 ракет</style>, затем <style=cIsUtility>перезаряжает ваше оружие</style>.",
+	"MOFFEIN_ROCKET_BODY_SPECIAL_SCEPTER_DESCRIPTION" : "Быстро <style=cIsDamage>выстреливает ракетами (10)</style>, затем <style=cIsUtility>перезаряжает оружие</style>.",
 	
-	"ACHIEVEMENT_MOFFEINROCKETHOMINGUNLOCK_NAME" : "Ракетомётчик: Скорость - это жизнь",
-	"ACHIEVEMENT_MOFFEINROCKETHOMINGUNLOCK_DESCRIPTION" : "Играя за Ракетомётчика, достигнуть и пройти через Божественный портал за 25 минут или меньше.",
+	"ACHIEVEMENT_MOFFEINROCKETHOMINGUNLOCK_NAME" : "Ракетомётчик: скорость - это жизнь",
+	"ACHIEVEMENT_MOFFEINROCKETHOMINGUNLOCK_DESCRIPTION" : "Играя за Ракетомётчика, достигните и пройдите через Божественный портал за 25 минут или меньше.",
 	
-	"ACHIEVEMENT_MOFFEINROCKETMARKETGARDENUNLOCK_NAME" : "Ракетомётчик: Пого",
+	"ACHIEVEMENT_MOFFEINROCKETMARKETGARDENUNLOCK_NAME" : "Ракетомётчик: пого",
 	"ACHIEVEMENT_MOFFEINROCKETMARKETGARDENUNLOCK_DESCRIPTION" : "Играя за Ракетомётчика, прыгните с помощью взрыва 10 раз подряд, не касаясь земли.",
 
 	"MOFFEIN_ROCKET_BODY_MASTERY_SKIN_NAME" : "Бомбардир",
-	"ACHIEVEMENT_MOFFEINROCKETCLEARGAMEMONSOON_NAME" : "Ракетомётчик: Мастерство",
+	"ACHIEVEMENT_MOFFEINROCKETCLEARGAMEMONSOON_NAME" : "Ракетомётчик: мастерство",
 	"ACHIEVEMENT_MOFFEINROCKETCLEARGAMEMONSOON_DESCRIPTION" : "Играя за Ракетомётчика, пройдите игру или уничтожьтесь на уровне сложности «Сезон дождей».",
 	
 	"MOFFEIN_ROCKET_BODY_GRANDMASTERY_SKIN_NAME" : "Рейнджер",
-	"ACHIEVEMENT_MOFFEINROCKETCLEARGAMETYPHOON_NAME" : "Ракетомётчик: Великое мастерство",
-	"ACHIEVEMENT_MOFFEINROCKETCLEARGAMETYPHOON_DESCRIPTION" : "Играя за Ракетомётчика, пройдите игру или уничтожьтесь на уровне сложности «Тайфун» или выше.\n<color=#8888>(Сложность Тайфун требует Starstorm 2)</color>",
+	"ACHIEVEMENT_MOFFEINROCKETCLEARGAMETYPHOON_NAME" : "Ракетомётчик: великое мастерство",
+	"ACHIEVEMENT_MOFFEINROCKETCLEARGAMETYPHOON_DESCRIPTION" : "Играя за Ракетомётчика, пройдите игру или уничтожьтесь на сложности «Тайфун».\n<color=#8888>(Сложность «Тайфун» доступна с модом Starstorm 2)</color>",
 	}
 }
