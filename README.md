@@ -6,6 +6,8 @@
 Original Concept Art by bruh#6900
 [![](https://i.imgur.com/P2GpdDk.png)]()
 
+If you have any feedback/suggestions, open an issue on the Github page, or join the discord at https://discord.gg/pKE3QCEsxG
+
 - Stuff not mentioned in-game:
 	- Rocket Jumping
 		- Maintain momentum by either inputting in the direction of your jump trajectory, or by letting go of the movement keys.
@@ -48,3 +50,11 @@ Drop the dll into \BepInEx\plugins\
 	- Risk of Rain 1
 	- TF2
 	- Dirty Bomb
+	
+## Translation Credits
+
+Chinese: Meteorite1014
+Russian: ILIa3174, hexxedude, marklecard
+French: darkwarrior45
+Brazilian Portuguese: Kauzok
+Ukrainian: Damglador
