@@ -81,8 +81,7 @@ namespace RocketSurvivor.SkillStates.BaseStates
                 pushAwayForce = this.pushForce,
                 hitBoxGroup = hitBoxGroup,
                 isCrit = base.RollCrit(),
-                impactSound = this.impactSound,
-                ignoredHealthComponentList = new List<HealthComponent>()
+                impactSound = this.impactSound
             };
         }
 

@@ -43,6 +43,8 @@ Drop the dll into \BepInEx\plugins\
 - Domi (Animations)
 - swuff (Bankroller)
 - BoxRoss (VR C4 stuff)
+- Mushy Avocado (Mastery Skin) - https://www.artstation.com/mushyavocado
+- FORCED_REASSEMBLY (helped re-rig Mastery Skin along with Domi)
 
 - Sounds taken from:
 	- Reflex Arena

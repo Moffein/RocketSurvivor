@@ -1,9 +1,9 @@
 ManifestFileVersion: 0
-CRC: 3632115835
+CRC: 3782665347
 Hashes:
   AssetFileHash:
     serializedVersion: 2
-    Hash: d49f21c62968f5dea6ee943fc5afbeda
+    Hash: 7a36f9559c95f6a94e098f84375c56af
   TypeTreeHash:
     serializedVersion: 2
     Hash: 7c96043ea960881e6368d4d6a0d67c30
@@ -70,23 +70,29 @@ Assets:
 - Assets/RocketBundle/Animation/RocketGesture.mask
 - Assets/RocketBundle/icons/texSkillSpecial_Scepter.png
 - Assets/RocketBundle/icons/texSkillSpecial.png
+- Assets/RocketBundle/Mesh/MeshRocketDefaultFrag.mesh
 - Assets/RocketBundle/icons/texSkillSecondary.png
 - Assets/RocketBundle/icons/texSkillSpecial_Scepter_mspaint.png
-- Assets/RocketBundle/Materials/MatShovel.mat
+- Assets/RocketBundle/Materials/MatRocketDefaultShovel.mat
 - Assets/RocketBundle/icons/texSkillPrimary_mspaint.png
 - Assets/RocketBundle/animRocketEmote.prefab
 - Assets/RocketBundle/icons/texIconRocket.png
 - Assets/RocketBundle/textures/TexGrenade.png
 - Assets/RocketBundle/textures/TexShovel.png
+- Assets/RocketBundle/Mesh/MeshRocketBombardierBody.mesh
 - Assets/RocketBundle/mdlRocket.prefab
+- Assets/RocketBundle/Materials/MatRocketBombardier.mat
 - Assets/RocketBundle/textures/TexShovelEmissive.png
 - Assets/RocketBundle/Materials/MatRocketProjectile.mat
 - Assets/RocketBundle/icons/texSkillUtility_Conc.png
 - Assets/RocketBundle/Particles/texRing.png
+- Assets/RocketBundle/Mesh/MeshRocketDefaultRocket.mesh
 - Assets/RocketBundle/Animation/animRocket.controller
 - Assets/RocketBundle/RocketDisplay.prefab
+- Assets/RocketBundle/textures/texRocketBombardier_Emission.png
 - Assets/RocketBundle/icons/texRocketSkinDefault.png
 - Assets/RocketBundle/mdlC4.prefab
+- Assets/RocketBundle/Mesh/MeshRocketDefaultFragsAttached.mesh
 - Assets/RocketBundle/SmokeEffect.prefab
 - Assets/RocketBundle/icons/texSkillPrimary_DirectHit.png
 - Assets/RocketBundle/icons/texSkillPrimary_DirectHit_mspaint.png
@@ -94,23 +100,31 @@ Assets:
 - Assets/RocketBundle/icons/texSkillPassive.png
 - Assets/RocketBundle/Animation/animRocketDisplay.controller
 - Assets/RocketBundle/icons/texSkillUtility_Shovel.png
+- Assets/RocketBundle/Mesh/MeshRocketDefaultBody.mesh
 - Assets/RocketBundle/icons/texSkillUtility_C4_mspaint.png
 - Assets/RocketBundle/icons/texSkillPrimary.png
 - Assets/RocketBundle/textures/texC4.png
-- Assets/RocketBundle/Materials/MatBlackBox.mat
+- Assets/RocketBundle/Materials/MatRocketDefaultLauncher.mat
 - Assets/RocketBundle/icons/texSkillUtility_Shovel_mspaint.png
 - Assets/RocketBundle/Materials/MatGrenade.mat
+- Assets/RocketBundle/Mesh/MeshRocketDefaultShovel.mesh
 - Assets/RocketBundle/icons/texSkillSecondary_mspaint.png
+- Assets/RocketBundle/textures/psdRocketBombardier.psd
+- Assets/RocketBundle/textures/texRocketBombardier.png
 - Assets/RocketBundle/icons/texSkillSpecial_mspaint.png
-- Assets/RocketBundle/Materials/MatRocketBackpack.mat
+- Assets/RocketBundle/icons/texRocketSkinMastery.png
+- Assets/RocketBundle/Materials/MatRocketDefaultBackpack.mat
 - Assets/RocketBundle/icons/texSkillUtility_Conc_mspaint.png
+- Assets/RocketBundle/Mesh/MeshRocketBombardierLauncher.mesh
 - Assets/RocketBundle/Materials/matC4.mat
+- Assets/RocketBundle/Mesh/MeshRocketDefaultBackpack.mesh
 - Assets/RocketBundle/Animation/RocketLeftArm.mask
-- Assets/RocketBundle/Materials/MatRocket.mat
+- Assets/RocketBundle/Materials/MatRocketDefaultBody.mat
 - Assets/RocketBundle/textures/TexRocketBackpack.png
 - Assets/RocketBundle/icons/texSkillPassive_mspaint.png
 - Assets/RocketBundle/textures/TexRocketEmissive.png
 - Assets/RocketBundle/Particles/matRing.mat
+- Assets/RocketBundle/Mesh/MeshRocketDefaultLauncher.mesh
 - Assets/RocketBundle/icons/texSkillUtility_C4.png
 - Assets/RocketBundle/textures/TexRocket.png
 - Assets/RocketBundle/textures/TexRocketProjectile.png

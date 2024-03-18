@@ -3,6 +3,7 @@ using RoR2;
 using RoR2.Skills;
 using RocketSurvivor.Components;
 using UnityEngine.Bindings;
+using JetBrains.Annotations;
 
 namespace RocketSurvivor
 {
