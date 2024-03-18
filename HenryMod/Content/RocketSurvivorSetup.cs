@@ -526,8 +526,8 @@ namespace RocketSurvivor.Modules.Survivors
 
             List<GameObject> gameObjectsToActivate = Skins.CreateAllActivatedGameObjectsList(childLocator,
                 "MeshRocketDefault0Backpack",//0
-                "MeshRocketDefault1FragsAttached",//1
-                "MeshRocketDefault42Body");//2
+                "MeshRocketDefault2FragsAttached",//1
+                "MeshRocketDefault4Body");//2
 
             #region DefaultSkin
             SkinDef defaultSkin = Modules.Skins.CreateSkinDef("DEFAULT_SKIN",
