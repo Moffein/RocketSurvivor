@@ -525,9 +525,9 @@ namespace RocketSurvivor.Modules.Survivors
             List<SkinDef> skins = new List<SkinDef>();
 
             List<GameObject> gameObjectsToActivate = Skins.CreateAllActivatedGameObjectsList(childLocator,
-                "MeshRocketDefaultBackpack",//0
-                "MeshRocketDefaultBody",//1
-                "MeshRocketDefaultFragsAttached");//2
+                "MeshRocketDefault0Backpack",//0
+                "MeshRocketDefault1FragsAttached",//1
+                "MeshRocketDefault42Body");//2
 
             #region DefaultSkin
             SkinDef defaultSkin = Modules.Skins.CreateSkinDef("DEFAULT_SKIN",
@@ -536,13 +536,13 @@ namespace RocketSurvivor.Modules.Survivors
                 model);
 
             defaultSkin.meshReplacements = Modules.Skins.getMeshReplacements(defaultRenderers,
-                "MeshRocketDefaultBackpack",
-                "MeshRocketDefaultBody",
-                "MeshRocketDefaultFrag",
-                "MeshRocketDefaultFragsAttached",
-                "MeshRocketDefaultLauncher",
-                "MeshRocketDefaultRocket",
-                "MeshRocketDefaultShovel");
+                "MeshRocketDefault0Backpack",
+                "MeshRocketDefault1Frag",
+                "MeshRocketDefault2FragsAttached",
+                "MeshRocketDefault3Launcher",
+                "MeshRocketDefault4Body",
+                "MeshRocketDefault5Shovel",
+                "MeshRocketDefault6Rocket");
                                                                                               
             defaultSkin.gameObjectActivations = Skins.GetGameObjectActivationsFromList(gameObjectsToActivate, 0, 1, 2); //activate 0, 1, and 2
 
@@ -564,18 +564,18 @@ namespace RocketSurvivor.Modules.Survivors
 
             masterySkin.meshReplacements = Modules.Skins.getMeshReplacements(defaultRenderers,
                 null,//"MeshRocketDefaultBackpack",
-                "MeshRocketBombardierBody",
                 null,//"MeshRocketDefaultFrag",
                 null,//"MeshRocketDefaultFragsAttached",
                 "MeshRocketBombardierLauncher",
-                null,//"MeshRocketDefaultRocket",
-                null//"MeshRocketDefaultShovel"
+                "MeshRocketBombardierBody",
+                null,//"MeshRocketDefaultShovel",
+                null//"MeshRocketDefaultRocket"
                 );
 
-            masterySkin.rendererInfos[1].defaultMaterial = Materials.CreateHopooMaterial("MatRocketBombardier").SetSpecular(0.54f, 5.82f);
+            masterySkin.rendererInfos[3].defaultMaterial = Materials.CreateHopooMaterial("MatRocketBombardier").SetSpecular(0.54f, 5.82f);
             masterySkin.rendererInfos[4].defaultMaterial = Materials.CreateHopooMaterial("MatRocketBombardier");
                                                                                               
-            masterySkin.gameObjectActivations = Skins.GetGameObjectActivationsFromList(gameObjectsToActivate, 1); //only activate 1, deactivate 0 and 2
+            masterySkin.gameObjectActivations = Skins.GetGameObjectActivationsFromList(gameObjectsToActivate, 2); //only activate 2, deactivate 0 and 2
 
             skins.Add(masterySkin);
 
