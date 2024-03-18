@@ -1,0 +1,51 @@
+{
+	strings:
+	{
+	"MOFFEIN_ROCKET_BODY_NAME" : "Ракета",
+	"MOFFEIN_ROCKET_BODY_SUBTITLE" : "Шок і трепет",
+	"MOFFEIN_ROCKET_BODY_LORE" : "Біо: Ракета народився з лендлізом на боєприпаси та джавеліном в руках",
+	"MOFFEIN_ROCKET_BODY_DESCRIPTION" : "Ракета - високомобільний експерт з вибухових речовин, який завдає руйнівної шкоди в області.<style=cSub>\r\n\r\n< ! > Частіше використовуйте вибухові стрибки, щоб швидко переміщатися по карті та уникати небезпеки!\r\n\r\n< ! > Ваша гранатометна установка добре відкидає ворогів. Використовуйте її, щоб збивати ворогів з виступів.\r\n\r\n< ! > Віддалений детонатор корисний для ураження літаючих ворогів, а також може бути використаний для мобільності.\r\n\r\n< ! > C-4 чудово підходить як для ураження площі, так і для мобільності.\r\n\r\n< ! > Швидке переозброєння може бути використане, щоб уникнути довгого перезаряджання вашої ракетниці.",
+	
+	"MOFFEIN_ROCKET_BODY_OUTRO_FLAVOR" : "...і він пішов, знову підлітаючи від вибуху.",
+	"MOFFEIN_ROCKET_BODY_MAIN_ENDING_ESCAPE_FAILURE_FLAVOR" : "...і він був стертий, так і не торкнувшись землі.",
+	
+	"MOFFEIN_ROCKET_BODY_PASSIVE_NAME" : "Вибух!",
+	"MOFFEIN_ROCKET_BODY_PASSIVE_DESCRIPTION" : "Ваші вибухи можуть бути використані для <style=cIsUtility>вибухового стрибку</style>.",
+	
+	"MOFFEIN_ROCKET_BODY_PRIMARY_NAME" : "Ракетна установка HG4",
+	"MOFFEIN_ROCKET_BODY_PRIMARY_DESCRIPTION" : "<style=cIsUtility>Спритність</style>. Стріляє ракетою, що завдає <style=cIsDamage>600% шкоди</style>. Може накопичувати до 4 ракет.",
+	
+	
+	"MOFFEIN_ROCKET_BODY_PRIMARY_ALT_NAME" : "ЗРК HG4",
+	"MOFFEIN_ROCKET_BODY_PRIMARY_ALT_DESCRIPTION" : "<style=cIsUtility>Спритність</style>. Стріляє <style=cIsUtility>самонавідною</style> ракетою з <style=cIsHealth>меншим радіусом вибуху</style>, що завдає <style=cIsDamage>600% шкоди</style>. Може накопичувати до 4 ракет.",
+	
+	"MOFFEIN_ROCKET_BODY_SECONDARY_NAME" : "Віддалений детонатор",
+	"MOFFEIN_ROCKET_BODY_SECONDARY_DESCRIPTION" : "Детонує <style=cIsDamage>всю вибухівку</style>. Детоновані <style=cIsDamage>ракети</style> отримують <style=cIsDamage>50%</style> додаткової <style=cIsDamage>шкоди</style> та <style=cIsDamage>радіусу вибуху</style>.",
+	
+	"MOFFEIN_ROCKET_BODY_UTILITY_NAME" : "C-4",
+	"MOFFEIN_ROCKET_BODY_UTILITY_DESCRIPTION" : "<style=cIsDamage>Приголомшує</style>. Кидає пакет вибухівки. Використовуйте <style=cIsDamage>Віддалений детонатор</style>, щоб здетонувати її та завдати <style=cIsDamage>1200% шкоди</style>.",
+	
+	"MOFFEIN_ROCKET_BODY_UTILITY_ALT_NAME" : "Бомбардувальний біг",
+	"MOFFEIN_ROCKET_BODY_UTILITY_ALT_DESCRIPTION" : "<style=cIsUtility>Важке</style>. <style=cIsDamage>Приголомшує</style>. Замахніться вибуховою лопатою на ворога, щоб завдати <style=cIsDamage>1200% шкоди</style>. Завдає <style=cIsDamage>критичні удари</style> під час <style=cIsUtility>вибухового стрибку</style>.",
+	
+	"MOFFEIN_ROCKET_BODY_SPECIAL_NAME" : "Швидке переозброєння",
+	"MOFFEIN_ROCKET_BODY_SPECIAL_DESCRIPTION" : "Швидко <style=cIsDamage>вистрілює 4 ракети</style> та <style=cIsUtility>перезаряджає вашу зброю</style>.",
+	
+	"MOFFEIN_ROCKET_BODY_SPECIAL_SCEPTER_NAME" : "Ракетний шторм",
+	"MOFFEIN_ROCKET_BODY_SPECIAL_SCEPTER_DESCRIPTION" : "Швидко <style=cIsDamage>вистрілює 10 ракет</style> та <style=cIsUtility>перезаряджає вашу зброю</style>.",
+	
+	"ACHIEVEMENT_MOFFEINROCKETHOMINGUNLOCK_NAME" : "Ракета: Швидкість - це життя",
+	"ACHIEVEMENT_MOFFEINROCKETHOMINGUNLOCK_DESCRIPTION" : "За Ракету, дойдіть і пройдіть крізь Божественний Портал за 25 хвилин, або менше.",
+	
+	"ACHIEVEMENT_MOFFEINROCKETMARKETGARDENUNLOCK_NAME" : "Ракета: Стрибунець",
+	"ACHIEVEMENT_MOFFEINROCKETMARKETGARDENUNLOCK_DESCRIPTION" : "За Ракету, зробіть 10 вибухових стрибків підряд не торкаючись землі.",
+
+	"MOFFEIN_ROCKET_BODY_MASTERY_SKIN_NAME" : "Бомбардир",
+	"ACHIEVEMENT_MOFFEINROCKETCLEARGAMEMONSOON_NAME" : "Ракета: Майстерність",
+	"ACHIEVEMENT_MOFFEINROCKETCLEARGAMEMONSOON_DESCRIPTION" : "За Ракету, пройдіть гру або зітріть себе на складності Мусон.",
+	
+	"MOFFEIN_ROCKET_BODY_GRANDMASTERY_SKIN_NAME" : "Рейнджер",
+	"ACHIEVEMENT_MOFFEINROCKETCLEARGAMETYPHOON_NAME" : "Ракета: Велична майстерність",
+	"ACHIEVEMENT_MOFFEINROCKETCLEARGAMETYPHOON_DESCRIPTION" : "За Ракету, пройдіть гру або зітріть себе на складності Тайфун або Затемненні.\n<color=#8888>(Складність Тайфун потребує Starstorm 2)</color>",
+	}
+}

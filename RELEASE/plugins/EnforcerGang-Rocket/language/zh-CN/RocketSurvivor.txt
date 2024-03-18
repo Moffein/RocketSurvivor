@@ -1,0 +1,51 @@
+{
+	strings:
+	{
+	"MOFFEIN_ROCKET_BODY_NAME" : "火箭手",
+	"MOFFEIN_ROCKET_BODY_SUBTITLE" : "震撼与敬畏",
+	"MOFFEIN_ROCKET_BODY_LORE" : "简介：火箭手生来便有一种特殊的力量...",
+	"MOFFEIN_ROCKET_BODY_DESCRIPTION" : "火箭手是一位高机动的爆破专家，可以造成毁灭性的区域打击。<style=cSub>\r\n\r\n< ! >爆炸跳经常用于快速的横跨地图或逃离危险！\r\n\r\n< ! >你的火箭发射器对敌人有很强的冲击力，用这个把他们从岩架上敲下来。\r\n\r\n< ! >遥控引爆器对打击飞行中的敌人很有用，也可以用来辅助机动。\r\n\r\n< ! >硝基炸药在范围伤害与辅助机动方面均表现不俗。\r\n\r\n< ! >快速重装可用于跳过你那火箭发射器漫长的装弹时间。",
+	
+	"MOFFEIN_ROCKET_BODY_OUTRO_FLAVOR" : "...于是他离开了，再次弹射起飞。",
+	"MOFFEIN_ROCKET_BODY_MAIN_ENDING_ESCAPE_FAILURE_FLAVOR" : "...于是他消失了，不再触碰地面。",
+	
+	"MOFFEIN_ROCKET_BODY_PASSIVE_NAME" : "发射！<color=#8888>(走你！)</color>",
+	"MOFFEIN_ROCKET_BODY_PASSIVE_DESCRIPTION" : "你的爆炸物可以用于<style=cIsUtility>爆炸跳</style>。",
+	
+	"MOFFEIN_ROCKET_BODY_PRIMARY_NAME" : "HG4火箭发射器",
+	"MOFFEIN_ROCKET_BODY_PRIMARY_DESCRIPTION" : "<style=cIsUtility>灵巧</style>. 发射一枚火箭弹，造成<style=cIsDamage>600%伤害</style>。最多可持有4枚。",
+	
+	
+	"MOFFEIN_ROCKET_BODY_PRIMARY_ALT_NAME" : "HG4地空导弹发射器",
+	"MOFFEIN_ROCKET_BODY_PRIMARY_ALT_DESCRIPTION" : "<style=cIsUtility>灵巧</style>。发射一枚<style=cIsUtility>热追踪</style>导弹，造成<style=cIsDamage>600%伤害</style>的<style=cIsHealth>较小范围爆炸</style>。最多可持有4枚。",
+	
+	"MOFFEIN_ROCKET_BODY_SECONDARY_NAME" : "遥控引爆器",
+	"MOFFEIN_ROCKET_BODY_SECONDARY_DESCRIPTION" : "引爆<style=cIsDamage>所有爆炸物</style>。被引爆的<style=cIsDamage>飞弹</style>获得额外<style=cIsDamage>50%</style>的<style=cIsDamage>伤害</style>与<style=cIsDamage>爆炸半径</style>提升。\n<color=#8888>(译者注：等效于1.5x)</color>",
+	
+	"MOFFEIN_ROCKET_BODY_UTILITY_NAME" : "硝基炸药",
+	"MOFFEIN_ROCKET_BODY_UTILITY_DESCRIPTION" : "<style=cIsDamage>眩晕</style>。扔出一个炸药包。使用<style=cIsDamage>遥控引爆器</style>进行引爆并造成<style=cIsDamage>1200%伤害</style>。",
+	
+	"MOFFEIN_ROCKET_BODY_UTILITY_ALT_NAME" : "轰炸行动<color=#8888>(舞铲阶级)</color>",
+	"MOFFEIN_ROCKET_BODY_UTILITY_ALT_DESCRIPTION" : "<style=cIsUtility>重型</style>。<style=cIsDamage>眩晕</style>。将爆破铲挥向一名敌人，造成<style=cIsDamage>1200%伤害</style>。若触发<style=cIsUtility>爆炸跳</style>则造成<style=cIsDamage>暴击</style>。",
+	
+	"MOFFEIN_ROCKET_BODY_SPECIAL_NAME" : "快速重装",
+	"MOFFEIN_ROCKET_BODY_SPECIAL_DESCRIPTION" : "立即<style=cIsDamage>发射4枚火箭弹</style>, 随后<style=cIsUtility>重装填你的武器</style>.",
+	
+	"MOFFEIN_ROCKET_BODY_SPECIAL_SCEPTER_NAME" : "火箭风暴",
+	"MOFFEIN_ROCKET_BODY_SPECIAL_SCEPTER_DESCRIPTION" : "立即<style=cIsDamage>发射10枚火箭弹</style>, 随后<style=cIsUtility>重装填你的武器</style>.",
+	
+	"ACHIEVEMENT_MOFFEINROCKETHOMINGUNLOCK_NAME" : "火箭手：速度就是生命",
+	"ACHIEVEMENT_MOFFEINROCKETHOMINGUNLOCK_DESCRIPTION" : "作为火箭手，在25分钟或更短的时间内到达并穿过天界传送门。",
+	
+	"ACHIEVEMENT_MOFFEINROCKETMARKETGARDENUNLOCK_NAME" : "火箭手：弹簧跳<color=#8888>(阶梯计划)</color>",
+	"ACHIEVEMENT_MOFFEINROCKETMARKETGARDENUNLOCK_DESCRIPTION" : "作为火箭手，在不触地的前提下连续爆炸跳10次。",
+
+	"MOFFEIN_ROCKET_BODY_MASTERY_SKIN_NAME" : "庞巴迪",
+	"ACHIEVEMENT_MOFFEINROCKETCLEARGAMEMONSOON_NAME" : "火箭手：精通",
+	"ACHIEVEMENT_MOFFEINROCKETCLEARGAMEMONSOON_DESCRIPTION" : "作为火箭手，在季风难度下通关游戏或抹除自己。",
+	
+	"MOFFEIN_ROCKET_BODY_GRANDMASTERY_SKIN_NAME" : "游骑兵",
+	"ACHIEVEMENT_MOFFEINROCKETCLEARGAMETYPHOON_NAME" : "火箭手：大师精通",
+	"ACHIEVEMENT_MOFFEINROCKETCLEARGAMETYPHOON_DESCRIPTION" : "作为火箭手，在台风难度或日食模式下通关游戏或抹除自己。\n<color=#8888>(台风难度需要模组Starstorm 2)</color>",
+	}
+}

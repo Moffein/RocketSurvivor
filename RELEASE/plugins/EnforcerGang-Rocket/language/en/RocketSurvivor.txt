@@ -1,0 +1,51 @@
+{
+	strings:
+	{
+	"MOFFEIN_ROCKET_BODY_NAME" : "Rocket",
+	"MOFFEIN_ROCKET_BODY_SUBTITLE" : "Shock and Awe",
+	"MOFFEIN_ROCKET_BODY_LORE" : "bio: rocket was born with a special power",
+	"MOFFEIN_ROCKET_BODY_DESCRIPTION" : "The Rocket is a highly mobile explosives expert who deals devastating area damage.<style=cSub>\r\n\r\n< ! > Blast jump often to traverse the map quickly and escape danger!\r\n\r\n< ! > Your Rocket Launcher has high knockback against enemies. Use this to knock them off of ledges.\r\n\r\n< ! > Remote Detonator is useful for hitting flying enemies, and can also be used for mobility.\r\n\r\n< ! > Nitro Charge is great for both area damage and mobility.\r\n\r\n< ! > Rapid Rearm can be used to skip your rocket launcher's lengthy reload time.",
+	
+	"MOFFEIN_ROCKET_BODY_OUTRO_FLAVOR" : "..and so he left, blasting off again.",
+	"MOFFEIN_ROCKET_BODY_MAIN_ENDING_ESCAPE_FAILURE_FLAVOR" : "..and so he vanished, never to touch the ground again.",
+	
+	"MOFFEIN_ROCKET_BODY_PASSIVE_NAME" : "Blastoff",
+	"MOFFEIN_ROCKET_BODY_PASSIVE_DESCRIPTION" : "Your explosives can be used to <style=cIsUtility>blast jump</style>.",
+	
+	"MOFFEIN_ROCKET_BODY_PRIMARY_NAME" : "HG4 Rocket Launcher",
+	"MOFFEIN_ROCKET_BODY_PRIMARY_DESCRIPTION" : "<style=cIsUtility>Agile</style>. Fire a rocket for <style=cIsDamage>600% damage</style>. Can hold up to 4.",
+	
+	
+	"MOFFEIN_ROCKET_BODY_PRIMARY_ALT_NAME" : "HG4 SAM Launcher",
+	"MOFFEIN_ROCKET_BODY_PRIMARY_ALT_DESCRIPTION" : "<style=cIsUtility>Agile</style>. Fire a <style=cIsUtility>heat-seeking</style> missile with a <style=cIsHealth>smaller blast radius</style> that deals <style=cIsDamage>600% damage</style>. Can hold up to 4.",
+	
+	"MOFFEIN_ROCKET_BODY_SECONDARY_NAME" : "Remote Detonator",
+	"MOFFEIN_ROCKET_BODY_SECONDARY_DESCRIPTION" : "Detonate <style=cIsDamage>all explosives</style>. Detonated <style=cIsDamage>rockets</style> gain <style=cIsDamage>50%</style> extra <style=cIsDamage>damage</style> and <style=cIsDamage>blast radius</style>.",
+	
+	"MOFFEIN_ROCKET_BODY_UTILITY_NAME" : "Nitro Charge",
+	"MOFFEIN_ROCKET_BODY_UTILITY_DESCRIPTION" : "<style=cIsDamage>Stunning</style>. Place an explosive charge. Use <style=cIsDamage>Remote Detonator</style> to detonate it for <style=cIsDamage>1200% damage</style>.",
+	
+	"MOFFEIN_ROCKET_BODY_UTILITY_ALT_NAME" : "Bombing Run",
+	"MOFFEIN_ROCKET_BODY_UTILITY_ALT_DESCRIPTION" : "<style=cIsUtility>Heavy</style>. <style=cIsDamage>Stunning</style>. Swing your explosive shovel at an enemy for <style=cIsDamage>1200% damage</style>. Deals <style=cIsDamage>Critical Strikes</style> while <style=cIsUtility>blast jumping</style>.",
+	
+	"MOFFEIN_ROCKET_BODY_SPECIAL_NAME" : "Rapid Rearm",
+	"MOFFEIN_ROCKET_BODY_SPECIAL_DESCRIPTION" : "Rapidly <style=cIsDamage>fire 4 rockets</style>, then <style=cIsUtility>reload your weapon</style>.",
+	
+	"MOFFEIN_ROCKET_BODY_SPECIAL_SCEPTER_NAME" : "Rocketstorm",
+	"MOFFEIN_ROCKET_BODY_SPECIAL_SCEPTER_DESCRIPTION" : "Rapidly <style=cIsDamage>fire 10 rockets</style>, then <style=cIsUtility>reload your weapon</style>.",
+	
+	"ACHIEVEMENT_MOFFEINROCKETHOMINGUNLOCK_NAME" : "Rocket: Speed is Life",
+	"ACHIEVEMENT_MOFFEINROCKETHOMINGUNLOCK_DESCRIPTION" : "As Rocket, reach and proceed through the Celestial Portal in 25 minutes or less.",
+	
+	"ACHIEVEMENT_MOFFEINROCKETMARKETGARDENUNLOCK_NAME" : "Rocket: Pogo",
+	"ACHIEVEMENT_MOFFEINROCKETMARKETGARDENUNLOCK_DESCRIPTION" : "As Rocket, blast jump 10 times in a row without touching the ground.",
+
+	"MOFFEIN_ROCKET_BODY_MASTERY_SKIN_NAME" : "Bombardier",
+	"ACHIEVEMENT_MOFFEINROCKETCLEARGAMEMONSOON_NAME" : "Rocket: Mastery",
+	"ACHIEVEMENT_MOFFEINROCKETCLEARGAMEMONSOON_DESCRIPTION" : "As Rocket, beat the game or obliterate on Monsoon.",
+	
+	"MOFFEIN_ROCKET_BODY_GRANDMASTERY_SKIN_NAME" : "Ranger",
+	"ACHIEVEMENT_MOFFEINROCKETCLEARGAMETYPHOON_NAME" : "Rocket: Grand Mastery",
+	"ACHIEVEMENT_MOFFEINROCKETCLEARGAMETYPHOON_DESCRIPTION" : "As Rocket, beat the game or obliterate on Typhoon or Eclipse.\n<color=#8888>(Typhoon difficulty requires Starstorm 2)</color>",
+	}
+}
