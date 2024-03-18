@@ -2,18 +2,14 @@
 using RoR2;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 
 namespace RocketSurvivor.Modules
 {
     internal static class Skins
     {
-        internal static SkinDef CreateSkinDef(string skinName, Sprite skinIcon, CharacterModel.RendererInfo[] rendererInfos, SkinnedMeshRenderer mainRenderer, GameObject root)
-        {
-            return CreateSkinDef(skinName, skinIcon, rendererInfos, mainRenderer, root, null);
-        }
-
-        internal static SkinDef CreateSkinDef(string skinName, Sprite skinIcon, CharacterModel.RendererInfo[] rendererInfos, SkinnedMeshRenderer mainRenderer, GameObject root, UnlockableDef unlockableDef)
+        internal static SkinDef CreateSkinDef(string skinName, Sprite skinIcon, CharacterModel.RendererInfo[] defaultRendererInfos, GameObject root, UnlockableDef unlockableDef = null)
         {
             SkinDefInfo skinDefInfo = new SkinDefInfo
             {
@@ -25,7 +21,7 @@ namespace RocketSurvivor.Modules
                 Name = skinName,
                 NameToken = skinName,
                 ProjectileGhostReplacements = new SkinDef.ProjectileGhostReplacement[0],
-                RendererInfos = rendererInfos,
+                RendererInfos = new CharacterModel.RendererInfo[defaultRendererInfos.Length],
                 RootObject = root,
                 UnlockableDef = unlockableDef
             };
@@ -37,6 +33,7 @@ namespace RocketSurvivor.Modules
             skinDef.icon = skinDefInfo.Icon;
             skinDef.unlockableDef = skinDefInfo.UnlockableDef;
             skinDef.rootObject = skinDefInfo.RootObject;
+            defaultRendererInfos.CopyTo(skinDefInfo.RendererInfos, 0);
             skinDef.rendererInfos = skinDefInfo.RendererInfos;
             skinDef.gameObjectActivations = skinDefInfo.GameObjectActivations;
             skinDef.meshReplacements = skinDefInfo.MeshReplacements;
@@ -119,6 +116,37 @@ namespace RocketSurvivor.Modules
             }
 
             return meshReplacements.ToArray();
+        }
+
+
+        /// <summary>
+        /// Plug in the names of all the GameObjects that are going to be activated/deactivated in any of your skins, and store this in a variable
+        /// </summary>
+        /// <returns>An ordered list of gameobjects to activate/deactivate</returns>
+        internal static List<GameObject> CreateAllActivatedGameObjectsList(ChildLocator childLocator, params string[] allChildren) {
+            List<GameObject> allObjects = new List<GameObject>();
+
+            for (int i = 0; i < allChildren.Length; i++) {
+                allObjects.Add(childLocator.FindChildGameObject(allChildren[i]));
+            }
+            return allObjects;
+        }
+
+        /// <summary>
+        /// Using the ActivatedGameObjects list, pass in the index of each gameobject to activate. Objects not passed in will deactivate.
+        /// </summary>
+        internal static SkinDef.GameObjectActivation[] GetGameObjectActivationsFromList(List<GameObject> allObjects, params int[] activatedChildren) {
+
+            SkinDef.GameObjectActivation[] gameObjectActivations = new SkinDef.GameObjectActivation[allObjects.Count];
+
+            for (int i = 0; i < allObjects.Count; i++) {
+                gameObjectActivations[i] = new SkinDef.GameObjectActivation {
+                    gameObject = allObjects[i],
+                    shouldActivate = activatedChildren.Contains(i),
+                };
+            }
+
+            return gameObjectActivations;
         }
     }
 }

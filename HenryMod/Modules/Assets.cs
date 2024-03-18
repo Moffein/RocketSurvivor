@@ -136,7 +136,7 @@ namespace RocketSurvivor.Modules
 
             foreach (Renderer i in objectToConvert.GetComponentsInChildren<Renderer>())
             {
-                i?.material?.SetHopooMaterial();
+                i?.sharedMaterial?.SetHopooMaterial();
             }
         }
 
@@ -149,7 +149,7 @@ namespace RocketSurvivor.Modules
             {
                 rendererInfos[i] = new CharacterModel.RendererInfo
                 {
-                    defaultMaterial = meshes[i].material,
+                    defaultMaterial = meshes[i].sharedMaterial,
                     renderer = meshes[i],
                     defaultShadowCastingMode = UnityEngine.Rendering.ShadowCastingMode.On,
                     ignoreOverlays = false

@@ -58,22 +58,6 @@ namespace RocketSurvivor.Modules.Survivors
 
         //taken care of by characterbody on prefab
         public override CustomRendererInfo[] customRendererInfos { get; set; } 
-        //    = new CustomRendererInfo[] 
-        //{
-        //        new CustomRendererInfo
-        //        {
-        //            childName = "SwordModel",
-        //            material = Materials.CreateHopooMaterial("matHenry"),
-        //        },
-        //        new CustomRendererInfo
-        //        {
-        //            childName = "GunModel",
-        //        },
-        //        new CustomRendererInfo
-        //        {
-        //            childName = "Model",
-        //        }
-        //};
 
         public override UnlockableDef characterUnlockableDef => null;
 
@@ -83,8 +67,6 @@ namespace RocketSurvivor.Modules.Survivors
 
                                                                           //if you have more than one character, easily create a config to enable/disable them like this
         public override ConfigEntry<bool> characterEnabledConfig => null; //Modules.Config.CharacterEnableConfig(bodyName);
-
-        private static UnlockableDef masterySkinUnlockableDef;
 
         //Doesnt use secondary since it has no clue how to use it well.
         public override void InitializeDoppelganger(string clone)
@@ -538,78 +520,65 @@ namespace RocketSurvivor.Modules.Survivors
             ModelSkinController skinController = model.AddComponent<ModelSkinController>();
             ChildLocator childLocator = model.GetComponent<ChildLocator>();
 
-            SkinnedMeshRenderer mainRenderer = characterModel.mainSkinnedMeshRenderer;
-
             CharacterModel.RendererInfo[] defaultRenderers = characterModel.baseRendererInfos;
 
             List<SkinDef> skins = new List<SkinDef>();
+
+            List<GameObject> gameObjectsToActivate = Skins.CreateAllActivatedGameObjectsList(childLocator,
+                "MeshRocketDefaultBackpack",//0
+                "MeshRocketDefaultBody",//1
+                "MeshRocketDefaultFragsAttached");//2
 
             #region DefaultSkin
             SkinDef defaultSkin = Modules.Skins.CreateSkinDef("DEFAULT_SKIN",
                 Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texRocketSkinDefault"),
                 defaultRenderers,
-                mainRenderer,
                 model);
 
-            defaultSkin.meshReplacements = new SkinDef.MeshReplacement[]
-            {
-                //place your mesh replacements here
-                //unnecessary if you don't have multiple skins
-                //new SkinDef.MeshReplacement
-                //{
-                //    mesh = Modules.Assets.mainAssetBundle.LoadAsset<Mesh>("meshHenrySword"),
-                //    renderer = defaultRenderers[0].renderer
-                //},
-                //new SkinDef.MeshReplacement
-                //{
-                //    mesh = Modules.Assets.mainAssetBundle.LoadAsset<Mesh>("meshHenryGun"),
-                //    renderer = defaultRenderers[1].renderer
-                //},
-                //new SkinDef.MeshReplacement
-                //{
-                //    mesh = Modules.Assets.mainAssetBundle.LoadAsset<Mesh>("meshHenry"),
-                //    renderer = defaultRenderers[2].renderer
-                //}
-            };
+            defaultSkin.meshReplacements = Modules.Skins.getMeshReplacements(defaultRenderers,
+                "MeshRocketDefaultBackpack",
+                "MeshRocketDefaultBody",
+                "MeshRocketDefaultFrag",
+                "MeshRocketDefaultFragsAttached",
+                "MeshRocketDefaultLauncher",
+                "MeshRocketDefaultRocket",
+                "MeshRocketDefaultShovel");
+                                                                                              
+            defaultSkin.gameObjectActivations = Skins.GetGameObjectActivationsFromList(gameObjectsToActivate, 0, 1, 2); //activate 0, 1, and 2
 
             skins.Add(defaultSkin);
             #endregion
-
-            //uncomment this when you have a mastery skin
+            
             #region MasterySkin
-            /*
-            Material masteryMat = Modules.Materials.CreateHopooMaterial("matHenryAlt");
-            CharacterModel.RendererInfo[] masteryRendererInfos = SkinRendererInfos(defaultRenderers, new Material[]
-            {
-                masteryMat,
-                masteryMat,
-                masteryMat,
-                masteryMat
-            });
+            UnlockableDef masteryUnlockable = ScriptableObject.CreateInstance<UnlockableDef>();
+            masteryUnlockable.cachedName = Achievements.Mastery.unlockableIdentifier;
+            masteryUnlockable.nameToken = LanguageTokens.GetAchievementNameToken(Achievements.Mastery.identifier);
+            masteryUnlockable.achievementIcon = Assets.mainAssetBundle.LoadAsset<Sprite>("texRocketSkinMastery");
+            Modules.ContentPacks.unlockableDefs.Add(masteryUnlockable);
 
-            SkinDef masterySkin = Modules.Skins.CreateSkinDef(HenryPlugin.DEVELOPER_PREFIX + "_HENRY_BODY_MASTERY_SKIN_NAME",
-                Assets.mainAssetBundle.LoadAsset<Sprite>("texMasteryAchievement"),
-                masteryRendererInfos,
-                mainRenderer,
+            SkinDef masterySkin = Modules.Skins.CreateSkinDef(Rocket_Prefix + "MASTERY_SKIN_NAME",
+                Assets.mainAssetBundle.LoadAsset<Sprite>("texRocketSkinMastery"),
+                defaultRenderers,
                 model,
-                masterySkinUnlockableDef);
+                masteryUnlockable);
 
-            masterySkin.meshReplacements = new SkinDef.MeshReplacement[]
-            {
-                new SkinDef.MeshReplacement
-                {
-                    mesh = Modules.Assets.mainAssetBundle.LoadAsset<Mesh>("meshHenrySwordAlt"),
-                    renderer = defaultRenderers[0].renderer
-                },
-                new SkinDef.MeshReplacement
-                {
-                    mesh = Modules.Assets.mainAssetBundle.LoadAsset<Mesh>("meshHenryAlt"),
-                    renderer = defaultRenderers[2].renderer
-                }
-            };
+            masterySkin.meshReplacements = Modules.Skins.getMeshReplacements(defaultRenderers,
+                null,//"MeshRocketDefaultBackpack",
+                "MeshRocketBombardierBody",
+                null,//"MeshRocketDefaultFrag",
+                null,//"MeshRocketDefaultFragsAttached",
+                "MeshRocketBombardierLauncher",
+                null,//"MeshRocketDefaultRocket",
+                null//"MeshRocketDefaultShovel"
+                );
+
+            masterySkin.rendererInfos[1].defaultMaterial = Materials.CreateHopooMaterial("MatRocketBombardier").SetSpecular(0.54f, 5.82f);
+            masterySkin.rendererInfos[4].defaultMaterial = Materials.CreateHopooMaterial("MatRocketBombardier");
+                                                                                              
+            masterySkin.gameObjectActivations = Skins.GetGameObjectActivationsFromList(gameObjectsToActivate, 1); //only activate 1, deactivate 0 and 2
 
             skins.Add(masterySkin);
-            */
+
             #endregion
 
             skinController.skins = skins.ToArray();

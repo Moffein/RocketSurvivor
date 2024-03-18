@@ -96,7 +96,37 @@ ModelImporter:
   - first:
       74: 201211410429333860
     second: Armature|idleIn
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: BlackBoxMaterial
+    second: {fileID: 2100000, guid: 235818799f501ba4582d113e918e19fa, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: GrenadeMaterial
+    second: {fileID: 2100000, guid: aef9db6a4ccc04d419af791984441dc2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: RocketBackpackMaterial
+    second: {fileID: 2100000, guid: aad992abb1abf1b43b94b285791644f2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: RocketMaterial
+    second: {fileID: 2100000, guid: 28e07b0d3c5cd3347ae7adc257378e74, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: RocketProjectileMaterial
+    second: {fileID: 2100000, guid: 01ae8b94c2a3afc4c95c120136fc1e13, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: RocketShovelMaterial
+    second: {fileID: 2100000, guid: 86e13bf10285f324da70d6328c4ef47d, type: 2}
   materials:
     materialImportMode: 1
     materialName: 0

@@ -2,11 +2,14 @@
 using RoR2.Achievements;
 using UnityEngine;
 
-namespace RocketSurvivor.Modules.Achievements
+namespace RocketSurvivor.Modules.Achievements 
 {
-    [RegisterAchievement("MoffeinRocketClearGameMonsoon", "Skins.MoffeinRocketSurvivor.Mastery", null, null)]
+    [RegisterAchievement(identifier, unlockableIdentifier, null, null)]
     public class Mastery : BasePerSurvivorClearGameMonsoonAchievement
     {
+        public const string identifier = "MoffeinRocketClearGameMonsoon";
+        public const string unlockableIdentifier = "Skins.MoffeinRocketSurvivor.Mastery";
+
         public override BodyIndex LookUpRequiredBodyIndex()
         {
             return BodyCatalog.FindBodyIndex("RocketSurvivorBody");

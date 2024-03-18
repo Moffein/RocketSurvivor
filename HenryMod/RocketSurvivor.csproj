@@ -13,16 +13,8 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Modules\Achievements\Mastery.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Remove="HenryBank.bnk" />
     <None Remove="Modules\Characters\Henry.cs~RF6221a098.TMP" />
-  </ItemGroup>
-
-  <ItemGroup>
-    <None Include="Modules\Achievements\Mastery.cs" />
   </ItemGroup>
 
 	<ItemGroup>
@@ -373,6 +365,6 @@
   </ItemGroup>
 
   <Target Name="PostBuild" AfterTargets="PostBuildEvent">
-    <Exec Command="if &quot;$(Username)&quot; == &quot;Erikbir&quot; copy &quot;$(TargetPath)&quot; &quot;E:\r2Profiles\Blinx Returns\BepInEx\plugins\EnforcerGang-Rocket\EnforcerGang-Rocket&quot;" />
+    <Exec Command="if &quot;$(Username)&quot; == &quot;Erikbir&quot; copy &quot;$(TargetPath)&quot; &quot;E:\r2Profiles\Blinx Returns\BepInEx\plugins\EnforcerGang-Rocket\EnforcerGang-Rocket&quot;&#xD;&#xA;if &quot;$(Username)&quot; == &quot;Erikbir&quot; copy &quot;$(ProjectDir)..\RocketSurvivorUnityProject\AssetBundles\rocketassetbundle&quot; &quot;E:\r2Profiles\Blinx Returns\BepInEx\plugins\EnforcerGang-Rocket\EnforcerGang-Rocket\AssetBundles&quot;" />
   </Target>
 </Project>

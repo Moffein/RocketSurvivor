@@ -38,5 +38,12 @@ namespace RocketSurvivor.Modules
             }
             orig(self, newFolders);
         }
+
+        public static string GetAchievementNameToken(string identifier) {
+            return $"ACHIEVEMENT_{identifier.ToUpperInvariant()}_NAME";
+        }
+        public static string GetAchievementDescriptionToken(string identifier) {
+            return $"ACHIEVEMENT_{identifier.ToUpperInvariant()}_DESCRIPTION";
+        }
     }
 }
