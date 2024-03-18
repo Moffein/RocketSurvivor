@@ -1,3 +1,6 @@
+`1.0.1`
+- fixed renderer change that broke custom skins oops
+
 `1.0.0`
 
 - Added Mastery Skin
