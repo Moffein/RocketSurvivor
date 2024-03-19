@@ -1402,8 +1402,12 @@ namespace RocketSurvivor.Modules.Characters
                             childName = "upper_arm.R",
                             localPos = new Vector3(0F, 0F, 0F),
                             localAngles = new Vector3(0F, 0F, 0F),
-                            localScale = new Vector3(-1F, 1F, 1F),
+                            localScale = new Vector3(1.106686f, 1.106686f, 1.106686f),
                             limbMask = LimbFlags.None
+                        },
+                        new ItemDisplayRule {
+                            ruleType = ItemDisplayRuleType.LimbMask,
+                            limbMask = LimbFlags.RightArm
                         }
                     }
                 }
@@ -2107,10 +2111,9 @@ namespace RocketSurvivor.Modules.Characters
                             childName = "head",
                             localPos = new Vector3(0.00691F, 0.10782F, -0.00923F),
                             localAngles = new Vector3(0F, 0F, 0F),
-                            localScale = new Vector3(0.8F, 0.8F, 0.8F),
+                            localScale = new Vector3(0.8936167f, 0.8936167f, 0.8936167f),
                             limbMask = LimbFlags.None
                         },
-
                         new ItemDisplayRule
                         {
                             ruleType = ItemDisplayRuleType.ParentedPrefab,
@@ -2120,6 +2123,10 @@ namespace RocketSurvivor.Modules.Characters
                             localAngles = new Vector3(0F, 179F, 0F),
                             localScale = new Vector3(1.3F, 1.3F, 1.3F),
                             limbMask = LimbFlags.None
+                        },
+                        new ItemDisplayRule {
+                            ruleType = ItemDisplayRuleType.LimbMask,
+                            limbMask = LimbFlags.Head
                         }
                     }
                 }

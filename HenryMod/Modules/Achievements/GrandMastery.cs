@@ -2,7 +2,7 @@
 
 namespace RocketSurvivor.Modules.Achievements 
 {
-    [RegisterAchievement(identifier, unlockableIdentifier, null, null)]
+    //[RegisterAchievement(identifier, unlockableIdentifier, null, null)]
     public class GrandMastery : BaseMasteryAchievement 
     {
         public const string identifier = "MoffeinRocketClearGameTyphoon";

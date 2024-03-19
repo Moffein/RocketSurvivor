@@ -1,3 +1,9 @@
+`1.0.2`
+- fixed emote rig
+- fixed some log spam relating to achievements
+- fixed launcher being see through
+- added limb removal for item displays
+
 `1.0.1`
 - fixed renderer change that broke custom skins oops
 
