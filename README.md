@@ -56,7 +56,7 @@ Drop the dll into \BepInEx\plugins\
 ## Translation Credits
 
 Chinese: Meteorite1014
-Russian: ILIa3174, hexxedude, marklecard
+Russian: ILIa3174, hexxedude, Lecarde
 French: darkwarrior45
 Brazilian Portuguese: Kauzok
 Ukrainian: Damglador

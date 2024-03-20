@@ -1,0 +1,50 @@
+{
+	strings:
+	{
+	"MOFFEIN_ROCKET_BODY_NAME" : "ロケット",
+	"MOFFEIN_ROCKET_BODY_SUBTITLE" : "驚愕と畏怖",
+	"MOFFEIN_ROCKET_BODY_LORE" : "略歴: ロケットは特別な力を持って生まれた",
+	"MOFFEIN_ROCKET_BODY_DESCRIPTION" : "ロケットは広範囲に壊滅的なダメージを与えられる機動力の高い爆発物専門家だ。<style=cSub>\r\n\r\n< ! > 頻繁にブラストジャンプを行うことで素早くマップを駆け抜けて難を逃れよう!\r\n\r\n< ! >  RocketL auncher は敵に対して強力なノックバックを与える。高台から敵を突き落とす事にも利用できる。\r\n\r\n< ! > Remote Detonator は飛行している敵へ命中させるのに役立ち、また、移動にも活用可能である。\r\n\r\n< ! > Nitro Charge は広範囲へのダメージと機動力の双方に優れている。\r\n\r\n< ! > Rapid Rearm は Rocket Launcher の長い装填時間を短縮するのに効果的だ。",
+	
+	"MOFFEIN_ROCKET_BODY_OUTRO_FLAVOR" : "..そして彼は立ち去った、再び爆音を轟かせながら。",
+	"MOFFEIN_ROCKET_BODY_MAIN_ENDING_ESCAPE_FAILURE_FLAVOR" : "..そして彼は消え失せた、地面に二度と足をつけることもないままに。",
+	
+	"MOFFEIN_ROCKET_BODY_PASSIVE_NAME" : "Blastoff",
+	"MOFFEIN_ROCKET_BODY_PASSIVE_DESCRIPTION" : "爆発物を利用した <style=cIsUtility>ブラストジャンプ</style> ができる。",
+	
+	"MOFFEIN_ROCKET_BODY_PRIMARY_NAME" : "HG4 Rocket Launcher",
+	"MOFFEIN_ROCKET_BODY_PRIMARY_DESCRIPTION" : "<style=cIsUtility>敏捷</style>。<style=cIsDamage>600% ダメージ</style> を与えるロケット弾を発射する。４発まで発射することができる。",
+	
+	"MOFFEIN_ROCKET_BODY_PRIMARY_ALT_NAME" : "HG4 SAM Launcher",
+	"MOFFEIN_ROCKET_BODY_PRIMARY_ALT_DESCRIPTION" : "<style=cIsUtility>敏捷</style>。 <style=cIsDamage>600% ダメージ</style>を与える <style=cIsHealth>小爆発範囲</style> の <style=cIsUtility>熱線追尾式</style> ミサイルを発射する。４発まで発射することができる。",
+	
+	"MOFFEIN_ROCKET_BODY_SECONDARY_NAME" : "Remote Detonator",
+	"MOFFEIN_ROCKET_BODY_SECONDARY_DESCRIPTION" : "<style=cIsDamage>全爆発物</style> を爆発させる。爆発した <style=cIsDamage>ロケット弾</style> は <style=cIsDamage>ダメージ</style> と <style=cIsDamage>爆発半径</style> を <style=cIsDamage>50%</style> 増加させる。",
+	
+	"MOFFEIN_ROCKET_BODY_UTILITY_NAME" : "Nitro Charge",
+	"MOFFEIN_ROCKET_BODY_UTILITY_DESCRIPTION" : "<style=cIsDamage>失神</style>。爆発物を仕掛ける。 <style=cIsDamage>Remote Detonator</style> を使って起爆させ <style=cIsDamage>1200% ダメージ</style> を与える。",
+	
+	"MOFFEIN_ROCKET_BODY_UTILITY_ALT_NAME" : "Bombing Run",
+	"MOFFEIN_ROCKET_BODY_UTILITY_ALT_DESCRIPTION" : "<style=cIsUtility>重量</style>。<style=cIsDamage>失神</style>。爆発するシャベルを敵めがけて振り回し <style=cIsDamage>1200% ダメージ</style> を与える。 <style=cIsUtility>ブラストジャンプ</style> 使用中は <style=cIsDamage>クリティカル ストライク</style> が発生する。",
+	
+	"MOFFEIN_ROCKET_BODY_SPECIAL_NAME" : "Rapid Rearm",
+	"MOFFEIN_ROCKET_BODY_SPECIAL_DESCRIPTION" : "高速で <style=cIsDamage>ロケット弾を4発</style> 発射し、<style=cIsUtility>武器の再装填</style> する。",
+	
+	"MOFFEIN_ROCKET_BODY_SPECIAL_SCEPTER_NAME" : "Rocketstorm",
+	"MOFFEIN_ROCKET_BODY_SPECIAL_SCEPTER_DESCRIPTION" : "高速で <style=cIsDamage>ロケット弾を10発</style> 発射し、 <style=cIsUtility>武器の再装填</style> する。",
+	
+	"ACHIEVEMENT_MOFFEINROCKETHOMINGUNLOCK_NAME" : "ロケット: スピードこそ人生",
+	"ACHIEVEMENT_MOFFEINROCKETHOMINGUNLOCK_DESCRIPTION" : "ロケットとして25分以内に神聖のポータルに到達し通過する。",
+	
+	"ACHIEVEMENT_MOFFEINROCKETMARKETGARDENUNLOCK_NAME" : "ロケット: ポゴ",
+	"ACHIEVEMENT_MOFFEINROCKETMARKETGARDENUNLOCK_DESCRIPTION" : "ロケットとして地面に触れずにブラストジャンプを連続10回する。",
+
+	"MOFFEIN_ROCKET_BODY_MASTERY_SKIN_NAME" : "砲兵",
+	"ACHIEVEMENT_MOFFEINROCKETCLEARGAMEMONSOON_NAME" : "ロケット: 熟達",
+	"ACHIEVEMENT_MOFFEINROCKETCLEARGAMEMONSOON_DESCRIPTION" : "ロケットとして難易度「暴風雨」でゲームをクリアまたは自分自身を消す。",
+	
+	"MOFFEIN_ROCKET_BODY_GRANDMASTERY_SKIN_NAME" : "レンジャー",
+	"ACHIEVEMENT_MOFFEINROCKETCLEARGAMETYPHOON_NAME" : "ロケット: 偉大な師範",
+	"ACHIEVEMENT_MOFFEINROCKETCLEARGAMETYPHOON_DESCRIPTION" : "ロケットとして難易度「Typhoon」か「Eclipse」でゲームをクリアまたは自分自身を消す。\n<color=#8888>(Typhoonの難易度はMOD[Starstorm 2]が必須)</color>",
+	}
+}
