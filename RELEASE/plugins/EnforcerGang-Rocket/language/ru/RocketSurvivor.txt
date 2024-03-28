@@ -46,6 +46,6 @@
 	
 	"MOFFEIN_ROCKET_BODY_GRANDMASTERY_SKIN_NAME" : "Рейнджер",
 	"ACHIEVEMENT_MOFFEINROCKETCLEARGAMETYPHOON_NAME" : "Ракетомётчик: великое мастерство",
-	"ACHIEVEMENT_MOFFEINROCKETCLEARGAMETYPHOON_DESCRIPTION" : "Играя за Ракетомётчика, пройдите игру или уничтожьтесь на сложности «Тайфун».\n<color=#8888>(Сложность «Тайфун» доступна с модом Starstorm 2)</color>",
+	"ACHIEVEMENT_MOFFEINROCKETCLEARGAMETYPHOON_DESCRIPTION" : "Играя за Ракетомётчика, пройдите игру или уничтожьтесь на уровне сложности «Тайфун».\n<color=#8888>(Уровень сложности «Тайфун» доступен с модом Starstorm 2)</color>",
 	}
 }

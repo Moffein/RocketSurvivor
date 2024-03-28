@@ -1,3 +1,7 @@
+`1.0.4`
+
+- Updated RU TL
+
 `1.0.3`
 
 - Added JP TL (Thanks punch!)
