@@ -129,7 +129,7 @@ namespace RocketSurvivor
                     }
                 }
 
-                if (playAirshotSound && damageInfo.HasModdedDamageType(DamageTypes.ScaleForceToMass) && damageInfo.damage > 0 &&  !damageInfo.damageType.HasFlag(DamageType.Silent))    //Check for ScaleForceToMass damageType so that only Rocket Skills play the sound.
+                if (playAirshotSound && damageInfo.HasModdedDamageType(DamageTypes.ScaleForceToMass) && damageInfo.damage > 0 && ((damageInfo.damageType & DamageType.Silent) == 0))    //Check for ScaleForceToMass damageType so that only Rocket Skills play the sound.
                 {
                     if (damageInfo.damageColorIndex == DamageColorIndex.Default) damageInfo.damageColorIndex = DamageColorIndex.WeakPoint;
                     EffectManager.SimpleSoundEffect(RocketSurvivor.Modules.Assets.spoonHitSoundEvent.index, damageInfo.position, true);

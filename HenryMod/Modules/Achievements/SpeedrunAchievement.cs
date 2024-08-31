@@ -5,7 +5,7 @@ using UnityEngine.Networking;
 
 namespace RocketSurvivor.Modules.Achievements
 {
-	[RegisterAchievement("MoffeinRocketHomingUnlock", "Skills.MoffeinRocketSurvivor.Homing", null, null)]
+	[RegisterAchievement("MoffeinRocketHomingUnlock", "Skills.MoffeinRocketSurvivor.Homing", null, 3u, null)]
 	public class SpeedrunAchievement : BaseAchievement
     {
 		public override void OnInstall()

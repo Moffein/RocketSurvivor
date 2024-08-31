@@ -11,9 +11,11 @@ namespace EntityStates.RocketSurvivorSkills.Special
 {
     public class FireAllRockets : BaseState
     {
+        private float lastUpdateTime;
         public override void OnEnter()
         {
             base.OnEnter();
+            lastUpdateTime = Time.time;
             fireStopwatch = 0f;
             delayBetweenShots = FireAllRockets.baseDelayBetweenShots / base.attackSpeedStat;
             shotsRemaining = base.skillLocator && base.skillLocator.primary ? base.skillLocator.primary.maxStock : FireAllRockets.baseShotCount;
@@ -39,12 +41,15 @@ namespace EntityStates.RocketSurvivorSkills.Special
         {
             base.FixedUpdate();
 
+            float deltaTime = Time.time - lastUpdateTime;
+            lastUpdateTime = Time.time;
+
             if (fireStopwatch <= 0f)
             {
                 fireStopwatch += delayBetweenShots;
                 if(shotsRemaining > 0) FireProjectile();
             }
-            fireStopwatch -= Time.fixedDeltaTime;
+            fireStopwatch -= deltaTime;
 
             if (base.isAuthority)
             {

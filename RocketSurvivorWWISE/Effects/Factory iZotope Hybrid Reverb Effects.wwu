@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<WwiseDocument Type="WorkUnit" ID="{33EB1407-1601-4B0D-A620-9099C0353115}" SchemaVersion="97">
+<WwiseDocument Type="WorkUnit" ID="{33EB1407-1601-4B0D-A620-9099C0353115}" SchemaVersion="119">
 	<Effects>
 		<WorkUnit Name="Factory iZotope Hybrid Reverb Effects" ID="{33EB1407-1601-4B0D-A620-9099C0353115}" PersistMode="Standalone">
 			<ChildrenList>

@@ -21,22 +21,20 @@ namespace RocketSurvivor
     [BepInDependency("com.DrBibop.VRAPI", BepInDependency.DependencyFlags.SoftDependency)]
     [BepInDependency("com.DestroyedClone.AncientScepter", BepInDependency.DependencyFlags.SoftDependency)]
     [BepInDependency("com.ThinkInvisible.ClassicItems", BepInDependency.DependencyFlags.SoftDependency)]
-    [BepInDependency("com.bepis.r2api", BepInDependency.DependencyFlags.HardDependency)]
+    [BepInDependency(R2API.R2API.PluginGUID)]
+    [BepInDependency(R2API.PrefabAPI.PluginGUID)]
+    [BepInDependency(R2API.UnlockableAPI.PluginGUID)]
+    [BepInDependency(R2API.DamageAPI.PluginGUID)]
+    [BepInDependency(R2API.SoundAPI.PluginGUID)]
+    [BepInDependency(R2API.RecalculateStatsAPI.PluginGUID)]
     [NetworkCompatibility(CompatibilityLevel.EveryoneMustHaveMod, VersionStrictness.EveryoneNeedSameModVersion)]
     [BepInPlugin(MODUID, MODNAME, MODVERSION)]
-    [R2APISubmoduleDependency(new string[]
-    {
-        "PrefabAPI",
-        "UnlockableAPI",
-        nameof(R2API.DamageAPI),
-        nameof(R2API.RecalculateStatsAPI)
-    })]
 
     public class RocketSurvivorPlugin : BaseUnityPlugin
     {
         public const string MODUID = "com.EnforcerGang.RocketSurvivor";
         public const string MODNAME = "RocketSurvivor";
-        public const string MODVERSION = "1.0.2";
+        public const string MODVERSION = "1.0.5";
 
         // a prefix for name tokens to prevent conflicts- please capitalize all name tokens for convention
         public const string DEVELOPER_PREFIX = "MOFFEIN";
@@ -67,6 +65,7 @@ namespace RocketSurvivor
             Buffs.Initialize();
 
             Modules.Assets.Initialize(); // load assets and read config
+            SoundBanks.Init();
             Modules.Config.ReadConfig();
             Modules.States.RegisterStates(); // register states for networking
             Modules.Projectiles.RegisterProjectiles(); // add and register custom projectiles
@@ -79,11 +78,6 @@ namespace RocketSurvivor
             // now make a content pack and add it- this part will change with the next update
             new Modules.ContentPacks().Initialize();
             if (emoteAPILoaded) EmoteAPICompat();
-        }
-        
-        private void Start()
-        {
-            SoundBanks.Init();
         }
         
         [MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]

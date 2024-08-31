@@ -6,7 +6,7 @@ using UnityEngine.Networking;
 
 namespace RocketSurvivor.Modules.Achievements
 {
-    [RegisterAchievement("MoffeinRocketMarketGardenUnlock", "Skills.MoffeinRocketSurvivor.MarketGaden", null, null)]
+    [RegisterAchievement("MoffeinRocketMarketGardenUnlock", "Skills.MoffeinRocketSurvivor.MarketGaden", null, 3u, null)]
     public class ConsecutiveRocketJumpAchievement : BaseAchievement
 	{
 		private int consecutiveJumps;

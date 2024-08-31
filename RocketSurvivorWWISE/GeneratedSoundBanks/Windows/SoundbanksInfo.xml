@@ -1,150 +1,317 @@
 <?xml version="1.0" encoding="utf-8"?>
-<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="12" SoundbankVersion="135">
+<SoundBanksInfo Platform="Windows" BasePlatform="Windows" SchemaVersion="16" SoundBankVersion="150">
 	<RootPaths>
-		<ProjectRoot>C:\Users\Node\RoR2 Mods\RocketSurvivor\RocketSurvivorWWISE\</ProjectRoot>
-		<SourceFilesRoot>C:\Users\Node\RoR2 Mods\RocketSurvivor\RocketSurvivorWWISE\.cache\Windows\</SourceFilesRoot>
-		<SoundBanksRoot>C:\Users\Node\RoR2 Mods\RocketSurvivor\RocketSurvivorWWISE\GeneratedSoundBanks\Windows\</SoundBanksRoot>
+		<ProjectRoot>../..</ProjectRoot>
+		<SourceFilesRoot>../../.cache/Windows</SourceFilesRoot>
+		<SoundBanksRoot>.</SoundBanksRoot>
 		<ExternalSourcesInputFile></ExternalSourcesInputFile>
-		<ExternalSourcesOutputRoot>C:\Users\Node\RoR2 Mods\RocketSurvivor\RocketSurvivorWWISE\GeneratedSoundBanks\Windows</ExternalSourcesOutputRoot>
+		<ExternalSourcesOutputRoot>.</ExternalSourcesOutputRoot>
 	</RootPaths>
 	<DialogueEvents/>
-	<StreamedFiles/>
-	<MediaFilesNotInAnyBank/>
 	<SoundBanks>
-		<SoundBank Id="1355168291" Language="SFX" Hash="1891520505">
-			<ObjectPath>Init</ObjectPath>
+		<SoundBank Id="1355168291" Type="User" Language="SFX" Hash="{68FE3006-2435-2223-0F3A-126586879B3C}">
 			<ShortName>Init</ShortName>
 			<Path>Init.bnk</Path>
+			<Plugins>
+				<AudioDevices>
+					<Plugin Id="2317455096" Name="No_Output" LibName="No Output" LibId="11862023"/>
+					<Plugin Id="3859886410" Name="System" LibName="System" LibId="11403271"/>
+				</AudioDevices>
+			</Plugins>
+			<Busses>
+				<Bus Id="985987111" Name="Motion Factory Bus"/>
+				<Bus Id="3803692087" Name="Master Audio Bus"/>
+			</Busses>
+			<GameParameters>
+				<GameParameter Id="796049864" Name="RPM"/>
+				<GameParameter Id="822163944" Name="SS_Air_RPM"/>
+				<GameParameter Id="1029930033" Name="SS_Air_Fury"/>
+				<GameParameter Id="1351367891" Name="SS_Air_Fear"/>
+				<GameParameter Id="1524500807" Name="Playback_Rate"/>
+				<GameParameter Id="2648548617" Name="SS_Air_Month"/>
+				<GameParameter Id="3002758120" Name="SS_Air_Freefall"/>
+				<GameParameter Id="3074696722" Name="SS_Air_Size"/>
+				<GameParameter Id="3203397129" Name="SS_Air_TimeOfDay"/>
+				<GameParameter Id="3673881719" Name="Volume_SFX"/>
+				<GameParameter Id="3715662592" Name="SS_Air_Storm"/>
+				<GameParameter Id="3847924954" Name="SS_Air_Presence"/>
+				<GameParameter Id="4160247818" Name="SS_Air_Turbulence"/>
+			</GameParameters>
+			<AcousticTextures>
+				<AcousticTexture Id="504532776" Name="Brick">
+					<Properties>
+						<Property Name="AbsorptionLow" Type="Real32" Value="12"/>
+						<Property Name="AbsorptionMidLow" Type="Real32" Value="18"/>
+						<Property Name="AbsorptionMidHigh" Type="Real32" Value="23"/>
+						<Property Name="AbsorptionHigh" Type="Real32" Value="35"/>
+						<Property Name="Scattering" Type="Real32" Value="0"/>
+					</Properties>
+				</AcousticTexture>
+				<AcousticTexture Id="513139656" Name="Mountain">
+					<Properties>
+						<Property Name="AbsorptionLow" Type="Real32" Value="0"/>
+						<Property Name="AbsorptionMidLow" Type="Real32" Value="0"/>
+						<Property Name="AbsorptionMidHigh" Type="Real32" Value="0"/>
+						<Property Name="AbsorptionHigh" Type="Real32" Value="0"/>
+						<Property Name="Scattering" Type="Real32" Value="0"/>
+					</Properties>
+				</AcousticTexture>
+				<AcousticTexture Id="841620460" Name="Concrete">
+					<Properties>
+						<Property Name="AbsorptionLow" Type="Real32" Value="6"/>
+						<Property Name="AbsorptionMidLow" Type="Real32" Value="6"/>
+						<Property Name="AbsorptionMidHigh" Type="Real32" Value="6"/>
+						<Property Name="AbsorptionHigh" Type="Real32" Value="14"/>
+						<Property Name="Scattering" Type="Real32" Value="0"/>
+					</Properties>
+				</AcousticTexture>
+				<AcousticTexture Id="1755085759" Name="Wood_Deep">
+					<Properties>
+						<Property Name="AbsorptionLow" Type="Real32" Value="1"/>
+						<Property Name="AbsorptionMidLow" Type="Real32" Value="8"/>
+						<Property Name="AbsorptionMidHigh" Type="Real32" Value="20"/>
+						<Property Name="AbsorptionHigh" Type="Real32" Value="35"/>
+						<Property Name="Scattering" Type="Real32" Value="0"/>
+					</Properties>
+				</AcousticTexture>
+				<AcousticTexture Id="1873957695" Name="Anechoic">
+					<Properties>
+						<Property Name="AbsorptionLow" Type="Real32" Value="100"/>
+						<Property Name="AbsorptionMidLow" Type="Real32" Value="100"/>
+						<Property Name="AbsorptionMidHigh" Type="Real32" Value="100"/>
+						<Property Name="AbsorptionHigh" Type="Real32" Value="100"/>
+						<Property Name="Scattering" Type="Real32" Value="0"/>
+					</Properties>
+				</AcousticTexture>
+				<AcousticTexture Id="1970351858" Name="Fabric">
+					<Properties>
+						<Property Name="AbsorptionLow" Type="Real32" Value="3"/>
+						<Property Name="AbsorptionMidLow" Type="Real32" Value="13"/>
+						<Property Name="AbsorptionMidHigh" Type="Real32" Value="48"/>
+						<Property Name="AbsorptionHigh" Type="Real32" Value="72"/>
+						<Property Name="Scattering" Type="Real32" Value="0"/>
+					</Properties>
+				</AcousticTexture>
+				<AcousticTexture Id="2058049674" Name="Wood">
+					<Properties>
+						<Property Name="AbsorptionLow" Type="Real32" Value="32"/>
+						<Property Name="AbsorptionMidLow" Type="Real32" Value="25"/>
+						<Property Name="AbsorptionMidHigh" Type="Real32" Value="20"/>
+						<Property Name="AbsorptionHigh" Type="Real32" Value="35"/>
+						<Property Name="Scattering" Type="Real32" Value="0"/>
+					</Properties>
+				</AcousticTexture>
+				<AcousticTexture Id="2412606308" Name="Carpet">
+					<Properties>
+						<Property Name="AbsorptionLow" Type="Real32" Value="46"/>
+						<Property Name="AbsorptionMidLow" Type="Real32" Value="45"/>
+						<Property Name="AbsorptionMidHigh" Type="Real32" Value="76"/>
+						<Property Name="AbsorptionHigh" Type="Real32" Value="100"/>
+						<Property Name="Scattering" Type="Real32" Value="0"/>
+					</Properties>
+				</AcousticTexture>
+				<AcousticTexture Id="2637588553" Name="Tile">
+					<Properties>
+						<Property Name="AbsorptionLow" Type="Real32" Value="67"/>
+						<Property Name="AbsorptionMidLow" Type="Real32" Value="41"/>
+						<Property Name="AbsorptionMidHigh" Type="Real32" Value="12"/>
+						<Property Name="AbsorptionHigh" Type="Real32" Value="0"/>
+						<Property Name="Scattering" Type="Real32" Value="0"/>
+					</Properties>
+				</AcousticTexture>
+				<AcousticTexture Id="2928161104" Name="Curtains">
+					<Properties>
+						<Property Name="AbsorptionLow" Type="Real32" Value="7"/>
+						<Property Name="AbsorptionMidLow" Type="Real32" Value="60"/>
+						<Property Name="AbsorptionMidHigh" Type="Real32" Value="0"/>
+						<Property Name="AbsorptionHigh" Type="Real32" Value="84"/>
+						<Property Name="Scattering" Type="Real32" Value="0"/>
+					</Properties>
+				</AcousticTexture>
+				<AcousticTexture Id="3195498748" Name="Cork_Tiles">
+					<Properties>
+						<Property Name="AbsorptionLow" Type="Real32" Value="14"/>
+						<Property Name="AbsorptionMidLow" Type="Real32" Value="30"/>
+						<Property Name="AbsorptionMidHigh" Type="Real32" Value="73"/>
+						<Property Name="AbsorptionHigh" Type="Real32" Value="100"/>
+						<Property Name="Scattering" Type="Real32" Value="0"/>
+					</Properties>
+				</AcousticTexture>
+				<AcousticTexture Id="3670307564" Name="Drywall">
+					<Properties>
+						<Property Name="AbsorptionLow" Type="Real32" Value="2"/>
+						<Property Name="AbsorptionMidLow" Type="Real32" Value="2"/>
+						<Property Name="AbsorptionMidHigh" Type="Real32" Value="2"/>
+						<Property Name="AbsorptionHigh" Type="Real32" Value="2"/>
+						<Property Name="Scattering" Type="Real32" Value="0"/>
+					</Properties>
+				</AcousticTexture>
+				<AcousticTexture Id="4168643977" Name="Acoustic_Banner">
+					<Properties>
+						<Property Name="AbsorptionLow" Type="Real32" Value="37"/>
+						<Property Name="AbsorptionMidLow" Type="Real32" Value="100"/>
+						<Property Name="AbsorptionMidHigh" Type="Real32" Value="100"/>
+						<Property Name="AbsorptionHigh" Type="Real32" Value="100"/>
+						<Property Name="Scattering" Type="Real32" Value="0"/>
+					</Properties>
+				</AcousticTexture>
+				<AcousticTexture Id="4262522749" Name="Wood_Bright">
+					<Properties>
+						<Property Name="AbsorptionLow" Type="Real32" Value="32"/>
+						<Property Name="AbsorptionMidLow" Type="Real32" Value="25"/>
+						<Property Name="AbsorptionMidHigh" Type="Real32" Value="10"/>
+						<Property Name="AbsorptionHigh" Type="Real32" Value="9"/>
+						<Property Name="Scattering" Type="Real32" Value="0"/>
+					</Properties>
+				</AcousticTexture>
+			</AcousticTextures>
 		</SoundBank>
-		<SoundBank Id="1554628720" Language="SFX" Hash="13996287">
-			<ObjectPath>\SoundBanks\Default Work Unit\RocketSoundbank</ObjectPath>
+		<SoundBank Id="1554628720" Type="User" Language="SFX" Hash="{FD5DCDE3-B205-9A99-129B-D5A28FCBDC35}">
 			<ShortName>RocketSoundbank</ShortName>
 			<Path>RocketSoundbank.bnk</Path>
-			<IncludedEvents>
-				<Event Id="628393261" Name="Play_Moffein_RocketSurvivor_C4_Land" ObjectPath="\Events\Default Work Unit\Play_Moffein_RocketSurvivor_C4_Land">
-					<IncludedMemoryFiles>
-						<File Id="588972692" Language="SFX">
-							<ShortName>breach_land_01.wav</ShortName>
-							<Path>SFX\breach_land_01_3F75BDB9.wem</Path>
-						</File>
-					</IncludedMemoryFiles>
+			<Media>
+				<File Id="12427387" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Reflex_RL_Explo.wav</ShortName>
+					<CachePath>SFX/Reflex_RL_Explo_8E324C96.wem</CachePath>
+				</File>
+				<File Id="31814413" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>rocket_reload.wav</ShortName>
+					<CachePath>SFX/rocket_reload_8E324C96.wem</CachePath>
+				</File>
+				<File Id="95071274" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>DB_Jav_RocketCharge.wav</ShortName>
+					<CachePath>SFX/DB_Jav_RocketCharge_8E324C96.wem</CachePath>
+				</File>
+				<File Id="162412063" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>QC_RL_Explo.wav</ShortName>
+					<CachePath>SFX/QC_RL_Explo_8E324C96.wem</CachePath>
+				</File>
+				<File Id="204569046" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>wSmite.wav</ShortName>
+					<CachePath>SFX/wSmite_8E324C96.wem</CachePath>
+				</File>
+				<File Id="267091277" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>rocket_jumper_shoot.wav</ShortName>
+					<CachePath>SFX/rocket_jumper_shoot_8E324C96.wem</CachePath>
+				</File>
+				<File Id="311484885" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>draw_shovel_soldier.wav</ShortName>
+					<CachePath>SFX/draw_shovel_soldier_8E324C96.wem</CachePath>
+				</File>
+				<File Id="442034263" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>bottle_hit_flesh1.wav</ShortName>
+					<CachePath>SFX/bottle_hit_flesh1_8E324C96.wem</CachePath>
+				</File>
+				<File Id="557845177" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>DB_Jav_FireToggle.wav</ShortName>
+					<CachePath>SFX/DB_Jav_FireToggle_8E324C96.wem</CachePath>
+				</File>
+				<File Id="560277754" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>hl2_wpn_denyselect.wav</ShortName>
+					<CachePath>SFX/hl2_wpn_denyselect_8E324C96.wem</CachePath>
+				</File>
+				<File Id="588972692" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>breach_land_01.wav</ShortName>
+					<CachePath>SFX/breach_land_01_8E324C96.wem</CachePath>
+				</File>
+				<File Id="594778408" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>shovel_swing.wav</ShortName>
+					<CachePath>SFX/shovel_swing_8E324C96.wem</CachePath>
+				</File>
+				<File Id="730758600" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>Reflex_RL.wav</ShortName>
+					<CachePath>SFX/Reflex_RL_8E324C96.wem</CachePath>
+				</File>
+				<File Id="947424030" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>wWormExplosion.wav</ShortName>
+					<CachePath>SFX/wWormExplosion_8E324C96.wem</CachePath>
+				</File>
+				<File Id="961459857" Language="SFX" Streaming="false" Location="Memory">
+					<ShortName>QC_RL.wav</ShortName>
+					<CachePath>SFX/QC_RL_8E324C96.wem</CachePath>
+				</File>
+			</Media>
+			<Events>
+				<Event Id="628393261" Name="Play_Moffein_RocketSurvivor_C4_Land">
+					<MediaRefs>
+						<MediaRef Id="588972692"/>
+					</MediaRefs>
 				</Event>
-				<Event Id="1154839090" Name="Play_Moffein_RocketSurvivor_M1_Alt_Explode" ObjectPath="\Events\Default Work Unit\Play_Moffein_RocketSurvivor_M1_Alt_Explode">
-					<IncludedMemoryFiles>
-						<File Id="12427387" Language="SFX">
-							<ShortName>Reflex_RL_Explo.wav</ShortName>
-							<Path>SFX\Reflex_RL_Explo_3F75BDB9.wem</Path>
-						</File>
-					</IncludedMemoryFiles>
+				<Event Id="1154839090" Name="Play_Moffein_RocketSurvivor_M1_Alt_Explode">
+					<MediaRefs>
+						<MediaRef Id="12427387"/>
+					</MediaRefs>
 				</Event>
-				<Event Id="1606585696" Name="Play_Moffein_RocketSurvivor_M1_Alt_Shoot" ObjectPath="\Events\Default Work Unit\Play_Moffein_RocketSurvivor_M1_Alt_Shoot">
-					<IncludedMemoryFiles>
-						<File Id="730758600" Language="SFX">
-							<ShortName>Reflex_RL.wav</ShortName>
-							<Path>SFX\Reflex_RL_3F75BDB9.wem</Path>
-						</File>
-					</IncludedMemoryFiles>
+				<Event Id="1606585696" Name="Play_Moffein_RocketSurvivor_M1_Alt_Shoot">
+					<MediaRefs>
+						<MediaRef Id="730758600"/>
+					</MediaRefs>
 				</Event>
-				<Event Id="3693856494" Name="Play_Moffein_RocketSurvivor_M1_Explode" ObjectPath="\Events\Default Work Unit\Play_Moffein_RocketSurvivor_M1_Explode">
-					<IncludedMemoryFiles>
-						<File Id="162412063" Language="SFX">
-							<ShortName>QC_RL_Explo.wav</ShortName>
-							<Path>SFX\QC_RL_Explo_3F75BDB9.wem</Path>
-						</File>
-					</IncludedMemoryFiles>
+				<Event Id="3693856494" Name="Play_Moffein_RocketSurvivor_M1_Explode">
+					<MediaRefs>
+						<MediaRef Id="162412063"/>
+					</MediaRefs>
 				</Event>
-				<Event Id="3142338656" Name="Play_Moffein_RocketSurvivor_M1_Reload" ObjectPath="\Events\Default Work Unit\Play_Moffein_RocketSurvivor_M1_Reload">
-					<IncludedMemoryFiles>
-						<File Id="31814413" Language="SFX">
-							<ShortName>rocket_reload.wav</ShortName>
-							<Path>SFX\rocket_reload_3F75BDB9.wem</Path>
-						</File>
-					</IncludedMemoryFiles>
+				<Event Id="3142338656" Name="Play_Moffein_RocketSurvivor_M1_Reload">
+					<MediaRefs>
+						<MediaRef Id="31814413"/>
+					</MediaRefs>
 				</Event>
-				<Event Id="879535644" Name="Play_Moffein_RocketSurvivor_M1_Shoot" ObjectPath="\Events\Default Work Unit\Play_Moffein_RocketSurvivor_M1_Shoot">
-					<IncludedMemoryFiles>
-						<File Id="961459857" Language="SFX">
-							<ShortName>QC_RL.wav</ShortName>
-							<Path>SFX\QC_RL_3F75BDB9.wem</Path>
-						</File>
-					</IncludedMemoryFiles>
+				<Event Id="879535644" Name="Play_Moffein_RocketSurvivor_M1_Shoot">
+					<MediaRefs>
+						<MediaRef Id="961459857"/>
+					</MediaRefs>
 				</Event>
-				<Event Id="2966818513" Name="Play_Moffein_RocketSurvivor_M2_Explode" ObjectPath="\Events\Default Work Unit\Play_Moffein_RocketSurvivor_M2_Explode">
-					<IncludedMemoryFiles>
-						<File Id="204569046" Language="SFX">
-							<ShortName>wSmite.wav</ShortName>
-							<Path>SFX\wSmite_3F75BDB9.wem</Path>
-						</File>
-					</IncludedMemoryFiles>
+				<Event Id="2966818513" Name="Play_Moffein_RocketSurvivor_M2_Explode">
+					<MediaRefs>
+						<MediaRef Id="204569046"/>
+					</MediaRefs>
 				</Event>
-				<Event Id="1995085771" Name="Play_Moffein_RocketSurvivor_M2_NoFire" ObjectPath="\Events\Default Work Unit\Play_Moffein_RocketSurvivor_M2_NoFire">
-					<IncludedMemoryFiles>
-						<File Id="560277754" Language="SFX">
-							<ShortName>hl2_wpn_denyselect.wav</ShortName>
-							<Path>SFX\hl2_wpn_denyselect_3F75BDB9.wem</Path>
-						</File>
-					</IncludedMemoryFiles>
+				<Event Id="1995085771" Name="Play_Moffein_RocketSurvivor_M2_NoFire">
+					<MediaRefs>
+						<MediaRef Id="560277754"/>
+					</MediaRefs>
 				</Event>
-				<Event Id="2849063714" Name="Play_Moffein_RocketSurvivor_M2_Trigger" ObjectPath="\Events\Default Work Unit\Play_Moffein_RocketSurvivor_M2_Trigger">
-					<IncludedMemoryFiles>
-						<File Id="557845177" Language="SFX">
-							<ShortName>DB_Jav_FireToggle.wav</ShortName>
-							<Path>SFX\DB_Jav_FireToggle_3F75BDB9.wem</Path>
-						</File>
-					</IncludedMemoryFiles>
+				<Event Id="2849063714" Name="Play_Moffein_RocketSurvivor_M2_Trigger">
+					<MediaRefs>
+						<MediaRef Id="557845177"/>
+					</MediaRefs>
 				</Event>
-				<Event Id="2170386138" Name="Play_Moffein_RocketSurvivor_R_Alt_Hit" ObjectPath="\Events\Default Work Unit\Play_Moffein_RocketSurvivor_R_Alt_Hit">
-					<IncludedMemoryFiles>
-						<File Id="442034263" Language="SFX">
-							<ShortName>bottle_hit_flesh1.wav</ShortName>
-							<Path>SFX\bottle_hit_flesh1_3F75BDB9.wem</Path>
-						</File>
-					</IncludedMemoryFiles>
+				<Event Id="2170386138" Name="Play_Moffein_RocketSurvivor_R_Alt_Hit">
+					<MediaRefs>
+						<MediaRef Id="442034263"/>
+					</MediaRefs>
 				</Event>
-				<Event Id="2772939066" Name="Play_Moffein_RocketSurvivor_R_Alt_Prep" ObjectPath="\Events\Default Work Unit\Play_Moffein_RocketSurvivor_R_Alt_Prep">
-					<IncludedMemoryFiles>
-						<File Id="311484885" Language="SFX">
-							<ShortName>draw_shovel_soldier.wav</ShortName>
-							<Path>SFX\draw_shovel_soldier_3F75BDB9.wem</Path>
-						</File>
-					</IncludedMemoryFiles>
+				<Event Id="2772939066" Name="Play_Moffein_RocketSurvivor_R_Alt_Prep">
+					<MediaRefs>
+						<MediaRef Id="311484885"/>
+					</MediaRefs>
 				</Event>
-				<Event Id="802553295" Name="Play_Moffein_RocketSurvivor_R_Alt_Swing" ObjectPath="\Events\Default Work Unit\Play_Moffein_RocketSurvivor_R_Alt_Swing">
-					<IncludedMemoryFiles>
-						<File Id="594778408" Language="SFX">
-							<ShortName>shovel_swing.wav</ShortName>
-							<Path>SFX\shovel_swing_3F75BDB9.wem</Path>
-						</File>
-					</IncludedMemoryFiles>
+				<Event Id="802553295" Name="Play_Moffein_RocketSurvivor_R_Alt_Swing">
+					<MediaRefs>
+						<MediaRef Id="594778408"/>
+					</MediaRefs>
 				</Event>
-				<Event Id="728023283" Name="Play_Moffein_RocketSurvivor_R_Flak_Explode" ObjectPath="\Events\Default Work Unit\Play_Moffein_RocketSurvivor_R_Flak_Explode">
-					<IncludedMemoryFiles>
-						<File Id="947424030" Language="SFX">
-							<ShortName>wWormExplosion.wav</ShortName>
-							<Path>SFX\wWormExplosion_3F75BDB9.wem</Path>
-						</File>
-					</IncludedMemoryFiles>
+				<Event Id="728023283" Name="Play_Moffein_RocketSurvivor_R_Flak_Explode">
+					<MediaRefs>
+						<MediaRef Id="947424030"/>
+					</MediaRefs>
 				</Event>
-				<Event Id="1534412064" Name="Play_Moffein_RocketSurvivor_R_Shoot" ObjectPath="\Events\Default Work Unit\Play_Moffein_RocketSurvivor_R_Shoot">
-					<IncludedMemoryFiles>
-						<File Id="267091277" Language="SFX">
-							<ShortName>rocket_jumper_shoot.wav</ShortName>
-							<Path>SFX\rocket_jumper_shoot_3F75BDB9.wem</Path>
-						</File>
-					</IncludedMemoryFiles>
+				<Event Id="1534412064" Name="Play_Moffein_RocketSurvivor_R_Shoot">
+					<MediaRefs>
+						<MediaRef Id="267091277"/>
+					</MediaRefs>
 				</Event>
-				<Event Id="893151536" Name="Play_Moffein_RocketSurvivor_Shift_Rearm" ObjectPath="\Events\Default Work Unit\Play_Moffein_RocketSurvivor_Shift_Rearm">
-					<IncludedMemoryFiles>
-						<File Id="95071274" Language="SFX">
-							<ShortName>DB_Jav_RocketCharge.wav</ShortName>
-							<Path>SFX\DB_Jav_RocketCharge_3F75BDB9.wem</Path>
-						</File>
-					</IncludedMemoryFiles>
+				<Event Id="893151536" Name="Play_Moffein_RocketSurvivor_Shift_Rearm">
+					<MediaRefs>
+						<MediaRef Id="95071274"/>
+					</MediaRefs>
 				</Event>
-			</IncludedEvents>
+			</Events>
 			<GameParameters>
-				<GameParameter Id="3673881719" Name="Volume_SFX" ObjectPath="\Game Parameters\Default Work Unit\Volume_SFX"/>
+				<GameParameter Id="3673881719" Name="Volume_SFX"/>
 			</GameParameters>
 		</SoundBank>
 	</SoundBanks>
+	<FileHash>{397C107F-722D-5ADD-7E2B-D0A9FBBFC7E3}</FileHash>
 </SoundBanksInfo>

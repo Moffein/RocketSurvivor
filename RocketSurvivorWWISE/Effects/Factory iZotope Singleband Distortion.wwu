@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<WwiseDocument Type="WorkUnit" ID="{1B1E3084-90B6-454A-A835-5C34918D0400}" SchemaVersion="97">
+<WwiseDocument Type="WorkUnit" ID="{1B1E3084-90B6-454A-A835-5C34918D0400}" SchemaVersion="119">
 	<Effects>
 		<WorkUnit Name="Factory iZotope Singleband Distortion" ID="{1B1E3084-90B6-454A-A835-5C34918D0400}" PersistMode="Standalone">
 			<ChildrenList>

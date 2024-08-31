@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<WwiseDocument Type="WorkUnit" ID="{0D1C409E-A735-471E-A538-63B18D993BE9}" SchemaVersion="97">
+<WwiseDocument Type="WorkUnit" ID="{0D1C409E-A735-471E-A538-63B18D993BE9}" SchemaVersion="119">
 	<Effects>
 		<WorkUnit Name="Factory Mastering Suite" ID="{0D1C409E-A735-471E-A538-63B18D993BE9}" PersistMode="Standalone">
 			<ChildrenList>
@@ -29,6 +29,7 @@
 						<Property Name="paramBand6FilterMode" Type="int32" Value="4"/>
 						<Property Name="paramEqNumBands" Type="int32" Value="6"/>
 					</PropertyList>
+					<PluginData/>
 				</Effect>
 				<Effect Name="TV" ID="{37A77AC4-6D1C-4769-ADCA-9BF504A15C3E}" PluginName="Mastering Suite" CompanyID="0" PluginID="186" PluginType="3">
 					<PropertyList>
@@ -83,6 +84,7 @@
 						<Property Name="paramBand6Gain" Type="Real32" Value="1.99"/>
 						<Property Name="paramEqNumBands" Type="int32" Value="6"/>
 					</PropertyList>
+					<PluginData/>
 				</Effect>
 				<Effect Name="HomeCinema" ID="{F9951DC8-664E-4B07-81CF-61716236F00A}" PluginName="Mastering Suite" CompanyID="0" PluginID="186" PluginType="3">
 					<PropertyList>
@@ -132,6 +134,7 @@
 						<Property Name="paramBand6Frequency" Type="Real32" Value="8500"/>
 						<Property Name="paramEqNumBands" Type="int32" Value="6"/>
 					</PropertyList>
+					<PluginData/>
 				</Effect>
 				<Effect Name="Headphones" ID="{E5116D0C-60E4-49B1-9BC3-00F4AEA2975F}" PluginName="Mastering Suite" CompanyID="0" PluginID="186" PluginType="3">
 					<PropertyList>
@@ -185,6 +188,7 @@
 						<Property Name="paramBand6Gain" Type="Real32" Value="1.08"/>
 						<Property Name="paramEqNumBands" Type="int32" Value="6"/>
 					</PropertyList>
+					<PluginData/>
 				</Effect>
 				<Effect Name="SoundBar" ID="{AACC9AF9-8FD9-4C5A-93F5-40CD904B57ED}" PluginName="Mastering Suite" CompanyID="0" PluginID="186" PluginType="3">
 					<PropertyList>
@@ -236,6 +240,7 @@
 						<Property Name="paramBand6Frequency" Type="Real32" Value="8500"/>
 						<Property Name="paramEqNumBands" Type="int32" Value="6"/>
 					</PropertyList>
+					<PluginData/>
 				</Effect>
 				<Effect Name="NightMode" ID="{D5363309-0217-46CF-86F9-6D8C2DDB9D42}" PluginName="Mastering Suite" CompanyID="0" PluginID="186" PluginType="3">
 					<PropertyList>
@@ -281,6 +286,7 @@
 						<Property Name="paramBand6Gain" Type="Real32" Value="0.56"/>
 						<Property Name="paramEqNumBands" Type="int32" Value="6"/>
 					</PropertyList>
+					<PluginData/>
 				</Effect>
 			</ChildrenList>
 		</WorkUnit>

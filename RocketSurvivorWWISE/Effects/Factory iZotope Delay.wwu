@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<WwiseDocument Type="WorkUnit" ID="{E78588B1-863C-474A-A1EF-029983C8530F}" SchemaVersion="97">
+<WwiseDocument Type="WorkUnit" ID="{E78588B1-863C-474A-A1EF-029983C8530F}" SchemaVersion="119">
 	<Effects>
 		<WorkUnit Name="Factory iZotope Delay" ID="{E78588B1-863C-474A-A1EF-029983C8530F}" PersistMode="Standalone">
 			<ChildrenList>

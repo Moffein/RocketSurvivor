@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace RocketSurvivor.Modules.Achievements 
 {
-    [RegisterAchievement(identifier, unlockableIdentifier, null, null)]
+    [RegisterAchievement(identifier, unlockableIdentifier, null, 10u, null)]
     public class Mastery : BasePerSurvivorClearGameMonsoonAchievement
     {
         public const string identifier = "MoffeinRocketClearGameMonsoon";

@@ -1,10 +1,15 @@
 {
     "name": "Rocket",
-    "version_number": "1.0.4",
+    "version_number": "1.0.5",
     "website_url": "https://github.com/Moffein/RocketSurvivor",
     "description": "Shoot feet, get kills. Multiplayer-compatible!",
     "dependencies": [
-        "bbepis-BepInExPack-5.4.1905",
-	    "tristanmcpherson-R2API-4.4.1"
+        "bbepis-BepInExPack-5.4.2117",
+	    "RiskofThunder-R2API_Core-5.1.1",
+		"RiskofThunder-R2API_RecalculateStats-1.4.0",
+	    "RiskofThunder-R2API_Prefab-1.0.4",
+		"RiskofThunder-R2API_Unlockable-1.0.2",
+		"RiskofThunder-R2API_Sound-1.0.3",
+		"RiskofThunder-R2API_DamageType-1.1.1",
     ]
 }

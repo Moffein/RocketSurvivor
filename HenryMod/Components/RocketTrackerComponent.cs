@@ -180,7 +180,7 @@ namespace RocketSurvivor.Components {
                     }
 
                     GameObject effectPrefab = EntityStates.RocketSurvivorSkills.Secondary.AirDet.explosionEffectPrefab;
-                    if (pd.damageType.HasFlag(DamageType.Silent) && pd.damageType.HasFlag(DamageType.Stun1s))
+                    if (((pd.damageType & DamageType.Silent) != 0) && ((pd.damageType & DamageType.Stun1s) != 0))
                     {
                         effectPrefab = EntityStates.RocketSurvivorSkills.Secondary.AirDet.concExplosionEffectPrefab;
                     }

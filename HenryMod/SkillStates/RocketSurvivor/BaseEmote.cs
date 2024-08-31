@@ -12,7 +12,7 @@ namespace EntityStates.RocketSurvivorSkills.Emote {
         public float duration;
         public float animDuration;
 
-        private uint activePlayID;
+        //private uint activePlayID;
         private Animator animator;
         private ChildLocator childLocator;
 
@@ -54,7 +54,8 @@ namespace EntityStates.RocketSurvivorSkills.Emote {
                 base.PlayAnimation("FullBody, Override", this.animString);
             }
 
-            this.activePlayID = Util.PlaySound(soundString, base.gameObject);
+            Util.PlaySound(soundString, base.gameObject);
+            //this.activePlayID = Util.PlaySound(soundString, base.gameObject);
 
             CameraParamsOverrideRequest request = new CameraParamsOverrideRequest {
                 cameraParamsData = emoteCameraParams,
@@ -106,7 +107,7 @@ namespace EntityStates.RocketSurvivorSkills.Emote {
             this.animator.SetLayerWeight(animator.GetLayerIndex("AimYaw"), 1);
 
             base.PlayAnimation("FullBody, Override", "BufferEmpty");
-            if (this.activePlayID != 0) AkSoundEngine.StopPlayingID(this.activePlayID);
+            //if (this.activePlayID != 0) AkSoundEngine.StopPlayingID(this.activePlayID);
 
             base.cameraTargetParams.RemoveParamsOverride(camOverrideHandle, 0.5f);
         }

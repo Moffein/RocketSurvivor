@@ -1,3 +1,7 @@
+`1.0.5`
+
+- DLC2 fix.
+
 `1.0.4`
 
 - Updated RU TL

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ProjectInfo>
+	<Project Name="RocketSurvivorWWISE" GUID="{8BC13100-D79E-4486-A59B-084AC04578D1}" Generator="2023.1.4.8496"/>
+	<CacheRoot>../.cache</CacheRoot>
+	<Platforms>
+		<Platform Name="Windows" GUID="{64C1E688-6658-486C-B062-C028A28784FE}" BasePlatform="Windows" BasePlatformGUID="{6E0CB257-C6C8-4C5C-8366-2740DFC441EB}" Path="Windows"/>
+	</Platforms>
+	<Languages>
+		<Language Name="English(US)" Id="684519430" GUID="{C479DD0D-0883-46E7-A18C-B5F18B06B28C}" Default="true" UseAsStandIn="true"/>
+	</Languages>
+	<FileHash>{BB9FD5A4-8C5A-E446-6CBD-29679E3BAD67}</FileHash>
+</ProjectInfo>

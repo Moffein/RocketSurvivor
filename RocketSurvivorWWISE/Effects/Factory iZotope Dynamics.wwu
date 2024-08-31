@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<WwiseDocument Type="WorkUnit" ID="{70F46671-A828-4029-A11A-36BB09D872B9}" SchemaVersion="97">
+<WwiseDocument Type="WorkUnit" ID="{70F46671-A828-4029-A11A-36BB09D872B9}" SchemaVersion="119">
 	<Effects>
 		<WorkUnit Name="Factory iZotope Dynamics" ID="{70F46671-A828-4029-A11A-36BB09D872B9}" PersistMode="Standalone">
 			<ChildrenList>

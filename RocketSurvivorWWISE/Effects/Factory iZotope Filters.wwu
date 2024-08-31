@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<WwiseDocument Type="WorkUnit" ID="{69E63F95-6DEA-446E-9EE0-8683389E45B4}" SchemaVersion="97">
+<WwiseDocument Type="WorkUnit" ID="{69E63F95-6DEA-446E-9EE0-8683389E45B4}" SchemaVersion="119">
 	<Effects>
 		<WorkUnit Name="Factory iZotope Filters" ID="{69E63F95-6DEA-446E-9EE0-8683389E45B4}" PersistMode="Standalone">
 			<ChildrenList>
