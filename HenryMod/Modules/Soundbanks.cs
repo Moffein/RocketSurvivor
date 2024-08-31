@@ -24,7 +24,6 @@ namespace RocketSurvivor.Modules
 
             using (Stream manifestResourceStream = new FileStream(SoundBankDirectory + "\\RocketSoundbank.bnk", FileMode.Open))
             {
-
                 byte[] array = new byte[manifestResourceStream.Length];
                 manifestResourceStream.Read(array, 0, array.Length);
                 SoundAPI.SoundBanks.Add(array);
