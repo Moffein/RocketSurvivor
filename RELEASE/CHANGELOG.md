@@ -1,3 +1,8 @@
+`1.0.7`
+
+- Korean translation (Thanks Dice-001!)
+- Recompiled with latest dlls.
+
 `1.0.6`
 
 - Fixed MP.

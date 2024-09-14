@@ -60,3 +60,4 @@ Russian: ILIa3174, hexxedude, Lecarde
 French: darkwarrior45
 Brazilian Portuguese: Kauzok
 Ukrainian: Damglador
+Korean: Dice-001
