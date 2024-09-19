@@ -26,7 +26,7 @@
 	"MOFFEIN_ROCKET_BODY_UTILITY_DESCRIPTION" : "<style=cIsDamage>마비</style>. 충전된 폭발물을 설치합니다. <style=cIsDamage>원격 기폭 장치</style>를 사용하여 <style=cIsDamage>1200% 피해</style>를 입힙니다.",
 	
 	"MOFFEIN_ROCKET_BODY_UTILITY_ALT_NAME" : "폭격 질주",
-	"MOFFEIN_ROCKET_BODY_UTILITY_ALT_DESCRIPTION" : "<style=cIsUtility>묵직</style>. <style=cIsDamage>마비</style>. 적에게 폭탄봉을 휘둘러 <style=cIsDamage>1200% 피해</style>를 입힙니다. <style=cIsDamage>명중시</style> <style=cIsUtility>블라스트 점프</style>를 일으킬수 있는 폭발을 생성합니다",
+	"MOFFEIN_ROCKET_BODY_UTILITY_ALT_DESCRIPTION" : "<style=cIsUtility>묵직</style>. <style=cIsDamage>마비</style>. 적에게 폭탄봉을 휘둘러 <style=cIsDamage>1200% 피해</style>를 입힙니다. <style=cIsDamage>명중시</style> <style=cIsUtility>블라스트 점프 중 타격시</style> 치명타를 일으킵니다.",
 	
 	"MOFFEIN_ROCKET_BODY_SPECIAL_NAME" : "신속 무장",
 	"MOFFEIN_ROCKET_BODY_SPECIAL_DESCRIPTION" : "<style=cIsDamage>로켓 4발을 빠르게 발사</style>하고 <style=cIsUtility>무기를 재장전시킵니다</style>.",

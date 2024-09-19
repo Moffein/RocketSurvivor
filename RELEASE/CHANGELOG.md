@@ -1,3 +1,7 @@
+`1.0.8`
+
+- Updated Korean TL.
+
 `1.0.7`
 
 - Korean translation (Thanks Dice-001!)
