@@ -45,6 +45,7 @@ Drop the dll into \BepInEx\plugins\
 - BoxRoss (VR C4 stuff)
 - Mushy Avocado (Mastery Skin) - https://www.artstation.com/mushyavocado
 - FORCED_REASSEMBLY (helped re-rig Mastery Skin along with Domi)
+- getsurabbit (Lore)
 
 - Sounds taken from:
 	- Reflex Arena

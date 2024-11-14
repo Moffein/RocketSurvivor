@@ -1,3 +1,8 @@
+`1.0.9`
+
+- Recompiled for latest update to attempt to fix online rocket jumps for clients. Ping me if it's still broken.
+- Added lore from getsurabbit.
+
 `1.0.8`
 
 - Updated Korean TL.
