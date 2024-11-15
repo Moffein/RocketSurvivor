@@ -25,10 +25,6 @@ If you have any feedback/suggestions, open an issue on the Github page, or join 
 	- Rapid Rearm
 		- Rockets have less knockback against enemies.
 
-## To Do
-
-- Mastery Skin
-
 ## Installation
 Drop the dll into \BepInEx\plugins\
 
