@@ -1,3 +1,9 @@
+`1.0.10`
+
+- Removed Client-Side rocket jumping optimizations from 0.8.0 since they no longer work with the latest RoR2 update.
+
+	*Let me know if rocket jumping is still broken for multiplayer clients. Also let me know if M2 detonation rocket jumps are working online.*
+
 `1.0.9`
 
 - Recompiled for latest update to attempt to fix online rocket jumps for clients. Ping me if it's still broken.
