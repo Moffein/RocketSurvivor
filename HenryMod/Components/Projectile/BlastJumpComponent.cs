@@ -68,6 +68,7 @@ namespace RocketSurvivor.Components.Projectile
         //Other 2 methods are still public because there are cases where you'd want to use them even if runOnServer is on/off, maybe.
         public void AttemptBlastJump()
         {
+            if (fired) return;
             if (runOnServer)
             {
                 BlastJumpServer();

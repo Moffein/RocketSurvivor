@@ -1,3 +1,7 @@
+`1.0.12`
+
+- Fixed another case where Rocket Jump force could be duplicated.
+
 `1.0.11`
 
 - Fixed a bug where Rocket Jump force could end up being doubled for the host.
