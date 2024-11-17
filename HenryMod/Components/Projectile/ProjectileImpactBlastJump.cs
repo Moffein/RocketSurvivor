@@ -11,7 +11,7 @@ namespace RocketSurvivor.Components.Projectile
         public void OnProjectileImpact(ProjectileImpactInfo impactInfo)
         {
             BlastJumpComponent bjc = base.GetComponent<BlastJumpComponent>();
-            if (bjc) bjc.BlastJump();
+            if (bjc) bjc.AttemptBlastJump();
         }
     }
 }

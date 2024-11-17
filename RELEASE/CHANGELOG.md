@@ -1,3 +1,7 @@
+`1.0.11`
+
+- Fixed a bug where Rocket Jump force could end up being doubled for the host.
+
 `1.0.10`
 
 - Removed Client-Side rocket jumping optimizations from 0.8.0 since they no longer work with the latest RoR2 update.

@@ -78,7 +78,7 @@ namespace RocketSurvivor.Components.Projectile
             }
         }
 
-        public void BlastJump()
+        private void BlastJump()
         {
             //Removed force check because it doesnt work with new Blast Jump stuff.
             if (fired || !pc || !pc.owner) return; // || (pd && pd.force <= 0f)
