@@ -32,6 +32,14 @@ namespace EntityStates.RocketSurvivorSkills.Special
             }
             selectedRocketSkill = FindRocketSkillInfo(selectedPrimarySkill);
 
+            damageTypeInternal = DamageType.Generic;
+            if (selectedRocketSkill != null && selectedRocketSkill.projectilePrefab)
+            {
+                ProjectileDamage pd = selectedRocketSkill.projectilePrefab.GetComponent<ProjectileDamage>();
+                if (pd) damageTypeInternal = pd.damageType;
+            }
+            damageTypeInternal.damageSource = DamageSource.Special;
+
             ModifyStats();
         }
 
@@ -114,7 +122,8 @@ namespace EntityStates.RocketSurvivorSkills.Special
                     {
                         //aimDirection = Util.ApplySpread(aimRay.direction, 0f, 3f, 1f, 1f);
                     }
-                    ProjectileManager.instance.FireProjectile(GetProjectilePrefab(), aimRay.origin, Util.QuaternionSafeLookRotation(aimDirection), base.gameObject, this.damageStat * GetDamageCoefficient(), GetForce() * 0.25f, isCrit, DamageColorIndex.Default, null, -1f);
+
+                    ProjectileManager.instance.FireProjectile(GetProjectilePrefab(), aimRay.origin, Util.QuaternionSafeLookRotation(aimDirection), base.gameObject, this.damageStat * GetDamageCoefficient(), GetForce() * 0.25f, isCrit, DamageColorIndex.Default, null, -1f, damageTypeInternal);
                 }
 
 
@@ -184,6 +193,7 @@ namespace EntityStates.RocketSurvivorSkills.Special
         private RocketSkillInfo selectedRocketSkill;
         private bool isCrit;
         private float fireStopwatch;
+        private DamageTypeCombo damageTypeInternal;
 
         public float delayBetweenShots;
         public int shotsRemaining;

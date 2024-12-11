@@ -30,6 +30,10 @@ namespace RocketSurvivor.Modules
         {
             GameObject rocketPrefab = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Toolbot/ToolbotGrenadeLauncherProjectile.prefab").WaitForCompletion().InstantiateClone("RocketSurvivorRocketProjectile", true);//"RoR2/Base/Drones/PaladinRocket.prefab"
 
+            ProjectileDamage pd = rocketPrefab.GetComponent<ProjectileDamage>();
+            pd.damageType = DamageType.Generic;
+            pd.damageType.damageSource = DamageSource.Primary;
+
             ProjectileSimple ps = rocketPrefab.GetComponent<ProjectileSimple>();
             ps.desiredForwardSpeed = 75f;// 20.96f should be equivalent to tf2 rockets (1100HU/S) but this doesn't seem to be the case in-game.
             ps.lifetime = 20f;
@@ -96,6 +100,10 @@ namespace RocketSurvivor.Modules
         {
             GameObject rocketPrefab = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Toolbot/ToolbotGrenadeLauncherProjectile.prefab").WaitForCompletion().InstantiateClone("RocketSurvivorRocketNoBlastJumpProjectile", true);//"RoR2/Base/Drones/PaladinRocket.prefab"
 
+            ProjectileDamage pd = rocketPrefab.GetComponent<ProjectileDamage>();
+            pd.damageType = DamageType.Generic;
+            pd.damageType.damageSource = DamageSource.Primary;
+
             ProjectileSimple ps = rocketPrefab.GetComponent<ProjectileSimple>();
             ps.desiredForwardSpeed = 75f;// 20.96f should be equivalent to tf2 rockets (1100HU/S) but this doesn't seem to be the case in-game.
             ps.lifetime = 20f;
@@ -156,6 +164,10 @@ namespace RocketSurvivor.Modules
         private static void CreateRocketAlt()
         {
             GameObject rocketPrefab = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Toolbot/ToolbotGrenadeLauncherProjectile.prefab").WaitForCompletion().InstantiateClone("RocketSurvivorRocketAltProjectile", true);//"RoR2/Base/Drones/PaladinRocket.prefab"
+
+            ProjectileDamage pd = rocketPrefab.GetComponent<ProjectileDamage>();
+            pd.damageType = DamageType.Generic;
+            pd.damageType.damageSource = DamageSource.Primary;
 
             ProjectileSimple ps = rocketPrefab.GetComponent<ProjectileSimple>();
             ps.desiredForwardSpeed = 75f * 1.8f;// 20.96f should be equivalent to tf2 rockets (1100HU/S) but this doesn't seem to be the case in-game.
@@ -246,6 +258,10 @@ namespace RocketSurvivor.Modules
         private static void CreateRocketAltNoBlastJump()
         {
             GameObject rocketPrefab = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Toolbot/ToolbotGrenadeLauncherProjectile.prefab").WaitForCompletion().InstantiateClone("RocketSurvivorRocketAltNoBlastJumpProjectile", true);//"RoR2/Base/Drones/PaladinRocket.prefab"
+
+            ProjectileDamage pd = rocketPrefab.GetComponent<ProjectileDamage>();
+            pd.damageType = DamageType.Generic;
+            pd.damageType.damageSource = DamageSource.Primary;
 
             ProjectileSimple ps = rocketPrefab.GetComponent<ProjectileSimple>();
             ps.desiredForwardSpeed = 75f * 1.8f;// 20.96f should be equivalent to tf2 rockets (1100HU/S) but this doesn't seem to be the case in-game.
@@ -365,6 +381,7 @@ namespace RocketSurvivor.Modules
 
             ProjectileDamage pd = c4Projectile.GetComponent<ProjectileDamage>();
             pd.damageType = DamageType.Stun1s;
+            pd.damageType.damageSource = DamageSource.Utility;
 
             DamageAPI.ModdedDamageTypeHolderComponent mdc = c4Projectile.AddComponent<DamageAPI.ModdedDamageTypeHolderComponent>();
             mdc.Add(DamageTypes.ScaleForceToMass);

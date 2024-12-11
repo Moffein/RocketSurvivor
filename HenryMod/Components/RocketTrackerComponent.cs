@@ -163,6 +163,7 @@ namespace RocketSurvivor.Components {
                         radius = pie.blastRadius,
                         teamIndex = tf.teamIndex
                     };
+                    ba.damageType.damageSource = DamageSource.Secondary;
 
                     if (info.applyAirDetBonus)
                     {

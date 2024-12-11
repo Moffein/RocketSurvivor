@@ -1,3 +1,7 @@
+`1.0.13`
+
+- Recompiled for latest update.
+
 `1.0.12`
 
 - Fixed another case where Rocket Jump force could be duplicated.
