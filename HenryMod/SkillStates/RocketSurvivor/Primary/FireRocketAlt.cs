@@ -1,4 +1,5 @@
-﻿using RoR2;
+﻿using R2API;
+using RoR2;
 using RoR2.Projectile;
 using UnityEngine;
 using UnityEngine.AddressableAssets;
@@ -24,9 +25,11 @@ namespace EntityStates.RocketSurvivorSkills.Primary
 			if (base.isAuthority)
 			{
 				float damageMult = RocketSurvivor.RocketSurvivorPlugin.GetICBMDamageMult(base.characterBody);
+                DamageTypeCombo damageTypeInternal = DamageTypeCombo.GenericPrimary;
+                damageTypeInternal.AddModdedDamageType(RocketSurvivor.DamageTypes.ScaleForceToMass);
 
-				//Copied from Bandit2
-				if (RocketSurvivor.Modules.Config.pocketICBM.Value&& base.characterBody && base.characterBody.inventory && base.characterBody.inventory.GetItemCount(DLC1Content.Items.MoreMissile) > 0)
+                //Copied from Bandit2
+                if (RocketSurvivor.Modules.Config.pocketICBM.Value&& base.characterBody && base.characterBody.inventory && base.characterBody.inventory.GetItemCount(DLC1Content.Items.MoreMissile) > 0)
 				{
 					Vector3 rhs = Vector3.Cross(Vector3.up, aimRay.direction);
 					Vector3 axis = Vector3.Cross(aimRay.direction, rhs);
@@ -43,13 +46,13 @@ namespace EntityStates.RocketSurvivorSkills.Primary
 					for (int i = 0; i < 3; i++)
 					{
 						bool centerRocket = i == 1 || RocketSurvivor.Modules.Config.pocketICBMEnableKnockback.Value;
-						ProjectileManager.instance.FireProjectile(centerRocket ? FireRocketAlt.projectilePrefab : FireRocketAlt.projectilePrefabICBM, aimRay2.origin, Util.QuaternionSafeLookRotation(aimRay2.direction), base.gameObject, damageMult * this.damageStat * FireRocketAlt.damageCoefficient, centerRocket ? FireRocketAlt.force : 0f, base.RollCrit(), DamageColorIndex.Default, null, -1f);
+						ProjectileManager.instance.FireProjectile(centerRocket ? FireRocketAlt.projectilePrefab : FireRocketAlt.projectilePrefabICBM, aimRay2.origin, Util.QuaternionSafeLookRotation(aimRay2.direction), base.gameObject, damageMult * this.damageStat * FireRocketAlt.damageCoefficient, centerRocket ? FireRocketAlt.force : 0f, base.RollCrit(), DamageColorIndex.Default, null, -1f, damageTypeInternal);
 						aimRay2.direction = rotation * aimRay2.direction;
 					}
 				}
 				else
 				{
-					ProjectileManager.instance.FireProjectile(FireRocketAlt.projectilePrefab, aimRay.origin, Util.QuaternionSafeLookRotation(aimRay.direction), base.gameObject, this.damageStat * FireRocketAlt.damageCoefficient, FireRocketAlt.force, base.RollCrit(), DamageColorIndex.Default, null, -1f);
+					ProjectileManager.instance.FireProjectile(FireRocketAlt.projectilePrefab, aimRay.origin, Util.QuaternionSafeLookRotation(aimRay.direction), base.gameObject, this.damageStat * FireRocketAlt.damageCoefficient, FireRocketAlt.force, base.RollCrit(), DamageColorIndex.Default, null, -1f, damageTypeInternal);
 				}
 			}
 		}

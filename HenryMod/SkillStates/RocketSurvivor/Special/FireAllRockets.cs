@@ -1,4 +1,5 @@
 ﻿using EntityStates.RocketSurvivorSkills.Primary;
+using R2API;
 using RocketSurvivor.Modules.Survivors;
 using RoR2;
 using RoR2.Projectile;
@@ -32,11 +33,15 @@ namespace EntityStates.RocketSurvivorSkills.Special
             }
             selectedRocketSkill = FindRocketSkillInfo(selectedPrimarySkill);
 
-            damageTypeInternal = DamageType.Generic;
+            damageTypeInternal = DamageTypeCombo.GenericSpecial;
             if (selectedRocketSkill != null && selectedRocketSkill.projectilePrefab)
             {
                 ProjectileDamage pd = selectedRocketSkill.projectilePrefab.GetComponent<ProjectileDamage>();
                 if (pd) damageTypeInternal = pd.damageType;
+            }
+            else
+            {
+                damageTypeInternal.AddModdedDamageType(RocketSurvivor.DamageTypes.ScaleForceToMass);
             }
             damageTypeInternal.damageSource = DamageSource.Special;
 

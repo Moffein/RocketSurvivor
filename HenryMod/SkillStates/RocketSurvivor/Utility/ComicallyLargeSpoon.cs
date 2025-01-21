@@ -111,7 +111,7 @@ namespace EntityStates.RocketSurvivorSkills.Utility
                         canRejectForce = true,
                         crit = false,
                         damageColorIndex = DamageColorIndex.Default,
-                        damageType = DamageType.Stun1s,
+                        damageType = (DamageTypeCombo) DamageType.Stun1s | DamageSource.Utility,
                         falloffModel = BlastAttack.FalloffModel.None,
                         inflictor = base.gameObject,
                         position = base.characterBody.corePosition,

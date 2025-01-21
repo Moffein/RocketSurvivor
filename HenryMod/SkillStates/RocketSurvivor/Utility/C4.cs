@@ -1,4 +1,5 @@
 ﻿using BepInEx.Configuration;
+using R2API;
 using RoR2;
 using RoR2.Projectile;
 using System.Runtime.CompilerServices;

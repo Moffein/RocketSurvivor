@@ -119,6 +119,8 @@ namespace RocketSurvivor.Components {
             if (!toDetonate) return false;
 
             ProjectileDamage pd = toDetonate.GetComponent<ProjectileDamage>();
+            if (pd.damageType.damageSource == DamageSource.Primary) pd.damageType.damageSource = DamageSource.Secondary;
+
             ProjectileController pc = toDetonate.GetComponent<ProjectileController>();
             ProjectileImpactExplosion pie = toDetonate.GetComponent<ProjectileImpactExplosion>();
             TeamFilter tf = toDetonate.GetComponent<TeamFilter>();
@@ -163,7 +165,6 @@ namespace RocketSurvivor.Components {
                         radius = pie.blastRadius,
                         teamIndex = tf.teamIndex
                     };
-                    ba.damageType.damageSource = DamageSource.Secondary;
 
                     if (info.applyAirDetBonus)
                     {
@@ -173,12 +174,12 @@ namespace RocketSurvivor.Components {
                         ba.radius = Mathf.Max(ba.radius * EntityStates.RocketSurvivorSkills.Secondary.AirDet.radiusMult, EntityStates.RocketSurvivorSkills.Secondary.AirDet.minRadius);
                     }
 
-                    DamageAPI.ModdedDamageTypeHolderComponent mdc = toDetonate.GetComponent<DamageAPI.ModdedDamageTypeHolderComponent>();
+                    /*DamageAPI.ModdedDamageTypeHolderComponent mdc = toDetonate.GetComponent<DamageAPI.ModdedDamageTypeHolderComponent>();
                     if (mdc)
                     {
                         if (mdc.Has(DamageTypes.ScaleForceToMass)) ba.AddModdedDamageType(DamageTypes.ScaleForceToMass);
                         if (mdc.Has(DamageTypes.AirborneBonus)) ba.AddModdedDamageType(DamageTypes.AirborneBonus);
-                    }
+                    }*/
 
                     GameObject effectPrefab = EntityStates.RocketSurvivorSkills.Secondary.AirDet.explosionEffectPrefab;
                     if (((pd.damageType & DamageType.Silent) != 0) && ((pd.damageType & DamageType.Stun1s) != 0))

@@ -31,8 +31,8 @@ namespace RocketSurvivor.Modules
             GameObject rocketPrefab = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Toolbot/ToolbotGrenadeLauncherProjectile.prefab").WaitForCompletion().InstantiateClone("RocketSurvivorRocketProjectile", true);//"RoR2/Base/Drones/PaladinRocket.prefab"
 
             ProjectileDamage pd = rocketPrefab.GetComponent<ProjectileDamage>();
-            pd.damageType = DamageType.Generic;
-            pd.damageType.damageSource = DamageSource.Primary;
+            pd.damageType = DamageTypeCombo.GenericPrimary;
+            pd.damageType.AddModdedDamageType(DamageTypes.ScaleForceToMass);
 
             ProjectileSimple ps = rocketPrefab.GetComponent<ProjectileSimple>();
             ps.desiredForwardSpeed = 75f;// 20.96f should be equivalent to tf2 rockets (1100HU/S) but this doesn't seem to be the case in-game.
@@ -87,10 +87,6 @@ namespace RocketSurvivor.Modules
             bjc.requireAirborne = true;
             rocketPrefab.AddComponent<ProjectileImpactBlastJump>();
 
-            DamageAPI.ModdedDamageTypeHolderComponent mdc = rocketPrefab.AddComponent<DamageAPI.ModdedDamageTypeHolderComponent>();
-            mdc.Add(DamageTypes.ScaleForceToMass);
-            mdc.Add(DamageTypes.SweetSpotModifier);
-
             AddProjectile(rocketPrefab);
 
             EntityStates.RocketSurvivorSkills.Primary.FireRocket.projectilePrefab = rocketPrefab;
@@ -101,8 +97,8 @@ namespace RocketSurvivor.Modules
             GameObject rocketPrefab = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Toolbot/ToolbotGrenadeLauncherProjectile.prefab").WaitForCompletion().InstantiateClone("RocketSurvivorRocketNoBlastJumpProjectile", true);//"RoR2/Base/Drones/PaladinRocket.prefab"
 
             ProjectileDamage pd = rocketPrefab.GetComponent<ProjectileDamage>();
-            pd.damageType = DamageType.Generic;
-            pd.damageType.damageSource = DamageSource.Primary;
+            pd.damageType = DamageTypeCombo.GenericPrimary;
+            pd.damageType.AddModdedDamageType(DamageTypes.ScaleForceToMass);
 
             ProjectileSimple ps = rocketPrefab.GetComponent<ProjectileSimple>();
             ps.desiredForwardSpeed = 75f;// 20.96f should be equivalent to tf2 rockets (1100HU/S) but this doesn't seem to be the case in-game.
@@ -151,10 +147,6 @@ namespace RocketSurvivor.Modules
 
             rocketPrefab.AddComponent<AddToRocketTrackerComponent>();
 
-            DamageAPI.ModdedDamageTypeHolderComponent mdc = rocketPrefab.AddComponent<DamageAPI.ModdedDamageTypeHolderComponent>();
-            mdc.Add(DamageTypes.ScaleForceToMass);
-            mdc.Add(DamageTypes.SweetSpotModifier);
-
             AddProjectile(rocketPrefab);
 
             EntityStates.RocketSurvivorSkills.Primary.FireRocket.projectilePrefabICBM = rocketPrefab;
@@ -166,8 +158,8 @@ namespace RocketSurvivor.Modules
             GameObject rocketPrefab = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Toolbot/ToolbotGrenadeLauncherProjectile.prefab").WaitForCompletion().InstantiateClone("RocketSurvivorRocketAltProjectile", true);//"RoR2/Base/Drones/PaladinRocket.prefab"
 
             ProjectileDamage pd = rocketPrefab.GetComponent<ProjectileDamage>();
-            pd.damageType = DamageType.Generic;
-            pd.damageType.damageSource = DamageSource.Primary;
+            pd.damageType = DamageTypeCombo.GenericPrimary;
+            pd.damageType.AddModdedDamageType(DamageTypes.ScaleForceToMass);
 
             ProjectileSimple ps = rocketPrefab.GetComponent<ProjectileSimple>();
             ps.desiredForwardSpeed = 75f * 1.8f;// 20.96f should be equivalent to tf2 rockets (1100HU/S) but this doesn't seem to be the case in-game.
@@ -224,10 +216,6 @@ namespace RocketSurvivor.Modules
             bjc.runOnServer = true;
             //rocketPrefab.AddComponent<ProjectileImpactBlastJump>();   //isPrediction prevents this from running on clients
 
-            DamageAPI.ModdedDamageTypeHolderComponent mdc = rocketPrefab.AddComponent<DamageAPI.ModdedDamageTypeHolderComponent>();
-            mdc.Add(DamageTypes.ScaleForceToMass);
-            //mdc.Add(DamageTypes.AirborneBonus);
-
             if (Modules.Config.samTracking.Value)
             {
                 rocketPrefab.AddComponent<ProjectileTargetComponent>();
@@ -260,8 +248,8 @@ namespace RocketSurvivor.Modules
             GameObject rocketPrefab = Addressables.LoadAssetAsync<GameObject>("RoR2/Base/Toolbot/ToolbotGrenadeLauncherProjectile.prefab").WaitForCompletion().InstantiateClone("RocketSurvivorRocketAltNoBlastJumpProjectile", true);//"RoR2/Base/Drones/PaladinRocket.prefab"
 
             ProjectileDamage pd = rocketPrefab.GetComponent<ProjectileDamage>();
-            pd.damageType = DamageType.Generic;
-            pd.damageType.damageSource = DamageSource.Primary;
+            pd.damageType = DamageTypeCombo.GenericPrimary;
+            pd.damageType.AddModdedDamageType(DamageTypes.ScaleForceToMass);
 
             ProjectileSimple ps = rocketPrefab.GetComponent<ProjectileSimple>();
             ps.desiredForwardSpeed = 75f * 1.8f;// 20.96f should be equivalent to tf2 rockets (1100HU/S) but this doesn't seem to be the case in-game.
@@ -310,9 +298,6 @@ namespace RocketSurvivor.Modules
             }*/
 
             rocketPrefab.AddComponent<AddToRocketTrackerComponent>();
-
-            DamageAPI.ModdedDamageTypeHolderComponent mdc = rocketPrefab.AddComponent<DamageAPI.ModdedDamageTypeHolderComponent>();
-            mdc.Add(DamageTypes.ScaleForceToMass);
             //mdc.Add(DamageTypes.AirborneBonus);
 
             if (Modules.Config.samTracking.Value)
@@ -380,11 +365,9 @@ namespace RocketSurvivor.Modules
             bjc.blastJumpOnDestroy = false;
 
             ProjectileDamage pd = c4Projectile.GetComponent<ProjectileDamage>();
-            pd.damageType = DamageType.Stun1s;
-            pd.damageType.damageSource = DamageSource.Utility;
+            pd.damageType = (DamageTypeCombo)DamageType.Stun1s | DamageSource.Utility;
+            pd.damageType.AddModdedDamageType(DamageTypes.ScaleForceToMass);
 
-            DamageAPI.ModdedDamageTypeHolderComponent mdc = c4Projectile.AddComponent<DamageAPI.ModdedDamageTypeHolderComponent>();
-            mdc.Add(DamageTypes.ScaleForceToMass);
 
             ProjectileController pc = c4Projectile.GetComponent<ProjectileController>();
             pc.allowPrediction = false;

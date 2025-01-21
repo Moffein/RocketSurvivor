@@ -1,3 +1,7 @@
+`1.0.14`
+
+- Fixed Breaching Fin and Luminous Shot compat.
+
 `1.0.13`
 
 - Recompiled for latest update.
