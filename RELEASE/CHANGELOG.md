@@ -1,3 +1,7 @@
+`1.0.15`
+
+- Actually uploaded the correct dll this time.
+
 `1.0.14`
 
 - Fixed Breaching Fin and Luminous Shot compat.
