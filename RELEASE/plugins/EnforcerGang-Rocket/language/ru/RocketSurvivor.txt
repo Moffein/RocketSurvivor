@@ -28,6 +28,9 @@
 	"MOFFEIN_ROCKET_BODY_UTILITY_ALT_NAME" : "Сапёрная лопата",
 	"MOFFEIN_ROCKET_BODY_UTILITY_ALT_DESCRIPTION" : "<style=cIsUtility>Пробивание</style>. <style=cIsDamage>Оглушение</style>. Ударьте взрывной лопатой по врагу, чтобы нанести <style=cIsDamage>1200% урона</style>. Наносит <style=cIsDamage>критические удары</style> во время <style=cIsUtility>взрывного прыжка</style>.",
 	
+	"MOFFEIN_ROCKET_BODY_UTILITY_ALT_SCEPTER_NAME" : "Большой шлем",
+	"MOFFEIN_ROCKET_BODY_UTILITY_ALT_SCEPTER_DESCRIPTION" : "<style=cIsUtility>Пробивание</style>. <style=cIsDamage>Оглушение</style>. Ударьте взрывной лопатой по врагу, чтобы нанести <style=cIsDamage>1800% урона</style>. Наносит <style=cIsDamage>критические удары</style> во время <style=cIsUtility>взрывного прыжка</style>.",
+	
 	"MOFFEIN_ROCKET_BODY_SPECIAL_NAME" : "Шустрая перезарядка",
 	"MOFFEIN_ROCKET_BODY_SPECIAL_DESCRIPTION" : "Быстро <style=cIsDamage>выстреливает ракетами (4)</style>, затем <style=cIsUtility>перезаряжает оружие</style>.",
 	

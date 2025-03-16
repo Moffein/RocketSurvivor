@@ -26,8 +26,10 @@ namespace RocketSurvivor.Modules.Survivors
         //used when registering your survivor's language tokens
         public override string survivorTokenPrefix => Rocket_Prefix;
 
-        public static SkillDef FireRocketSkillDef, FireRocketAltSkillDef, AirDetDef, C4Def, ShovelDef;
+        public static SkillDef FireRocketSkillDef, FireRocketAltSkillDef, AirDetDef, C4Def, ShovelDef, ShovelSpecialDef, ShovelScepterDef;
         public static Color RocketSurvivorColor = new Color(62f / 255f, 137f / 255f, 72f / 255f);
+
+        private UnlockableDef spoonUnlock;
 
         public override BodyInfo bodyInfo { get; set; } = new BodyInfo
         {
@@ -444,7 +446,7 @@ namespace RocketSurvivor.Modules.Survivors
             Modules.Content.AddSkillDef(marketGardenDef);
             RocketSurvivorSetup.ShovelDef = marketGardenDef;
 
-            UnlockableDef spoonUnlock = ScriptableObject.CreateInstance<UnlockableDef>();
+            spoonUnlock = ScriptableObject.CreateInstance<UnlockableDef>();
             spoonUnlock.cachedName = "Skills.MoffeinRocketSurvivor.MarketGaden";
             spoonUnlock.nameToken = "ACHIEVEMENT_MOFFEINROCKETMARKETGARDENUNLOCK_NAME";
             spoonUnlock.achievementIcon = marketGardenDef.icon;
@@ -480,7 +482,7 @@ namespace RocketSurvivor.Modules.Survivors
             });
             (rearmDef as ScriptableObject).name = "Rearm";
             Modules.Content.AddSkillDef(rearmDef);
-            Modules.Skills.AddSpecialSkills(bodyPrefab, rearmDef);
+            Skills.AddSkillsToFamily(sk.special.skillFamily, rearmDef);
 
             SkillDef rearmScepterDef = Modules.Skills.CreateSkillDef(new SkillDefInfo
             {
@@ -509,6 +511,65 @@ namespace RocketSurvivor.Modules.Survivors
             Modules.Content.AddSkillDef(rearmScepterDef);
             RocketSurvivor.RocketSurvivorPlugin.SetupScepterClassic("RocketSurvivorBody", rearmScepterDef, rearmDef);
             RocketSurvivor.RocketSurvivorPlugin.SetupScepterStandalone("RocketSurvivorBody", rearmScepterDef, SkillSlot.Special, 0);
+
+            SkillDef shovelSpecialDef = Modules.Skills.CreateSkillDef(new SkillDefInfo
+            {
+                skillName = "MarketGardenSpecial",
+                skillNameToken = Rocket_Prefix + "UTILITY_ALT_NAME",
+                skillDescriptionToken = Rocket_Prefix + "UTILITY_ALT_DESCRIPTION",
+                skillIcon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texSkillUtility_Shovel" + (Modules.Config.msPaintIcons.Value ? "_mspaint" : "")),
+                activationState = new EntityStates.SerializableEntityStateType(typeof(EntityStates.RocketSurvivorSkills.Special.PrepComicallyLargeSpoonSpecial)),
+                activationStateMachineName = "Offhand",
+                baseMaxStock = 1,
+                baseRechargeInterval = 5f,
+                beginSkillCooldownOnSkillEnd = true,
+                canceledFromSprinting = false,
+                forceSprintDuringState = false,
+                fullRestockOnAssign = true,
+                interruptPriority = EntityStates.InterruptPriority.PrioritySkill,
+                resetCooldownTimerOnUse = false,
+                isCombatSkill = true,
+                mustKeyPress = true,
+                cancelSprintingOnActivation = false,
+                rechargeStock = 1,
+                requiredStock = 1,
+                stockToConsume = 1,
+                keywordTokens = new string[] { "KEYWORD_HEAVY", "KEYWORD_STUNNING" }
+            });
+            (shovelSpecialDef as ScriptableObject).name = "MarketGardenSpecial";
+            Modules.Content.AddSkillDef(shovelSpecialDef);
+            RocketSurvivorSetup.ShovelSpecialDef = shovelSpecialDef;
+            Skills.AddSkillToFamily(sk.special.skillFamily, shovelSpecialDef, Config.ForceUnlock.Value ? null : spoonUnlock);
+
+            SkillDef shovelScepterDef = Modules.Skills.CreateSkillDef(new SkillDefInfo
+            {
+                skillName = "MarketGardenScepter",
+                skillNameToken = Rocket_Prefix + "UTILITY_ALT_SCEPTER_NAME",
+                skillDescriptionToken = Rocket_Prefix + "UTILITY_ALT_SCEPTER_DESCRIPTION",
+                skillIcon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texSkillUtility_Shovel_Scepter" + (Modules.Config.msPaintIcons.Value ? "_mspaint" : "")),
+                activationState = new EntityStates.SerializableEntityStateType(typeof(EntityStates.RocketSurvivorSkills.Special.PrepComicallyLargeSpoonScepter)),
+                activationStateMachineName = "Offhand",
+                baseMaxStock = 1,
+                baseRechargeInterval = 5f,
+                beginSkillCooldownOnSkillEnd = true,
+                canceledFromSprinting = false,
+                forceSprintDuringState = false,
+                fullRestockOnAssign = true,
+                interruptPriority = EntityStates.InterruptPriority.PrioritySkill,
+                resetCooldownTimerOnUse = false,
+                isCombatSkill = true,
+                mustKeyPress = true,
+                cancelSprintingOnActivation = false,
+                rechargeStock = 1,
+                requiredStock = 1,
+                stockToConsume = 1,
+                keywordTokens = new string[] { "KEYWORD_HEAVY", "KEYWORD_STUNNING" }
+            });
+            (shovelScepterDef as ScriptableObject).name = "MarketGardenScepter";
+            RocketSurvivorSetup.ShovelScepterDef = shovelScepterDef;
+            RocketSurvivor.RocketSurvivorPlugin.SetupScepterClassic("RocketSurvivorBody", shovelScepterDef, shovelSpecialDef);
+            RocketSurvivor.RocketSurvivorPlugin.SetupScepterStandalone("RocketSurvivorBody", shovelScepterDef, SkillSlot.Special, 1);
+
             #endregion
         }
 

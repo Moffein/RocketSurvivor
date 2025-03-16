@@ -28,6 +28,9 @@
 	"MOFFEIN_ROCKET_BODY_UTILITY_ALT_NAME" : "Bombardeio",
 	"MOFFEIN_ROCKET_BODY_UTILITY_ALT_DESCRIPTION" : "<style=cIsUtility>Pesado</style>. <style=cIsDamage>Atordoante</style>. Balance sua pá explosiva contra um inimigo, causando <style=cIsDamage>1.200% de dano</style>. Realiza <style=cIsDamage>Acertos Críticos</style> durante <style=cIsUtility>saltos explosivos</style>.",
 	
+	"MOFFEIN_ROCKET_BODY_UTILITY_ALT_SCEPTER_NAME" : "Grande Slam",
+	"MOFFEIN_ROCKET_BODY_UTILITY_ALT_SCEPTER_DESCRIPTION" : "<style=cIsUtility>Pesado</style>. <style=cIsDamage>Atordoante</style>. Balance sua pá explosiva contra um inimigo, causando <style=cIsDamage>1.800% de dano</style>. Realiza <style=cIsDamage>Acertos Críticos</style> durante <style=cIsUtility>saltos explosivos</style>.",
+	
 	"MOFFEIN_ROCKET_BODY_SPECIAL_NAME" : "Recarregamento Rápido",
 	"MOFFEIN_ROCKET_BODY_SPECIAL_DESCRIPTION" : "Rapidamente <style=cIsDamage>atire 4 foguetes</style>, e então <style=cIsUtility>recarregue sua arma</style>.",
 	

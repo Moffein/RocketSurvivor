@@ -32,6 +32,10 @@ namespace RocketSurvivor.Modules
             Modules.Content.AddEntityState(typeof(Rearm));
             Modules.Content.AddEntityState(typeof(PrepComicallyLargeSpoon));
             Modules.Content.AddEntityState(typeof(ComicallyLargeSpoon));
+            Modules.Content.AddEntityState(typeof(PrepComicallyLargeSpoonSpecial));
+            Modules.Content.AddEntityState(typeof(ComicallyLargeSpoonSpecial));
+            Modules.Content.AddEntityState(typeof(PrepComicallyLargeSpoonScepter));
+            Modules.Content.AddEntityState(typeof(ComicallyLargeSpoonScepter));
             Modules.Content.AddEntityState(typeof(C4));
         }
     }

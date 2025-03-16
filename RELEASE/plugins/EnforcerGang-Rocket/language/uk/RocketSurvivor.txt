@@ -28,6 +28,9 @@
 	"MOFFEIN_ROCKET_BODY_UTILITY_ALT_NAME" : "Бомбардувальний біг",
 	"MOFFEIN_ROCKET_BODY_UTILITY_ALT_DESCRIPTION" : "<style=cIsUtility>Важке</style>. <style=cIsDamage>Приголомшує</style>. Замахніться вибуховою лопатою на ворога, щоб завдати <style=cIsDamage>1200% шкоди</style>. Завдає <style=cIsDamage>критичні удари</style> під час <style=cIsUtility>вибухового стрибку</style>.",
 	
+	"MOFFEIN_ROCKET_BODY_UTILITY_ALT_SCEPTER_NAME" : "Великий шолом",
+	"MOFFEIN_ROCKET_BODY_UTILITY_ALT_SCEPTER_DESCRIPTION" : "<style=cIsUtility>Важке</style>. <style=cIsDamage>Приголомшує</style>. Замахніться вибуховою лопатою на ворога, щоб завдати <style=cIsDamage>1800% шкоди</style>. Завдає <style=cIsDamage>критичні удари</style> під час <style=cIsUtility>вибухового стрибку</style>.",
+	
 	"MOFFEIN_ROCKET_BODY_SPECIAL_NAME" : "Швидке переозброєння",
 	"MOFFEIN_ROCKET_BODY_SPECIAL_DESCRIPTION" : "Швидко <style=cIsDamage>вистрілює 4 ракети</style> та <style=cIsUtility>перезаряджає вашу зброю</style>.",
 	

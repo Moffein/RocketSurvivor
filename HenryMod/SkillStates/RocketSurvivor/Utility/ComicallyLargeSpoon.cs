@@ -20,17 +20,27 @@ namespace EntityStates.RocketSurvivorSkills.Utility
         public override void FixedUpdate()
         {
             base.FixedUpdate();
-            if (base.isAuthority && !(base.inputBank && base.inputBank.skill3.down))
+            if (base.isAuthority && ButtonReleased())
             {
-                this.outer.SetNextState(new ComicallyLargeSpoon());
+                SetNextState();
                 success = true;
                 return;
             }
         }
 
+        public virtual bool ButtonReleased()
+        {
+            return !(base.inputBank && base.inputBank.skill3.down);
+        }
+
+        public virtual void SetNextState()
+        {
+            this.outer.SetNextState(new ComicallyLargeSpoon());
+        }
+
         public override InterruptPriority GetMinimumInterruptPriority()
         {
-            return InterruptPriority.PrioritySkill;
+            return InterruptPriority.Pain;
         }
 
         public override void OnExit() {
@@ -84,6 +94,11 @@ namespace EntityStates.RocketSurvivorSkills.Utility
             base.PlaySwingEffect();
         }
 
+        public virtual float CalculateAdditionalSpeedDamage(float speed)
+        {
+            return (Mathf.Max(0f, speed - ComicallyLargeSpoon.minSpeedForDamageBonus)) * ComicallyLargeSpoon.speedDamageCoefficient;
+        }
+
         protected override void OnHitEnemyAuthority()
         {
             base.OnHitEnemyAuthority();
@@ -100,7 +115,7 @@ namespace EntityStates.RocketSurvivorSkills.Utility
 
                 if (base.characterBody)
                 {
-                    float speedFactor = (Mathf.Max(0f, speed - ComicallyLargeSpoon.minSpeedForDamageBonus)) * ComicallyLargeSpoon.speedDamageCoefficient;
+                    float speedFactor = CalculateAdditionalSpeedDamage(speed);
                     BlastAttack ba = new BlastAttack
                     {
                         attacker = base.gameObject,
@@ -123,13 +138,15 @@ namespace EntityStates.RocketSurvivorSkills.Utility
                     ba.AddModdedDamageType(DamageTypes.ScaleForceToMass);
                     ba.AddModdedDamageType(DamageTypes.SlamDunk);
                     ba.AddModdedDamageType(DamageTypes.MarketGarden);
-
+                    ModifyBlastAttack(ref ba);
                     ba.Fire();
 
                     EffectManager.SpawnEffect(EntityStates.RocketSurvivorSkills.Secondary.AirDet.explosionEffectPrefab, new EffectData { origin = base.characterBody.corePosition, scale = ba.radius }, true);
                 }
             }
         }
+
+        public virtual void ModifyBlastAttack(ref BlastAttack ba) { }
 
         public override InterruptPriority GetMinimumInterruptPriority()
         {

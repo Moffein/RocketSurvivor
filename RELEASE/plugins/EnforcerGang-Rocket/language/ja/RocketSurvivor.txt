@@ -27,6 +27,9 @@
 	"MOFFEIN_ROCKET_BODY_UTILITY_ALT_NAME" : "Bombing Run",
 	"MOFFEIN_ROCKET_BODY_UTILITY_ALT_DESCRIPTION" : "<style=cIsUtility>重量</style>。<style=cIsDamage>失神</style>。爆発するシャベルを敵めがけて振り回し <style=cIsDamage>1200% ダメージ</style> を与える。 <style=cIsUtility>ブラストジャンプ</style> 使用中は <style=cIsDamage>クリティカル ストライク</style> が発生する。",
 	
+	"MOFFEIN_ROCKET_BODY_UTILITY_ALT_SCEPTER_NAME" : "Grand Slam",
+	"MOFFEIN_ROCKET_BODY_UTILITY_ALT_SCEPTER_DESCRIPTION" : "<style=cIsUtility>重量</style>。<style=cIsDamage>失神</style>。爆発するシャベルを敵めがけて振り回し <style=cIsDamage>1800% ダメージ</style> を与える。 <style=cIsUtility>ブラストジャンプ</style> 使用中は <style=cIsDamage>クリティカル ストライク</style> が発生する。",
+	
 	"MOFFEIN_ROCKET_BODY_SPECIAL_NAME" : "Rapid Rearm",
 	"MOFFEIN_ROCKET_BODY_SPECIAL_DESCRIPTION" : "高速で <style=cIsDamage>ロケット弾を4発</style> 発射し、<style=cIsUtility>武器の再装填</style> する。",
 	

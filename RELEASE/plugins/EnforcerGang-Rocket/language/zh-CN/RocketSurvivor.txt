@@ -28,6 +28,9 @@
 	"MOFFEIN_ROCKET_BODY_UTILITY_ALT_NAME" : "轰炸行动<color=#8888>(舞铲阶级)</color>",
 	"MOFFEIN_ROCKET_BODY_UTILITY_ALT_DESCRIPTION" : "<style=cIsUtility>重型</style>。<style=cIsDamage>眩晕</style>。将爆破铲挥向一名敌人，造成<style=cIsDamage>1200%伤害</style>。若触发<style=cIsUtility>爆炸跳</style>则造成<style=cIsDamage>暴击</style>。",
 	
+	"MOFFEIN_ROCKET_BODY_UTILITY_ALT_SCEPTER_NAME" : "轰炸行动<color=#8888>(大满贯)</color>",
+	"MOFFEIN_ROCKET_BODY_UTILITY_ALT_SCEPTER_DESCRIPTION" : "<style=cIsUtility>重型</style>。<style=cIsDamage>眩晕</style>。将爆破铲挥向一名敌人，造成<style=cIsDamage>1800%伤害</style>。若触发<style=cIsUtility>爆炸跳</style>则造成<style=cIsDamage>暴击</style>。",
+	
 	"MOFFEIN_ROCKET_BODY_SPECIAL_NAME" : "快速重装",
 	"MOFFEIN_ROCKET_BODY_SPECIAL_DESCRIPTION" : "立即<style=cIsDamage>发射4枚火箭弹</style>, 随后<style=cIsUtility>重装填你的武器</style>.",
 	

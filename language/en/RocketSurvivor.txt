@@ -28,6 +28,9 @@
 	"MOFFEIN_ROCKET_BODY_UTILITY_ALT_NAME" : "Bombing Run",
 	"MOFFEIN_ROCKET_BODY_UTILITY_ALT_DESCRIPTION" : "<style=cIsUtility>Heavy</style>. <style=cIsDamage>Stunning</style>. Swing your explosive shovel at an enemy for <style=cIsDamage>1200% damage</style>. Deals <style=cIsDamage>Critical Strikes</style> while <style=cIsUtility>blast jumping</style>.",
 	
+	"MOFFEIN_ROCKET_BODY_UTILITY_ALT_SCEPTER_NAME" : "Grand Slam",
+	"MOFFEIN_ROCKET_BODY_UTILITY_ALT_SCEPTER_DESCRIPTION" : "<style=cIsUtility>Heavy</style>. <style=cIsDamage>Stunning</style>. Swing your explosive shovel at an enemy for <style=cIsDamage>1800% damage</style>. Deals <style=cIsDamage>Critical Strikes</style> while <style=cIsUtility>blast jumping</style>.",
+	
 	"MOFFEIN_ROCKET_BODY_SPECIAL_NAME" : "Rapid Rearm",
 	"MOFFEIN_ROCKET_BODY_SPECIAL_DESCRIPTION" : "Rapidly <style=cIsDamage>fire 4 rockets</style>, then <style=cIsUtility>reload your weapon</style>.",
 	

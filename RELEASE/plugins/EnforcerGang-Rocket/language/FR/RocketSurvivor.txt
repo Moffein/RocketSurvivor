@@ -18,6 +18,8 @@
       "MOFFEIN_ROCKET_BODY_UTILITY_DESCRIPTION": "<style=cIsDamage>Étourdissant</style>. Placez une charge explosive. Utilisez le <style=cIsDamage>Détonateur à Distance</style> pour la faire exploser pour <style=cIsDamage>1200% de dégâts</style>.",
       "MOFFEIN_ROCKET_BODY_UTILITY_ALT_NAME": "Attaque Aérienne",
       "MOFFEIN_ROCKET_BODY_UTILITY_ALT_DESCRIPTION": "<style=cIsUtility>Lourd</style>. <style=cIsDamage>Étourdissant</style>. Frappez un ennemi avec votre pelle explosive pour <style=cIsDamage>1200% de dégâts</style>. Inflige des <style=cIsDamage>Coups Critiques</style> en <style=cIsUtility>saut propulsé</style>.",
+	  "MOFFEIN_ROCKET_BODY_UTILITY_ALT_SCEPTER_NAME": "Grand Chelem",
+      "MOFFEIN_ROCKET_BODY_UTILITY_ALT_SCEPTER_DESCRIPTION": "<style=cIsUtility>Lourd</style>. <style=cIsDamage>Étourdissant</style>. Frappez un ennemi avec votre pelle explosive pour <style=cIsDamage>1800% de dégâts</style>. Inflige des <style=cIsDamage>Coups Critiques</style> en <style=cIsUtility>saut propulsé</style>.",
       "MOFFEIN_ROCKET_BODY_SPECIAL_NAME": "Rearmement Rapide",
       "MOFFEIN_ROCKET_BODY_SPECIAL_DESCRIPTION": "Tirez rapidement <style=cIsDamage>4 roquets</style>, puis <style=cIsUtility>rechargez votre arme</style>.",
       "MOFFEIN_ROCKET_BODY_SPECIAL_SCEPTER_NAME": "Tempête de Roquets",

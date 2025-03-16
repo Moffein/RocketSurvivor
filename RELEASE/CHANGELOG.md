@@ -1,3 +1,9 @@
+`1.1.0`
+
+- New Special: Bombing Run
+	- It's exactly the same as the Utility version.
+	- Scepter: Grand Slam: +50% damage and radius, +100% speed-based damage scaling.
+
 `1.0.15`
 
 - Actually uploaded the correct dll this time.
