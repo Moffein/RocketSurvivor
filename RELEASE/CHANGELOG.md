@@ -1,3 +1,7 @@
+`1.1.1`
+
+- Added Mute M2 config option.
+
 `1.1.0`
 
 - New Special: Bombing Run

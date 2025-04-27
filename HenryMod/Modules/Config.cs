@@ -1,5 +1,6 @@
 ﻿using BepInEx.Configuration;
 using RiskOfOptions;
+using RocketSurvivor.Components;
 using System.Runtime.CompilerServices;
 using UnityEngine;
 
@@ -17,6 +18,8 @@ namespace RocketSurvivor.Modules
         public static ConfigEntry<bool> pocketICBMEnableKnockback;
         public static ConfigEntry<bool> samTracking;
 
+        public static ConfigEntry<bool> muteM2Sound;
+
         public static void ReadConfig()
         {
 
@@ -25,6 +28,8 @@ namespace RocketSurvivor.Modules
             pocketICBMEnableKnockback = RocketSurvivorPlugin.instance.Config.Bind("Gameplay", "Pocket ICBM Knockback", false, "Extra rockets from Pocket ICBM have knockback.");
             samTracking = RocketSurvivorPlugin.instance.Config.Bind("Primaries - HG4 SAM Launcher", "Enable Homing (Server-Side)", true, "SAM Rockets will home towards targets.");
             EntityStates.RocketSurvivorSkills.Utility.C4.vrUseOffhand = RocketSurvivorPlugin.instance.Config.Bind("Utilities - Nitro Charge", "VR: Throw from Offhand", true, "When VR Motion Controls are enabled, throw C4 from your nondominant hand. Throws from your dominant hand if false.");
+            muteM2Sound = RocketSurvivorPlugin.instance.Config.Bind("General", "Mute Remote Detonator Sound", false, "Mute Remote Detonator sound for yourself.");
+            muteM2Sound.SettingChanged += MuteM2Sound_SettingChanged;
 
             ForceUnlock = RocketSurvivorPlugin.instance.Config.Bind("General", "Force Unlock", false, "Unlock all gameplay-related features.");
             KeybindEmoteSit = RocketSurvivorPlugin.instance.Config.Bind("Keybinds", "Emote - Sit", new KeyboardShortcut(KeyCode.Alpha1), "Button to play this emote.");
@@ -37,9 +42,23 @@ namespace RocketSurvivor.Modules
             }
         }
 
+        public static void MuteM2Sound_SettingChanged(object sender, System.EventArgs e)
+        {
+            if (RocketTrackerComponent.detonateSuccess)
+            {
+                RocketTrackerComponent.detonateSuccess.eventName = muteM2Sound.Value ? "" : "Play_Moffein_RocketSurvivor_M2_Trigger";
+            }
+
+            if (RocketTrackerComponent.detonateFail)
+            {
+                RocketTrackerComponent.detonateFail.eventName = muteM2Sound.Value ? "" : "Play_Moffein_RocketSurvivor_M2_NoFire";
+            }
+        }
+
         [MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
         private static void RiskOfOptionsCompat()
         {
+            ModSettingsManager.AddOption(new RiskOfOptions.Options.CheckBoxOption(muteM2Sound));
             ModSettingsManager.AddOption(new RiskOfOptions.Options.KeyBindOption(KeybindEmoteSit));
             ModSettingsManager.AddOption(new RiskOfOptions.Options.KeyBindOption(KeybindEmoteShovel));
             ModSettingsManager.AddOption(new RiskOfOptions.Options.KeyBindOption(KeybindEmoteCSS));

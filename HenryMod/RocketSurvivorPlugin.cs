@@ -34,7 +34,7 @@ namespace RocketSurvivor
     {
         public const string MODUID = "com.EnforcerGang.RocketSurvivor";
         public const string MODNAME = "RocketSurvivor";
-        public const string MODVERSION = "1.1.0";
+        public const string MODVERSION = "1.1.1";
 
         // a prefix for name tokens to prevent conflicts- please capitalize all name tokens for convention
         public const string DEVELOPER_PREFIX = "MOFFEIN";
@@ -78,6 +78,8 @@ namespace RocketSurvivor
             // now make a content pack and add it- this part will change with the next update
             new Modules.ContentPacks().Initialize();
             if (emoteAPILoaded) EmoteAPICompat();
+
+            RocketSurvivor.Modules.Config.MuteM2Sound_SettingChanged(null, null);
         }
         
         [MethodImpl(MethodImplOptions.NoInlining | MethodImplOptions.NoOptimization)]
