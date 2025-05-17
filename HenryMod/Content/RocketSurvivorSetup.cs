@@ -258,7 +258,7 @@ namespace RocketSurvivor.Modules.Survivors
             primarySkillDef.baseRechargeInterval = 0f;
             primarySkillDef.beginSkillCooldownOnSkillEnd = false;
             primarySkillDef.canceledFromSprinting = false;
-            primarySkillDef.dontAllowPastMaxStocks = true;
+            primarySkillDef.dontAllowPastMaxStocks = false;
             primarySkillDef.forceSprintDuringState = false;
             primarySkillDef.fullRestockOnAssign = true;
             primarySkillDef.icon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texSkillPrimary" + (Modules.Config.msPaintIcons.Value ? "_mspaint" : ""));
@@ -299,7 +299,7 @@ namespace RocketSurvivor.Modules.Survivors
             primaryAltSkillDef.baseRechargeInterval = 0f;
             primaryAltSkillDef.beginSkillCooldownOnSkillEnd = false;
             primaryAltSkillDef.canceledFromSprinting = false;
-            primaryAltSkillDef.dontAllowPastMaxStocks = true;
+            primaryAltSkillDef.dontAllowPastMaxStocks = false;
             primaryAltSkillDef.forceSprintDuringState = false;
             primaryAltSkillDef.fullRestockOnAssign = true;
             primaryAltSkillDef.icon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texSkillPrimary_DirectHit" + (Modules.Config.msPaintIcons.Value ? "_mspaint" : ""));
@@ -352,7 +352,7 @@ namespace RocketSurvivor.Modules.Survivors
             airDetTrackerDef.baseRechargeInterval = 2f;
             airDetTrackerDef.beginSkillCooldownOnSkillEnd = false;
             airDetTrackerDef.canceledFromSprinting = false;
-            airDetTrackerDef.dontAllowPastMaxStocks = true;
+            airDetTrackerDef.dontAllowPastMaxStocks = false;
             airDetTrackerDef.forceSprintDuringState = false;
             airDetTrackerDef.fullRestockOnAssign = true;
             airDetTrackerDef.icon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texSkillSecondary" + (Modules.Config.msPaintIcons.Value ? "_mspaint" : ""));
@@ -398,7 +398,7 @@ namespace RocketSurvivor.Modules.Survivors
             c4Def.baseRechargeInterval = 5f;
             c4Def.beginSkillCooldownOnSkillEnd = false;
             c4Def.canceledFromSprinting = false;
-            c4Def.dontAllowPastMaxStocks = true;
+            c4Def.dontAllowPastMaxStocks = false;
             c4Def.forceSprintDuringState = false;
             c4Def.fullRestockOnAssign = true;
             c4Def.icon = Modules.Assets.mainAssetBundle.LoadAsset<Sprite>("texSkillUtility_C4" + (Modules.Config.msPaintIcons.Value ? "_mspaint" : ""));

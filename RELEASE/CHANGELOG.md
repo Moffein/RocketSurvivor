@@ -1,3 +1,7 @@
+`1.1.2`
+
+- Removed DontAllowPastMaxStocks
+
 `1.1.1`
 
 - Added Mute M2 config option.
