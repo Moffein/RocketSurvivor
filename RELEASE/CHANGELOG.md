@@ -1,3 +1,7 @@
+`1.1.3`
+
+- Update KO TL.
+
 `1.1.2`
 
 - Removed DontAllowPastMaxStocks
