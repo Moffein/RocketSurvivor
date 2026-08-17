@@ -1,3 +1,7 @@
+`1.1.4`
+
+- Fixed Nitro Charge being unable to crit.
+
 `1.1.3`
 
 - Update KO TL.

@@ -37,7 +37,7 @@ namespace EntityStates.RocketSurvivorSkills.Utility
 			}
 			if (base.isAuthority)
 			{
-				ProjectileManager.instance.FireProjectile(C4.projectilePrefab, aimRay.origin, Util.QuaternionSafeLookRotation(aimRay.direction), base.gameObject, this.damageStat * C4.damageCoefficient, C4.force, false, DamageColorIndex.Default, null, -1f);
+				ProjectileManager.instance.FireProjectile(C4.projectilePrefab, aimRay.origin, Util.QuaternionSafeLookRotation(aimRay.direction), base.gameObject, this.damageStat * C4.damageCoefficient, C4.force, RollCrit(), DamageColorIndex.Default, null, -1f);
 			}
 		}
 
