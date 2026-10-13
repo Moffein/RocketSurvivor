@@ -1,3 +1,7 @@
+`1.1.5`
+
+- DLC4
+
 `1.1.4`
 
 - Fixed Nitro Charge being unable to crit.

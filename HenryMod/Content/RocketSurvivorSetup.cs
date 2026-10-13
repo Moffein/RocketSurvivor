@@ -65,7 +65,8 @@ namespace RocketSurvivor.Modules.Survivors
 
         public override Type characterMainState => typeof(RocketMainState);
 
-        public override ItemDisplaysBase itemDisplays => new RocketItemDisplays();
+        //TODO Fix this for DLC4 later
+        //public override ItemDisplaysBase itemDisplays => new RocketItemDisplays();
 
                                                                           //if you have more than one character, easily create a config to enable/disable them like this
         public override ConfigEntry<bool> characterEnabledConfig => null; //Modules.Config.CharacterEnableConfig(bodyName);

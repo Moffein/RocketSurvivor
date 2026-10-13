@@ -34,7 +34,7 @@ namespace RocketSurvivor
     {
         public const string MODUID = "com.EnforcerGang.RocketSurvivor";
         public const string MODNAME = "RocketSurvivor";
-        public const string MODVERSION = "1.1.4";
+        public const string MODVERSION = "1.1.5";
 
         // a prefix for name tokens to prevent conflicts- please capitalize all name tokens for convention
         public const string DEVELOPER_PREFIX = "MOFFEIN";
@@ -70,7 +70,9 @@ namespace RocketSurvivor
             Modules.States.RegisterStates(); // register states for networking
             Modules.Projectiles.RegisterProjectiles(); // add and register custom projectiles
             new Modules.LanguageTokens();
-            Modules.ItemDisplays.PopulateDisplays(); // collect item display prefabs for use in our display rules
+
+            //TODO: Fix for DLC4
+            //Modules.ItemDisplays.PopulateDisplays(); // collect item display prefabs for use in our display rules
 
             // survivor initialization
             new RocketSurvivorSetup().Initialize();

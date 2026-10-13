@@ -390,6 +390,7 @@ namespace RocketSurvivor.Modules
             //Modules.Assets.ConvertAllRenderersToHopooShader(c4Ghost);
             //Breaks ring
             c4Ghost.AddComponent<ProjectileGhostController>();
+            pc.ghostPrefabAddress = default;
             pc.ghostPrefab = c4Ghost;
 
             AddProjectile(c4Projectile);
