@@ -1,3 +1,7 @@
+`1.1.6`
+
+- Fixed the mod attempting to add 2 keyitemslots.
+
 `1.1.5`
 
 - DLC4, itemdisplays currently broken.

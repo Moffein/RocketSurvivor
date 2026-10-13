@@ -120,8 +120,6 @@ namespace RocketSurvivor.Modules {
             SetupFootstepController(model);
             SetupRagdoll(model);
 
-            newBodyPrefab.AddComponent<KeyItemSlot>();
-
             Modules.Content.AddCharacterBodyPrefab(newBodyPrefab);
 
             return newBodyPrefab;
