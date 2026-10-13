@@ -1,6 +1,6 @@
 `1.1.5`
 
-- DLC4
+- DLC4, itemdisplays currently broken.
 
 `1.1.4`
 
